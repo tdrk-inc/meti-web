@@ -18,6 +18,15 @@
     a { color: #E8702A; text-decoration: none; }
     a:hover { color: #1F1F21; }
     ::selection { background: #B48CC8; color: #FFFFFF; }
+    .header-anchor-link {
+      padding-bottom: 4px;
+      background-image: linear-gradient(#E8702A, #E8702A);
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 2px;
+      transition: background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    .header-anchor-link:hover { background-size: 100% 2px; }
     @media (min-width: 1000px) { .hero-eco-line { white-space: nowrap; } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes floatOrange {
@@ -46,28 +55,28 @@
       </div>
       <sc-if value="{{ showDesktopNav }}" hint-placeholder-val="{{ true }}">
         <nav style="display:flex; align-items:center; gap:32px; flex:1 1 auto; justify-content:center; overflow-x:auto; white-space:nowrap; scrollbar-width:none; padding-right:220px;">
-          <a href="#benefit" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">アワード特典</a>
-          <a href="#category" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">応募カテゴリ</a>
-          <a href="#advisory" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">アドバイザリーボード</a>
-          <a href="#schedule" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">スケジュール</a>
-          <a href="#requirements" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">応募条件</a>
-          <a href="#apply" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">エントリー方法</a>
-          <a href="#faq" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">FAQ</a>
-          <a href="mailto:info@art-business-award.jp" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">お問い合わせ</a>
+          <a href="#benefit" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">アワード特典</a>
+          <a href="#category" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">応募カテゴリ</a>
+          <a href="#advisory" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">アドバイザリーボード</a>
+          <a href="#schedule" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">スケジュール</a>
+          <a href="#requirements" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">応募条件</a>
+          <a href="#apply" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">エントリー方法</a>
+          <a href="#faq" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">FAQ</a>
+          <a href="mailto:info@art-business-award.jp" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">お問い合わせ</a>
         </nav>
         <a href="#apply" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; flex:0 0 auto; position:absolute; top:50%; right:clamp(24px, 4vw, 48px); transform:translateY(-50%); transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background:#E8702A; color:#FFFFFF;">エントリーする <span style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:14px; transition:transform 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="transform:translateX(2px);">→</span></a>
       </sc-if>
       <sc-if value="{{ isTablet }}" hint-placeholder-val="{{ false }}">
         <a href="#apply" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; flex:0 0 auto; position:absolute; top:50%; right:clamp(24px, 4vw, 48px); transform:translateY(-50%); transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background:#E8702A; color:#FFFFFF;">エントリーする <span style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:14px; transition:transform 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="transform:translateX(2px);">→</span></a>
         <nav style="display:flex; align-items:center; gap:12px; flex-basis:100%; justify-content:flex-start; overflow-x:auto; white-space:nowrap; scrollbar-width:thin; margin-top:0;">
-          <a href="#benefit" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">アワード特典</a>
-          <a href="#category" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">応募カテゴリ</a>
-          <a href="#advisory" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">アドバイザリーボード</a>
-          <a href="#schedule" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">スケジュール</a>
-          <a href="#requirements" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">応募条件</a>
-          <a href="#apply" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">エントリー方法</a>
-          <a href="#faq" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">FAQ</a>
-          <a href="mailto:info@art-business-award.jp" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21; padding-bottom:4px; background-image:linear-gradient(#E8702A, #E8702A); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);" style-hover="background-size:100% 2px;">お問い合わせ</a>
+          <a href="#benefit" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">アワード特典</a>
+          <a href="#category" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">応募カテゴリ</a>
+          <a href="#advisory" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">アドバイザリーボード</a>
+          <a href="#schedule" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">スケジュール</a>
+          <a href="#requirements" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">応募条件</a>
+          <a href="#apply" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">エントリー方法</a>
+          <a href="#faq" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">FAQ</a>
+          <a href="mailto:info@art-business-award.jp" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">お問い合わせ</a>
         </nav>
       </sc-if>
       <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
