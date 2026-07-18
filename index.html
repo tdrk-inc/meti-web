@@ -274,7 +274,7 @@
           <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
           <div style="{{ cat.innerRowStyle }}">
             <div style="{{ cat.noBlockStyle }}">
-              <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:{{ cat.noFontSize }}; line-height:1; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.no }}</span>
+              <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:{{ cat.noFontSize }}; line-height:1; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.no }}</span>
               <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.3px; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.titleEn }}</span>
             </div>
             <div style="{{ cat.contentBlockStyle }}">
@@ -308,7 +308,7 @@
           <div style="display:flex; flex-direction:column; gap:12px;">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
               <div style="display:flex; align-items:baseline; gap:10px; min-width:0;">
-                <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:18px; line-height:1; color:{{ cat.textColor }};">{{ cat.no }}</span>
+                <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; line-height:1; color:{{ cat.textColor }};">{{ cat.no }}</span>
                 <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.3px; color:{{ cat.textColor }};">{{ cat.titleEn }}</span>
               </div>
             </div>
@@ -991,7 +991,7 @@ class Component extends DCLogic {
           flex: isMobile ? '0 0 44px' : '0 1 160px',
           minWidth: 0
         },
-        noFontSize: isMobile ? '22px' : 'clamp(36px, 4.5vw, 56px)',
+        noFontSize: isMobile ? '20px' : 'clamp(32px, 4vw, 48px)',
         contentBlockStyle: {
           flex: '1 1 220px',
           display: 'flex',
