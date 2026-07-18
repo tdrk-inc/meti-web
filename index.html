@@ -1144,7 +1144,8 @@ class Component extends DCLogic {
           ]
         : [{ text: ev.date, style: kanjiStyle }];
       let daysLeft = null;
-      if (ev.label === 'プレエントリー締切' && m) {
+      const countdownLabels = ['プレエントリー締切', 'エントリーシート提出締切'];
+      if (m && countdownLabels.includes(ev.label)) {
         const target = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
         const now = new Date();
         const diff = Math.ceil((target.setHours(0,0,0,0) - now.setHours(0,0,0,0)) / 86400000);
