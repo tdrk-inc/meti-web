@@ -610,8 +610,8 @@
   <section data-screen-label="CTA Band" ref="{{ revealRefs.ctaband }}" style="{{ revealStyles.ctaband }}">
     <div style="max-width:1440px; margin:0 auto; padding:clamp(48px, 9vw, 96px) clamp(32px, 7vw, 96px); position:relative; overflow:hidden;">
       <div style="position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px;">
-        <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:28px; letter-spacing:1px; color:#FFFFFF;">ENTRY NOW</span>
-        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#FFFFFF;">プレエントリー締切まで<sc-if value="{{ preEntryDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}"><span style="color:#1F1F21; font-weight:700;">あと{{ preEntryDaysLeft }}日</span></sc-if>。気になる方はまずはお気軽にエントリーください。</p>
+        <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:36px; letter-spacing:1px; color:#FFFFFF;">ENTRY NOW</span>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:22px; line-height:170%; color:#FFFFFF;">プレエントリー締切まで<sc-if value="{{ preEntryDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}"><span style="font-size:28px; color:#1F1F21; font-weight:700;">あと{{ preEntryDaysLeft }}日</span></sc-if>。気になる方はまずはお気軽にエントリーください。</p>
       </div>
       <div style="{{ entryCardsRowStyle }}">
         <a href="#" class="entry-card" style="{{ entryCardStyle }}">
@@ -645,7 +645,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer data-screen-label="Footer" id="footer" style="margin-top:100px; background:#1A1A1A; scroll-margin-top:100px;">
+  <footer data-screen-label="Footer" id="footer" style="margin-top:0px; background:#1A1A1A; scroll-margin-top:100px;">
     <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
     <div style="max-width:1440px; margin:0 auto; padding:64px clamp(24px, 6vw, 96px) 40px; display:flex; flex-direction:column; gap:48px;">
       <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:32px; flex-wrap:wrap;">
@@ -868,7 +868,7 @@ class Component extends DCLogic {
       minHeight: '220px',
       display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '32px',
       padding: '32px', borderRadius: '8px', border: 'none', textDecoration: 'none',
-      background: 'rgba(255,255,255,0.55)',
+      background: '#FDF9F2',
       backdropFilter: 'blur(12px) saturate(140%)',
       WebkitBackdropFilter: 'blur(12px) saturate(140%)',
       transition: 'background 350ms cubic-bezier(0.65, 0, 0.35, 1)'
@@ -893,7 +893,7 @@ class Component extends DCLogic {
       information: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       faq: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       contact: { maxWidth: '1440px', margin: '0 auto', padding: `0 clamp(24px, 6vw, 96px) ${SECTION_GAP}` },
-      ctaband: { padding: `${SECTION_GAP} 0 0`, position: 'relative', background: '#E8702A' }
+      ctaband: { padding: '0', marginTop: SECTION_GAP, position: 'relative', background: '#E8702A' }
     };
     const revealStyles = {};
     this.revealKeys.forEach(key => {
