@@ -543,27 +543,18 @@
 
   <!-- ARCHIVE -->
   <section data-screen-label="Archive" style="max-width:1440px; margin:0 auto; padding:clamp(48px, 9vw, 96px) clamp(24px, 6vw, 96px) 0;">
-    <a href="#information" aria-label="2025年（第1回）受賞企業・プロジェクト一覧を見る" style="{{ archiveBoxStyle }}">
-      <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
-      <div style="{{ archiveInnerStyle }}">
-        <div style="display:flex; align-items:center; gap:8px; flex:0 0 auto;">
-          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:1.5px; color:#1F1F21;">ARCHIVE</span>
-        </div>
-        <span style="{{ archiveDividerStyle }}"></span>
-        <span style="{{ archiveDescStyle }}">2025年（第1回）受賞企業・プロジェクト一覧を見る</span>
-      </div>
-      <span aria-hidden="true" class="archive-arrow" style="width:36px; height:36px; border-radius:50%; background:transparent; color:#B48CC8; display:inline-flex; align-items:center; justify-content:center; font-size:16px; flex:0 0 auto; transition:background 500ms cubic-bezier(0.65, 0, 0.35, 1), color 500ms cubic-bezier(0.65, 0, 0.35, 1);">→</span>
-      </sc-if>
-      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
-      <div style="display:flex; flex-direction:column; gap:12px; width:100%;">
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
-          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:1.5px; color:#1F1F21;">ARCHIVE</span>
-          <span aria-hidden="true" class="archive-arrow" style="width:36px; height:36px; border-radius:50%; background:transparent; color:#B48CC8; display:inline-flex; align-items:center; justify-content:center; font-size:16px; flex:0 0 auto; transition:background 500ms cubic-bezier(0.65, 0, 0.35, 1), color 500ms cubic-bezier(0.65, 0, 0.35, 1);">→</span>
-        </div>
-        <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#1F1F21;">2025年（第1回）受賞企業・プロジェクト一覧を見る</span>
-      </div>
-      </sc-if>
-    </a>
+    <div style="{{ archiveGridStyle }}">
+      <sc-for list="{{ archiveItems }}" as="item" hint-placeholder-count="2">
+        <a href="{{ item.url }}" aria-label="{{ item.description }}" style="{{ archiveCardStyle }}">
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:1.5px; color:#1F1F21;">ARCHIVE</span>
+            <span style="{{ archiveCardTitleStyle }}">{{ item.title }}</span>
+            <span style="{{ archiveCardDescStyle }}">{{ item.description }}</span>
+          </div>
+          <span aria-hidden="true" class="archive-arrow" style="width:36px; height:36px; border-radius:50%; background:transparent; color:#B48CC8; display:inline-flex; align-items:center; justify-content:center; font-size:16px; flex:0 0 auto; align-self:flex-end; transition:background 500ms cubic-bezier(0.65, 0, 0.35, 1), color 500ms cubic-bezier(0.65, 0, 0.35, 1);">→</span>
+        </a>
+      </sc-for>
+    </div>
   </section>
 
   <!-- INFORMATION -->
@@ -839,10 +830,10 @@ class Component extends DCLogic {
     const heroEyebrowMarginTop = isMobile ? '56px' : '100px';
     const heroEyebrowMarginBottom = isMobile ? '16px' : '24px';
     const benefitFadeStyle = { position: 'absolute', left: 0, right: 0, top: 0, height: isMobile ? '0px' : '120px', background: 'linear-gradient(to bottom, #FDF9F2 0%, rgba(253,249,242,0) 100%)', pointerEvents: 'none', zIndex: 1 };
-    const archiveBoxStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: isMobile ? 'nowrap' : 'wrap', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)' };
-    const archiveInnerStyle = { display: 'flex', alignItems: 'center', gap: '16px', flexWrap: isMobile ? 'nowrap' : 'wrap', minWidth: 0, overflow: isMobile ? 'hidden' : 'visible' };
-    const archiveDividerStyle = { display: isMobile ? 'none' : 'block', width: '1px', height: '16px', background: '#D4D5E2', flex: '0 0 auto' };
-    const archiveDescStyle = { fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 500, fontSize: '13px', color: '#1F1F21', whiteSpace: isMobile ? 'nowrap' : 'normal', overflow: isMobile ? 'hidden' : 'visible', textOverflow: isMobile ? 'ellipsis' : 'clip', minWidth: 0 };
+    const archiveGridStyle = { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '16px' : '24px' };
+    const archiveCardStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '32px', minHeight: '200px', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)' };
+    const archiveCardTitleStyle = { fontFamily: "'Zen Kaku Gothic New',sans-serif", fontWeight: 700, fontSize: 'clamp(20px, 2.6vw, 26px)', color: '#1F1F21' };
+    const archiveCardDescStyle = { fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 500, fontSize: '13px', lineHeight: '170%', color: '#333333' };
     const advisoryNoteRowStyle = { display: 'flex', alignItems: isMobile ? 'flex-start' : 'baseline', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '4px' : '12px' };
     const aboutSectionDisplay = 'block';
     const sectionTitleFontSize = isMobile ? '28px' : '36px';
@@ -1089,6 +1080,11 @@ class Component extends DCLogic {
       };
     });
 
+    const archiveItems = [
+      { title: '2025実績', description: '2025年（第1回）受賞企業・プロジェクト一覧を見る', url: '#' },
+      { title: 'プレイヤーズファイル', description: 'アーティスト・コラボレーター・企業プロジェクトを紹介するPLAYERS FILEを見る', url: '#' }
+    ];
+
     const rawInformationItems = [
       { date: '2026年7月29日', tag: 'INFO', tagColor: '#E8702A', text: 'Art & Business Award 2026 エントリー開始のお知らせ' },
       { date: '2026年6月11日', tag: 'NEWS', tagColor: '#B48CC8', text: 'ART & BUSINESS CASEBOOKを公表しました。', url: 'https://www.meti.go.jp/policy/mono_info_service/mono/creative/art/260601_casebook01.pdf' },
@@ -1167,7 +1163,7 @@ class Component extends DCLogic {
       { name: '福武 英明', title: 'ベネッセホールディングス取締役／公益財団法人福武財団理事長', photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, benefitGroupColumns, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), aboutRef: this.aboutRef, aboutStyle, revealRefs: this.revealRefs, revealStyles, winnerBenefits, finalistBenefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroEyebrowMarginTop, heroEyebrowMarginBottom, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveBoxStyle, archiveInnerStyle, archiveDividerStyle, archiveDescStyle, advisoryNoteRowStyle, aboutSectionDisplay, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, aboutBodyFontWeight, aboutQuoteFontSize, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, benefitGroupColumns, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), aboutRef: this.aboutRef, aboutStyle, revealRefs: this.revealRefs, revealStyles, winnerBenefits, finalistBenefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroEyebrowMarginTop, heroEyebrowMarginBottom, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveGridStyle, archiveCardStyle, archiveCardTitleStyle, archiveCardDescStyle, advisoryNoteRowStyle, aboutSectionDisplay, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, aboutBodyFontWeight, aboutQuoteFontSize, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
