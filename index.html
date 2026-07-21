@@ -192,67 +192,33 @@
 
   <!-- BENEFIT -->
   <section data-screen-label="Benefit" id="benefit" ref="{{ revealRefs.benefit }}" style="{{ revealStyles.benefit }}">
-    <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:48px;">
-      <div style="display:flex; align-items:center; gap:8px;">
-        <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
-        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">BENEFIT</span>
+    <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; position:relative; margin-bottom:48px;">
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
+          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">BENEFIT</span>
+        </div>
+        <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">アワード特典</span>
       </div>
-      <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">アワード特典</span>
+      <p style="margin:0; max-width:440px; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; color:#333333;">受賞企業様とファイナリスト企業様（最終選考に残られた企業）への特典です。</p>
     </div>
-    <div style="display:grid; grid-template-columns:{{ benefitGroupColumns }}; gap:64px 48px;">
-      <div>
-        <div style="min-height:170px;">
-        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:1.5px; color:#C9971F; display:block; margin-bottom:6px;">TOP AWARD</span>
-        <h3 style="margin:0 0 12px; font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:22px; color:#1F1F21; display:flex; align-items:center; gap:8px;"><span style="width:5px; height:5px; border-radius:50%; background:#C9971F; display:inline-block;"></span>受賞企業</h3>
-        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:170%; color:#333333;">受賞した企業様への特典です。</p>
-        </div>
-        <div style="display:grid; grid-template-columns:1fr; gap:0;">
-          <sc-for list="{{ winnerBenefits }}" as="b" hint-placeholder-count="4">
-            <div style="border-top:1px solid #E8D9B8; padding:24px 0; display:flex; align-items:center; gap:20px;">
-              <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; color:{{ b.noColor }};">{{ b.no }}</span>
-                  <sc-if value="{{ b.common }}" hint-placeholder-val="{{ false }}">
-                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#333333; border:1px solid #D4D5E2; border-radius:4px; padding:2px 8px;">共通</span>
-                  </sc-if>
-                  <sc-if value="{{ !b.common }}" hint-placeholder-val="{{ true }}">
-                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#C9971F; border:1px solid #C9971F; border-radius:4px; padding:2px 8px;">受賞企業限定</span>
-                  </sc-if>
-                </div>
-                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:160%; color:#1F1F21;">{{ b.text }}</span>
-                <sc-if value="{{ b.note }}" hint-placeholder-val="{{ '' }}">
-                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:160%; color:#999999;">※{{ b.note }}</span>
-                </sc-if>
-              </div>
+    <div style="display:grid; grid-template-columns:1fr; gap:0;">
+      <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
+        <div style="border-top:1px solid #E8D9B8; padding:24px 0; display:flex; align-items:center; gap:20px;">
+          <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; color:#1F1F21;">{{ b.no }}</span>
+              <sc-for list="{{ b.tags }}" as="tag" hint-placeholder-count="2">
+                <span style="{{ tag.style }}">{{ tag.label }}</span>
+              </sc-for>
             </div>
-          </sc-for>
+            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:160%; color:#1F1F21;">{{ b.text }}</span>
+            <sc-if value="{{ b.note }}" hint-placeholder-val="{{ '' }}">
+              <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:160%; color:#999999;">※{{ b.note }}</span>
+            </sc-if>
+          </div>
         </div>
-      </div>
-      <div>
-        <div style="min-height:170px;">
-        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:1.5px; color:#333333; display:block; margin-bottom:6px;">FINALIST</span>
-        <h3 style="margin:0 0 12px; font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:18px; color:#1F1F21; display:flex; align-items:center; gap:8px;"><span style="width:5px; height:5px; border-radius:50%; background:#333333; display:inline-block;"></span>ファイナリスト企業</h3>
-        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:170%; color:#333333;">最終選考に残られた企業様への特典です。</p>
-        </div>
-        <div style="display:grid; grid-template-columns:1fr; gap:0;">
-          <sc-for list="{{ finalistBenefits }}" as="b" hint-placeholder-count="3">
-            <div style="border-top:1px solid #DDE0E3; padding:24px 0; display:flex; align-items:center; gap:20px;">
-              <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; color:#333333;">{{ b.no }}</span>
-                  <sc-if value="{{ b.common }}" hint-placeholder-val="{{ false }}">
-                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#333333; border:1px solid #D4D5E2; border-radius:4px; padding:2px 8px;">共通</span>
-                  </sc-if>
-                </div>
-                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:160%; color:#1F1F21;">{{ b.text }}</span>
-                <sc-if value="{{ b.note }}" hint-placeholder-val="{{ '' }}">
-                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:160%; color:#999999;">※{{ b.note }}</span>
-                </sc-if>
-              </div>
-            </div>
-          </sc-for>
-        </div>
-      </div>
+      </sc-for>
     </div>
   </section>
 
@@ -831,7 +797,6 @@ class Component extends DCLogic {
     const advisoryNoteRowStyle = { display: 'flex', alignItems: isMobile ? 'flex-start' : 'baseline', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '4px' : '12px' };
     const sectionTitleFontSize = isMobile ? '28px' : '36px';
     const benefitGridColumns = isMobile ? 'repeat(auto-fit, minmax(260px, 1fr))' : '1fr 1fr';
-    const benefitGroupColumns = isMobile ? '1fr' : '1fr 1fr';
     const advisoryGridColumns = isMobile ? 'repeat(auto-fit, minmax(140px, 1fr))' : 'repeat(4, 1fr)';
     const SECTION_GAP = '100px';
     const revealBase = {
@@ -1012,18 +977,17 @@ class Component extends DCLogic {
       };
     });
 
-    const winnerBenefits = [
-      { no: '01', text: '都内で開催する授賞式にて表彰' },
-      { no: '02', text: '授賞式にてプレゼンテーションの実施（任意）', common: true },
-      { no: '03', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true, note: '掲載にあたっては相談する場合がございます' },
-      { no: '04', text: '経済産業省の報告書とサイトへ掲載', common: true, note: '掲載にあたっては相談する場合がございます' }
-    ].map(b => ({ ...b, noColor: b.common ? '#333333' : '#C9971F' }));
+    const benefitTagStyles = {
+      '受賞企業': "font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#C9971F; border:1px solid #C9971F; border-radius:4px; padding:2px 8px;",
+      'ファイナリスト企業': "font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#333333; border:1px solid #333333; border-radius:4px; padding:2px 8px;"
+    };
 
-    const finalistBenefits = [
-      { no: '01', text: '授賞式への参加（任意）', common: true },
-      { no: '02', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true, note: '掲載にあたっては相談する場合がございます' },
-      { no: '03', text: '経済産業省の報告書とサイトへ掲載', common: true, note: '掲載にあたっては相談する場合がございます' }
-    ];
+    const benefits = [
+      { no: '01', text: '都内で開催する授賞式にて表彰', tagNames: ['受賞企業'] },
+      { no: '02', text: '授賞式にてプレゼンテーションの実施', tagNames: ['受賞企業', 'ファイナリスト企業'] },
+      { no: '03', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', tagNames: ['受賞企業', 'ファイナリスト企業'], note: '掲載にあたっては相談する場合がございます' },
+      { no: '04', text: '経済産業省の報告書とサイトへ掲載', tagNames: ['受賞企業', 'ファイナリスト企業'], note: '掲載にあたっては相談する場合がございます' }
+    ].map(b => ({ ...b, tags: b.tagNames.map(name => ({ label: name, style: benefitTagStyles[name] })) }));
 
     const midArticles = [
       { url: 'https://forbesjapan.com/articles/detail/85055', tag: 'アートな数字', title: '「直島新美術館」と創造的カオス', date: '2025.11.23', image: 'https://images.forbesjapan.com/media/article/85055/images/main_image_2859a654bc375ae44b3adc8171340623ab3bd005.jpg?w=1200' },
@@ -1150,7 +1114,7 @@ class Component extends DCLogic {
       { name: '福武 英明', title: 'ベネッセホールディングス取締役／公益財団法人福武財団理事長', photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, benefitGroupColumns, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, winnerBenefits, finalistBenefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveInnerStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveInnerStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
