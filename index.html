@@ -47,6 +47,7 @@
     .cta-arrow { transition: transform 350ms cubic-bezier(0.65, 0, 0.35, 1); }
     a:hover > .cta-arrow { transform: translateX(2px); }
     .archive-arrow:hover { background: #B48CC8; color: #FFFFFF !important; }
+    .archive-card:hover { background: rgba(180,140,200,0.16) !important; }
     @media (min-width: 1000px) { .hero-eco-line { white-space: nowrap; } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes floatOrange {
@@ -551,7 +552,7 @@
     </div>
     <div style="{{ archiveGridStyle }}">
       <sc-for list="{{ archiveItems }}" as="item" hint-placeholder-count="2">
-        <a href="{{ item.url }}" aria-label="{{ item.description }}" style="{{ archiveCardStyle }}">
+        <a href="{{ item.url }}" aria-label="{{ item.description }}" class="archive-card" style="{{ archiveCardStyle }}">
           <div style="display:flex; flex-direction:column; gap:12px;">
             <span style="{{ archiveCardTitleStyle }}">{{ item.title }}</span>
             <span style="{{ archiveCardDescStyle }}">{{ item.description }}</span>
@@ -838,7 +839,7 @@ class Component extends DCLogic {
     const heroEyebrowMarginBottom = isMobile ? '12px' : '24px';
     const benefitFadeStyle = { position: 'absolute', left: 0, right: 0, top: 0, height: isMobile ? '0px' : '120px', background: 'linear-gradient(to bottom, #FDF9F2 0%, rgba(253,249,242,0) 100%)', pointerEvents: 'none', zIndex: 1 };
     const archiveGridStyle = { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '16px' : '24px' };
-    const archiveCardStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '32px', minHeight: '200px', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)' };
+    const archiveCardStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '32px', minHeight: '200px', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)', transition: 'background 350ms cubic-bezier(0.65, 0, 0.35, 1)' };
     const archiveCardTitleStyle = { fontFamily: "'Zen Kaku Gothic New',sans-serif", fontWeight: 700, fontSize: 'clamp(20px, 2.6vw, 26px)', color: '#1F1F21' };
     const archiveCardDescStyle = { fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 500, fontSize: '13px', lineHeight: '170%', color: '#333333' };
     const archiveCardSubDescStyle = { fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 400, fontSize: '13px', lineHeight: '170%', color: '#666666' };
