@@ -549,11 +549,17 @@
 
   <!-- ARCHIVE -->
   <section data-screen-label="Archive" style="max-width:1440px; margin:0 auto; padding:clamp(48px, 9vw, 96px) clamp(24px, 6vw, 96px) 0;">
+    <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:48px;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">ARCHIVE</span>
+      </div>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">ART &amp; BUSINESS AWARD 2025について</span>
+    </div>
     <div style="{{ archiveGridStyle }}">
       <sc-for list="{{ archiveItems }}" as="item" hint-placeholder-count="2">
         <a href="{{ item.url }}" aria-label="{{ item.description }}" style="{{ archiveCardStyle }}">
           <div style="display:flex; flex-direction:column; gap:12px;">
-            <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:1.5px; color:#1F1F21;">ARCHIVE</span>
             <span style="{{ archiveCardTitleStyle }}">{{ item.title }}</span>
             <span style="{{ archiveCardDescStyle }}">{{ item.description }}</span>
           </div>
@@ -1091,8 +1097,8 @@ class Component extends DCLogic {
     });
 
     const archiveItems = [
-      { title: '2025実績', description: '2025年（第1回）受賞企業・プロジェクト一覧を見る', url: '#' },
-      { title: 'プレイヤーズファイル', description: 'アーティスト・コラボレーター・企業プロジェクトを紹介するPLAYERS FILEを見る', url: '#' }
+      { title: '2025 Honorees', description: 'ART & BUSINESS AWARD 2025の実績一覧', url: '#' },
+      { title: 'PLAYERS FILE', description: '企業とアートのプレイヤーをつなぐ未来の共創に向けた「データベース」', url: '#' }
     ];
 
     const rawInformationItems = [
