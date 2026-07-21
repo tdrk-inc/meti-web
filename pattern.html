@@ -269,44 +269,62 @@
     </div>
   </section>
 
-  <!-- PATTERN: FIT / NOT-FIT CARDS -->
-  <section data-screen-label="Pattern: Fit Cards" id="pattern-fit-cards" style="max-width:1440px; margin:0 auto; padding:clamp(64px, 11vw, 128px) clamp(24px, 6vw, 96px); position:relative; overflow:hidden;">
+  <!-- PATTERN: BENEFIT CARDS (TOP AWARD / FINALIST) -->
+  <section data-screen-label="Pattern: Benefit Cards" id="pattern-benefit-cards" style="max-width:1440px; margin:0 auto; padding:clamp(64px, 11vw, 128px) clamp(24px, 6vw, 96px); position:relative; overflow:hidden;">
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:32px;">
 
-      <!-- Card A: fit -->
+      <!-- Card A: Top Award benefits -->
       <div style="position:relative; border:1px solid #E8702A; border-radius:4px; padding:40px clamp(24px, 4vw, 48px); background:rgba(255,255,255,0.5); overflow:hidden;">
         <div aria-hidden="true" style="position:absolute; top:0; left:0; width:0; height:0; border-style:solid; border-width:22px 22px 0 0; border-color:#E8702A transparent transparent transparent;"></div>
         <div aria-hidden="true" style="position:absolute; bottom:0; right:0; width:0; height:0; border-style:solid; border-width:0 0 22px 22px; border-color:transparent transparent #1F1F21 transparent;"></div>
         <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:32px;">
-          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#E8702A;">WHO WE'RE LOOKING FOR</span>
-          <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(22px, 3vw, 28px); line-height:140%; color:#E8702A;">こんな方と、<br>未来をつくりたい</h3>
+          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#E8702A;">TOP AWARD</span>
+          <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(22px, 3vw, 28px); line-height:140%; color:#E8702A;">受賞企業</h3>
+          <p style="margin:8px 0 0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:170%; color:#333333;">本アワードの受賞企業として選ばれた企業様への特典です。<br>共通特典に加え、受賞企業様だけの特別な特典をご用意しています。</p>
         </div>
         <div style="display:flex; flex-direction:column;">
-          <sc-for list="{{ patternFitItems }}" as="item" hint-placeholder-count="6">
+          <sc-for list="{{ winnerBenefits }}" as="b" hint-placeholder-count="5">
             <div style="display:flex; align-items:flex-start; gap:16px; padding:18px 0; border-top:1px dashed #E8B79A;">
               <span style="flex-shrink:0; width:26px; height:26px; border-radius:50%; border:1.5px solid #E8702A; color:#E8702A; display:inline-flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;">✓</span>
-              <div style="display:flex; flex-direction:column; gap:4px;">
-                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21;">{{ item.title }}</span>
-                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:170%; color:#333333;">{{ item.text }}</span>
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                <div style="display:flex; align-items:center; gap:10px;">
+                  <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; color:{{ b.noColor }};">{{ b.no }}</span>
+                  <sc-if value="{{ b.common }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#333333; border:1px solid #D4D5E2; border-radius:4px; padding:2px 8px;">共通</span>
+                  </sc-if>
+                  <sc-if value="{{ !b.common }}" hint-placeholder-val="{{ true }}">
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#C9971F; border:1px solid #C9971F; border-radius:4px; padding:2px 8px;">受賞企業限定</span>
+                  </sc-if>
+                </div>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:160%; color:#1F1F21;">{{ b.text }}</span>
               </div>
             </div>
           </sc-for>
         </div>
       </div>
 
-      <!-- Card B: not a fit -->
+      <!-- Card B: Finalist benefits -->
       <div style="position:relative; border:1px solid #1F1F21; border-radius:4px; padding:40px clamp(24px, 4vw, 48px); background:rgba(255,255,255,0.5); overflow:hidden;">
         <div aria-hidden="true" style="position:absolute; top:0; left:0; width:0; height:0; border-style:solid; border-width:22px 22px 0 0; border-color:#1F1F21 transparent transparent transparent;"></div>
         <div aria-hidden="true" style="position:absolute; bottom:0; right:0; width:0; height:0; border-style:solid; border-width:0 0 22px 22px; border-color:transparent transparent #1F1F21 transparent;"></div>
         <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:32px;">
-          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#6B6B6E;">THIS MIGHT NOT BE FOR YOU</span>
-          <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(22px, 3vw, 28px); line-height:140%; color:#1F1F21;">こんな方には<br>合わないかもしれません</h3>
+          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#6B6B6E;">FINALIST</span>
+          <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(22px, 3vw, 28px); line-height:140%; color:#1F1F21;">ファイナリスト企業</h3>
+          <p style="margin:8px 0 0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:170%; color:#333333;">最終選考に残られた企業様への特典です。</p>
         </div>
         <div style="display:flex; flex-direction:column;">
-          <sc-for list="{{ patternNotFitItems }}" as="item" hint-placeholder-count="7">
+          <sc-for list="{{ finalistBenefits }}" as="b" hint-placeholder-count="3">
             <div style="display:flex; align-items:flex-start; gap:16px; padding:18px 0; border-top:1px solid #D4D5E2;">
-              <span style="flex-shrink:0; width:26px; height:26px; border-radius:50%; border:1.5px solid #1F1F21; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;">✕</span>
-              <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; line-height:170%; color:#1F1F21;">{{ item.text }}</span>
+              <span style="flex-shrink:0; width:26px; height:26px; border-radius:50%; border:1.5px solid #1F1F21; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;">✓</span>
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                <div style="display:flex; align-items:center; gap:10px;">
+                  <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; color:#333333;">{{ b.no }}</span>
+                  <sc-if value="{{ b.common }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#333333; border:1px solid #D4D5E2; border-radius:4px; padding:2px 8px;">共通</span>
+                  </sc-if>
+                </div>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:160%; color:#1F1F21;">{{ b.text }}</span>
+              </div>
             </div>
           </sc-for>
         </div>
@@ -1092,25 +1110,6 @@ class Component extends DCLogic {
       { no: '01', text: 'アワード受賞イベントへの参加（任意）', common: true },
       { no: '02', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true },
       { no: '03', text: '経済産業省の報告書とサイトへ掲載', common: true }
-    ];
-
-    const patternFitItems = [
-      { title: '共感とカルチャーフィット', text: '私達の理念に共鳴し、"楽しい"を本気で追求できる方' },
-      { title: '自分を鍛え、挑戦を楽しめる人', text: '仲間とともに結果を出す。そんな喜びを知っている方' },
-      { title: 'チームで何かを成し遂げた経験がある方', text: '変化の速さを楽しみ、昨日より一歩前に進みたい方' },
-      { title: 'グローバルな舞台で勝負したい方', text: '海外で働いた経験、語学力、グローバル志向を活かしたい方' },
-      { title: 'アワード受賞後の発信にも前向きな方', text: '受賞イベントへの参加やPLAYERS FILEへの掲載など、取り組みを社会に発信することを楽しめる方' },
-      { title: '経済社会への発信・貢献に関心がある方', text: '経済産業省の報告書やサイトへの掲載を通じて、日本のアート市場活性化に貢献したいと考える方' }
-    ];
-
-    const patternNotFitItems = [
-      { text: '常に笑顔で人と接することが苦手な方' },
-      { text: '指示を待ってからでないと動けない方' },
-      { text: '変化や挑戦よりも、今のままを望む方' },
-      { text: 'チームでの協力より、自分のやり方を優先したい方' },
-      { text: '困難や課題を、全て環境のせいにしてしまう方' },
-      { text: '自分の意見やアイデアを発信することに消極的な方' },
-      { text: '「成長したい」という意志が薄い方' }
     ];
 
     const midArticles = [
