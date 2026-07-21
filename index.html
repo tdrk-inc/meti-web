@@ -51,7 +51,7 @@
 <div style="font-family:'Noto Sans JP',sans-serif; background:#FDF9F2; color:#1F1F21; min-height:100vh;">
 
   <!-- HEADER -->
-  <header data-screen-label="Header" style="{{ headerStyle }}">
+  <header data-screen-label="Header" ref="{{ headerRef }}" style="{{ headerStyle }}">
     <div style="{{ headerInnerStyle }}">
       <div style="{{ logoBlockStyle }}">
         <a href="#top" style="display:flex; align-items:center; gap:10px; text-decoration:none; cursor:pointer;">
@@ -123,7 +123,7 @@
   </sc-if>
 
   <!-- HERO -->
-  <section data-screen-label="Hero" id="top" style="position:relative; overflow:visible; padding-top:72px; background:#FDF9F2; min-height:100vh; display:flex; flex-direction:column;">
+  <section data-screen-label="Hero" id="top" style="position:relative; overflow:visible; padding-top:{{ heroSectionPaddingTop }}; background:#FDF9F2; min-height:100vh; display:flex; flex-direction:column;">
     <video ref="{{ videoRef }}" autoplay muted loop playsinline aria-hidden="true" style="display:none;">
       <source src="glow_blend_fv.mp4" type="video/mp4">
     </video>
@@ -691,7 +691,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { openCategory: null, scrolled: false, openFaq: null, hoveredNewsItem: null, hoveredFaq: null, aboutVisible: false, revealed: {}, isMobile: false, mobileNavOpen: false };
+  state = { openCategory: null, scrolled: false, openFaq: null, hoveredNewsItem: null, hoveredFaq: null, aboutVisible: false, revealed: {}, isMobile: false, mobileNavOpen: false, headerHeight: 0 };
 
   checkMobile = () => {
     const w = window.innerWidth;
@@ -729,10 +729,24 @@ class Component extends DCLogic {
 
   aboutRef = React.createRef();
 
+  headerRef = React.createRef();
+
   componentDidMount() {
     window.addEventListener('scroll', this.onScroll, { passive: true });
     this.checkMobile();
     window.addEventListener('resize', this.checkMobile, { passive: true });
+    if (this.headerRef.current) {
+      if ('ResizeObserver' in window) {
+        this.headerResizeObserver = new ResizeObserver((entries) => {
+          if (this.state.scrolled) return;
+          const h = Math.round(entries[0].contentRect.height);
+          if (h !== this.state.headerHeight) this.setState({ headerHeight: h });
+        });
+        this.headerResizeObserver.observe(this.headerRef.current);
+      } else {
+        this.setState({ headerHeight: Math.round(this.headerRef.current.getBoundingClientRect().height) });
+      }
+    }
     const v = this.videoRef.current;
     if (v) {
       v.muted = true;
@@ -795,6 +809,7 @@ class Component extends DCLogic {
   componentWillUnmount() {
     window.removeEventListener('scroll', this.onScroll);
     window.removeEventListener('resize', this.checkMobile);
+    if (this.headerResizeObserver) this.headerResizeObserver.disconnect();
   }
 
   renderVals() {
@@ -804,6 +819,8 @@ class Component extends DCLogic {
     const mobileNavOpen = this.state.mobileNavOpen;
     const heroTitleFontSize = isMobile ? 'clamp(24px, 8vw, 40px)' : 'clamp(28px, 3.4vw, 56px)';
     const heroTitleWhiteSpace = isMobile ? 'normal' : 'nowrap';
+    const headerHeight = this.state.headerHeight;
+    const heroSectionPaddingTop = headerHeight ? `${headerHeight}px` : (isMobile ? '56px' : '72px');
     const heroEyebrowMarginTop = isMobile ? '80px' : '140px';
     const heroEyebrowMarginBottom = isMobile ? '24px' : '32px';
     const benefitFadeStyle = { position: 'absolute', left: 0, right: 0, top: 0, height: isMobile ? '0px' : '120px', background: 'linear-gradient(to bottom, #FDF9F2 0%, rgba(253,249,242,0) 100%)', pointerEvents: 'none', zIndex: 1 };
