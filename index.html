@@ -288,11 +288,6 @@
                     </sc-for>
                   </ol>
               </div>
-              <div style="display:flex; flex-wrap:wrap; gap:8px;">
-                <sc-for list="{{ cat.tags }}" as="tag" hint-placeholder-count="3">
-                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:{{ cat.tagColor }}; background:transparent; border:1px solid {{ cat.tagBorder }}; padding:6px 14px; border-radius:4px; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1), border-color 500ms cubic-bezier(0.65, 0, 0.35, 1);">#{{ tag }}</span>
-                </sc-for>
-              </div>
             </div>
           </div>
           </sc-if>
@@ -324,11 +319,6 @@
                     </sc-for>
                   </ol>
                 </div>
-              <div style="display:flex; flex-wrap:wrap; gap:8px;">
-                <sc-for list="{{ cat.tags }}" as="tag" hint-placeholder-count="3">
-                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:{{ cat.tagColor }}; background:transparent; border:1px solid {{ cat.tagBorder }}; padding:6px 14px; border-radius:4px;">#{{ tag }}</span>
-                </sc-for>
-              </div>
               </div>
             </div>
           </div>
@@ -886,7 +876,6 @@ class Component extends DCLogic {
         titleEn: 'Corporate Strategy',
         isNew: false,
         criteria: 'アートの有する価値を活用して企業戦略・体制の構築、実行、発信など経営領域で新たな変化を起こした企業',
-        tags: ['企業ブランディング・理念発信', 'アート起点の事業価値向上', '差別化・独自ポジショニング'],
         points: [
           'アートの有する価値を活かした類を見ないユニークな取組か',
           '経営レベル・指標の設定を行い、企業内外に大きな変化をもたらしているか',
@@ -900,7 +889,6 @@ class Component extends DCLogic {
         titleEn: 'Art Collaboration',
         isNew: false,
         criteria: 'アート・アーティストとの共創を通じて事業の高度化など新たな経済的価値を創出した企業・プロジェクト',
-        tags: ['創造性・イノベーション醸成', '共創', 'アーティスト連携'],
         points: [
           'アートの有する価値を活かした類を見ないユニークな事業内容か',
           'アーティストや関連団体・機関等との間にWin-Winの共創ができているか',
@@ -914,7 +902,6 @@ class Component extends DCLogic {
         titleEn: 'New Business with Art',
         isNew: false,
         criteria: 'アート起点とした事業創造などを通じて新たなビジネスモデルを創出した企業・プロジェクト',
-        tags: ['アート起点の新規事業創出・DX活用', 'ビジネスモデル', '事業成長'],
         points: [
           'アートの有する価値を活かした類を見ないユニークな事業内容か',
           '事業としての新規性があるか',
@@ -928,7 +915,6 @@ class Component extends DCLogic {
         titleEn: 'Local Impact',
         isNew: false,
         criteria: '地域特性を活かしたアートに関わる取組を通じて地域における経済的価値を創出した企業・プロジェクト',
-        tags: ['地域・エリア価値向上', '地域活性化・地域資源活用', '差別化・収益機会創出'],
         points: [
           'アートの有する価値を活かした類を見ないユニークな取り組みか',
           '地域資源を活かした事業内容であるか',
@@ -942,7 +928,6 @@ class Component extends DCLogic {
         titleEn: 'Art Engagement',
         isNew: true,
         criteria: '所有しているアート作品を活用し、企業価値向上とともに日本のアートの発展に寄与した、企業・プロジェクト',
-        tags: ['アートコレクション', '企業価値向上', 'アート市場活性化'],
         points: [
           '所有する作品を有効に活用してか',
           '企業価値向上につながっているか',
@@ -1004,9 +989,7 @@ class Component extends DCLogic {
           width: isMobile ? '100%' : 'auto'
         },
         textColor: '#1F1F21',
-        mutedColor: '#333333',
-        tagColor: '#E8702A',
-        tagBorder: '#E8702A'
+        mutedColor: '#333333'
       };
     });
 
