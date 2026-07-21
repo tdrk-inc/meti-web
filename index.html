@@ -227,11 +227,10 @@
     <div style="display:flex; flex-direction:column; position:relative;">
       <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
 <div style="{{ cat.rowStyle }}">
-          <div style="position:absolute; top:0; left:0; right:0; height:1px; background:#D4D5E2;"></div>
+          <div style="{{ cat.dividerStyle }}"></div>
           <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
           <div style="{{ cat.innerRowStyle }}">
             <div style="{{ cat.noBlockStyle }}">
-              <div aria-hidden="true" style="width:32px; height:2px; background:#E8702A; margin-bottom:6px;"></div>
               <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:{{ cat.noFontSize }}; line-height:1; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.no }}</span>
               <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.3px; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.titleEn }}</span>
             </div>
@@ -261,7 +260,6 @@
           <div style="display:flex; flex-direction:column; gap:12px;">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
               <div style="display:flex; flex-direction:column; gap:6px; min-width:0;">
-                <div aria-hidden="true" style="width:20px; height:2px; background:#E8702A;"></div>
                 <div style="display:flex; align-items:baseline; gap:10px; min-width:0;">
                   <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; line-height:1; color:{{ cat.textColor }};">{{ cat.no }}</span>
                   <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.3px; color:{{ cat.textColor }};">{{ cat.titleEn }}</span>
@@ -353,7 +351,7 @@
     <div style="display:flex; flex-direction:column; position:relative;">
       <sc-for list="{{ scheduleItems }}" as="ev" hint-placeholder-count="5">
         <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
-        <div style="display:flex; align-items:center; gap:16px; padding:32px 0; border-bottom:1px solid #F6C6AA; flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:16px; padding:32px 0; border-bottom:1px solid #D4D5E2; flex-wrap:wrap;">
           <span style="font-size:16px; color:#1F1F21; min-width:160px;">
             <sc-for list="{{ ev.dateParts }}" as="part" hint-placeholder-count="6">
               <span style="{{ part.style }}">{{ part.text }}</span>
@@ -367,7 +365,7 @@
         </div>
         </sc-if>
         <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
-        <div style="display:flex; flex-direction:column; gap:10px; padding:24px 0; border-bottom:1px solid #F6C6AA;">
+        <div style="display:flex; flex-direction:column; gap:10px; padding:24px 0; border-bottom:1px solid #D4D5E2;">
           <span style="font-size:16px; color:#1F1F21;">
             <sc-for list="{{ ev.dateParts }}" as="part" hint-placeholder-count="6">
               <span style="{{ part.style }}">{{ part.text }}</span>
@@ -395,7 +393,7 @@
       </div>
       <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">応募条件</span>
     </div>
-    <div style="display:flex; flex-direction:column; border-top:1px solid #F6C6AA;">
+    <div style="display:flex; flex-direction:column; border-top:1px solid #D4D5E2;">
       <sc-for list="{{ requirementItems }}" as="req" hint-placeholder-count="5">
         <div style="{{ req.rowStyle }}">
           <span style="{{ req.labelStyle }}">{{ req.label }}</span>
@@ -535,7 +533,7 @@
     <div style="display:flex; flex-direction:column; position:relative;">
       <sc-for list="{{ informationItems }}" as="item" hint-placeholder-count="3">
         <div style="display:flex; align-items:center; gap:24px; padding:32px 0; position:relative;" onMouseEnter="{{ item.onMouseEnter }}" onMouseLeave="{{ item.onMouseLeave }}">
-          <div style="position:absolute; bottom:0; left:0; right:0; height:1px; background:#F6C6AA; overflow:hidden; pointer-events:none;">
+          <div style="position:absolute; bottom:0; left:0; right:0; height:1px; background:#D4D5E2; overflow:hidden; pointer-events:none;">
             <div style="{{ item.underlineFillStyle }}"></div>
           </div>
           <div style="flex:1; display:flex; flex-direction:column; gap:12px;">
@@ -566,7 +564,7 @@
     </div>
     <div style="display:flex; flex-direction:column;">
       <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
-        <div style="border-top:1px solid #F6C6AA; position:relative;">
+        <div style="border-top:1px solid #D4D5E2; position:relative;">
           <div aria-hidden="true" style="position:absolute; top:-1px; left:0; right:0; height:1px; overflow:hidden; pointer-events:none;">
             <div style="{{ f.topLineFillStyle }}"></div>
           </div>
@@ -591,9 +589,8 @@
 
   <!-- ENTRY + FOOTER: shared pinned background -->
   <div style="position:relative; overflow:hidden; transform:translateZ(0);">
-    <div aria-hidden="true" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; background:#FDF9F2;">
-      <img src="assets/entry-below-bg.svg" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
-      <div aria-hidden="true" style="position:absolute; left:0; right:0; top:0; height:25%; background:linear-gradient(to top, rgba(253,249,242,0) 0%, #FDF9F2 100%); pointer-events:none;"></div>
+    <div aria-hidden="true" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; background:linear-gradient(135deg, #FBF7EE 0%, #FDF9F2 55%, #FDFBF6 100%);">
+      <div aria-hidden="true" style="position:absolute; inset:0; opacity:0.035; mix-blend-mode:multiply; pointer-events:none; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' base-frequency='0.9' num-octaves='3' stitch-tiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
     </div>
     <div style="position:relative; z-index:1;">
 
@@ -608,9 +605,11 @@
         <a href="#" class="entry-card" style="{{ entryCardStyle }}">
           <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:block;">
           <div style="display:flex; flex-direction:column; gap:24px;">
-            <div style="display:flex; flex-direction:column; gap:8px;">
-              <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:24px; color:#1F1F21;">Download</span>
-              <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21;">ダウンロード</span>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:24px; color:#1F1F21;">Download</span>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21;">ダウンロード</span>
+              </div>
               <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; line-height:150%; color:#333333;">ART &amp; BUSINESS AWARD 2026の概要資料はこちらから</span>
             </div>
             <span aria-hidden="true" class="cta-arrow" style="width:36px; height:36px; border-radius:50%; border:1px solid #1F1F21; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto; align-self:flex-end;"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#1F1F21"><path d="M480-337q-8 0-15-2.5t-13-8.5L308-492q-12-12-11.5-28t11.5-28q12-12 28.5-12.5T365-549l75 75v-286q0-17 11.5-28.5T480-800q17 0 28.5 11.5T520-760v286l75-75q12-12 28.5-11.5T652-548q11 12 11.5 28T652-492L508-348q-6 6-13 8.5t-15 2.5ZM240-160q-33 0-56.5-23.5T160-240v-80q0-17 11.5-28.5T200-360q17 0 28.5 11.5T240-320v80h480v-80q0-17 11.5-28.5T760-360q17 0 28.5 11.5T800-320v80q0 33-23.5 56.5T720-160H240Z"/></svg></span>
@@ -619,9 +618,11 @@
         <a href="https://form.run/@aba2026-pre-entry" target="_blank" rel="noopener noreferrer" class="entry-card" style="{{ entryCardStyle }}">
           <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:block;">
           <div style="display:flex; flex-direction:column; gap:24px;">
-            <div style="display:flex; flex-direction:column; gap:8px;">
-              <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:24px; color:#1F1F21;">ENTRY</span>
-              <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21;">エントリー</span>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:24px; color:#1F1F21;">ENTRY</span>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21;">エントリー</span>
+              </div>
               <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; line-height:150%; color:#333333;">ART &amp; BUSINESS AWARD 2026 へのエントリーはこちらから</span>
             </div>
             <span aria-hidden="true" class="cta-arrow" style="width:36px; height:36px; border-radius:50%; border:1px solid #1F1F21; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:16px; flex:0 0 auto; align-self:flex-end;">→</span>
@@ -832,7 +833,7 @@ class Component extends DCLogic {
     const archiveListStyle = { display: 'grid', gridTemplateColumns: '1fr', gap: isMobile ? '16px' : '24px' };
     const archiveBoxStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: isMobile ? 'nowrap' : 'wrap', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)', transition: 'background 350ms cubic-bezier(0.65, 0, 0.35, 1)' };
     const archiveInnerStyle = { display: 'flex', alignItems: 'center', gap: '16px', flexWrap: isMobile ? 'nowrap' : 'wrap', minWidth: 0, overflow: isMobile ? 'hidden' : 'visible' };
-    const archiveDividerStyle = { display: isMobile ? 'none' : 'block', width: '1px', height: '16px', background: '#D4D5E2', flex: '0 0 auto' };
+    const archiveDividerStyle = { display: isMobile ? 'none' : 'block', width: '1px', alignSelf: 'stretch', background: '#D4D5E2', flex: '0 0 auto' };
     const archiveDescStyle = { fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 500, fontSize: '13px', color: '#1F1F21', whiteSpace: isMobile ? 'nowrap' : 'normal', overflow: isMobile ? 'hidden' : 'visible', textOverflow: isMobile ? 'ellipsis' : 'clip', minWidth: 0 };
     const advisoryNoteRowStyle = { display: 'flex', alignItems: isMobile ? 'flex-start' : 'baseline', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '4px' : '12px' };
     const sectionTitleFontSize = isMobile ? '28px' : '36px';
@@ -996,7 +997,7 @@ class Component extends DCLogic {
       { label: '応募費用', text: 'プレエントリー・エントリーシート提出とも無料です。' },
       { label: '過去の応募・受賞歴', text: '2025年（第1回）にエントリー・受賞された企業・プロジェクトも再度ご応募いただけます。昨年度からの変化した点をエントリーシート内に分かりやすく明記してください。' }
     ].map((r, i, arr) => {
-      const borderBottom = i === arr.length - 1 ? 'none' : '1px solid #F6C6AA';
+      const borderBottom = i === arr.length - 1 ? 'none' : '1px solid #D4D5E2';
       return {
         ...r,
         rowStyle: isMobile
@@ -1022,6 +1023,11 @@ class Component extends DCLogic {
           borderRadius: '4px',
           padding: '40px 0',
           background: 'transparent'
+        },
+        dividerStyle: {
+          position: 'absolute', top: 0, left: 0,
+          width: isMobile ? '44px' : '160px',
+          height: '2px', background: '#E8702A'
         },
         innerRowStyle: {
           display: 'flex',
@@ -1108,7 +1114,7 @@ class Component extends DCLogic {
     });
 
     const archiveItems = [
-      { label: 'ARCHIVE', description: 'ART & BUSINESS AWARD 2025 受賞企業・プロジェクト一覧を見る', url: '#' }
+      { label: '2025 Honorees', description: 'ART & BUSINESS AWARD 2025 受賞企業・プロジェクト一覧を見る', url: '#' }
     ];
 
     const rawInformationItems = [
