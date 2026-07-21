@@ -204,7 +204,7 @@
           </div>
           <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">アワード特典</span>
         </div>
-        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; color:#333333;">受賞企業様とファイナリスト企業様（最終選考に残られた企業）への特典です。</p>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; color:#333333; text-align:right;">受賞企業様とファイナリスト企業様（最終選考に残られた企業）への特典です。</p>
       </div>
       <div style="display:grid; grid-template-columns:{{ benefitGridColumns }}; gap:24px;">
         <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
@@ -249,7 +249,7 @@
                 <sc-if value="{{ cat.isNew }}">
                   <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#FFFFFF; background:#B48CC8; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; height:26px;">NEW</span>
                 </sc-if>
-                <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:26px; line-height:140%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.title }}</h3>
+                <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:32px; line-height:140%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.title }}</h3>
               </div>
               <div style="display:flex; flex-direction:column; gap:4px;">
                 <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:{{ cat.mutedColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">審査基準</span>
@@ -278,7 +278,7 @@
               <sc-if value="{{ cat.isNew }}">
                 <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#FFFFFF; background:#B48CC8; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; height:24px;">NEW</span>
               </sc-if>
-              <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:20px; line-height:140%; color:{{ cat.textColor }};">{{ cat.title }}</h3>
+              <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:32px; line-height:140%; color:{{ cat.textColor }};">{{ cat.title }}</h3>
             </div>
             <div style="display:flex; flex-direction:column; gap:16px; margin-top:20px;">
               <div style="display:flex; flex-direction:column; gap:4px;">
@@ -863,8 +863,8 @@ class Component extends DCLogic {
     const benefitStickyStyle = { display: 'flex', flexDirection: 'column', gap: '12px' };
     const benefitCardStyle = {
       display: 'flex', flexDirection: 'column', gap: '8px',
-      border: '1px solid #D4D5E2', borderRadius: '8px', padding: '24px',
-      background: 'rgba(255,255,255,0.8)'
+      border: '1px solid #F6C6AA', borderRadius: '8px', padding: '24px',
+      background: 'transparent'
     };
     const entryCardsRowStyle = isMobile
       ? { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px', marginTop: '40px' }
@@ -1046,7 +1046,7 @@ class Component extends DCLogic {
         innerRowStyle: {
           display: 'flex',
           alignItems: 'flex-start',
-          gap: isMobile ? '14px' : '24px',
+          gap: '24px',
           flexWrap: isMobile ? 'nowrap' : 'wrap'
         },
         noBlockStyle: isMobile
