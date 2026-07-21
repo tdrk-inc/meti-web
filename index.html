@@ -51,12 +51,12 @@
   <!-- HEADER -->
   <header data-screen-label="Header" style="{{ headerStyle }}">
     <div style="{{ headerInnerStyle }}">
-      <div style="display:flex; flex-direction:column; gap:8px; flex:0 0 auto;">
+      <div style="{{ logoBlockStyle }}">
         <a href="#top" style="display:flex; align-items:center; gap:10px; text-decoration:none; cursor:pointer;">
           <img src="assets/motif.png" alt="" style="width:22px; height:auto; display:block;">
           <span style="{{ logoTitleStyle }}">ART &amp; BUSINESS AWARD 2026</span>
         </a>
-        <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; letter-spacing:0.4px; color:#8C8C8C;">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン</span>
+        <span style="{{ logoSubtitleStyle }}">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン</span>
       </div>
       <sc-if value="{{ showDesktopNav }}" hint-placeholder-val="{{ true }}">
         <nav style="display:flex; align-items:center; gap:32px; flex:1 1 auto; justify-content:center; overflow-x:auto; white-space:nowrap; scrollbar-width:none; padding-right:220px;">
@@ -865,13 +865,23 @@ class Component extends DCLogic {
       maxWidth: '1600px', margin: '0 auto', position: 'relative',
       padding: scrolled ? '8px clamp(24px, 4vw, 48px)' : '14px clamp(24px, 4vw, 48px)',
       display: 'flex', alignItems: isMobile ? 'flex-start' : 'center', justifyContent: 'space-between', gap: isTablet ? '16px 32px' : '32px',
-      flexWrap: 'wrap',
+      flexWrap: isMobile ? 'nowrap' : 'wrap',
       transition: 'padding 0.35s ease'
     };
     const logoTitleStyle = {
       fontFamily: "'Oswald',sans-serif", fontWeight: 600,
       fontSize: scrolled ? '14px' : '16px', letterSpacing: '0.5px', color: '#1F1F21',
       whiteSpace: 'nowrap', transition: 'font-size 0.35s ease'
+    };
+    const logoBlockStyle = {
+      display: 'flex', flexDirection: 'column', gap: '8px',
+      flex: isMobile ? '1 1 auto' : '0 0 auto',
+      minWidth: 0, maxWidth: isMobile ? 'calc(100% - 56px)' : 'none'
+    };
+    const logoSubtitleStyle = {
+      fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 400,
+      fontSize: isMobile ? '12px' : '14px', letterSpacing: '0.4px', color: '#8C8C8C',
+      whiteSpace: 'normal', overflowWrap: 'break-word'
     };
     const rawCategories = [
       {
@@ -1168,7 +1178,7 @@ class Component extends DCLogic {
       { name: '福武 英明', title: 'ベネッセホールディングス取締役／公益財団法人福武財団理事長', photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, benefitGroupColumns, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), aboutRef: this.aboutRef, aboutStyle, revealRefs: this.revealRefs, revealStyles, winnerBenefits, finalistBenefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, benefitFadeStyle, archiveBoxStyle, archiveInnerStyle, archiveDividerStyle, archiveDescStyle, advisoryNoteRowStyle, aboutSectionDisplay, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, aboutBodyFontWeight, aboutQuoteFontSize, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, benefitGroupColumns, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), aboutRef: this.aboutRef, aboutStyle, revealRefs: this.revealRefs, revealStyles, winnerBenefits, finalistBenefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, benefitFadeStyle, archiveBoxStyle, archiveInnerStyle, archiveDividerStyle, archiveDescStyle, advisoryNoteRowStyle, aboutSectionDisplay, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, aboutBodyFontWeight, aboutQuoteFontSize, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
