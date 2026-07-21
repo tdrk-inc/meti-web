@@ -353,7 +353,7 @@
     <div style="display:flex; flex-direction:column; position:relative;">
       <sc-for list="{{ scheduleItems }}" as="ev" hint-placeholder-count="5">
         <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
-        <div style="display:flex; align-items:center; gap:16px; padding:32px 0; border-bottom:1px solid #D4D5E2; flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:16px; padding:32px 0; border-bottom:1px solid #F6C6AA; flex-wrap:wrap;">
           <span style="font-size:16px; color:#1F1F21; min-width:160px;">
             <sc-for list="{{ ev.dateParts }}" as="part" hint-placeholder-count="6">
               <span style="{{ part.style }}">{{ part.text }}</span>
@@ -367,7 +367,7 @@
         </div>
         </sc-if>
         <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
-        <div style="display:flex; flex-direction:column; gap:10px; padding:24px 0; border-bottom:1px solid #D4D5E2;">
+        <div style="display:flex; flex-direction:column; gap:10px; padding:24px 0; border-bottom:1px solid #F6C6AA;">
           <span style="font-size:16px; color:#1F1F21;">
             <sc-for list="{{ ev.dateParts }}" as="part" hint-placeholder-count="6">
               <span style="{{ part.style }}">{{ part.text }}</span>
@@ -395,7 +395,7 @@
       </div>
       <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">応募条件</span>
     </div>
-    <div style="display:flex; flex-direction:column; border-top:1px solid #D4D5E2;">
+    <div style="display:flex; flex-direction:column; border-top:1px solid #F6C6AA;">
       <sc-for list="{{ requirementItems }}" as="req" hint-placeholder-count="5">
         <div style="{{ req.rowStyle }}">
           <span style="{{ req.labelStyle }}">{{ req.label }}</span>
@@ -535,7 +535,7 @@
     <div style="display:flex; flex-direction:column; position:relative;">
       <sc-for list="{{ informationItems }}" as="item" hint-placeholder-count="3">
         <div style="display:flex; align-items:center; gap:24px; padding:32px 0; position:relative;" onMouseEnter="{{ item.onMouseEnter }}" onMouseLeave="{{ item.onMouseLeave }}">
-          <div style="position:absolute; bottom:0; left:0; right:0; height:1px; background:#D4D5E2; overflow:hidden; pointer-events:none;">
+          <div style="position:absolute; bottom:0; left:0; right:0; height:1px; background:#F6C6AA; overflow:hidden; pointer-events:none;">
             <div style="{{ item.underlineFillStyle }}"></div>
           </div>
           <div style="flex:1; display:flex; flex-direction:column; gap:12px;">
@@ -566,7 +566,7 @@
     </div>
     <div style="display:flex; flex-direction:column;">
       <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
-        <div style="border-top:1px solid #D4D5E2; position:relative;">
+        <div style="border-top:1px solid #F6C6AA; position:relative;">
           <div aria-hidden="true" style="position:absolute; top:-1px; left:0; right:0; height:1px; overflow:hidden; pointer-events:none;">
             <div style="{{ f.topLineFillStyle }}"></div>
           </div>
@@ -996,7 +996,7 @@ class Component extends DCLogic {
       { label: '応募費用', text: 'プレエントリー・エントリーシート提出とも無料です。' },
       { label: '過去の応募・受賞歴', text: '2025年（第1回）にエントリー・受賞された企業・プロジェクトも再度ご応募いただけます。昨年度からの変化した点をエントリーシート内に分かりやすく明記してください。' }
     ].map((r, i, arr) => {
-      const borderBottom = i === arr.length - 1 ? 'none' : '1px solid #D4D5E2';
+      const borderBottom = i === arr.length - 1 ? 'none' : '1px solid #F6C6AA';
       return {
         ...r,
         rowStyle: isMobile
