@@ -62,7 +62,7 @@
       <sc-if value="{{ showDesktopNav }}" hint-placeholder-val="{{ true }}">
         <nav style="display:flex; align-items:center; gap:32px; flex:1 1 auto; justify-content:center; overflow-x:auto; white-space:nowrap; scrollbar-width:none; padding-right:220px;">
           <a href="#benefit" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">アワード特典</a>
-          <a href="#category" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">応募カテゴリ</a>
+          <a href="#category" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">応募カテゴリー</a>
           <a href="#advisory" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">アドバイザリーボード</a>
           <a href="#schedule" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">スケジュール</a>
           <a href="#requirements" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">応募条件</a>
@@ -76,7 +76,7 @@
         <a href="#apply" class="cta-dark" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; flex:0 0 auto; position:absolute; top:50%; right:clamp(24px, 4vw, 48px); transform:translateY(-50%); transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
         <nav style="display:flex; align-items:center; gap:12px; flex-basis:100%; justify-content:flex-start; overflow-x:auto; white-space:nowrap; scrollbar-width:thin; margin-top:0;">
           <a href="#benefit" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">アワード特典</a>
-          <a href="#category" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">応募カテゴリ</a>
+          <a href="#category" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">応募カテゴリー</a>
           <a href="#advisory" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">アドバイザリーボード</a>
           <a href="#schedule" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">スケジュール</a>
           <a href="#requirements" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">応募条件</a>
@@ -103,7 +103,7 @@
       </div>
       <nav style="display:flex; flex-direction:column; gap:28px; margin-top:24px;">
         <a href="#benefit" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">アワード特典</a>
-        <a href="#category" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">応募カテゴリ</a>
+        <a href="#category" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">応募カテゴリー</a>
         <a href="#advisory" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">アドバイザリーボード</a>
         <a href="#schedule" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">スケジュール</a>
         <a href="#requirements" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">応募条件</a>
@@ -280,7 +280,7 @@
         <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
         <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">CATEGORY</span>
       </div>
-      <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">応募カテゴリ</span>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">応募カテゴリー</span>
     </div>
     <div style="display:flex; flex-direction:column; position:relative;">
       <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
@@ -981,9 +981,9 @@ class Component extends DCLogic {
     const requirementItems = [
       { label: '対象法人', text: '日本国内に拠点を持つ企業・法人（外資系日本法人を含む）。個人事業主・任意団体は対象外です。' },
       { label: '業種・企業規模', text: '業種・企業規模による制限はありません。大企業・中小企業・スタートアップを問わずご応募いただけます。' },
-      { label: '対象となる取り組み', text: '「応募カテゴリ」いずれかに該当するアート・アーティストとの共創、またはアート活用の取り組み・プロジェクト。' },
+      { label: '対象となる取り組み', text: '「応募カテゴリー」いずれかに該当するアート・アーティストとの共創、またはアート活用の取り組み・プロジェクト。' },
       { label: '応募費用', text: 'プレエントリー・エントリーシート提出とも無料です。' },
-      { label: 'カテゴリ重複応募', text: '複数カテゴリへの応募が可能です。カテゴリごとに個別のエントリーシートをご提出ください。' },
+      { label: 'カテゴリー重複応募', text: '複数カテゴリーへの応募が可能です。カテゴリーごとに個別のエントリーシートをご提出ください。' },
       { label: '過去の応募・受賞歴', text: '2025年（第1回）にエントリー・受賞された企業・プロジェクトも再度ご応募いただけます。' }
     ].map(r => ({
       ...r,
@@ -1087,10 +1087,10 @@ class Component extends DCLogic {
 
     const rawFaqs = [
       { q: 'どのような企業が応募できますか？', a: '日本に拠点を持つ企業・法人であればご応募いただけます（外資系日本法人を含む）。業種・企業規模による制限はありません。' },
-      { q: '複数のカテゴリに応募することはできますか？', a: '可能です。ただし、カテゴリごとに個別のエントリーシートをご提出ください。' },
-      { q: 'どのカテゴリに応募すべきか分かりません。', a: '「応募カテゴリ」セクションの各カードに付けた#キーワードが取組内容に近いカテゴリをご確認ください。判断に迷う場合は事務局までお問い合わせください。' },
+      { q: '複数のカテゴリーに応募することはできますか？', a: '可能です。ただし、カテゴリーごとに個別のエントリーシートをご提出ください。' },
+      { q: 'どのカテゴリーに応募すべきか分かりません。', a: '「応募カテゴリー」セクションの各カードに付けた#キーワードが取組内容に近いカテゴリーをご確認ください。判断に迷う場合は事務局までお問い合わせください。' },
       { q: '応募に費用はかかりますか？', a: 'プレエントリー・エントリーシートの提出はいずれも無料です。' },
-      { q: '審査はどのように行われますか？', a: '各カテゴリに設定された審査基準・審査のポイントに基づき、アドバイザリーボードによる審査を実施します。' },
+      { q: '審査はどのように行われますか？', a: '各カテゴリーに設定された審査基準・審査のポイントに基づき、アドバイザリーボードによる審査を実施します。' },
       { q: 'プレエントリー後に内容を変更できますか？', a: 'プレエントリー完了後にお送りするご案内に従い、エントリーシート提出締切までは内容の確定・修正が可能です。' },
       { q: '昨年度もエントリーしたのですが、今年もエントリーできますか？', a: 'エントリーいただくことは可能です。昨年度からの変化した点をエントリーシート内に分かりやすく明記してください。' }
     ];
