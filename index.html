@@ -47,7 +47,6 @@
     .cta-arrow { transition: transform 350ms cubic-bezier(0.65, 0, 0.35, 1); }
     a:hover > .cta-arrow { transform: translateX(2px); }
     .archive-arrow:hover { background: #B48CC8; color: #FFFFFF !important; }
-    .review-points-list li::marker { font-style: normal; font-size: 18px; }
     @media (min-width: 1000px) { .hero-eco-line { white-space: nowrap; } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes floatOrange {
@@ -69,7 +68,7 @@
     <div style="{{ headerInnerStyle }}">
       <div style="{{ logoBlockStyle }}">
         <a href="#top" style="display:flex; align-items:center; gap:10px; text-decoration:none; cursor:pointer;">
-          <img src="assets/motif.png" alt="" style="width:22px; height:auto; display:block;">
+          <img src="assets/motif.png" alt="" style="width:20px; height:auto; display:block;">
           <span style="{{ logoTitleStyle }}">ART &amp; BUSINESS AWARD 2026</span>
         </a>
         <span style="{{ logoSubtitleStyle }}">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン</span>
@@ -103,10 +102,10 @@
         </nav>
       </sc-if>
       <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
-        <button onClick="{{ toggleMobileNav }}" aria-label="メニュー" style="width:40px; height:40px; border-radius:50%; background:transparent; border:none; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto;">
+        <button onClick="{{ toggleMobileNav }}" aria-label="メニュー" style="width:40px; height:40px; border-radius:50%; background:transparent; border:none; cursor:pointer; display:inline-flex; align-items:flex-start; justify-content:center; flex:0 0 auto;">
           <span style="display:flex; flex-direction:column; gap:6px;">
-            <span style="width:22px; height:2px; background:#1F1F21; display:block;"></span>
-            <span style="width:22px; height:2px; background:#1F1F21; display:block;"></span>
+            <span style="width:20px; height:2px; background:#1F1F21; display:block;"></span>
+            <span style="width:20px; height:2px; background:#1F1F21; display:block;"></span>
           </span>
         </button>
       </sc-if>
@@ -147,7 +146,7 @@
     <div style="position:relative; z-index:1; max-width:1440px; margin:0 auto; width:100%; padding:clamp(32px, 5vw, 56px) clamp(24px, 6vw, 96px) 0;">
       <span style="display:block; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.3px; color:#333333; margin-top:{{ heroEyebrowMarginTop }}; margin-bottom:{{ heroEyebrowMarginBottom }}; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン｜第二回アワード</span>
       <div style="position:relative; max-width:100%; overflow:hidden;">
-        <span style="display:block; font-family:'Oswald',sans-serif; font-weight:700; font-size:{{ heroTitleFontSize }}; line-height:0.98; letter-spacing:-0.5px; white-space:{{ heroTitleWhiteSpace }}; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; color:#1F1F21;">ART &amp; BUSINESS AWARD 2026</span>
+        <span style="display:block; font-family:'Oswald',sans-serif; font-weight:700; font-size:{{ heroTitleFontSize }}; line-height:0.98; letter-spacing:-0.5px; white-space:{{ heroTitleWhiteSpace }}; margin-bottom:{{ heroTitleMarginBottom }}; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; color:#1F1F21;">ART &amp; BUSINESS AWARD 2026</span>
       </div>
     </div>
     <div style="max-width:1440px; margin-top:auto; margin-left:auto; margin-right:auto; width:100%; padding:0 clamp(24px, 6vw, 96px) 80px; position:relative; z-index:1;">
@@ -299,11 +298,8 @@
                 <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:180%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.criteria }}</p>
               </div>
               <div style="display:flex; flex-direction:column; gap:8px; padding-top:8px;">
-                  <div style="display:flex; align-items:center; gap:8px;">
-                    <span style="width:8px; height:8px; border-radius:50%; background:#E8702A; display:inline-block; flex-shrink:0;"></span>
-                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:{{ cat.mutedColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">審査のポイント</span>
-                  </div>
-                  <ol class="review-points-list" style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:6px; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">
+                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:{{ cat.mutedColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">審査のポイント</span>
+                  <ol style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:6px; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">
                     <sc-for list="{{ cat.points }}" as="pt" hint-placeholder-count="4">
                       <li>{{ pt }}</li>
                     </sc-for>
@@ -333,11 +329,8 @@
               </div>
 
               <div style="display:flex; flex-direction:column; gap:8px; padding-top:8px;">
-                  <div style="display:flex; align-items:center; gap:8px;">
-                    <span style="width:8px; height:8px; border-radius:50%; background:#E8702A; display:inline-block; flex-shrink:0;"></span>
-                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:{{ cat.mutedColor }};">審査のポイント</span>
-                  </div>
-                  <ol class="review-points-list" style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:6px; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }};">
+                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:{{ cat.mutedColor }};">審査のポイント</span>
+                  <ol style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:6px; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }};">
                     <sc-for list="{{ cat.points }}" as="pt" hint-placeholder-count="4">
                       <li>{{ pt }}</li>
                     </sc-for>
@@ -835,12 +828,13 @@ class Component extends DCLogic {
     const isTablet = this.state.isTablet;
     const mobileNavOpen = this.state.mobileNavOpen;
     const heroOverflow = isMobile ? 'hidden' : 'visible';
-    const heroTitleFontSize = isMobile ? 'clamp(24px, 8vw, 40px)' : 'clamp(28px, 3.4vw, 56px)';
+    const heroTitleFontSize = isMobile ? 'clamp(28px, 8vw, 48px)' : 'clamp(28px, 3.4vw, 56px)';
     const heroTitleWhiteSpace = isMobile ? 'normal' : 'nowrap';
+    const heroTitleMarginBottom = isMobile ? '40px' : '0';
     const headerHeight = this.state.headerHeight;
     const heroSectionPaddingTop = headerHeight ? `${headerHeight}px` : (isMobile ? '56px' : '72px');
-    const heroEyebrowMarginTop = isMobile ? '56px' : '100px';
-    const heroEyebrowMarginBottom = isMobile ? '16px' : '24px';
+    const heroEyebrowMarginTop = isMobile ? '36px' : '100px';
+    const heroEyebrowMarginBottom = isMobile ? '12px' : '24px';
     const benefitFadeStyle = { position: 'absolute', left: 0, right: 0, top: 0, height: isMobile ? '0px' : '120px', background: 'linear-gradient(to bottom, #FDF9F2 0%, rgba(253,249,242,0) 100%)', pointerEvents: 'none', zIndex: 1 };
     const archiveGridStyle = { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '16px' : '24px' };
     const archiveCardStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '32px', minHeight: '200px', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)' };
@@ -1179,7 +1173,7 @@ class Component extends DCLogic {
       { name: '福武 英明', title: 'ベネッセホールディングス取締役／公益財団法人福武財団理事長', photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, benefitGroupColumns, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), aboutRef: this.aboutRef, aboutStyle, revealRefs: this.revealRefs, revealStyles, winnerBenefits, finalistBenefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroEyebrowMarginTop, heroEyebrowMarginBottom, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveGridStyle, archiveCardStyle, archiveCardTitleStyle, archiveCardDescStyle, advisoryNoteRowStyle, aboutSectionDisplay, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, aboutBodyFontWeight, aboutQuoteFontSize, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, benefitGroupColumns, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), aboutRef: this.aboutRef, aboutStyle, revealRefs: this.revealRefs, revealStyles, winnerBenefits, finalistBenefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroEyebrowMarginTop, heroEyebrowMarginBottom, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveGridStyle, archiveCardStyle, archiveCardTitleStyle, archiveCardDescStyle, advisoryNoteRowStyle, aboutSectionDisplay, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, aboutBodyFontWeight, aboutQuoteFontSize, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
