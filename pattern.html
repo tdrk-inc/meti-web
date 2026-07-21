@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>ART &amp; BUSINESS AWARD 2026｜企業とアーティストの共創で新たな経済価値を創出する</title>
+  <meta name="description" content="アート・アーティストとの共創で、新しい経済価値を生み出す企業・プロジェクトを表彰するART &amp; BUSINESS AWARD 2026。主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン。日本に拠点を置く企業・法人であれば、業種・規模を問わずご応募いただけます（応募無料）。">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ART &amp; BUSINESS AWARD 2026">
+  <meta property="og:title" content="ART &amp; BUSINESS AWARD 2026｜企業とアーティストの共創で新たな経済価値を創出する">
+  <meta property="og:description" content="アート・アーティストとの共創で、新しい経済価値を生み出す企業・プロジェクトを表彰するART &amp; BUSINESS AWARD 2026。主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン。">
+  <meta property="og:image" content="assets/ogp.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ART &amp; BUSINESS AWARD 2026｜企業とアーティストの共創で新たな経済価値を創出する">
+  <meta name="twitter:description" content="アート・アーティストとの共創で、新しい経済価値を生み出す企業・プロジェクトを表彰するART &amp; BUSINESS AWARD 2026。">
+  <meta name="twitter:image" content="assets/ogp.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #FCFBFA; scroll-behavior: smooth; }
+    html, body { overflow-x: hidden; }
+    a { color: #E8702A; text-decoration: none; }
+    a:hover { color: #1F1F21; }
+    ::selection { background: #B48CC8; color: #FFFFFF; }
+    .header-anchor-link {
+      padding-bottom: 4px;
+      background-image: linear-gradient(#E8702A, #E8702A);
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 2px;
+      transition: background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    .header-anchor-link:hover { background-size: 100% 2px; }
+    .cta-dark:hover { background: #E8702A !important; color: #FFFFFF !important; }
+    .cta-orange:hover { background: #1F1F21 !important; color: #FFFFFF !important; }
+    .cta-arrow { transition: transform 350ms cubic-bezier(0.65, 0, 0.35, 1); }
+    a:hover > .cta-arrow { transform: translateX(2px); }
+    .archive-arrow:hover { background: #B48CC8; color: #FFFFFF !important; }
+    .review-points-list li::marker { font-style: normal; font-size: 18px; }
+    @media (min-width: 1000px) { .hero-eco-line { white-space: nowrap; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes floatOrange {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(24px, -24px) scale(1.02); }
+    }
+    @keyframes floatPurple {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-24px, 24px) scale(1.02); }
+    }
+  </style>
+</helmet>
+
+
+<div style="font-family:'Noto Sans JP',sans-serif; background:#FDF9F2; color:#1F1F21; min-height:100vh;">
+
+  <!-- HEADER -->
+  <header data-screen-label="Header" ref="{{ headerRef }}" style="{{ headerStyle }}">
+    <div style="{{ headerInnerStyle }}">
+      <div style="{{ logoBlockStyle }}">
+        <a href="#top" style="display:flex; align-items:center; gap:10px; text-decoration:none; cursor:pointer;">
+          <img src="assets/motif.png" alt="" style="width:22px; height:auto; display:block;">
+          <span style="{{ logoTitleStyle }}">ART &amp; BUSINESS AWARD 2026</span>
+        </a>
+        <span style="{{ logoSubtitleStyle }}">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン</span>
+      </div>
+      <sc-if value="{{ showDesktopNav }}" hint-placeholder-val="{{ true }}">
+        <nav style="display:flex; align-items:center; gap:32px; flex:1 1 auto; justify-content:center; overflow-x:auto; white-space:nowrap; scrollbar-width:none; padding-right:220px;">
+          <a href="#benefit" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">アワード特典</a>
+          <a href="#category" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">応募カテゴリー</a>
+          <a href="#advisory" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">アドバイザリーボード</a>
+          <a href="#schedule" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">スケジュール</a>
+          <a href="#requirements" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">応募条件</a>
+          <a href="#apply" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">エントリー方法</a>
+          <a href="#information" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">アーカイブ</a>
+          <a href="#faq" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">FAQ</a>
+          <a href="mailto:info@art-business-award.jp" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">お問い合わせ</a>
+        </nav>
+        <a href="#apply" class="cta-dark" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; flex:0 0 auto; position:absolute; top:50%; right:clamp(24px, 4vw, 48px); transform:translateY(-50%); transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+      </sc-if>
+      <sc-if value="{{ isTablet }}" hint-placeholder-val="{{ false }}">
+        <a href="#apply" class="cta-dark" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; flex:0 0 auto; position:absolute; top:50%; right:clamp(24px, 4vw, 48px); transform:translateY(-50%); transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+        <nav style="display:flex; align-items:center; gap:12px; flex-basis:100%; justify-content:flex-start; overflow-x:auto; white-space:nowrap; scrollbar-width:thin; margin-top:0;">
+          <a href="#benefit" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">アワード特典</a>
+          <a href="#category" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">応募カテゴリー</a>
+          <a href="#advisory" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">アドバイザリーボード</a>
+          <a href="#schedule" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">スケジュール</a>
+          <a href="#requirements" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">応募条件</a>
+          <a href="#apply" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">エントリー方法</a>
+          <a href="#information" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">アーカイブ</a>
+          <a href="#faq" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">FAQ</a>
+          <a href="mailto:info@art-business-award.jp" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">お問い合わせ</a>
+        </nav>
+      </sc-if>
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ toggleMobileNav }}" aria-label="メニュー" style="width:40px; height:40px; border-radius:50%; background:transparent; border:none; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto;">
+          <span style="display:flex; flex-direction:column; gap:6px;">
+            <span style="width:22px; height:2px; background:#1F1F21; display:block;"></span>
+            <span style="width:22px; height:2px; background:#1F1F21; display:block;"></span>
+          </span>
+        </button>
+      </sc-if>
+    </div>
+  </header>
+
+  <sc-if value="{{ mobileNavOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:200; background:#FDF9F2; display:flex; flex-direction:column; padding:24px;">
+      <div style="display:flex; justify-content:flex-end;">
+        <button onClick="{{ toggleMobileNav }}" aria-label="閉じる" style="width:40px; height:40px; border:none; background:transparent; font-size:26px; cursor:pointer; color:#1F1F21;">×</button>
+      </div>
+      <nav style="display:flex; flex-direction:column; gap:28px; margin-top:24px;">
+        <a href="#benefit" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">アワード特典</a>
+        <a href="#category" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">応募カテゴリー</a>
+        <a href="#advisory" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">アドバイザリーボード</a>
+        <a href="#schedule" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">スケジュール</a>
+        <a href="#requirements" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">応募条件</a>
+        <a href="#apply" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">エントリー方法</a>
+        <a href="#information" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">アーカイブ</a>
+        <a href="#faq" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">FAQ</a>
+        <a href="mailto:info@art-business-award.jp" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">お問い合わせ</a>
+      </nav>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <a href="#apply" style="position:fixed; bottom:0; left:0; right:0; z-index:150; background:#1F1F21; color:#FFFFFF; text-align:center; padding:16px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; display:block;">エントリーする</a>
+  </sc-if>
+
+  <!-- HERO -->
+  <section data-screen-label="Hero" id="top" style="position:relative; overflow:{{ heroOverflow }}; padding-top:{{ heroSectionPaddingTop }}; background:#FDF9F2; min-height:100vh; display:flex; flex-direction:column;">
+    <video ref="{{ videoRef }}" autoplay muted loop playsinline aria-hidden="true" style="display:none;">
+      <source src="glow_blend_fv.mp4" type="video/mp4">
+    </video>
+    <div aria-hidden="true" style="position:absolute; left:-8%; bottom:-55%; width:85vmax; height:85vmax; border-radius:50%; background:radial-gradient(circle, rgba(232,112,42,0.7) 0%, rgba(232,112,42,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatOrange 13s ease-in-out infinite; z-index:0; pointer-events:none;"></div>
+    <div aria-hidden="true" style="position:absolute; right:-10%; top:-15%; width:70vmax; height:70vmax; border-radius:50%; background:radial-gradient(circle, rgba(180,140,200,0.7) 0%, rgba(180,140,200,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatPurple 15s ease-in-out infinite; z-index:0; pointer-events:none;"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; opacity:0.05; mix-blend-mode:overlay; pointer-events:none; z-index:0; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' base-frequency='0.9' num-octaves='3' stitch-tiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
+    <div style="position:relative; z-index:1; max-width:1440px; margin:0 auto; width:100%; padding:clamp(32px, 5vw, 56px) clamp(24px, 6vw, 96px) 0;">
+      <span style="display:block; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.3px; color:#333333; margin-top:{{ heroEyebrowMarginTop }}; margin-bottom:{{ heroEyebrowMarginBottom }}; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン｜第二回アワード</span>
+      <div style="position:relative; max-width:100%; overflow:hidden;">
+        <span style="display:block; font-family:'Oswald',sans-serif; font-weight:700; font-size:{{ heroTitleFontSize }}; line-height:0.98; letter-spacing:-0.5px; white-space:{{ heroTitleWhiteSpace }}; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; color:#1F1F21;">ART &amp; BUSINESS AWARD 2026</span>
+      </div>
+    </div>
+    <div style="max-width:1440px; margin-top:auto; margin-left:auto; margin-right:auto; width:100%; padding:0 clamp(24px, 6vw, 96px) 80px; position:relative; z-index:1;">
+      <sc-if value="{{ !isMobile }}">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:64px;">
+          <div style="flex:1 1 420px; max-width:520px; display:flex; flex-direction:column; gap:32px; position:relative; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.1s both;">
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(24px, 3vw, 32px); line-height:135%; color:#1F1F21;">企業<span style="font-size:clamp(20px, 2.6vw, 28px);">と</span>アーティスト<span style="font-size:clamp(20px, 2.6vw, 28px);">の</span>共創<span style="font-size:clamp(20px, 2.6vw, 28px);">で</span><br>新<span style="font-size:clamp(20px, 2.6vw, 28px);">たな</span>経済価値<span style="font-size:clamp(20px, 2.6vw, 28px);">を</span>創出<span style="font-size:clamp(20px, 2.6vw, 28px);">する</span>。</span>
+            </div>
+            <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; letter-spacing:0.15px; color:#333333; max-width:520px;">アート・アーティストとの共創で、新しい経済価値を生み出す企業・プロジェクトを表彰します。日本に拠点を置く企業・法人であれば、業種・規模を問わずご応募いただけます（応募無料）。</p>
+          </div>
+          <div style="flex:0 0 auto; display:flex; flex-direction:column; align-items:flex-start; gap:12px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;">
+            <a href="#apply" class="cta-orange" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#E8702A; padding:16px 32px; border-radius:8px; display:inline-flex; align-items:center; gap:16px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#E8702A; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+          </div>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:40px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.3s both;">
+          <sc-for list="{{ categoryLabels }}" as="cl" hint-placeholder-count="5">
+            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#1F1F21; border:1px solid #1F1F21; border-radius:8px; padding:8px 18px;">{{ cl }}</span>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ isMobile }}">
+        <div style="display:flex; flex-direction:column; gap:16px; position:relative; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.1s both;">
+          <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(24px, 3vw, 32px); line-height:135%; color:#1F1F21;">企業<span style="font-size:clamp(20px, 2.6vw, 28px);">と</span>アーティスト<span style="font-size:clamp(20px, 2.6vw, 28px);">の</span>共創<span style="font-size:clamp(20px, 2.6vw, 28px);">で</span><br>新<span style="font-size:clamp(20px, 2.6vw, 28px);">たな</span>経済価値<span style="font-size:clamp(20px, 2.6vw, 28px);">を</span>創出<span style="font-size:clamp(20px, 2.6vw, 28px);">する</span>。</span>
+          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; letter-spacing:0.15px; color:#333333;">アート・アーティストとの共創で、新しい経済価値を生み出す企業・プロジェクトを表彰します。日本に拠点を置く企業・法人であれば、業種・規模を問わずご応募いただけます（応募無料）。</p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:20px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;">
+          <sc-for list="{{ categoryLabels }}" as="cl" hint-placeholder-count="5">
+            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#1F1F21;">#{{ cl }}</span>
+          </sc-for>
+        </div>
+        <div style="margin-top:20px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.3s both;">
+          <a href="#apply" class="cta-orange" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#E8702A; padding:16px 32px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; gap:16px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#E8702A; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section data-screen-label="About" id="about" ref="{{ aboutRef }}" style="max-width:1440px; margin:0 auto; padding:clamp(64px, 11vw, 128px) clamp(24px, 6vw, 96px); position:relative; overflow:hidden; display:{{ aboutSectionDisplay }};">
+    <div style="{{ aboutStyle }}">
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:clamp(36px, 5vw, 64px); line-height:110%; letter-spacing:-0.5px; color:#1F1F21;">ABOUT</span>
+        <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:24px; line-height:140%; color:#1F1F21;">アワードについて</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:24px;">
+        <div style="display:flex; flex-direction:column; gap:20px; max-width:720px;">
+          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:{{ aboutBodyFontWeight }}; font-size:16px; line-height:190%; letter-spacing:0.15px; color:#1F1F21;">企業がアート・アーティストとの共創を通じて新たな価値を創出し、経済社会とアート・アーティストそれぞれが持続的に発展するエコシステムの構築を目指しています。</p>
+          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:{{ aboutBodyFontWeight }}; font-size:16px; line-height:190%; letter-spacing:0.15px; color:#1F1F21;">共創の現場と経済的価値創出を巧みに結びつけたモデルとなる企業・プロジェクトを選出・表彰いたします。本アワードは2025年に第1回を開催し、2026年で第2回を迎えます。</p>
+        </div>
+        <p style="margin:24px 0 0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ aboutQuoteFontSize }}; line-height:150%; color:#1F1F21;">アートとビジネスの共創が、<br>未来の経済をつくる。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIDDLE SECTIONS: grain + gradient background -->
+  <div style="position:relative; background:linear-gradient(135deg, #FBF7EE 0%, #FDF9F2 55%, #FDFBF6 100%);">
+    <div aria-hidden="true" style="{{ benefitFadeStyle }}"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; opacity:0.035; mix-blend-mode:multiply; pointer-events:none; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' base-frequency='0.9' num-octaves='3' stitch-tiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
+
+  <!-- BENEFIT -->
+  <section data-screen-label="Benefit" id="benefit" ref="{{ revealRefs.benefit }}" style="{{ revealStyles.benefit }}">
+    <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:48px;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">BENEFIT</span>
+      </div>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">アワード特典</span>
+    </div>
+    <div style="display:grid; grid-template-columns:{{ benefitGroupColumns }}; gap:64px 48px;">
+      <div>
+        <div style="min-height:170px;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:1.5px; color:#C9971F; display:block; margin-bottom:6px;">TOP AWARD</span>
+        <h3 style="margin:0 0 12px; font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:22px; color:#1F1F21; display:flex; align-items:center; gap:8px;"><span style="width:5px; height:5px; border-radius:50%; background:#C9971F; display:inline-block;"></span>受賞企業</h3>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:170%; color:#333333;">本アワードの受賞企業として選ばれた企業様への特典です。<br>共通特典に加え、受賞企業様だけの特別な特典をご用意しています。</p>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr; gap:0;">
+          <sc-for list="{{ winnerBenefits }}" as="b" hint-placeholder-count="5">
+            <div style="border-top:1px solid #E8D9B8; padding:24px 0; display:flex; align-items:center; gap:20px;">
+              <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+                <div style="display:flex; align-items:center; gap:10px;">
+                  <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; color:{{ b.noColor }};">{{ b.no }}</span>
+                  <sc-if value="{{ b.common }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#333333; border:1px solid #D4D5E2; border-radius:4px; padding:2px 8px;">共通</span>
+                  </sc-if>
+                  <sc-if value="{{ !b.common }}" hint-placeholder-val="{{ true }}">
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#C9971F; border:1px solid #C9971F; border-radius:4px; padding:2px 8px;">受賞企業限定</span>
+                  </sc-if>
+                </div>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:160%; color:#1F1F21;">{{ b.text }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div>
+        <div style="min-height:170px;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:1.5px; color:#333333; display:block; margin-bottom:6px;">FINALIST</span>
+        <h3 style="margin:0 0 12px; font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:18px; color:#1F1F21; display:flex; align-items:center; gap:8px;"><span style="width:5px; height:5px; border-radius:50%; background:#333333; display:inline-block;"></span>ファイナリスト企業</h3>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:170%; color:#333333;">最終選考に残られた企業様への特典です。</p>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr; gap:0;">
+          <sc-for list="{{ finalistBenefits }}" as="b" hint-placeholder-count="3">
+            <div style="border-top:1px solid #DDE0E3; padding:24px 0; display:flex; align-items:center; gap:20px;">
+              <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+                <div style="display:flex; align-items:center; gap:10px;">
+                  <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; color:#333333;">{{ b.no }}</span>
+                  <sc-if value="{{ b.common }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#333333; border:1px solid #D4D5E2; border-radius:4px; padding:2px 8px;">共通</span>
+                  </sc-if>
+                </div>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:160%; color:#1F1F21;">{{ b.text }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATTERN: FIT / NOT-FIT CARDS -->
+  <section data-screen-label="Pattern: Fit Cards" id="pattern-fit-cards" style="max-width:1440px; margin:0 auto; padding:clamp(64px, 11vw, 128px) clamp(24px, 6vw, 96px); position:relative; overflow:hidden;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:32px;">
+
+      <!-- Card A: fit -->
+      <div style="position:relative; border:1px solid #E8702A; border-radius:4px; padding:40px clamp(24px, 4vw, 48px); background:rgba(255,255,255,0.5); overflow:hidden;">
+        <div aria-hidden="true" style="position:absolute; top:0; left:0; width:0; height:0; border-style:solid; border-width:22px 22px 0 0; border-color:#E8702A transparent transparent transparent;"></div>
+        <div aria-hidden="true" style="position:absolute; bottom:0; right:0; width:0; height:0; border-style:solid; border-width:0 0 22px 22px; border-color:transparent transparent #1F1F21 transparent;"></div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:32px;">
+          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#E8702A;">WHO WE'RE LOOKING FOR</span>
+          <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(22px, 3vw, 28px); line-height:140%; color:#E8702A;">こんな方と、<br>未来をつくりたい</h3>
+        </div>
+        <div style="display:flex; flex-direction:column;">
+          <sc-for list="{{ patternFitItems }}" as="item" hint-placeholder-count="6">
+            <div style="display:flex; align-items:flex-start; gap:16px; padding:18px 0; border-top:1px dashed #E8B79A;">
+              <span style="flex-shrink:0; width:26px; height:26px; border-radius:50%; border:1.5px solid #E8702A; color:#E8702A; display:inline-flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;">✓</span>
+              <div style="display:flex; flex-direction:column; gap:4px;">
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21;">{{ item.title }}</span>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:170%; color:#333333;">{{ item.text }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- Card B: not a fit -->
+      <div style="position:relative; border:1px solid #1F1F21; border-radius:4px; padding:40px clamp(24px, 4vw, 48px); background:rgba(255,255,255,0.5); overflow:hidden;">
+        <div aria-hidden="true" style="position:absolute; top:0; left:0; width:0; height:0; border-style:solid; border-width:22px 22px 0 0; border-color:#1F1F21 transparent transparent transparent;"></div>
+        <div aria-hidden="true" style="position:absolute; bottom:0; right:0; width:0; height:0; border-style:solid; border-width:0 0 22px 22px; border-color:transparent transparent #1F1F21 transparent;"></div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:32px;">
+          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#6B6B6E;">THIS MIGHT NOT BE FOR YOU</span>
+          <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(22px, 3vw, 28px); line-height:140%; color:#1F1F21;">こんな方には<br>合わないかもしれません</h3>
+        </div>
+        <div style="display:flex; flex-direction:column;">
+          <sc-for list="{{ patternNotFitItems }}" as="item" hint-placeholder-count="7">
+            <div style="display:flex; align-items:flex-start; gap:16px; padding:18px 0; border-top:1px solid #D4D5E2;">
+              <span style="flex-shrink:0; width:26px; height:26px; border-radius:50%; border:1.5px solid #1F1F21; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;">✕</span>
+              <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; line-height:170%; color:#1F1F21;">{{ item.text }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CATEGORY -->
+  <section data-screen-label="Category" id="category" ref="{{ revealRefs.category }}" style="{{ revealStyles.category }}">
+    <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:48px;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">CATEGORY</span>
+      </div>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">応募カテゴリー</span>
+    </div>
+    <div style="display:flex; flex-direction:column; position:relative;">
+      <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
+<div style="{{ cat.rowStyle }}">
+          <div style="position:absolute; top:0; left:0; right:0; height:1px; background:#D4D5E2;"></div>
+          <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
+          <div style="{{ cat.innerRowStyle }}">
+            <div style="{{ cat.noBlockStyle }}">
+              <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:{{ cat.noFontSize }}; line-height:1; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.no }}</span>
+              <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.3px; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.titleEn }}</span>
+            </div>
+            <div style="{{ cat.contentBlockStyle }}">
+              <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                <sc-if value="{{ cat.isNew }}">
+                  <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#FFFFFF; background:#B48CC8; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; height:26px;">NEW</span>
+                </sc-if>
+                <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:26px; line-height:140%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.title }}</h3>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:4px;">
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:{{ cat.mutedColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">審査基準</span>
+                <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:180%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.criteria }}</p>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:8px; padding-top:8px;">
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="width:8px; height:8px; border-radius:50%; background:#E8702A; display:inline-block; flex-shrink:0;"></span>
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:{{ cat.mutedColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">審査のポイント</span>
+                  </div>
+                  <ol class="review-points-list" style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:6px; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">
+                    <sc-for list="{{ cat.points }}" as="pt" hint-placeholder-count="4">
+                      <li>{{ pt }}</li>
+                    </sc-for>
+                  </ol>
+              </div>
+            </div>
+          </div>
+          </sc-if>
+          <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+              <div style="display:flex; align-items:baseline; gap:10px; min-width:0;">
+                <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; line-height:1; color:{{ cat.textColor }};">{{ cat.no }}</span>
+                <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.3px; color:{{ cat.textColor }};">{{ cat.titleEn }}</span>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <sc-if value="{{ cat.isNew }}">
+                <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#FFFFFF; background:#B48CC8; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; height:24px;">NEW</span>
+              </sc-if>
+              <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:20px; line-height:140%; color:{{ cat.textColor }};">{{ cat.title }}</h3>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:16px; margin-top:20px;">
+              <div style="display:flex; flex-direction:column; gap:4px;">
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:{{ cat.mutedColor }};">審査基準</span>
+                <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:180%; color:{{ cat.textColor }};">{{ cat.criteria }}</p>
+              </div>
+
+              <div style="display:flex; flex-direction:column; gap:8px; padding-top:8px;">
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="width:8px; height:8px; border-radius:50%; background:#E8702A; display:inline-block; flex-shrink:0;"></span>
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:{{ cat.mutedColor }};">審査のポイント</span>
+                  </div>
+                  <ol class="review-points-list" style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:6px; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }};">
+                    <sc-for list="{{ cat.points }}" as="pt" hint-placeholder-count="4">
+                      <li>{{ pt }}</li>
+                    </sc-for>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- MID-PAGE CTA -->
+  <section data-screen-label="Mid Page CTA" ref="{{ revealRefs.midcta }}" style="{{ revealStyles.midcta }}">
+    <div>
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;">
+        <div>
+          <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}"><h2 style="margin:0 0 20px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:20px; color:#1F1F21;">気になったら、<br>まずはエントリーから。</h2></sc-if><sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}"><h2 style="margin:0 0 24px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:20px; color:#1F1F21;">気になったら、まずはエントリーから。</h2></sc-if>
+          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#333333;">エントリーは1分程度。あとからエントリーシートで詳細をご提出いただけます。</p>
+        </div>
+        <a href="#apply" class="cta-orange" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#E8702A; padding:14px 28px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; gap:16px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#E8702A; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVISORY BOARD -->
+  <section data-screen-label="Advisory Board" id="advisory" ref="{{ revealRefs.advisory }}" style="{{ revealStyles.advisory }}">
+    <div aria-hidden="true" style="position:absolute; top:-80px; right:-160px; width:480px; height:480px; border-radius:50%; background:#E8702A; opacity:0.25; filter:blur(80px); z-index:0; pointer-events:none;"></div>
+    <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:48px;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">ADVISORY BOARD</span>
+      </div>
+      <div style="{{ advisoryNoteRowStyle }}">
+        <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">アドバイザリーボード</span>
+        <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#333333;">※五十音順</span>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:{{ advisoryGridColumns }}; gap:32px 24px; position:relative;">
+      <sc-for list="{{ advisoryBoard }}" as="person" hint-placeholder-count="7">
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="width:140px; height:140px; border-radius:8px; overflow:hidden; border:1px solid #D4D5E2;">
+            <img src="{{ person.photo }}" alt="{{ person.name }}" style="width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.75) contrast(0.95) brightness(1.02);">
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21;">{{ person.name }}</span>
+            <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; line-height:150%; color:#333333;">{{ person.title }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section data-screen-label="Schedule" id="schedule" ref="{{ revealRefs.schedule }}" style="{{ revealStyles.schedule }}">
+    <div aria-hidden="true" style="position:absolute; top:40%; left:-160px; width:440px; height:440px; border-radius:50%; background:#B48CC8; opacity:0.25; filter:blur(80px); z-index:0; pointer-events:none;"></div>
+    <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:48px;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">SCHEDULE</span>
+      </div>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">スケジュール</span>
+    </div>
+    <div style="display:flex; flex-direction:column; position:relative;">
+      <sc-for list="{{ scheduleItems }}" as="ev" hint-placeholder-count="5">
+        <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex; align-items:center; gap:16px; padding:32px 0; border-bottom:1px solid #D4D5E2; flex-wrap:wrap;">
+          <span style="font-size:16px; color:#1F1F21; min-width:160px;">
+            <sc-for list="{{ ev.dateParts }}" as="part" hint-placeholder-count="6">
+              <span style="{{ part.style }}">{{ part.text }}</span>
+            </sc-for>
+          </span>
+          <span style="width:6px; height:6px; border-radius:50%; background:{{ ev.dotColor }};"></span>
+          <span style="font-family:'Noto Sans JP',sans-serif; font-size:16px; color:#1F1F21; flex:1 1 200px;">{{ ev.label }}<sc-if value="{{ ev.daysLeft !== null }}" hint-placeholder-val="{{ false }}"><span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:15px; color:#FFFFFF; background:#E8702A; padding:6px 16px; border-radius:4px; margin-left:12px; display:inline-block;">あと{{ ev.daysLeft }}日</span></sc-if></span>
+          <sc-if value="{{ ev.isKeyDate }}">
+            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#E8702A; background:transparent; border:1px solid #E8702A; padding:6px 14px; border-radius:4px;">KEY DATE</span>
+          </sc-if>
+        </div>
+        </sc-if>
+        <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex; flex-direction:column; gap:10px; padding:24px 0; border-bottom:1px solid #D4D5E2;">
+          <span style="font-size:16px; color:#1F1F21;">
+            <sc-for list="{{ ev.dateParts }}" as="part" hint-placeholder-count="6">
+              <span style="{{ part.style }}">{{ part.text }}</span>
+            </sc-for>
+          </span>
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+            <span style="width:6px; height:6px; border-radius:50%; background:{{ ev.dotColor }}; flex:0 0 auto;"></span>
+            <span style="font-family:'Noto Sans JP',sans-serif; font-size:16px; color:#1F1F21; flex:1 1 auto;">{{ ev.label }}<sc-if value="{{ ev.daysLeft !== null }}" hint-placeholder-val="{{ false }}"><span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF; background:#E8702A; padding:5px 14px; border-radius:4px; margin-left:10px; display:inline-block;">あと{{ ev.daysLeft }}日</span></sc-if></span>
+            <sc-if value="{{ ev.isKeyDate }}">
+              <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#E8702A; background:transparent; border:1px solid #E8702A; padding:6px 14px; border-radius:4px;">KEY DATE</span>
+            </sc-if>
+          </div>
+        </div>
+        </sc-if>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- REQUIREMENTS -->
+  <section data-screen-label="Requirements" id="requirements" ref="{{ revealRefs.requirements }}" style="{{ revealStyles.requirements }}">
+    <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:48px;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">REQUIREMENTS</span>
+      </div>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">応募条件</span>
+    </div>
+    <div style="display:flex; flex-direction:column; border-top:1px solid #D4D5E2;">
+      <sc-for list="{{ requirementItems }}" as="req" hint-placeholder-count="5">
+        <div style="{{ req.rowStyle }}">
+          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21; flex:0 0 200px;">{{ req.label }}</span>
+          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:180%; color:#1F1F21; flex:1 1 auto;">{{ req.text }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- HOW TO APPLY -->
+  <section data-screen-label="How to Apply" id="apply" ref="{{ revealRefs.apply }}" style="{{ revealStyles.apply }}">
+    <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; position:relative; margin-bottom:48px;">
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
+          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">HOW TO APPLY</span>
+        </div>
+        <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">エントリー方法</span>
+      </div>
+      <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
+      <a href="#apply" class="cta-orange" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#E8702A; padding:12px 28px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; gap:16px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#E8702A; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+      </sc-if>
+    </div>
+    <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
+    <div style="display:grid; grid-template-columns:minmax(0, 1fr) 40px minmax(0, 1fr); gap:24px; margin-bottom:16px; align-items:center; position:relative;">
+      <div style="text-align:center;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:24px; padding:0 24px; color:#E8702A;">STEP1</span>
+      </div>
+      <div style="position:relative;">
+        <div style="position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); display:flex; align-items:center; gap:6px; white-space:nowrap;">
+          <sc-for list="{{ stepDots }}" as="dot" hint-placeholder-count="36">
+            <span style="width:3px; height:3px; border-radius:50%; background:{{ dot.color }}; flex:0 0 auto;"></span>
+          </sc-for>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:24px; padding:0 24px; color:#B48CC8;">STEP2</span>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:minmax(0, 1fr) 40px minmax(0, 1fr); gap:24px; align-items:stretch; position:relative;">
+      <div style="border:1px solid #D4D5E2; border-radius:4px; padding:32px; display:flex; flex-direction:column; gap:16px;">
+        <h3 style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:18px; color:#1F1F21;">プレエントリー</h3>
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <span style="font-family:'Noto Sans JP',sans-serif; font-size:16px; color:#333333;">締切：2026年8月26日（水）23:59</span>
+          <sc-if value="{{ preEntryDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}">
+            <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF; background:#E8702A; padding:4px 12px; border-radius:4px;">あと{{ preEntryDaysLeft }}日</span>
+          </sc-if>
+        </div>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#1F1F21;">「エントリー」ボタンからプレエントリーを行い、エントリーシートをダウンロードします。</p>
+      </div>
+      <div></div>
+      <div style="border:1px solid #D4D5E2; border-radius:4px; padding:32px; display:flex; flex-direction:column; gap:16px;">
+        <h3 style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:18px; color:#1F1F21;">エントリーシート提出</h3>
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <span style="font-family:'Noto Sans JP',sans-serif; font-size:16px; color:#333333;">締切：2026年9月9日（水）23:59</span>
+          <sc-if value="{{ entrySheetDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}">
+            <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF; background:#B48CC8; padding:4px 12px; border-radius:4px;">あと{{ entrySheetDaysLeft }}日</span>
+          </sc-if>
+        </div>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#1F1F21;">必要事項を記入したエントリーシートを、ご案内するフォームよりアップロードします。提出をもってエントリー完了となります。</p>
+      </div>
+    </div>
+    </sc-if>
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex; flex-direction:column;">
+      <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:16px; color:#E8702A; margin-bottom:16px;">STEP1</span>
+      <div style="border:1px solid #D4D5E2; border-radius:4px; padding:24px; display:flex; flex-direction:column; gap:12px; margin-bottom:32px;">
+        <h3 style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:18px; color:#1F1F21;">プレエントリー</h3>
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <span style="font-family:'Noto Sans JP',sans-serif; font-size:16px; color:#333333;">締切：2026年8月26日（水）23:59</span>
+          <sc-if value="{{ preEntryDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}">
+            <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF; background:#E8702A; padding:4px 12px; border-radius:4px;">あと{{ preEntryDaysLeft }}日</span>
+          </sc-if>
+        </div>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#1F1F21;">「エントリー」ボタンからプレエントリーを行い、エントリーシートをダウンロードします。</p>
+      </div>
+      <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:16px; color:#B48CC8; margin-bottom:8px;">STEP2</span>
+      <div style="border:1px solid #D4D5E2; border-radius:4px; padding:24px; display:flex; flex-direction:column; gap:12px;">
+        <h3 style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:18px; color:#1F1F21;">エントリーシート提出</h3>
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <span style="font-family:'Noto Sans JP',sans-serif; font-size:16px; color:#333333;">締切：2026年9月9日（水）23:59</span>
+          <sc-if value="{{ entrySheetDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}">
+            <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF; background:#B48CC8; padding:4px 12px; border-radius:4px;">あと{{ entrySheetDaysLeft }}日</span>
+          </sc-if>
+        </div>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#1F1F21;">必要事項を記入したエントリーシートを、ご案内するフォームよりアップロードします。提出をもってエントリー完了となります。</p>
+      </div>
+    </div>
+    </sc-if>
+    <p style="margin:24px 0 0; font-family:'Noto Sans JP',sans-serif; font-size:14px; line-height:170%; color:#333333;">※エントリーシートのご提出をもって、エントリー完了となります。各ステップの締切日は厳密に取り扱わせていただきますのでご注意ください。</p>
+  </section>
+
+  <!-- ARCHIVE -->
+  <section data-screen-label="Archive" style="max-width:1440px; margin:0 auto; padding:clamp(48px, 9vw, 96px) clamp(24px, 6vw, 96px) 0;">
+    <a href="#information" aria-label="2025年（第1回）受賞企業・プロジェクト一覧を見る" style="{{ archiveBoxStyle }}">
+      <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
+      <div style="{{ archiveInnerStyle }}">
+        <div style="display:flex; align-items:center; gap:8px; flex:0 0 auto;">
+          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:1.5px; color:#1F1F21;">ARCHIVE</span>
+        </div>
+        <span style="{{ archiveDividerStyle }}"></span>
+        <span style="{{ archiveDescStyle }}">2025年（第1回）受賞企業・プロジェクト一覧を見る</span>
+      </div>
+      <span aria-hidden="true" class="archive-arrow" style="width:36px; height:36px; border-radius:50%; background:transparent; color:#B48CC8; display:inline-flex; align-items:center; justify-content:center; font-size:16px; flex:0 0 auto; transition:background 500ms cubic-bezier(0.65, 0, 0.35, 1), color 500ms cubic-bezier(0.65, 0, 0.35, 1);">→</span>
+      </sc-if>
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex; flex-direction:column; gap:12px; width:100%;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:1.5px; color:#1F1F21;">ARCHIVE</span>
+          <span aria-hidden="true" class="archive-arrow" style="width:36px; height:36px; border-radius:50%; background:transparent; color:#B48CC8; display:inline-flex; align-items:center; justify-content:center; font-size:16px; flex:0 0 auto; transition:background 500ms cubic-bezier(0.65, 0, 0.35, 1), color 500ms cubic-bezier(0.65, 0, 0.35, 1);">→</span>
+        </div>
+        <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#1F1F21;">2025年（第1回）受賞企業・プロジェクト一覧を見る</span>
+      </div>
+      </sc-if>
+    </a>
+  </section>
+
+  <!-- INFORMATION -->
+  <section data-screen-label="Information" id="information" ref="{{ revealRefs.information }}" style="{{ revealStyles.information }}">
+    <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:48px;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">INFORMATION</span>
+      </div>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">お知らせ</span>
+    </div>
+    <div style="display:flex; flex-direction:column; position:relative;">
+      <sc-for list="{{ informationItems }}" as="item" hint-placeholder-count="3">
+        <div style="display:flex; align-items:center; gap:24px; padding:32px 0; position:relative;" onMouseEnter="{{ item.onMouseEnter }}" onMouseLeave="{{ item.onMouseLeave }}">
+          <div style="position:absolute; bottom:0; left:0; right:0; height:1px; background:#D4D5E2; overflow:hidden; pointer-events:none;">
+            <div style="{{ item.underlineFillStyle }}"></div>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; gap:12px;">
+            <sc-if value="{{ item.url }}" hint-placeholder-val="{{ false }}">
+              <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:160%; color:#1F1F21; text-decoration:none;">{{ item.text }}</a>
+            </sc-if>
+            <sc-if value="{{ !item.url }}" hint-placeholder-val="{{ true }}">
+              <span style="font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:160%; color:#1F1F21;">{{ item.text }}</span>
+            </sc-if>
+            <span style="font-family:'Oswald',sans-serif; font-weight:300; font-size:14px; letter-spacing:0.5px; color:#333333;">{{ item.date }}</span>
+          </div>
+          <sc-if value="{{ item.url }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.text }}" style="{{ item.arrowStyle }}">↗</a>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section data-screen-label="FAQ" id="faq" ref="{{ revealRefs.faq }}" style="{{ revealStyles.faq }}">
+    <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:48px;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">FAQ</span>
+      </div>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">よくあるご質問</span>
+    </div>
+    <div style="display:flex; flex-direction:column;">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+        <div style="border-top:1px solid #D4D5E2;">
+          <button onClick="{{ f.toggle }}" onMouseEnter="{{ f.onMouseEnter }}" onMouseLeave="{{ f.onMouseLeave }}" style="width:100%; text-align:left; background:transparent; border:none; cursor:pointer; padding:32px 0 40px; display:flex; align-items:baseline; gap:16px; position:relative;">
+            <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; color:#E8702A; flex:0 0 auto; margin-right:8px;">Q</span>
+            <span style="flex:1; font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21; padding-right:40px;">{{ f.question }}</span>
+            <span style="position:absolute; top:16px; right:0; display:inline-flex; align-items:center; justify-content:center;">
+              <span style="{{ f.plusStyle }}">＋</span>
+            </span>
+          </button>
+          <div style="max-height:{{ f.maxHeight }}; opacity:{{ f.opacity }}; overflow:hidden; transition:max-height 0.4s ease, opacity 0.3s ease;">
+            <p style="margin:0 0 24px; padding:20px 24px; background:#F0EDE7; border-radius:4px; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:180%; color:#1F1F21;">{{ f.answer }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  </div>
+
+  </div>
+
+  <!-- ENTRY + FOOTER: shared pinned background -->
+  <div style="position:relative; overflow:hidden; transform:translateZ(0);">
+    <div aria-hidden="true" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; background:#FDF9F2;">
+      <img src="assets/entry-below-bg.svg" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+      <div aria-hidden="true" style="position:absolute; left:0; right:0; top:0; height:25%; background:linear-gradient(to top, rgba(253,249,242,0) 0%, #FDF9F2 100%); pointer-events:none;"></div>
+    </div>
+    <div style="position:relative; z-index:1;">
+
+  <!-- CTA BAND -->
+  <section data-screen-label="CTA Band" ref="{{ revealRefs.ctaband }}" style="{{ revealStyles.ctaband }}">
+    <div style="border-radius:4px; padding:clamp(48px, 9vw, 96px) clamp(32px, 7vw, 96px); position:relative; overflow:hidden; background:rgba(255,255,255,0.35); backdrop-filter:blur(12px) saturate(140%); -webkit-backdrop-filter:blur(12px) saturate(140%); border:1px solid rgba(255,255,255,0.5);">
+      <div style="position:relative; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;">
+        <div style="display:flex; flex-direction:column; gap:12px; max-width:760px;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
+            <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:28px; letter-spacing:1px; color:#1F1F21;">ENTRY NOW</span>
+          </div>
+          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#333333;">プレエントリー締切まで<sc-if value="{{ preEntryDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}"><span style="color:#E8702A; font-weight:700;">あと{{ preEntryDaysLeft }}日</span></sc-if>。気になる方はまずはお気軽にエントリーください。</p>
+        </div>
+        <a href="#apply" class="cta-orange" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#E8702A; padding:12px 28px 12px 28px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; gap:16px; flex:0 0 auto; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#E8702A; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer data-screen-label="Footer" style="margin-top:100px; background:#FDF9F2;">
+    <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
+    <div style="max-width:1440px; margin:0 auto; padding:64px clamp(24px, 6vw, 96px) 40px; display:flex; flex-direction:column; gap:48px;">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap;">
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <a href="#top" style="display:flex; align-items:center; gap:10px; text-decoration:none; cursor:pointer;">
+            <img src="assets/motif.png" alt="" style="width:18px; height:auto; display:block;">
+            <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:0.5px; color:#1F1F21;">ART &amp; BUSINESS AWARD 2026</span>
+          </a>
+          <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#333333;">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン</span>
+        </div>
+        <a href="mailto:info@art-business-award.jp" class="cta-dark" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">お問い合わせはこちら <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+      </div>
+      <div style="border-top:1px solid #E4E1DB; padding-top:24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+          <a href="terms.html" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">利用規約</a>
+          <a href="https://www.meti.go.jp/intro/privacypolicy/index.html" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">プライバシーポリシー（経済産業省）</a>
+          <a href="https://cvj.or.jp/privacy/" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">プライバシーポリシー（運営事務局：Culture Vision Japan）</a>
+          <a href="https://drive.google.com/file/d/1ITKTFtuN7VDBaipuXJWeYFL9kkRTDpnu/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">反社会的勢力の排除に関する基本方針</a>
+        </div>
+        <span style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:#333333;">© 2026 Art &amp; Business Award. All rights reserved.</span>
+      </div>
+    </div>
+    </sc-if>
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1440px; margin:0 auto; padding:56px clamp(24px, 6vw, 96px) 96px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:40px;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <a href="#top" style="display:flex; align-items:center; gap:10px; text-decoration:none; cursor:pointer;">
+          <img src="assets/motif.png" alt="" style="width:18px; height:auto; display:block;">
+          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:0.5px; color:#1F1F21;">ART &amp; BUSINESS AWARD 2026</span>
+        </a>
+        <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#333333;">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン</span>
+      </div>
+      <a href="mailto:info@art-business-award.jp" class="cta-dark" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">お問い合わせはこちら <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+      <div style="border-top:1px solid #E4E1DB; padding-top:24px; display:flex; flex-direction:column; align-items:center; gap:16px; width:100%;">
+        <a href="terms.html" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">利用規約</a>
+        <a href="https://www.meti.go.jp/intro/privacypolicy/index.html" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">プライバシーポリシー（経済産業省）</a>
+        <a href="https://cvj.or.jp/privacy/" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">プライバシーポリシー（運営事務局：Culture Vision Japan）</a>
+        <a href="https://drive.google.com/file/d/1ITKTFtuN7VDBaipuXJWeYFL9kkRTDpnu/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">反社会的勢力の排除に関する基本方針</a>
+        <span style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:#333333;">© 2026 Art &amp; Business Award. All rights reserved.</span>
+      </div>
+    </div>
+    </sc-if>
+  </footer>
+
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { openCategory: null, scrolled: false, openFaq: null, hoveredNewsItem: null, hoveredFaq: null, aboutVisible: false, revealed: {}, isMobile: false, mobileNavOpen: false, headerHeight: 0 };
+
+  checkMobile = () => {
+    const w = window.innerWidth;
+    const isMobile = w <= 768;
+    const isTablet = w > 768 && w <= 1599;
+    if (isMobile !== this.state.isMobile || isTablet !== this.state.isTablet) this.setState({ isMobile, isTablet });
+  };
+
+  toggleMobileNav = () => {
+    this.setState(s => ({ mobileNavOpen: !s.mobileNavOpen }));
+  };
+
+  toggleCategory = (i) => {
+    this.setState(s => ({ openCategory: s.openCategory === i ? null : i }));
+  };
+
+  toggleFaq = (i) => {
+    this.setState(s => ({ openFaq: s.openFaq === i ? null : i }));
+  };
+
+
+
+  onScroll = () => {
+    const isScrolled = window.scrollY > 24;
+    if (isScrolled !== this.state.scrolled) this.setState({ scrolled: isScrolled });
+  };
+
+  makeTitleChars = (str, startDelay) => {
+    return str.split('').map((ch, i) => ({ ch: ch === ' ' ? '\u00A0' : ch, delay: (startDelay + i * 0.045).toFixed(3) }));
+  };
+
+  videoRef = React.createRef();
+
+  titleVideoRef = React.createRef();
+
+  aboutRef = React.createRef();
+
+  headerRef = React.createRef();
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.checkMobile();
+    window.addEventListener('resize', this.checkMobile, { passive: true });
+    if (this.headerRef.current) {
+      if ('ResizeObserver' in window) {
+        this.headerResizeObserver = new ResizeObserver((entries) => {
+          if (this.state.scrolled) return;
+          const h = Math.round(entries[0].contentRect.height);
+          if (h !== this.state.headerHeight) this.setState({ headerHeight: h });
+        });
+        this.headerResizeObserver.observe(this.headerRef.current);
+      } else {
+        this.setState({ headerHeight: Math.round(this.headerRef.current.getBoundingClientRect().height) });
+      }
+    }
+    const v = this.videoRef.current;
+    if (v) {
+      v.muted = true;
+      v.loop = true;
+      v.playsInline = true;
+      const tryPlay = () => v.play().catch(() => {});
+      tryPlay();
+      v.addEventListener('loadedmetadata', tryPlay);
+    }
+    const tv = this.titleVideoRef.current;
+    if (tv) {
+      tv.muted = true;
+      tv.loop = true;
+      tv.playsInline = true;
+      const tryPlayTitle = () => tv.play().catch(() => {});
+      tryPlayTitle();
+      tv.addEventListener('loadedmetadata', tryPlayTitle);
+    }
+    if (this.aboutRef.current && 'IntersectionObserver' in window) {
+      this.aboutObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.setState({ aboutVisible: true });
+            this.aboutObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.2 });
+      this.aboutObserver.observe(this.aboutRef.current);
+    }
+  }
+
+  revealObserver = ('IntersectionObserver' in window)
+    ? new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const key = entry.target.dataset.revealKey;
+            this.setState(s => ({ revealed: { ...s.revealed, [key]: true } }));
+            this.revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' })
+    : null;
+
+  revealKeys = ['benefit', 'category', 'midcta', 'advisory', 'schedule', 'requirements', 'apply', 'information', 'faq', 'contact', 'ctaband'];
+
+  makeAttachReveal(key) {
+    return (el) => {
+      if (!el || el.dataset.revealBound || !this.revealObserver) return;
+      el.dataset.revealBound = '1';
+      el.dataset.revealKey = key;
+      this.revealObserver.observe(el);
+    };
+  }
+
+  revealRefs = this.revealKeys.reduce((acc, key) => {
+    acc[key] = this.makeAttachReveal(key);
+    return acc;
+  }, {});
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.checkMobile);
+    if (this.headerResizeObserver) this.headerResizeObserver.disconnect();
+  }
+
+  renderVals() {
+    const scrolled = this.state.scrolled;
+    const isMobile = this.state.isMobile;
+    const isTablet = this.state.isTablet;
+    const mobileNavOpen = this.state.mobileNavOpen;
+    const heroOverflow = isMobile ? 'hidden' : 'visible';
+    const heroTitleFontSize = isMobile ? 'clamp(24px, 8vw, 40px)' : 'clamp(28px, 3.4vw, 56px)';
+    const heroTitleWhiteSpace = isMobile ? 'normal' : 'nowrap';
+    const headerHeight = this.state.headerHeight;
+    const heroSectionPaddingTop = headerHeight ? `${headerHeight}px` : (isMobile ? '56px' : '72px');
+    const heroEyebrowMarginTop = isMobile ? '80px' : '140px';
+    const heroEyebrowMarginBottom = isMobile ? '24px' : '32px';
+    const benefitFadeStyle = { position: 'absolute', left: 0, right: 0, top: 0, height: isMobile ? '0px' : '120px', background: 'linear-gradient(to bottom, #FDF9F2 0%, rgba(253,249,242,0) 100%)', pointerEvents: 'none', zIndex: 1 };
+    const archiveBoxStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: isMobile ? 'nowrap' : 'wrap', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)' };
+    const archiveInnerStyle = { display: 'flex', alignItems: 'center', gap: '16px', flexWrap: isMobile ? 'nowrap' : 'wrap', minWidth: 0, overflow: isMobile ? 'hidden' : 'visible' };
+    const archiveDividerStyle = { display: isMobile ? 'none' : 'block', width: '1px', height: '16px', background: '#D4D5E2', flex: '0 0 auto' };
+    const archiveDescStyle = { fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 500, fontSize: '13px', color: '#1F1F21', whiteSpace: isMobile ? 'nowrap' : 'normal', overflow: isMobile ? 'hidden' : 'visible', textOverflow: isMobile ? 'ellipsis' : 'clip', minWidth: 0 };
+    const advisoryNoteRowStyle = { display: 'flex', alignItems: isMobile ? 'flex-start' : 'baseline', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '4px' : '12px' };
+    const aboutSectionDisplay = 'block';
+    const sectionTitleFontSize = isMobile ? '28px' : '36px';
+    const benefitGridColumns = isMobile ? 'repeat(auto-fit, minmax(260px, 1fr))' : '1fr 1fr';
+    const benefitGroupColumns = isMobile ? '1fr' : '1fr 1fr';
+    const aboutBodyFontWeight = isMobile ? 400 : 500;
+    const aboutQuoteFontSize = isMobile ? '24px' : '32px';
+    const advisoryGridColumns = isMobile ? 'repeat(auto-fit, minmax(140px, 1fr))' : 'repeat(4, 1fr)';
+    const aboutStyle = {
+      position: 'relative', maxWidth: '1200px', margin: '0 auto', display: 'grid',
+      gridTemplateColumns: isMobile ? '1fr' : '320px 1fr', gap: isMobile ? '40px' : '64px', alignItems: 'start',
+      opacity: 1,
+      transform: 'translateY(0)',
+      transition: 'opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)'
+    };
+    const SECTION_GAP = '100px';
+    const revealBase = {
+      benefit: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
+      category: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
+      midcta: { background: '#FFFFFF', borderRadius: '8px', maxWidth: '1440px', margin: `${SECTION_GAP} auto 0`, padding: '48px clamp(24px, 6vw, 96px)' },
+      advisory: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: isMobile ? 'hidden' : 'visible' },
+      schedule: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: isMobile ? 'hidden' : 'visible' },
+      requirements: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
+      apply: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
+      information: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
+      faq: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
+      contact: { maxWidth: '1440px', margin: '0 auto', padding: `0 clamp(24px, 6vw, 96px) ${SECTION_GAP}` },
+      ctaband: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative' }
+    };
+    const revealStyles = {};
+    this.revealKeys.forEach(key => {
+      const visible = !!this.state.revealed[key];
+      revealStyles[key] = {
+        ...revealBase[key],
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(32px)',
+        transition: 'opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)'
+      };
+    });
+    const headerStyle = {
+      position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 100,
+      background: scrolled ? '#FFFFFF' : 'transparent',
+      boxShadow: scrolled ? '0 6px 28px -2px rgba(232,112,42,0.06)' : '0 6px 24px -4px rgba(232,112,42,0.05)',
+      transition: 'padding 0.35s ease, box-shadow 0.35s ease'
+    };
+    const headerInnerStyle = {
+      maxWidth: '1600px', margin: '0 auto', position: 'relative',
+      padding: scrolled ? '8px clamp(24px, 4vw, 48px)' : '14px clamp(24px, 4vw, 48px)',
+      display: 'flex', alignItems: isMobile ? 'flex-start' : 'center', justifyContent: 'space-between', gap: isTablet ? '16px 32px' : '32px',
+      flexWrap: isMobile ? 'nowrap' : 'wrap',
+      transition: 'padding 0.35s ease'
+    };
+    const logoTitleStyle = {
+      fontFamily: "'Oswald',sans-serif", fontWeight: 600,
+      fontSize: scrolled ? '14px' : '16px', letterSpacing: '0.5px', color: '#1F1F21',
+      whiteSpace: 'nowrap', transition: 'font-size 0.35s ease'
+    };
+    const logoBlockStyle = {
+      display: 'flex', flexDirection: 'column', gap: '8px',
+      flex: isMobile ? '1 1 auto' : '0 0 auto',
+      minWidth: 0, maxWidth: isMobile ? 'calc(100% - 56px)' : 'none'
+    };
+    const logoSubtitleStyle = {
+      fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 400,
+      fontSize: isMobile ? '12px' : '14px', letterSpacing: '0.4px', color: '#333333',
+      whiteSpace: 'normal', overflowWrap: 'break-word'
+    };
+    const rawCategories = [
+      {
+        no: '01',
+        title: 'コーポレート・ストラテジー',
+        titleEn: 'Corporate Strategy',
+        isNew: false,
+        criteria: 'アートの有する価値を活用して企業戦略・体制の構築、実行、発信など経営領域で新たな変化を起こした企業',
+        points: [
+          'アートの有する価値を活かした類を見ないユニークな取組か',
+          '経営レベル・指標の設定を行い、企業内外に大きな変化をもたらしているか',
+          '単発ではなく魅力的な取組となっているか',
+          'ステークホルダーや社会に対して取組を発信できているか'
+        ]
+      },
+      {
+        no: '02',
+        title: 'アートコラボレーション',
+        titleEn: 'Art Collaboration',
+        isNew: false,
+        criteria: 'アート・アーティストとの共創を通じて事業の高度化など新たな経済的価値を創出した企業・プロジェクト',
+        points: [
+          'アートの有する価値を活かした類を見ないユニークな事業内容か',
+          'アーティストや関連団体・機関等との間にWin-Winの共創ができているか',
+          'プロジェクトの経済的価値（既存事業の高度化、顧客との関係強化、新規顧客獲得等）',
+          '単発ではなく魅力的な事業となっているか'
+        ]
+      },
+      {
+        no: '03',
+        title: 'ニューアートビジネス',
+        titleEn: 'New Business with Art',
+        isNew: false,
+        criteria: 'アート起点とした事業創造などを通じて新たなビジネスモデルを創出した企業・プロジェクト',
+        points: [
+          'アートの有する価値を活かした類を見ないユニークな事業内容か',
+          '事業としての新規性があるか',
+          'プロジェクトの経済的価値（収益性、エンゲージメント（参加者数、SNS等）、再現性等）',
+          '単発ではなく魅力的な事業となるための計画や構想があるか'
+        ]
+      },
+      {
+        no: '04',
+        title: 'ローカルインパクト',
+        titleEn: 'Local Impact',
+        isNew: false,
+        criteria: '地域特性を活かしたアートに関わる取組を通じて地域における経済的価値を創出した企業・プロジェクト',
+        points: [
+          'アートの有する価値を活かした類を見ないユニークな取り組みか',
+          '地域資源を活かした事業内容であるか',
+          '地域経済活性化に寄与しているか（新事業・新産業創出、雇用創出、観光客はか関係人口の増加等）',
+          '単発ではなく魅力的な事業となっているか'
+        ]
+      },
+      {
+        no: '05',
+        title: 'アートエンゲージメント',
+        titleEn: 'Art Engagement',
+        isNew: true,
+        criteria: '所有しているアート作品を活用し、企業価値向上とともに日本のアートの発展に寄与した、企業・プロジェクト',
+        points: [
+          '所有する作品を有効に活用してか',
+          '企業価値向上につながっているか',
+          '日本のアート市場活性化や国際発信など日本のアート界の発展に寄与しているか',
+          '事業・プロジェクトを対外的に発信しているか'
+        ]
+      }
+    ];
+
+    const categoryLabels = rawCategories.map(c => c.title);
+    const requirementItems = [
+      { label: '対象法人', text: '日本国内に拠点を持つ企業・法人（外資系日本法人を含む）。個人事業主・任意団体は対象外です。' },
+      { label: '業種・企業規模', text: '業種・企業規模による制限はありません。大企業・中小企業・スタートアップを問わずご応募いただけます。' },
+      { label: '対象となる取り組み', text: '「応募カテゴリー」いずれかに該当するアート・アーティストとの共創、またはアート活用の取り組み・プロジェクト。' },
+      { label: '応募費用', text: 'プレエントリー・エントリーシート提出とも無料です。' },
+      { label: '過去の応募・受賞歴', text: '2025年（第1回）にエントリー・受賞された企業・プロジェクトも再度ご応募いただけます。昨年度からの変化した点をエントリーシート内に分かりやすく明記してください。' }
+    ].map(r => ({
+      ...r,
+      rowStyle: isMobile
+        ? { display: 'flex', flexDirection: 'column', gap: '12px', padding: '24px 0', borderBottom: '1px solid #D4D5E2' }
+        : { display: 'flex', alignItems: 'flex-start', gap: '32px', padding: '32px 0', borderBottom: '1px solid #D4D5E2' }
+    }));
+    const categories = rawCategories.map((c, i) => {
+      const isOpen = this.state.openCategory === i;
+      return {
+        ...c,
+        isOpen,
+        toggle: () => this.toggleCategory(i),
+        rotate: isOpen ? '135deg' : '0deg',
+        maxHeight: isOpen ? '600px' : '0px',
+        opacity: isOpen ? 1 : 0,
+        rowStyle: {
+          position: 'relative',
+          borderRadius: '4px',
+          padding: '40px 0',
+          background: 'transparent'
+        },
+        innerRowStyle: {
+          display: 'flex',
+          alignItems: 'flex-start',
+          gap: isMobile ? '14px' : '24px',
+          flexWrap: isMobile ? 'nowrap' : 'wrap'
+        },
+        noBlockStyle: {
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '2px',
+          flex: isMobile ? '0 0 44px' : '0 1 160px',
+          minWidth: 0
+        },
+        noFontSize: isMobile ? '20px' : 'clamp(32px, 4vw, 48px)',
+        contentBlockStyle: {
+          flex: '1 1 220px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '16px',
+          minWidth: 0,
+          width: isMobile ? '100%' : 'auto'
+        },
+        textColor: '#1F1F21',
+        mutedColor: '#333333'
+      };
+    });
+
+    const winnerBenefits = [
+      { no: '01', text: '12月17日都内で開催するアワード授賞式にて表彰' },
+      { no: '02', text: '目録授与にて贈呈' },
+      { no: '03', text: 'アワード受賞イベントにてプレゼンテーションの実施（任意）', common: true },
+      { no: '04', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true },
+      { no: '05', text: '経済産業省の報告書とサイトへ掲載', common: true }
+    ].map(b => ({ ...b, noColor: b.common ? '#333333' : '#C9971F' }));
+
+    const finalistBenefits = [
+      { no: '01', text: 'アワード受賞イベントへの参加（任意）', common: true },
+      { no: '02', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true },
+      { no: '03', text: '経済産業省の報告書とサイトへ掲載', common: true }
+    ];
+
+    const patternFitItems = [
+      { title: '共感とカルチャーフィット', text: '私達の理念に共鳴し、"楽しい"を本気で追求できる方' },
+      { title: '自分を鍛え、挑戦を楽しめる人', text: '仲間とともに結果を出す。そんな喜びを知っている方' },
+      { title: 'チームで何かを成し遂げた経験がある方', text: '変化の速さを楽しみ、昨日より一歩前に進みたい方' },
+      { title: 'グローバルな舞台で勝負したい方', text: '海外で働いた経験、語学力、グローバル志向を活かしたい方' },
+      { title: 'センスとスタイルを大切にできる方', text: '身だしなみやファッションにもこだわりを持てる方' },
+      { title: '自分のお店をつくってみたい人', text: 'いつかは自分の店を持ちたい方' }
+    ];
+
+    const patternNotFitItems = [
+      { text: '常に笑顔で人と接することが苦手な方' },
+      { text: '指示を待ってからでないと動けない方' },
+      { text: '変化や挑戦よりも、今のままを望む方' },
+      { text: 'チームでの協力より、自分のやり方を優先したい方' },
+      { text: '困難や課題を、全て環境のせいにしてしまう方' },
+      { text: '自分の意見やアイデアを発信することに消極的な方' },
+      { text: '「成長したい」という意志が薄い方' }
+    ];
+
+    const midArticles = [
+      { url: 'https://forbesjapan.com/articles/detail/85055', tag: 'アートな数字', title: '「直島新美術館」と創造的カオス', date: '2025.11.23', image: 'https://images.forbesjapan.com/media/article/85055/images/main_image_2859a654bc375ae44b3adc8171340623ab3bd005.jpg?w=1200' },
+      { url: 'https://forbesjapan.com/articles/detail/83719', tag: 'カルチャープレナー', title: '東洋から美のルネサンスを起こす「文化統合戦略」', date: '2025.10.23', image: 'https://images.forbesjapan.com/media/article/83719/images/main_image_3c7c6297206e20b185479754f4d7d14912fed795.jpg?w=1200' },
+      { url: 'https://forbesjapan.com/articles/detail/82738', tag: 'アート', title: '自販機は現代の聖なる光？ 森本啓太が見つめる東京という「異世界」', date: '2025.09.26', image: 'https://images.forbesjapan.com/media/article/82738/images/main_image_9fc37b55f70d2e5f1909c81e188aecbe39e48976.jpg?w=1200' }
+    ];
+
+    const rawFaqs = [
+      { q: 'どのような企業が応募できますか？', a: '日本に拠点を持つ企業・法人であればご応募いただけます（外資系日本法人を含む）。業種・企業規模による制限はありません。' },
+      { q: '複数のカテゴリーに応募することはできますか？', a: '複数カテゴリへの応募が可能です。エントリーを希望するカテゴリーを選んでご提出ください。' },
+      { q: 'どのカテゴリーに応募すべきか分かりません。', a: '「応募カテゴリー」セクションの各カードに付けた#キーワードが取組内容に近いカテゴリーをご確認ください。判断に迷う場合は事務局までお問い合わせください。' },
+      { q: '応募に費用はかかりますか？', a: 'プレエントリー・エントリーシートの提出はいずれも無料です。' },
+      { q: '審査はどのように行われますか？', a: '各カテゴリーに設定された審査基準・審査のポイントに基づき、アドバイザリーボードによる審査を実施します。' },
+      { q: 'プレエントリー後に内容を変更できますか？', a: 'プレエントリー完了後にお送りするご案内に従い、エントリーシート提出締切までは内容の確定・修正が可能です。' },
+      { q: '昨年度もエントリーしたのですが、今年もエントリーできますか？', a: 'エントリーいただくことは可能です。昨年度からの変化した点をエントリーシート内に分かりやすく明記してください。' }
+    ];
+
+    const faqs = rawFaqs.map((f, i) => {
+      const isOpen = this.state.openFaq === i;
+      const isHovered = this.state.hoveredFaq === i;
+      return {
+        ...f,
+        question: f.q,
+        answer: f.a,
+        qLabel: 'Q' + (i + 1),
+        toggle: () => this.toggleFaq(i),
+        onMouseEnter: () => this.setState({ hoveredFaq: i }),
+        onMouseLeave: () => this.setState({ hoveredFaq: null }),
+        rotate: isOpen ? '135deg' : '0deg',
+        maxHeight: isOpen ? '300px' : '0px',
+        opacity: isOpen ? 1 : 0,
+        plusStyle: {
+          width: '36px', height: '36px', borderRadius: '50%',
+          background: isHovered ? '#E8702A' : 'transparent',
+          color: isHovered ? '#FFFFFF' : '#333333',
+          fontSize: '18px',
+          display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+          transform: `rotate(${isOpen ? '135deg' : '0deg'})`,
+          transition: 'transform 0.3s ease, background 500ms cubic-bezier(0.65, 0, 0.35, 1), color 500ms cubic-bezier(0.65, 0, 0.35, 1)'
+        }
+      };
+    });
+
+    const rawInformationItems = [
+      { date: '2026年7月29日', tag: 'INFO', tagColor: '#E8702A', text: 'Art & Business Award 2026 エントリー開始のお知らせ' },
+      { date: '2026年6月11日', tag: 'NEWS', tagColor: '#B48CC8', text: 'ART & BUSINESS CASEBOOKを公表しました。', url: 'https://www.meti.go.jp/policy/mono_info_service/mono/creative/art/260601_casebook01.pdf' },
+      { date: '2025年12月18日', tag: 'INFO', tagColor: '#E8702A', text: 'アーティスト、コラボレーター、企業プロジェクトを紹介する「PLAYERS FILE」を公開しました。' }
+    ];
+    const informationItems = rawInformationItems.map((item, i) => ({
+      ...item,
+      onMouseEnter: item.url ? () => this.setState({ hoveredNewsItem: i }) : undefined,
+      onMouseLeave: item.url ? () => this.setState({ hoveredNewsItem: null }) : undefined,
+      underlineFillStyle: {
+        position: 'absolute', top: 0, left: 0, bottom: 0, width: '100%',
+        background: '#E8702A',
+        transform: this.state.hoveredNewsItem === i ? 'scaleX(1)' : 'scaleX(0)',
+        transformOrigin: 'left',
+        transition: 'transform 500ms cubic-bezier(0.65, 0, 0.35, 1)'
+      },
+      arrowStyle: {
+        width: '36px', height: '36px', borderRadius: '50%',
+        background: this.state.hoveredNewsItem === i ? '#E8702A' : 'transparent',
+        color: this.state.hoveredNewsItem === i ? '#FFFFFF' : '#E8702A',
+        display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px',
+        flex: '0 0 auto', position: 'relative', zIndex: 1,
+        transition: 'background 500ms cubic-bezier(0.65, 0, 0.35, 1), color 500ms cubic-bezier(0.65, 0, 0.35, 1)'
+      }
+    }));
+
+    const stepDots = Array.from({ length: 36 }, (_, i) => ({
+      color: `color-mix(in oklch, #E8702A ${100 - (i / 35) * 100}%, #B48CC8 ${(i / 35) * 100}%)`
+    }));
+
+    const mobileStepDots = Array.from({ length: 10 }, (_, i) => ({
+      color: `color-mix(in oklch, #E8702A ${100 - (i / 9) * 100}%, #B48CC8 ${(i / 9) * 100}%)`
+    }));
+
+    const scheduleItemsRaw = [
+      { date: '2026年7月29日', label: 'エントリー受付開始', isKeyDate: false },
+      { date: '2026年8月26日', label: 'プレエントリー締切', isKeyDate: true },
+      { date: '2026年9月9日', label: 'エントリーシート提出締切', isKeyDate: true },
+      { date: '2026年11月23日', label: '受賞企業発表', isKeyDate: false },
+      { date: '2026年12月17日', label: 'アワード授賞式（都内）', isKeyDate: true }
+    ];
+    const scheduleItems = scheduleItemsRaw.map(ev => {
+      const m = ev.date.match(/^(\d+)年(\d+)月(\d+)日$/);
+      const numStyle = "font-family:'Oswald',sans-serif; font-weight:200;";
+      const kanjiStyle = "font-family:'Noto Sans JP',sans-serif; font-weight:300;";
+      const dateParts = m
+        ? [
+            { text: m[1], style: numStyle },
+            { text: '年', style: kanjiStyle },
+            { text: m[2], style: numStyle },
+            { text: '月', style: kanjiStyle },
+            { text: m[3], style: numStyle },
+            { text: '日', style: kanjiStyle }
+          ]
+        : [{ text: ev.date, style: kanjiStyle }];
+      let daysLeft = null;
+      const countdownLabels = ['プレエントリー締切', 'エントリーシート提出締切'];
+      if (m && countdownLabels.includes(ev.label)) {
+        const target = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+        const now = new Date();
+        const diff = Math.ceil((target.setHours(0,0,0,0) - now.setHours(0,0,0,0)) / 86400000);
+        if (diff >= 0) daysLeft = diff;
+      }
+      return { ...ev, dotColor: ev.isKeyDate ? '#E8702A' : '#333333', dateParts, daysLeft };
+    });
+    const preEntryDaysLeft = (scheduleItems.find(s => s.label === 'プレエントリー締切') || {}).daysLeft;
+    const entrySheetDaysLeft = (scheduleItems.find(s => s.label === 'エントリーシート提出締切') || {}).daysLeft;
+
+    const advisoryBoard = [
+      { name: '大林 剛郎', title: '大林組取締役会長／公益財団法人大林財団理事長', photo: 'assets/advisory-01.png' },
+      { name: '片岡 真実', title: '森美術館館長', photo: 'assets/advisory-02.png' },
+      { name: '塩見 有子', title: 'NPO法人アーツコミュニケーション代表', photo: 'assets/advisory-03.png' },
+      { name: '寺瀬 由紀', title: 'アート・インテリジェンス・グローバル Founding Partner', photo: 'assets/advisory-04.png' },
+      { name: '永田 暁彦', title: 'ユーグレナ代表取締役社長CEO', photo: 'assets/advisory-05.png' },
+      { name: '日比野 克彦', title: '東京藝術大学長', photo: 'assets/advisory-06.png' },
+      { name: '福武 英明', title: 'ベネッセホールディングス取締役／公益財団法人福武財団理事長', photo: 'assets/advisory-07.png' }
+    ];
+
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, benefitGroupColumns, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), aboutRef: this.aboutRef, aboutStyle, revealRefs: this.revealRefs, revealStyles, winnerBenefits, finalistBenefits, patternFitItems, patternNotFitItems, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroEyebrowMarginTop, heroEyebrowMarginBottom, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveBoxStyle, archiveInnerStyle, archiveDividerStyle, archiveDescStyle, advisoryNoteRowStyle, aboutSectionDisplay, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, aboutBodyFontWeight, aboutQuoteFontSize, isTablet, showDesktopNav: !isMobile && !isTablet };
+    // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
+  }
+}
+</script>
+</body>
+</html>
