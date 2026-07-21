@@ -205,7 +205,7 @@
         <div style="min-height:170px;">
         <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:1.5px; color:#C9971F; display:block; margin-bottom:6px;">TOP AWARD</span>
         <h3 style="margin:0 0 12px; font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:22px; color:#1F1F21; display:flex; align-items:center; gap:8px;"><span style="width:5px; height:5px; border-radius:50%; background:#C9971F; display:inline-block;"></span>受賞企業</h3>
-        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:170%; color:#333333;">本アワードの受賞企業として選ばれた企業様への特典です。<br>共通特典に加え、受賞企業様だけの特別な特典をご用意しています。</p>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:170%; color:#333333;">受賞した企業様への特典です。</p>
         </div>
         <div style="display:grid; grid-template-columns:1fr; gap:0;">
           <sc-for list="{{ winnerBenefits }}" as="b" hint-placeholder-count="4">
@@ -1015,7 +1015,7 @@ class Component extends DCLogic {
     });
 
     const winnerBenefits = [
-      { no: '01', text: '12月17日都内で開催する授賞式にて表彰' },
+      { no: '01', text: '都内で開催する授賞式にて表彰' },
       { no: '02', text: '授賞式にてプレゼンテーションの実施（任意）', common: true },
       { no: '03', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true, note: '掲載にあたっては相談する場合がございます' },
       { no: '04', text: '経済産業省の報告書とサイトへ掲載', common: true, note: '掲載にあたっては相談する場合がございます' }
