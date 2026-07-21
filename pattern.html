@@ -47,6 +47,7 @@
     .cta-arrow { transition: transform 350ms cubic-bezier(0.65, 0, 0.35, 1); }
     a:hover > .cta-arrow { transform: translateX(2px); }
     .archive-arrow:hover { background: #B48CC8; color: #FFFFFF !important; }
+    .archive-card:hover { background: rgba(180,140,200,0.16) !important; }
     .review-points-list li::marker { font-style: normal; font-size: 18px; }
     @media (min-width: 1000px) { .hero-eco-line { white-space: nowrap; } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
@@ -589,7 +590,7 @@
 
   <!-- ARCHIVE -->
   <section data-screen-label="Archive" style="max-width:1440px; margin:0 auto; padding:clamp(48px, 9vw, 96px) clamp(24px, 6vw, 96px) 0;">
-    <a href="#information" aria-label="2025年（第1回）受賞企業・プロジェクト一覧を見る" style="{{ archiveBoxStyle }}">
+    <a href="#information" aria-label="2025年（第1回）受賞企業・プロジェクト一覧を見る" class="archive-card" style="{{ archiveBoxStyle }}">
       <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
       <div style="{{ archiveInnerStyle }}">
         <div style="display:flex; align-items:center; gap:8px; flex:0 0 auto;">
@@ -885,7 +886,7 @@ class Component extends DCLogic {
     const heroEyebrowMarginTop = isMobile ? '80px' : '140px';
     const heroEyebrowMarginBottom = isMobile ? '24px' : '32px';
     const benefitFadeStyle = { position: 'absolute', left: 0, right: 0, top: 0, height: isMobile ? '0px' : '120px', background: 'linear-gradient(to bottom, #FDF9F2 0%, rgba(253,249,242,0) 100%)', pointerEvents: 'none', zIndex: 1 };
-    const archiveBoxStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: isMobile ? 'nowrap' : 'wrap', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)' };
+    const archiveBoxStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: isMobile ? 'nowrap' : 'wrap', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)', transition: 'background 350ms cubic-bezier(0.65, 0, 0.35, 1)' };
     const archiveInnerStyle = { display: 'flex', alignItems: 'center', gap: '16px', flexWrap: isMobile ? 'nowrap' : 'wrap', minWidth: 0, overflow: isMobile ? 'hidden' : 'visible' };
     const archiveDividerStyle = { display: isMobile ? 'none' : 'block', width: '1px', height: '16px', background: '#D4D5E2', flex: '0 0 auto' };
     const archiveDescStyle = { fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 500, fontSize: '13px', color: '#1F1F21', whiteSpace: isMobile ? 'nowrap' : 'normal', overflow: isMobile ? 'hidden' : 'visible', textOverflow: isMobile ? 'ellipsis' : 'clip', minWidth: 0 };
