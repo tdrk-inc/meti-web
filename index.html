@@ -49,7 +49,7 @@
     .archive-arrow:hover { background: #B48CC8; color: #FFFFFF !important; }
     .archive-card:hover { background: rgba(180,140,200,0.16) !important; }
     .footer-card:hover { border-color: #E8702A !important; background: #FDF9F2 !important; }
-    .entry-card:hover { border-color: #FFFFFF !important; }
+    .entry-card:hover { background: rgba(255,255,255,0.7) !important; }
     .entry-card:hover .cta-arrow { background: #E8702A !important; border-color: #E8702A !important; color: #FFFFFF !important; }
     @media (min-width: 1000px) { .hero-eco-line { white-space: nowrap; } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
@@ -612,7 +612,7 @@
 
   <!-- CTA BAND -->
   <section data-screen-label="CTA Band" ref="{{ revealRefs.ctaband }}" style="{{ revealStyles.ctaband }}">
-    <div style="border-radius:4px; padding:clamp(48px, 9vw, 96px) clamp(32px, 7vw, 96px); position:relative; overflow:hidden; background:#E8702A;">
+    <div style="border-radius:4px; padding:clamp(48px, 9vw, 96px) clamp(32px, 7vw, 96px); position:relative; overflow:hidden; background:linear-gradient(135deg, #F3944F 0%, #E8702A 55%, #CD5A18 100%);">
       <div style="position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px;">
         <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:28px; letter-spacing:1px; color:#FFFFFF;">ENTRY NOW</span>
         <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#FFFFFF;">プレエントリー締切まで<sc-if value="{{ preEntryDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}"><span style="color:#1F1F21; font-weight:700;">あと{{ preEntryDaysLeft }}日</span></sc-if>。気になる方はまずはお気軽にエントリーください。</p>
@@ -874,11 +874,11 @@ class Component extends DCLogic {
       maxWidth: '360px',
       minHeight: '220px',
       display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '32px',
-      padding: '32px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.5)', textDecoration: 'none',
-      background: 'rgba(255,255,255,0.18)',
+      padding: '32px', borderRadius: '8px', border: 'none', textDecoration: 'none',
+      background: 'rgba(255,255,255,0.55)',
       backdropFilter: 'blur(12px) saturate(140%)',
       WebkitBackdropFilter: 'blur(12px) saturate(140%)',
-      transition: 'border-color 350ms cubic-bezier(0.65, 0, 0.35, 1)'
+      transition: 'background 350ms cubic-bezier(0.65, 0, 0.35, 1)'
     };
     const footerCardStyle = {
       display: 'flex', flexDirection: 'column', gap: '8px', padding: '20px 24px',
