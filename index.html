@@ -8,6 +8,20 @@
 <body>
 <x-dc>
 <helmet>
+  <title>ART &amp; BUSINESS AWARD 2026｜企業とアーティストの共創で新たな経済価値を創出する</title>
+  <meta name="description" content="アート・アーティストとの共創で、新しい経済価値を生み出す企業・プロジェクトを表彰するART &amp; BUSINESS AWARD 2026。主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン。日本に拠点を置く企業・法人であれば、業種・規模を問わずご応募いただけます（応募無料）。">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ART &amp; BUSINESS AWARD 2026">
+  <meta property="og:title" content="ART &amp; BUSINESS AWARD 2026｜企業とアーティストの共創で新たな経済価値を創出する">
+  <meta property="og:description" content="アート・アーティストとの共創で、新しい経済価値を生み出す企業・プロジェクトを表彰するART &amp; BUSINESS AWARD 2026。主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン。">
+  <meta property="og:image" content="assets/ogp.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ART &amp; BUSINESS AWARD 2026｜企業とアーティストの共創で新たな経済価値を創出する">
+  <meta name="twitter:description" content="アート・アーティストとの共創で、新しい経済価値を生み出す企業・プロジェクトを表彰するART &amp; BUSINESS AWARD 2026。">
+  <meta name="twitter:image" content="assets/ogp.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +47,7 @@
     .cta-arrow { transition: transform 350ms cubic-bezier(0.65, 0, 0.35, 1); }
     a:hover > .cta-arrow { transform: translateX(2px); }
     .archive-arrow:hover { background: #B48CC8; color: #FFFFFF !important; }
+    .review-points-list li::marker { font-style: italic; font-size: 18px; }
     @media (min-width: 1000px) { .hero-eco-line { white-space: nowrap; } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes floatOrange {
@@ -50,7 +65,7 @@
 <div style="font-family:'Noto Sans JP',sans-serif; background:#FDF9F2; color:#1F1F21; min-height:100vh;">
 
   <!-- HEADER -->
-  <header data-screen-label="Header" style="{{ headerStyle }}">
+  <header data-screen-label="Header" ref="{{ headerRef }}" style="{{ headerStyle }}">
     <div style="{{ headerInnerStyle }}">
       <div style="{{ logoBlockStyle }}">
         <a href="#top" style="display:flex; align-items:center; gap:10px; text-decoration:none; cursor:pointer;">
@@ -122,7 +137,7 @@
   </sc-if>
 
   <!-- HERO -->
-  <section data-screen-label="Hero" id="top" style="position:relative; overflow:{{ heroOverflow }}; padding-top:72px; background:#FDF9F2; min-height:100vh; display:flex; flex-direction:column;">
+  <section data-screen-label="Hero" id="top" style="position:relative; overflow:{{ heroOverflow }}; padding-top:{{ heroSectionPaddingTop }}; background:#FDF9F2; min-height:100vh; display:flex; flex-direction:column;">
     <video ref="{{ videoRef }}" autoplay muted loop playsinline aria-hidden="true" style="display:none;">
       <source src="glow_blend_fv.mp4" type="video/mp4">
     </video>
@@ -218,6 +233,9 @@
                   <sc-if value="{{ b.common }}" hint-placeholder-val="{{ false }}">
                     <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#333333; border:1px solid #D4D5E2; border-radius:4px; padding:2px 8px;">共通</span>
                   </sc-if>
+                  <sc-if value="{{ !b.common }}" hint-placeholder-val="{{ true }}">
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#C9971F; border:1px solid #C9971F; border-radius:4px; padding:2px 8px;">受賞企業限定</span>
+                  </sc-if>
                 </div>
                 <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:160%; color:#1F1F21;">{{ b.text }}</span>
               </div>
@@ -281,8 +299,11 @@
                 <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:180%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.criteria }}</p>
               </div>
               <div style="display:flex; flex-direction:column; gap:8px; padding-top:8px;">
-                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:{{ cat.mutedColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">審査のポイント</span>
-                  <ol style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:6px; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="width:8px; height:8px; border-radius:50%; background:#E8702A; display:inline-block; flex-shrink:0;"></span>
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:{{ cat.mutedColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">審査のポイント</span>
+                  </div>
+                  <ol class="review-points-list" style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:6px; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">
                     <sc-for list="{{ cat.points }}" as="pt" hint-placeholder-count="4">
                       <li>{{ pt }}</li>
                     </sc-for>
@@ -312,8 +333,11 @@
               </div>
 
               <div style="display:flex; flex-direction:column; gap:8px; padding-top:8px;">
-                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:{{ cat.mutedColor }};">審査のポイント</span>
-                  <ol style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:6px; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }};">
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="width:8px; height:8px; border-radius:50%; background:#E8702A; display:inline-block; flex-shrink:0;"></span>
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:{{ cat.mutedColor }};">審査のポイント</span>
+                  </div>
+                  <ol class="review-points-list" style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:6px; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }};">
                     <sc-for list="{{ cat.points }}" as="pt" hint-placeholder-count="4">
                       <li>{{ pt }}</li>
                     </sc-for>
@@ -681,7 +705,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { openCategory: null, scrolled: false, openFaq: null, hoveredNewsItem: null, hoveredFaq: null, aboutVisible: false, revealed: {}, isMobile: false, mobileNavOpen: false };
+  state = { openCategory: null, scrolled: false, openFaq: null, hoveredNewsItem: null, hoveredFaq: null, aboutVisible: false, revealed: {}, isMobile: false, mobileNavOpen: false, headerHeight: 0 };
 
   checkMobile = () => {
     const w = window.innerWidth;
@@ -719,10 +743,24 @@ class Component extends DCLogic {
 
   aboutRef = React.createRef();
 
+  headerRef = React.createRef();
+
   componentDidMount() {
     window.addEventListener('scroll', this.onScroll, { passive: true });
     this.checkMobile();
     window.addEventListener('resize', this.checkMobile, { passive: true });
+    if (this.headerRef.current) {
+      if ('ResizeObserver' in window) {
+        this.headerResizeObserver = new ResizeObserver((entries) => {
+          if (this.state.scrolled) return;
+          const h = Math.round(entries[0].contentRect.height);
+          if (h !== this.state.headerHeight) this.setState({ headerHeight: h });
+        });
+        this.headerResizeObserver.observe(this.headerRef.current);
+      } else {
+        this.setState({ headerHeight: Math.round(this.headerRef.current.getBoundingClientRect().height) });
+      }
+    }
     const v = this.videoRef.current;
     if (v) {
       v.muted = true;
@@ -785,6 +823,7 @@ class Component extends DCLogic {
   componentWillUnmount() {
     window.removeEventListener('scroll', this.onScroll);
     window.removeEventListener('resize', this.checkMobile);
+    if (this.headerResizeObserver) this.headerResizeObserver.disconnect();
   }
 
   renderVals() {
@@ -795,8 +834,10 @@ class Component extends DCLogic {
     const heroOverflow = isMobile ? 'hidden' : 'visible';
     const heroTitleFontSize = isMobile ? 'clamp(24px, 8vw, 40px)' : 'clamp(28px, 3.4vw, 56px)';
     const heroTitleWhiteSpace = isMobile ? 'normal' : 'nowrap';
-    const heroEyebrowMarginTop = isMobile ? '40px' : '80px';
-    const heroEyebrowMarginBottom = isMobile ? '12px' : '16px';
+    const headerHeight = this.state.headerHeight;
+    const heroSectionPaddingTop = headerHeight ? `${headerHeight}px` : (isMobile ? '56px' : '72px');
+    const heroEyebrowMarginTop = isMobile ? '80px' : '140px';
+    const heroEyebrowMarginBottom = isMobile ? '24px' : '32px';
     const benefitFadeStyle = { position: 'absolute', left: 0, right: 0, top: 0, height: isMobile ? '0px' : '120px', background: 'linear-gradient(to bottom, #FDF9F2 0%, rgba(253,249,242,0) 100%)', pointerEvents: 'none', zIndex: 1 };
     const archiveBoxStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: isMobile ? 'nowrap' : 'wrap', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)' };
     const archiveInnerStyle = { display: 'flex', alignItems: 'center', gap: '16px', flexWrap: isMobile ? 'nowrap' : 'wrap', minWidth: 0, overflow: isMobile ? 'hidden' : 'visible' };
@@ -1001,7 +1042,7 @@ class Component extends DCLogic {
     ].map(b => ({ ...b, noColor: b.common ? '#333333' : '#C9971F' }));
 
     const finalistBenefits = [
-      { no: '01', text: 'アワード受賞イベントにてプレゼンテーションの実施（任意）', common: true },
+      { no: '01', text: 'アワード受賞イベントへの参加（任意）', common: true },
       { no: '02', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true },
       { no: '03', text: '経済産業省の報告書とサイトへ掲載', common: true }
     ];
@@ -1126,7 +1167,7 @@ class Component extends DCLogic {
       { name: '福武 英明', title: 'ベネッセホールディングス取締役／公益財団法人福武財団理事長', photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, benefitGroupColumns, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), aboutRef: this.aboutRef, aboutStyle, revealRefs: this.revealRefs, revealStyles, winnerBenefits, finalistBenefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroEyebrowMarginTop, heroEyebrowMarginBottom, heroOverflow, benefitFadeStyle, archiveBoxStyle, archiveInnerStyle, archiveDividerStyle, archiveDescStyle, advisoryNoteRowStyle, aboutSectionDisplay, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, aboutBodyFontWeight, aboutQuoteFontSize, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, benefitGroupColumns, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), aboutRef: this.aboutRef, aboutStyle, revealRefs: this.revealRefs, revealStyles, winnerBenefits, finalistBenefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroEyebrowMarginTop, heroEyebrowMarginBottom, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveBoxStyle, archiveInnerStyle, archiveDividerStyle, archiveDescStyle, advisoryNoteRowStyle, aboutSectionDisplay, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, aboutBodyFontWeight, aboutQuoteFontSize, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
