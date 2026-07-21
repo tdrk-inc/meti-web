@@ -152,7 +152,7 @@
   </section>
 
   <!-- ABOUT -->
-  <section data-screen-label="About" id="about" ref="{{ aboutRef }}" style="max-width:1440px; margin:0 auto; padding:clamp(48px, 9vw, 96px) clamp(24px, 6vw, 96px) 0; position:relative; overflow:hidden; display:{{ aboutSectionDisplay }};">
+  <section data-screen-label="About" id="about" ref="{{ aboutRef }}" style="max-width:1440px; margin:0 auto; padding:clamp(64px, 11vw, 128px) clamp(24px, 6vw, 96px); position:relative; overflow:hidden; display:{{ aboutSectionDisplay }};">
     <div style="{{ aboutStyle }}">
       <div style="display:flex; flex-direction:column; gap:8px;">
         <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:clamp(36px, 5vw, 64px); line-height:110%; letter-spacing:-0.5px; color:#1F1F21;">ABOUT</span>
@@ -647,7 +647,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer data-screen-label="Footer" style="margin-top:clamp(48px, 9vw, 96px); background:#FDF9F2;">
+  <footer data-screen-label="Footer" style="margin-top:100px; background:#FDF9F2;">
     <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
     <div style="max-width:1440px; margin:0 auto; padding:64px clamp(24px, 6vw, 96px) 40px; display:flex; flex-direction:column; gap:48px;">
       <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap;">
@@ -831,7 +831,7 @@ class Component extends DCLogic {
       transform: 'translateY(0)',
       transition: 'opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)'
     };
-    const SECTION_GAP = 'clamp(48px, 9vw, 96px)';
+    const SECTION_GAP = '100px';
     const revealBase = {
       benefit: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       category: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
