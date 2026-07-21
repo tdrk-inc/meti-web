@@ -243,7 +243,7 @@
               </div>
               <div style="display:flex; flex-direction:column; gap:4px;">
                 <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:{{ cat.mutedColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">審査基準</span>
-                <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:180%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.criteria }}</p>
+                <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:18px; line-height:180%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.criteria }}</p>
               </div>
               <div style="display:flex; flex-direction:column; gap:8px; padding-top:8px;">
                   <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:{{ cat.mutedColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">審査のポイント</span>
@@ -254,7 +254,7 @@
                           <span style="width:8px; height:8px; border-radius:50%; background:#E8702A; flex:0 0 auto;"></span>
                           <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:14px; letter-spacing:0.5px; color:#E8702A;">{{ pt.no }}</span>
                         </div>
-                        <p style="margin:0; padding-left:16px; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ pt.text }}</p>
+                        <p style="margin:0; padding-left:16px; text-align:left; font-family:'Noto Sans JP',sans-serif; font-size:18px; line-height:170%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ pt.text }}</p>
                       </div>
                     </sc-for>
                   </div>
@@ -281,7 +281,7 @@
             <div style="display:flex; flex-direction:column; gap:16px; margin-top:20px;">
               <div style="display:flex; flex-direction:column; gap:4px;">
                 <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:{{ cat.mutedColor }};">審査基準</span>
-                <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:180%; color:{{ cat.textColor }};">{{ cat.criteria }}</p>
+                <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:18px; line-height:180%; color:{{ cat.textColor }};">{{ cat.criteria }}</p>
               </div>
 
               <div style="display:flex; flex-direction:column; gap:8px; padding-top:8px;">
@@ -293,7 +293,7 @@
                           <span style="width:8px; height:8px; border-radius:50%; background:#E8702A; flex:0 0 auto;"></span>
                           <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:14px; letter-spacing:0.5px; color:#E8702A;">{{ pt.no }}</span>
                         </div>
-                        <p style="margin:0; padding-left:16px; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }};">{{ pt.text }}</p>
+                        <p style="margin:0; padding-left:16px; text-align:left; font-family:'Noto Sans JP',sans-serif; font-size:18px; line-height:170%; color:{{ cat.textColor }};">{{ pt.text }}</p>
                       </div>
                     </sc-for>
                   </div>
@@ -1056,7 +1056,7 @@ class Component extends DCLogic {
           flex: '1 1 220px',
           display: 'flex',
           flexDirection: 'column',
-          gap: '24px',
+          gap: '32px',
           minWidth: 0,
           width: isMobile ? '100%' : 'auto'
         },
