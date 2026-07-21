@@ -48,6 +48,7 @@
     a:hover > .cta-arrow { transform: translateX(2px); }
     .archive-arrow:hover { background: #B48CC8; color: #FFFFFF !important; }
     .archive-card:hover { background: rgba(180,140,200,0.16) !important; }
+    .footer-card:hover { border-color: #E8702A !important; background: #FDF9F2 !important; }
     @media (min-width: 1000px) { .hero-eco-line { white-space: nowrap; } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes floatOrange {
@@ -84,7 +85,7 @@
           <a href="#apply" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">エントリー方法</a>
           <a href="" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">過去のアワード</a>
           <a href="#faq" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">FAQ</a>
-          <a href="mailto:info@art-business-award.jp" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">お問い合わせ</a>
+          <a href="#footer" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">お問い合わせ</a>
         </nav>
         <a href="https://form.run/@aba2026-pre-entry" target="_blank" rel="noopener noreferrer" class="cta-dark" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; flex:0 0 auto; position:absolute; top:50%; right:clamp(24px, 4vw, 48px); transform:translateY(-50%); transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
       </sc-if>
@@ -99,7 +100,7 @@
           <a href="#apply" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">エントリー方法</a>
           <a href="" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">過去のアワード</a>
           <a href="#faq" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">FAQ</a>
-          <a href="mailto:info@art-business-award.jp" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">お問い合わせ</a>
+          <a href="#footer" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">お問い合わせ</a>
         </nav>
       </sc-if>
       <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
@@ -127,7 +128,7 @@
         <a href="#apply" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">エントリー方法</a>
         <a href="" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">過去のアワード</a>
         <a href="#faq" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">FAQ</a>
-        <a href="mailto:info@art-business-award.jp" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">お問い合わせ</a>
+        <a href="#footer" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">お問い合わせ</a>
       </nav>
     </div>
   </sc-if>
@@ -141,8 +142,8 @@
     <video ref="{{ videoRef }}" autoplay muted loop playsinline aria-hidden="true" style="display:none;">
       <source src="glow_blend_fv.mp4" type="video/mp4">
     </video>
-    <div aria-hidden="true" style="position:absolute; left:-8%; bottom:-55%; width:85vmax; height:85vmax; border-radius:50%; background:radial-gradient(circle, rgba(232,112,42,0.7) 0%, rgba(232,112,42,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatOrange 13s ease-in-out infinite; z-index:0; pointer-events:none;"></div>
-    <div aria-hidden="true" style="position:absolute; right:-10%; top:-15%; width:70vmax; height:70vmax; border-radius:50%; background:radial-gradient(circle, rgba(180,140,200,0.7) 0%, rgba(180,140,200,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatPurple 15s ease-in-out infinite; z-index:0; pointer-events:none;"></div>
+    <div aria-hidden="true" style="position:absolute; left:-8%; bottom:-55%; width:66vmax; height:66vmax; border-radius:50%; background:radial-gradient(circle, rgba(232,112,42,0.7) 0%, rgba(232,112,42,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatOrange 13s ease-in-out infinite; z-index:0; pointer-events:none;"></div>
+    <div aria-hidden="true" style="position:absolute; right:-10%; top:-15%; width:54vmax; height:54vmax; border-radius:50%; background:radial-gradient(circle, rgba(180,140,200,0.7) 0%, rgba(180,140,200,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatPurple 15s ease-in-out infinite; z-index:0; pointer-events:none;"></div>
     <div aria-hidden="true" style="position:absolute; inset:0; opacity:0.05; mix-blend-mode:overlay; pointer-events:none; z-index:0; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' base-frequency='0.9' num-octaves='3' stitch-tiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
     <div style="position:relative; z-index:1; max-width:1440px; margin:0 auto; width:100%; padding:clamp(32px, 5vw, 56px) clamp(24px, 6vw, 96px) 0;">
       <div style="position:relative; max-width:100%; overflow:hidden; margin-top:{{ heroTitleMarginTop }};">
@@ -192,33 +193,33 @@
 
   <!-- BENEFIT -->
   <section data-screen-label="Benefit" id="benefit" ref="{{ revealRefs.benefit }}" style="{{ revealStyles.benefit }}">
-    <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; position:relative; margin-bottom:48px;">
-      <div style="display:flex; flex-direction:column; gap:12px;">
+    <div style="{{ benefitLayoutStyle }}">
+      <div style="{{ benefitStickyStyle }}">
         <div style="display:flex; align-items:center; gap:8px;">
           <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
           <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">BENEFIT</span>
         </div>
         <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">アワード特典</span>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; color:#333333;">受賞企業様とファイナリスト企業様（最終選考に残られた企業）への特典です。</p>
       </div>
-      <p style="margin:0; max-width:440px; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; color:#333333;">受賞企業様とファイナリスト企業様（最終選考に残られた企業）への特典です。</p>
-    </div>
-    <div style="display:grid; grid-template-columns:1fr; gap:0;">
-      <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
-        <div style="border-top:1px solid #E8D9B8; padding:24px 0; display:flex; align-items:center; gap:20px;">
-          <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
-            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-              <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; color:#1F1F21;">{{ b.no }}</span>
-              <sc-for list="{{ b.tags }}" as="tag" hint-placeholder-count="2">
-                <span style="{{ tag.style }}">{{ tag.label }}</span>
-              </sc-for>
+      <div style="display:grid; grid-template-columns:1fr; gap:0;">
+        <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
+          <div style="border-top:1px solid #E8D9B8; padding:24px 0; display:flex; align-items:center; gap:20px;">
+            <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+              <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; color:#1F1F21;">{{ b.no }}</span>
+                <sc-for list="{{ b.tags }}" as="tag" hint-placeholder-count="2">
+                  <span style="{{ tag.style }}">{{ tag.label }}</span>
+                </sc-for>
+              </div>
+              <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:160%; color:#1F1F21;">{{ b.text }}</span>
+              <sc-if value="{{ b.note }}" hint-placeholder-val="{{ '' }}">
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:160%; color:#999999;">※{{ b.note }}</span>
+              </sc-if>
             </div>
-            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:160%; color:#1F1F21;">{{ b.text }}</span>
-            <sc-if value="{{ b.note }}" hint-placeholder-val="{{ '' }}">
-              <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:160%; color:#999999;">※{{ b.note }}</span>
-            </sc-if>
           </div>
-        </div>
-      </sc-for>
+        </sc-for>
+      </div>
     </div>
   </section>
 
@@ -329,12 +330,14 @@
     <div style="display:grid; grid-template-columns:{{ advisoryGridColumns }}; gap:32px 24px; position:relative;">
       <sc-for list="{{ advisoryBoard }}" as="person" hint-placeholder-count="7">
         <div style="display:flex; flex-direction:column; gap:12px;">
-          <div style="width:140px; height:140px; border-radius:8px; overflow:hidden; border:1px solid #D4D5E2;">
+          <div style="width:160px; height:160px; border-radius:8px; overflow:hidden; border:1px solid #D4D5E2;">
             <img src="{{ person.photo }}" alt="{{ person.name }}" style="width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.75) contrast(0.95) brightness(1.02);">
           </div>
           <div style="display:flex; flex-direction:column; gap:4px;">
             <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21;">{{ person.name }}</span>
-            <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; line-height:150%; color:#333333;">{{ person.title }}</span>
+            <sc-for list="{{ person.titleLines }}" as="tl" hint-placeholder-count="2">
+              <span style="display:block; font-family:'Noto Sans JP',sans-serif; font-size:14px; line-height:150%; color:#333333;">{{ tl }}</span>
+            </sc-for>
           </div>
         </div>
       </sc-for>
@@ -496,7 +499,7 @@
   </section>
 
   <!-- ARCHIVE -->
-  <section data-screen-label="Archive" style="max-width:1440px; margin:0 auto; padding:clamp(48px, 9vw, 96px) clamp(24px, 6vw, 96px) 0;">
+  <section data-screen-label="Archive" ref="{{ revealRefs.archive }}" style="{{ revealStyles.archive }}">
     <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:48px;">
       <div style="display:flex; align-items:center; gap:8px;">
         <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
@@ -617,10 +620,10 @@
   </section>
 
   <!-- FOOTER -->
-  <footer data-screen-label="Footer" style="margin-top:100px; background:#FDF9F2;">
+  <footer data-screen-label="Footer" id="footer" style="margin-top:100px; background:#FDF9F2; scroll-margin-top:100px;">
     <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
     <div style="max-width:1440px; margin:0 auto; padding:64px clamp(24px, 6vw, 96px) 40px; display:flex; flex-direction:column; gap:48px;">
-      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap;">
+      <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:32px; flex-wrap:wrap;">
         <div style="display:flex; flex-direction:column; gap:6px;">
           <a href="#top" style="display:flex; align-items:center; gap:10px; text-decoration:none; cursor:pointer;">
             <img src="assets/motif.png" alt="" style="width:18px; height:auto; display:block;">
@@ -628,7 +631,19 @@
           </a>
           <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#333333;">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン</span>
         </div>
-        <a href="mailto:info@art-business-award.jp" class="cta-dark" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">お問い合わせはこちら <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="#" class="footer-card" style="{{ footerCardStyle }}">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+              <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#1F1F21;">PLAYERS FILE</span>
+              <span aria-hidden="true" class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#B48CC8; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; font-size:13px; flex:0 0 auto;">→</span>
+            </div>
+            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:150%; color:#333333;">企業とアートのプレイヤーをつなぐデータベース</span>
+          </a>
+          <div class="footer-card" style="{{ footerCardStyle }}">
+            <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#1F1F21;">CONTACT</span>
+            <a href="mailto:info@art-business-award.jp" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; color:#E8702A;">info@art-business-award.jp</a>
+          </div>
+        </div>
       </div>
       <div style="border-top:1px solid #E4E1DB; padding-top:24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
         <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
@@ -650,7 +665,19 @@
         </a>
         <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#333333;">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン</span>
       </div>
-      <a href="mailto:info@art-business-award.jp" class="cta-dark" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">お問い合わせはこちら <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+      <div style="display:flex; flex-direction:column; gap:16px; width:100%;">
+        <a href="#" class="footer-card" style="{{ footerCardStyle }}">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+            <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#1F1F21;">PLAYERS FILE</span>
+            <span aria-hidden="true" class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#B48CC8; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; font-size:13px; flex:0 0 auto;">→</span>
+          </div>
+          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:150%; color:#333333;">企業とアートのプレイヤーをつなぐデータベース</span>
+        </a>
+        <div class="footer-card" style="{{ footerCardStyle }}">
+          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#1F1F21;">CONTACT</span>
+          <a href="mailto:info@art-business-award.jp" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; color:#E8702A;">info@art-business-award.jp</a>
+        </div>
+      </div>
       <div style="border-top:1px solid #E4E1DB; padding-top:24px; display:flex; flex-direction:column; align-items:center; gap:16px; width:100%;">
         <a href="terms.html" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">利用規約</a>
         <a href="https://www.meti.go.jp/intro/privacypolicy/index.html" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">プライバシーポリシー（経済産業省）</a>
@@ -755,7 +782,7 @@ class Component extends DCLogic {
       }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' })
     : null;
 
-  revealKeys = ['benefit', 'category', 'midcta', 'advisory', 'schedule', 'requirements', 'apply', 'information', 'faq', 'contact', 'ctaband'];
+  revealKeys = ['benefit', 'category', 'midcta', 'advisory', 'schedule', 'requirements', 'apply', 'archive', 'information', 'faq', 'contact', 'ctaband'];
 
   makeAttachReveal(key) {
     return (el) => {
@@ -790,13 +817,25 @@ class Component extends DCLogic {
     const heroSectionPaddingTop = headerHeight ? `${headerHeight}px` : (isMobile ? '56px' : '72px');
     const heroTitleMarginTop = isMobile ? '36px' : '100px';
     const benefitFadeStyle = { position: 'absolute', left: 0, right: 0, top: 0, height: isMobile ? '0px' : '120px', background: 'linear-gradient(to bottom, #FDF9F2 0%, rgba(253,249,242,0) 100%)', pointerEvents: 'none', zIndex: -1 };
-    const archiveListStyle = { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '16px' : '24px' };
+    const archiveListStyle = { display: 'grid', gridTemplateColumns: '1fr', gap: isMobile ? '16px' : '24px' };
     const archiveBoxStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: isMobile ? 'nowrap' : 'wrap', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)', transition: 'background 350ms cubic-bezier(0.65, 0, 0.35, 1)' };
     const archiveInnerStyle = { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', flexWrap: isMobile ? 'nowrap' : 'wrap', minWidth: 0, overflow: isMobile ? 'hidden' : 'visible' };
     const archiveDescStyle = { fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 500, fontSize: '13px', color: '#1F1F21', whiteSpace: isMobile ? 'nowrap' : 'normal', overflow: isMobile ? 'hidden' : 'visible', textOverflow: isMobile ? 'ellipsis' : 'clip', minWidth: 0 };
     const advisoryNoteRowStyle = { display: 'flex', alignItems: isMobile ? 'flex-start' : 'baseline', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '4px' : '12px' };
     const sectionTitleFontSize = isMobile ? '28px' : '36px';
     const benefitGridColumns = isMobile ? 'repeat(auto-fit, minmax(260px, 1fr))' : '1fr 1fr';
+    const benefitLayoutStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: '32px' }
+      : { display: 'grid', gridTemplateColumns: 'minmax(260px, 360px) 1fr', gap: '64px', alignItems: 'start' };
+    const benefitStickyStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: '12px' }
+      : { display: 'flex', flexDirection: 'column', gap: '12px', position: 'sticky', top: `${(headerHeight || 90) + 40}px` };
+    const footerCardStyle = {
+      display: 'flex', flexDirection: 'column', gap: '8px', padding: '20px 24px',
+      width: isMobile ? '100%' : 'auto', minWidth: isMobile ? '0' : '240px',
+      borderRadius: '8px', border: '1px solid #E4E1DB', background: '#FFFFFF', textDecoration: 'none',
+      transition: 'border-color 350ms cubic-bezier(0.65, 0, 0.35, 1), background 350ms cubic-bezier(0.65, 0, 0.35, 1)'
+    };
     const advisoryGridColumns = isMobile ? 'repeat(auto-fit, minmax(140px, 1fr))' : 'repeat(4, 1fr)';
     const SECTION_GAP = '100px';
     const revealBase = {
@@ -807,6 +846,7 @@ class Component extends DCLogic {
       schedule: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: isMobile ? 'hidden' : 'visible' },
       requirements: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       apply: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
+      archive: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       information: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       faq: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       contact: { maxWidth: '1440px', margin: '0 auto', padding: `0 clamp(24px, 6vw, 96px) ${SECTION_GAP}` },
@@ -925,16 +965,19 @@ class Component extends DCLogic {
       { label: 'プロジェクトの実施期間', text: '事業の期間は問いません。成果については、どの期間の数値か分かりやすく明記してください。継続中のプロジェクトであれば、それも明記してください。' },
       { label: '応募費用', text: 'プレエントリー・エントリーシート提出とも無料です。' },
       { label: '過去の応募・受賞歴', text: '2025年（第1回）にエントリー・受賞された企業・プロジェクトも再度ご応募いただけます。昨年度からの変化した点をエントリーシート内に分かりやすく明記してください。' }
-    ].map(r => ({
-      ...r,
-      rowStyle: isMobile
-        ? { display: 'flex', flexDirection: 'column', gap: '12px', padding: '24px 0', borderBottom: '1px solid #D4D5E2' }
-        : { display: 'flex', alignItems: 'flex-start', gap: '32px', padding: '32px 0', borderBottom: '1px solid #D4D5E2' },
-      labelStyle: {
-        fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 700, fontSize: '16px', color: '#1F1F21',
-        flex: isMobile ? '0 0 auto' : '0 0 200px'
-      }
-    }));
+    ].map((r, i, arr) => {
+      const borderBottom = i === arr.length - 1 ? 'none' : '1px solid #D4D5E2';
+      return {
+        ...r,
+        rowStyle: isMobile
+          ? { display: 'flex', flexDirection: 'column', gap: '12px', padding: '24px 0', borderBottom }
+          : { display: 'flex', alignItems: 'flex-start', gap: '32px', padding: '32px 0', borderBottom },
+        labelStyle: {
+          fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 700, fontSize: '16px', color: '#1F1F21',
+          flex: isMobile ? '0 0 auto' : '0 0 200px'
+        }
+      };
+    });
     const categories = rawCategories.map((c, i) => {
       const isOpen = this.state.openCategory === i;
       return {
@@ -1032,8 +1075,7 @@ class Component extends DCLogic {
     });
 
     const archiveItems = [
-      { label: '2025 Honorees', description: '2025年（第1回）受賞企業・プロジェクト一覧を見る', url: '#' },
-      { label: 'PLAYERS FILE', description: '企業とアートのプレイヤーをつなぐデータベースはこちらから', url: '#' }
+      { label: '2025 Honorees', description: '2025年（第1回）受賞企業・プロジェクト一覧を見る', url: '#' }
     ];
 
     const rawInformationItems = [
@@ -1105,16 +1147,16 @@ class Component extends DCLogic {
     const entrySheetDaysLeft = (scheduleItems.find(s => s.label === 'エントリーシート提出締切') || {}).daysLeft;
 
     const advisoryBoard = [
-      { name: '大林 剛郎', title: '大林組取締役会長／公益財団法人大林財団理事長', photo: 'assets/advisory-01.png' },
-      { name: '片岡 真実', title: '森美術館館長', photo: 'assets/advisory-02.png' },
-      { name: '塩見 有子', title: 'NPO法人アーツコミュニケーション代表', photo: 'assets/advisory-03.png' },
-      { name: '寺瀬 由紀', title: 'アート・インテリジェンス・グローバル Founding Partner', photo: 'assets/advisory-04.png' },
-      { name: '永田 暁彦', title: 'ユーグレナ代表取締役社長CEO', photo: 'assets/advisory-05.png' },
-      { name: '日比野 克彦', title: '東京藝術大学長', photo: 'assets/advisory-06.png' },
-      { name: '福武 英明', title: 'ベネッセホールディングス取締役／公益財団法人福武財団理事長', photo: 'assets/advisory-07.png' }
+      { name: '大林 剛郎', titleLines: ['大林組取締役会長', '公益財団法人大林財団理事長'], photo: 'assets/advisory-01.png' },
+      { name: '片岡 真実', titleLines: ['森美術館館長'], photo: 'assets/advisory-02.png' },
+      { name: '塩見 有子', titleLines: ['NPO法人アーツコミュニケーション代表'], photo: 'assets/advisory-03.png' },
+      { name: '寺瀬 由紀', titleLines: ['アート・インテリジェンス・グローバル Founding Partner'], photo: 'assets/advisory-04.png' },
+      { name: '永田 暁彦', titleLines: ['ユーグレナ代表取締役社長CEO'], photo: 'assets/advisory-05.png' },
+      { name: '日比野 克彦', titleLines: ['東京藝術大学長'], photo: 'assets/advisory-06.png' },
+      { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役', '公益財団法人福武財団理事長'], photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveInnerStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveInnerStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, benefitLayoutStyle, benefitStickyStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
