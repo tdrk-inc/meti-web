@@ -596,7 +596,7 @@
 
   <!-- CTA BAND -->
   <section data-screen-label="CTA Band" ref="{{ revealRefs.ctaband }}" style="{{ revealStyles.ctaband }}">
-    <div style="border-radius:4px; padding:clamp(48px, 9vw, 96px) clamp(32px, 7vw, 96px); position:relative; overflow:hidden; background:linear-gradient(135deg, #F3944F 0%, #E8702A 55%, #CD5A18 100%);">
+    <div style="max-width:1440px; margin:0 auto; padding:clamp(48px, 9vw, 96px) clamp(32px, 7vw, 96px); position:relative; overflow:hidden;">
       <div style="position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px;">
         <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:28px; letter-spacing:1px; color:#FFFFFF;">ENTRY NOW</span>
         <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#FFFFFF;">プレエントリー締切まで<sc-if value="{{ preEntryDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}"><span style="color:#1F1F21; font-weight:700;">あと{{ preEntryDaysLeft }}日</span></sc-if>。気になる方はまずはお気軽にエントリーください。</p>
@@ -633,39 +633,39 @@
   </section>
 
   <!-- FOOTER -->
-  <footer data-screen-label="Footer" id="footer" style="margin-top:100px; background:#FDF9F2; scroll-margin-top:100px;">
+  <footer data-screen-label="Footer" id="footer" style="margin-top:100px; background:#1A1A1A; scroll-margin-top:100px;">
     <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
     <div style="max-width:1440px; margin:0 auto; padding:64px clamp(24px, 6vw, 96px) 40px; display:flex; flex-direction:column; gap:48px;">
       <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:32px; flex-wrap:wrap;">
         <div style="display:flex; flex-direction:column; gap:6px;">
           <a href="#top" style="display:flex; align-items:center; gap:10px; text-decoration:none; cursor:pointer;">
             <img src="assets/motif.png" alt="" style="width:18px; height:auto; display:block;">
-            <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:0.5px; color:#1F1F21;">ART &amp; BUSINESS AWARD 2026</span>
+            <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:0.5px; color:#FFFFFF;">ART &amp; BUSINESS AWARD 2026</span>
           </a>
-          <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#333333;">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン</span>
+          <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#C9C9C9;">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン</span>
         </div>
         <div style="display:flex; gap:16px; flex-wrap:wrap;">
           <a href="#" class="footer-card" style="{{ footerCardStyle }}">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
-              <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#1F1F21;">PLAYERS FILE</span>
+              <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#FFFFFF;">PLAYERS FILE</span>
               <span aria-hidden="true" class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#E8702A; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; font-size:13px; flex:0 0 auto;">→</span>
             </div>
             <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:150%; color:#999999;">企業とアートのプレイヤーをつなぐデータベース</span>
           </a>
           <div style="{{ footerCardStyle }}">
-            <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#1F1F21;">CONTACT</span>
+            <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#FFFFFF;">CONTACT</span>
             <a href="mailto:info@art-business-award.jp" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; color:#999999;">info@art-business-award.jp</a>
           </div>
         </div>
       </div>
-      <div style="border-top:1px solid #E4E1DB; padding-top:24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+      <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
         <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
-          <a href="terms.html" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">利用規約</a>
-          <a href="https://www.meti.go.jp/intro/privacypolicy/index.html" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">プライバシーポリシー（経済産業省）</a>
-          <a href="https://cvj.or.jp/privacy/" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">プライバシーポリシー（運営事務局：Culture Vision Japan）</a>
-          <a href="anti-social-forces.html" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">反社会的勢力の排除に関する基本方針</a>
+          <a href="terms.html" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#C9C9C9;">利用規約</a>
+          <a href="https://www.meti.go.jp/intro/privacypolicy/index.html" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#C9C9C9;">プライバシーポリシー（経済産業省）</a>
+          <a href="https://cvj.or.jp/privacy/" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#C9C9C9;">プライバシーポリシー（運営事務局：Culture Vision Japan）</a>
+          <a href="anti-social-forces.html" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#C9C9C9;">反社会的勢力の排除に関する基本方針</a>
         </div>
-        <span style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:#333333;">© 2026 Art &amp; Business Award. All rights reserved.</span>
+        <span style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:#C9C9C9;">© 2026 Art &amp; Business Award. All rights reserved.</span>
       </div>
     </div>
     </sc-if>
@@ -674,29 +674,29 @@
       <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
         <a href="#top" style="display:flex; align-items:center; gap:10px; text-decoration:none; cursor:pointer;">
           <img src="assets/motif.png" alt="" style="width:18px; height:auto; display:block;">
-          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:0.5px; color:#1F1F21;">ART &amp; BUSINESS AWARD 2026</span>
+          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:0.5px; color:#FFFFFF;">ART &amp; BUSINESS AWARD 2026</span>
         </a>
-        <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#333333;">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン</span>
+        <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#C9C9C9;">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン</span>
       </div>
       <div style="display:flex; flex-direction:column; gap:16px; width:100%;">
         <a href="#" class="footer-card" style="{{ footerCardStyle }}">
           <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
-            <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#1F1F21;">PLAYERS FILE</span>
+            <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#FFFFFF;">PLAYERS FILE</span>
             <span aria-hidden="true" class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#E8702A; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; font-size:13px; flex:0 0 auto;">→</span>
           </div>
           <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:150%; color:#999999;">企業とアートのプレイヤーをつなぐデータベース</span>
         </a>
         <div style="{{ footerCardStyle }}">
-          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#1F1F21;">CONTACT</span>
+          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#FFFFFF;">CONTACT</span>
           <a href="mailto:info@art-business-award.jp" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; color:#999999;">info@art-business-award.jp</a>
         </div>
       </div>
-      <div style="border-top:1px solid #E4E1DB; padding-top:24px; display:flex; flex-direction:column; align-items:center; gap:16px; width:100%;">
-        <a href="terms.html" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">利用規約</a>
-        <a href="https://www.meti.go.jp/intro/privacypolicy/index.html" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">プライバシーポリシー（経済産業省）</a>
-        <a href="https://cvj.or.jp/privacy/" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">プライバシーポリシー（運営事務局：Culture Vision Japan）</a>
-        <a href="anti-social-forces.html" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#333333;">反社会的勢力の排除に関する基本方針</a>
-        <span style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:#333333;">© 2026 Art &amp; Business Award. All rights reserved.</span>
+      <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:24px; display:flex; flex-direction:column; align-items:center; gap:16px; width:100%;">
+        <a href="terms.html" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#C9C9C9;">利用規約</a>
+        <a href="https://www.meti.go.jp/intro/privacypolicy/index.html" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#C9C9C9;">プライバシーポリシー（経済産業省）</a>
+        <a href="https://cvj.or.jp/privacy/" target="_blank" rel="noopener noreferrer" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#C9C9C9;">プライバシーポリシー（運営事務局：Culture Vision Japan）</a>
+        <a href="anti-social-forces.html" style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; color:#C9C9C9;">反社会的勢力の排除に関する基本方針</a>
+        <span style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:#C9C9C9;">© 2026 Art &amp; Business Award. All rights reserved.</span>
       </div>
     </div>
     </sc-if>
@@ -881,7 +881,7 @@ class Component extends DCLogic {
       information: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       faq: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       contact: { maxWidth: '1440px', margin: '0 auto', padding: `0 clamp(24px, 6vw, 96px) ${SECTION_GAP}` },
-      ctaband: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative' }
+      ctaband: { padding: `${SECTION_GAP} 0 0`, position: 'relative', background: '#E8702A' }
     };
     const revealStyles = {};
     this.revealKeys.forEach(key => {
