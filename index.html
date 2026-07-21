@@ -502,13 +502,6 @@
 
   <!-- ARCHIVE -->
   <section data-screen-label="Archive" ref="{{ revealRefs.archive }}" style="{{ revealStyles.archive }}">
-    <div style="{{ archiveHeaderStyle }}">
-    <div style="{{ archiveTitleBlockStyle }}">
-      <div style="display:flex; align-items:center; gap:8px;">
-        <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
-        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">ARCHIVE</span>
-      </div>
-    </div>
     <div style="{{ archiveListStyle }}">
       <sc-for list="{{ archiveItems }}" as="item" hint-placeholder-count="2">
         <a href="{{ item.url }}" aria-label="{{ item.description }}" class="archive-card" style="{{ archiveBoxStyle }}">
@@ -517,6 +510,7 @@
             <div style="display:flex; align-items:center; gap:8px; flex:0 0 auto;">
               <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:1.5px; color:#1F1F21;">{{ item.label }}</span>
             </div>
+            <span style="{{ archiveDividerStyle }}"></span>
             <span style="{{ archiveDescStyle }}">{{ item.description }}</span>
           </div>
           <span aria-hidden="true" class="archive-arrow" style="width:36px; height:36px; border-radius:50%; background:transparent; color:#B48CC8; display:inline-flex; align-items:center; justify-content:center; font-size:16px; flex:0 0 auto; transition:background 500ms cubic-bezier(0.65, 0, 0.35, 1), color 500ms cubic-bezier(0.65, 0, 0.35, 1);">→</span>
@@ -532,7 +526,6 @@
           </sc-if>
         </a>
       </sc-for>
-    </div>
     </div>
   </section>
 
@@ -662,11 +655,11 @@
               <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#1F1F21;">PLAYERS FILE</span>
               <span aria-hidden="true" class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#E8702A; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; font-size:13px; flex:0 0 auto;">→</span>
             </div>
-            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:150%; color:#333333;">企業とアートのプレイヤーをつなぐデータベース</span>
+            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:150%; color:#999999;">企業とアートのプレイヤーをつなぐデータベース</span>
           </a>
           <div style="{{ footerCardStyle }}">
             <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#1F1F21;">CONTACT</span>
-            <a href="mailto:info@art-business-award.jp" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; color:#333333;">info@art-business-award.jp</a>
+            <a href="mailto:info@art-business-award.jp" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; color:#999999;">info@art-business-award.jp</a>
           </div>
         </div>
       </div>
@@ -696,11 +689,11 @@
             <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#1F1F21;">PLAYERS FILE</span>
             <span aria-hidden="true" class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#E8702A; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; font-size:13px; flex:0 0 auto;">→</span>
           </div>
-          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:150%; color:#333333;">企業とアートのプレイヤーをつなぐデータベース</span>
+          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:150%; color:#999999;">企業とアートのプレイヤーをつなぐデータベース</span>
         </a>
         <div style="{{ footerCardStyle }}">
           <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#1F1F21;">CONTACT</span>
-          <a href="mailto:info@art-business-award.jp" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; color:#333333;">info@art-business-award.jp</a>
+          <a href="mailto:info@art-business-award.jp" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; color:#999999;">info@art-business-award.jp</a>
         </div>
       </div>
       <div style="border-top:1px solid #E4E1DB; padding-top:24px; display:flex; flex-direction:column; align-items:center; gap:16px; width:100%;">
@@ -842,17 +835,10 @@ class Component extends DCLogic {
     const heroSectionPaddingTop = headerHeight ? `${headerHeight}px` : (isMobile ? '56px' : '72px');
     const heroTitleMarginTop = isMobile ? '36px' : '100px';
     const benefitFadeStyle = { position: 'absolute', left: 0, right: 0, top: 0, height: isMobile ? '0px' : '120px', background: 'linear-gradient(to bottom, #FDF9F2 0%, rgba(253,249,242,0) 100%)', pointerEvents: 'none', zIndex: -1 };
-    const archiveHeaderStyle = isMobile
-      ? { display: 'flex', flexDirection: 'column', gap: '24px' }
-      : { display: 'flex', alignItems: 'flex-start', gap: '40px' };
-    const archiveTitleBlockStyle = isMobile
-      ? { display: 'flex', flexDirection: 'column', gap: '12px', position: 'relative' }
-      : { display: 'flex', flexDirection: 'column', gap: '12px', position: 'relative', flex: '0 0 25%', minWidth: 0 };
-    const archiveListStyle = isMobile
-      ? { display: 'grid', gridTemplateColumns: '1fr', gap: '16px' }
-      : { display: 'grid', gridTemplateColumns: '1fr', gap: '24px', flex: '0 0 75%', minWidth: 0 };
+    const archiveListStyle = { display: 'grid', gridTemplateColumns: '1fr', gap: isMobile ? '16px' : '24px' };
     const archiveBoxStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: isMobile ? 'nowrap' : 'wrap', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)', transition: 'background 350ms cubic-bezier(0.65, 0, 0.35, 1)' };
-    const archiveInnerStyle = { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', flexWrap: isMobile ? 'nowrap' : 'wrap', minWidth: 0, overflow: isMobile ? 'hidden' : 'visible' };
+    const archiveInnerStyle = { display: 'flex', alignItems: 'center', gap: '16px', flexWrap: isMobile ? 'nowrap' : 'wrap', minWidth: 0, overflow: isMobile ? 'hidden' : 'visible' };
+    const archiveDividerStyle = { display: isMobile ? 'none' : 'block', width: '1px', height: '16px', background: '#D4D5E2', flex: '0 0 auto' };
     const archiveDescStyle = { fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 500, fontSize: '13px', color: '#1F1F21', whiteSpace: isMobile ? 'nowrap' : 'normal', overflow: isMobile ? 'hidden' : 'visible', textOverflow: isMobile ? 'ellipsis' : 'clip', minWidth: 0 };
     const advisoryNoteRowStyle = { display: 'flex', alignItems: isMobile ? 'flex-start' : 'baseline', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '4px' : '12px' };
     const sectionTitleFontSize = isMobile ? '28px' : '36px';
@@ -1128,7 +1114,7 @@ class Component extends DCLogic {
     });
 
     const archiveItems = [
-      { label: '2025 Honorees', description: 'ART & BUSINESS AWARD 2025 受賞企業・プロジェクト一覧を見る', url: '#' }
+      { label: 'ARCHIVE', description: 'ART & BUSINESS AWARD 2025 受賞企業・プロジェクト一覧を見る', url: '#' }
     ];
 
     const rawInformationItems = [
@@ -1209,7 +1195,7 @@ class Component extends DCLogic {
       { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役', '公益財団法人福武財団理事長'], photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveHeaderStyle, archiveTitleBlockStyle, archiveListStyle, archiveBoxStyle, archiveInnerStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitCardStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveInnerStyle, archiveDividerStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitCardStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
