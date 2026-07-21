@@ -60,6 +60,14 @@
       0%, 100% { transform: translate(0, 0) scale(1); }
       50% { transform: translate(-24px, 24px) scale(1.02); }
     }
+    @keyframes heroCategoryScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .hero-category-track { animation: heroCategoryScroll 26s linear infinite; }
+    .hero-category-pause-btn:hover { background: #1F1F21 !important; }
+    .hero-category-pause-btn:hover .hero-category-pause-bar { background: #FFFFFF !important; }
+    .hero-category-pause-btn:hover .hero-category-play-tri { border-left-color: #FFFFFF !important; }
   </style>
 </helmet>
 
@@ -165,10 +173,25 @@
             <a href="https://form.run/@aba2026-pre-entry" target="_blank" rel="noopener noreferrer" class="cta-orange" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#E8702A; padding:16px 32px; border-radius:8px; display:inline-flex; align-items:center; gap:16px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#E8702A; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
           </div>
         </div>
-        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:40px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.3s both;">
-          <sc-for list="{{ categoryLabels }}" as="cl" hint-placeholder-count="5">
-            <a href="#category" class="hero-category-tag" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#1F1F21; border:1px solid #1F1F21; border-radius:8px; padding:8px 18px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cl }}</a>
-          </sc-for>
+        <div style="display:flex; align-items:center; gap:16px; margin-top:40px; max-width:100%; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.3s both;">
+          <div style="flex:1 1 auto; min-width:0; overflow:hidden;">
+            <div class="hero-category-track" style="display:flex; gap:12px; width:max-content; animation-play-state:{{ heroCategoryPlayState }};">
+              <sc-for list="{{ heroCategoryLoop }}" as="cl" hint-placeholder-count="10">
+                <a href="#category" class="hero-category-tag" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#1F1F21; border:1px solid #1F1F21; border-radius:8px; padding:8px 18px; white-space:nowrap; flex:0 0 auto; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cl }}</a>
+              </sc-for>
+            </div>
+          </div>
+          <button onClick="{{ toggleHeroCategoryScroll }}" aria-label="{{ heroCategoryAriaLabel }}" class="hero-category-pause-btn" style="width:36px; height:36px; border-radius:50%; border:1px solid #1F1F21; background:transparent; display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto; cursor:pointer; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1);">
+            <sc-if value="{{ !heroCategoryPaused }}" hint-placeholder-val="{{ true }}">
+              <span style="display:flex; gap:3px;">
+                <span class="hero-category-pause-bar" style="width:3px; height:11px; background:#1F1F21; display:block; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1);"></span>
+                <span class="hero-category-pause-bar" style="width:3px; height:11px; background:#1F1F21; display:block; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1);"></span>
+              </span>
+            </sc-if>
+            <sc-if value="{{ heroCategoryPaused }}" hint-placeholder-val="{{ false }}">
+              <span aria-hidden="true" class="hero-category-play-tri" style="width:0; height:0; border-style:solid; border-width:5px 0 5px 8px; border-color:transparent transparent transparent #1F1F21; display:block; margin-left:2px; transition:border-color 350ms cubic-bezier(0.65, 0, 0.35, 1);"></span>
+            </sc-if>
+          </button>
         </div>
       </sc-if>
       <sc-if value="{{ isMobile }}">
@@ -176,10 +199,25 @@
           <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(24px, 3vw, 32px); line-height:135%; color:#1F1F21;">企業<span style="font-size:clamp(20px, 2.6vw, 28px);">と</span>アーティスト<span style="font-size:clamp(20px, 2.6vw, 28px);">の</span>共創<span style="font-size:clamp(20px, 2.6vw, 28px);">で</span><br>新<span style="font-size:clamp(20px, 2.6vw, 28px);">たな</span>経済価値<span style="font-size:clamp(20px, 2.6vw, 28px);">を</span>創出<span style="font-size:clamp(20px, 2.6vw, 28px);">する</span>。</span>
           <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; letter-spacing:0.15px; color:#333333;">アート・アーティストとの共創で、新しい経済価値を生み出す企業・プロジェクトを表彰します。日本に拠点を置く企業・法人であれば、業種・規模を問わずご応募いただけます（応募無料）。</p>
         </div>
-        <div style="display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:20px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;">
-          <sc-for list="{{ categoryLabels }}" as="cl" hint-placeholder-count="5">
-            <a href="#category" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#1F1F21;">#{{ cl }}</a>
-          </sc-for>
+        <div style="display:flex; align-items:center; gap:12px; margin-top:20px; max-width:100%; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;">
+          <div style="flex:1 1 auto; min-width:0; overflow:hidden;">
+            <div class="hero-category-track" style="display:flex; gap:16px; width:max-content; animation-play-state:{{ heroCategoryPlayState }};">
+              <sc-for list="{{ heroCategoryLoop }}" as="cl" hint-placeholder-count="10">
+                <a href="#category" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#1F1F21; white-space:nowrap; flex:0 0 auto;">#{{ cl }}</a>
+              </sc-for>
+            </div>
+          </div>
+          <button onClick="{{ toggleHeroCategoryScroll }}" aria-label="{{ heroCategoryAriaLabel }}" class="hero-category-pause-btn" style="width:32px; height:32px; border-radius:50%; border:1px solid #1F1F21; background:transparent; display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto; cursor:pointer; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1);">
+            <sc-if value="{{ !heroCategoryPaused }}" hint-placeholder-val="{{ true }}">
+              <span style="display:flex; gap:3px;">
+                <span class="hero-category-pause-bar" style="width:3px; height:10px; background:#1F1F21; display:block; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1);"></span>
+                <span class="hero-category-pause-bar" style="width:3px; height:10px; background:#1F1F21; display:block; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1);"></span>
+              </span>
+            </sc-if>
+            <sc-if value="{{ heroCategoryPaused }}" hint-placeholder-val="{{ false }}">
+              <span aria-hidden="true" class="hero-category-play-tri" style="width:0; height:0; border-style:solid; border-width:5px 0 5px 8px; border-color:transparent transparent transparent #1F1F21; display:block; margin-left:2px; transition:border-color 350ms cubic-bezier(0.65, 0, 0.35, 1);"></span>
+            </sc-if>
+          </button>
         </div>
         <div style="margin-top:20px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.3s both;">
           <a href="https://form.run/@aba2026-pre-entry" target="_blank" rel="noopener noreferrer" class="cta-orange" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#E8702A; padding:16px 32px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; gap:16px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#E8702A; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
@@ -753,7 +791,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { openCategory: null, scrolled: false, openFaq: null, hoveredNewsItem: null, hoveredFaq: null, aboutVisible: false, revealed: {}, isMobile: false, mobileNavOpen: false, headerHeight: 0 };
+  state = { openCategory: null, scrolled: false, openFaq: null, hoveredNewsItem: null, hoveredFaq: null, aboutVisible: false, revealed: {}, isMobile: false, mobileNavOpen: false, headerHeight: 0, heroCategoryPaused: false };
 
   checkMobile = () => {
     const w = window.innerWidth;
@@ -772,6 +810,10 @@ class Component extends DCLogic {
 
   toggleFaq = (i) => {
     this.setState(s => ({ openFaq: s.openFaq === i ? null : i }));
+  };
+
+  toggleHeroCategoryScroll = () => {
+    this.setState(s => ({ heroCategoryPaused: !s.heroCategoryPaused }));
   };
 
 
@@ -1027,6 +1069,10 @@ class Component extends DCLogic {
     ];
 
     const categoryLabels = rawCategories.map(c => c.title);
+    const heroCategoryLoop = [...categoryLabels, ...categoryLabels];
+    const heroCategoryPaused = this.state.heroCategoryPaused;
+    const heroCategoryPlayState = heroCategoryPaused ? 'paused' : 'running';
+    const heroCategoryAriaLabel = heroCategoryPaused ? '応募カテゴリーの自動スクロールを再生する' : '応募カテゴリーの自動スクロールを一時停止する';
     const requirementItems = [
       { label: '対象法人', text: '日本国内に拠点を持つ企業・法人（外資系日本法人を含む）。個人事業主・任意団体は対象外です。' },
       { label: '業種・企業規模', text: '業種・企業規模による制限はありません。大企業・中小企業・スタートアップを問わずご応募いただけます。' },
@@ -1234,7 +1280,7 @@ class Component extends DCLogic {
       { name: '福武 英明', title: 'ベネッセホールディングス取締役／公益財団法人福武財団理事長', photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, benefitGroupColumns, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), aboutRef: this.aboutRef, aboutStyle, revealRefs: this.revealRefs, revealStyles, winnerBenefits, finalistBenefits, patternFitItems, patternNotFitItems, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroEyebrowMarginTop, heroEyebrowMarginBottom, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveBoxStyle, archiveInnerStyle, archiveDividerStyle, archiveDescStyle, advisoryNoteRowStyle, aboutSectionDisplay, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, aboutBodyFontWeight, aboutQuoteFontSize, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, benefitGroupColumns, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), aboutRef: this.aboutRef, aboutStyle, revealRefs: this.revealRefs, revealStyles, winnerBenefits, finalistBenefits, patternFitItems, patternNotFitItems, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroEyebrowMarginTop, heroEyebrowMarginBottom, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveBoxStyle, archiveInnerStyle, archiveDividerStyle, archiveDescStyle, advisoryNoteRowStyle, aboutSectionDisplay, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, aboutBodyFontWeight, aboutQuoteFontSize, isTablet, showDesktopNav: !isMobile && !isTablet, heroCategoryLoop, heroCategoryPlayState, heroCategoryAriaLabel, toggleHeroCategoryScroll: this.toggleHeroCategoryScroll, heroCategoryPaused };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
