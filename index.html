@@ -137,7 +137,7 @@
   </sc-if>
 
   <!-- HERO -->
-  <section data-screen-label="Hero" id="top" style="position:relative; overflow:{{ heroOverflow }}; padding-top:{{ heroSectionPaddingTop }}; background:#FDF9F2; min-height:100vh; display:flex; flex-direction:column;">
+  <section data-screen-label="Hero" id="top" style="position:relative; z-index:2; overflow:{{ heroOverflow }}; padding-top:{{ heroSectionPaddingTop }}; background:#FDF9F2; min-height:100vh; display:flex; flex-direction:column;">
     <video ref="{{ videoRef }}" autoplay muted loop playsinline aria-hidden="true" style="display:none;">
       <source src="glow_blend_fv.mp4" type="video/mp4">
     </video>
@@ -145,8 +145,7 @@
     <div aria-hidden="true" style="position:absolute; right:-10%; top:-15%; width:70vmax; height:70vmax; border-radius:50%; background:radial-gradient(circle, rgba(180,140,200,0.7) 0%, rgba(180,140,200,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatPurple 15s ease-in-out infinite; z-index:0; pointer-events:none;"></div>
     <div aria-hidden="true" style="position:absolute; inset:0; opacity:0.05; mix-blend-mode:overlay; pointer-events:none; z-index:0; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' base-frequency='0.9' num-octaves='3' stitch-tiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
     <div style="position:relative; z-index:1; max-width:1440px; margin:0 auto; width:100%; padding:clamp(32px, 5vw, 56px) clamp(24px, 6vw, 96px) 0;">
-      <span style="display:block; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.3px; color:#333333; margin-top:{{ heroEyebrowMarginTop }}; margin-bottom:{{ heroEyebrowMarginBottom }}; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;">主催：経済産業省 / 一般財団法人カルチャー・ヴィジョン・ジャパン｜第二回アワード</span>
-      <div style="position:relative; max-width:100%; overflow:hidden;">
+      <div style="position:relative; max-width:100%; overflow:hidden; margin-top:{{ heroTitleMarginTop }};">
         <span style="display:block; font-family:'Oswald',sans-serif; font-weight:700; font-size:{{ heroTitleFontSize }}; line-height:0.98; letter-spacing:-0.5px; white-space:{{ heroTitleWhiteSpace }}; margin-bottom:{{ heroTitleMarginBottom }}; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; color:#1F1F21;">ART &amp; BUSINESS AWARD 2026</span>
       </div>
     </div>
@@ -187,7 +186,7 @@
   </section>
 
   <!-- MIDDLE SECTIONS: grain + gradient background -->
-  <div style="position:relative; background:linear-gradient(135deg, #FBF7EE 0%, #FDF9F2 55%, #FDFBF6 100%);">
+  <div style="position:relative; z-index:1; background:linear-gradient(135deg, #FBF7EE 0%, #FDF9F2 55%, #FDFBF6 100%);">
     <div aria-hidden="true" style="{{ benefitFadeStyle }}"></div>
     <div aria-hidden="true" style="position:absolute; inset:0; opacity:0.035; mix-blend-mode:multiply; pointer-events:none; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' base-frequency='0.9' num-octaves='3' stitch-tiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
 
@@ -823,8 +822,7 @@ class Component extends DCLogic {
     const heroTitleMarginBottom = isMobile ? '40px' : '0';
     const headerHeight = this.state.headerHeight;
     const heroSectionPaddingTop = headerHeight ? `${headerHeight}px` : (isMobile ? '56px' : '72px');
-    const heroEyebrowMarginTop = isMobile ? '36px' : '100px';
-    const heroEyebrowMarginBottom = isMobile ? '12px' : '24px';
+    const heroTitleMarginTop = isMobile ? '36px' : '100px';
     const benefitFadeStyle = { position: 'absolute', left: 0, right: 0, top: 0, height: isMobile ? '0px' : '120px', background: 'linear-gradient(to bottom, #FDF9F2 0%, rgba(253,249,242,0) 100%)', pointerEvents: 'none', zIndex: 1 };
     const archiveListStyle = { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '16px' : '24px' };
     const archiveBoxStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: isMobile ? 'nowrap' : 'wrap', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)', transition: 'background 350ms cubic-bezier(0.65, 0, 0.35, 1)' };
@@ -1152,7 +1150,7 @@ class Component extends DCLogic {
       { name: '福武 英明', title: 'ベネッセホールディングス取締役／公益財団法人福武財団理事長', photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, benefitGroupColumns, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, winnerBenefits, finalistBenefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroEyebrowMarginTop, heroEyebrowMarginBottom, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveInnerStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, benefitGroupColumns, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, winnerBenefits, finalistBenefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveInnerStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
