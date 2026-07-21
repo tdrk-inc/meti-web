@@ -210,7 +210,7 @@
         <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
           <div style="{{ benefitCardStyle }}">
             <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-              <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; color:#1F1F21;">{{ b.no }}</span>
+              <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">{{ b.no }}</span>
               <sc-for list="{{ b.tags }}" as="tag" hint-placeholder-count="2">
                 <span style="{{ tag.style }}">{{ tag.label }}</span>
               </sc-for>
@@ -845,7 +845,7 @@ class Component extends DCLogic {
     const benefitGridColumns = isMobile ? '1fr' : '1fr 1fr';
     const benefitHeaderStyle = isMobile
       ? { display: 'flex', flexDirection: 'column', gap: '16px' }
-      : { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'start' };
+      : { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'end' };
     const benefitStickyStyle = { display: 'flex', flexDirection: 'column', gap: '12px' };
     const benefitCardStyle = {
       display: 'flex', flexDirection: 'column', gap: '8px',
@@ -1054,7 +1054,7 @@ class Component extends DCLogic {
 
     const benefitTagStyles = {
       '受賞企業': "font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#C9971F; border:1px solid #C9971F; border-radius:4px; padding:2px 8px;",
-      'ファイナリスト企業': "font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#333333; border:1px solid #333333; border-radius:4px; padding:2px 8px;"
+      'ファイナリスト企業': "font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#8C919A; border:1px solid #8C919A; border-radius:4px; padding:2px 8px;"
     };
 
     const benefits = [
