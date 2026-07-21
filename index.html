@@ -284,10 +284,8 @@
     </div>
     <div style="display:flex; flex-direction:column; position:relative;">
       <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
-<div style="{{ cat.rowStyle }}" onMouseEnter="{{ cat.onMouseEnter }}" onMouseLeave="{{ cat.onMouseLeave }}">
-          <div style="position:absolute; top:0; left:0; right:0; height:1px; background:#D4D5E2; overflow:hidden;">
-            <div style="{{ cat.underlineFillStyle }}"></div>
-          </div>
+<div style="{{ cat.rowStyle }}">
+          <div style="position:absolute; top:0; left:0; right:0; height:1px; background:#D4D5E2;"></div>
           <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
           <div style="{{ cat.innerRowStyle }}">
             <div style="{{ cat.noBlockStyle }}">
@@ -716,7 +714,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { openCategory: null, scrolled: false, openFaq: null, hoveredCategory: null, hoveredNewsItem: null, hoveredFaq: null, aboutVisible: false, revealed: {}, isMobile: false, mobileNavOpen: false };
+  state = { openCategory: null, scrolled: false, openFaq: null, hoveredNewsItem: null, hoveredFaq: null, aboutVisible: false, revealed: {}, isMobile: false, mobileNavOpen: false };
 
   checkMobile = () => {
     const w = window.innerWidth;
@@ -993,13 +991,10 @@ class Component extends DCLogic {
     }));
     const categories = rawCategories.map((c, i) => {
       const isOpen = this.state.openCategory === i;
-      const isHovered = this.state.hoveredCategory === i;
       return {
         ...c,
         isOpen,
         toggle: () => this.toggleCategory(i),
-        onMouseEnter: () => this.setState({ hoveredCategory: i }),
-        onMouseLeave: () => this.setState({ hoveredCategory: null }),
         rotate: isOpen ? '135deg' : '0deg',
         maxHeight: isOpen ? '600px' : '0px',
         opacity: isOpen ? 1 : 0,
@@ -1031,35 +1026,8 @@ class Component extends DCLogic {
           minWidth: 0,
           width: isMobile ? '100%' : 'auto'
         },
-        buttonStyle: {
-          width: '48px',
-          height: '48px',
-          borderRadius: '50%',
-          background: isHovered ? '#E8702A' : '#1F1F21',
-          border: 'none',
-          cursor: 'pointer',
-          flex: '0 0 auto',
-          display: 'inline-flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          alignSelf: 'flex-start',
-          transition: 'background 500ms cubic-bezier(0.65, 0, 0.35, 1)'
-        },
-        underlineFillStyle: {
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          bottom: 0,
-          width: '100%',
-          background: '#E8702A',
-          transform: isHovered ? 'scaleX(1)' : 'scaleX(0)',
-          transformOrigin: 'left',
-          transition: 'transform 500ms cubic-bezier(0.65, 0, 0.35, 1)'
-        },
         textColor: '#1F1F21',
         mutedColor: '#333333',
-        buttonBg: isHovered ? '#E8702A' : '#1F1F21',
-        buttonFg: isHovered ? '#1F1F21' : '#FFFFFF',
         tagColor: '#E8702A',
         tagBorder: '#E8702A'
       };
