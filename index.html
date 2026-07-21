@@ -208,7 +208,7 @@
         <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:170%; color:#333333;">本アワードの受賞企業として選ばれた企業様への特典です。<br>共通特典に加え、受賞企業様だけの特別な特典をご用意しています。</p>
         </div>
         <div style="display:grid; grid-template-columns:1fr; gap:0;">
-          <sc-for list="{{ winnerBenefits }}" as="b" hint-placeholder-count="5">
+          <sc-for list="{{ winnerBenefits }}" as="b" hint-placeholder-count="4">
             <div style="border-top:1px solid #E8D9B8; padding:24px 0; display:flex; align-items:center; gap:20px;">
               <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
                 <div style="display:flex; align-items:center; gap:10px;">
@@ -1015,15 +1015,14 @@ class Component extends DCLogic {
     });
 
     const winnerBenefits = [
-      { no: '01', text: '12月17日都内で開催する表彰式にて表彰' },
-      { no: '02', text: '目録授与にて贈呈' },
-      { no: '03', text: '表彰式にてプレゼンテーションの実施（任意）', common: true },
-      { no: '04', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true, note: '掲載にあたっては相談する場合がございます' },
-      { no: '05', text: '経済産業省の報告書とサイトへ掲載', common: true, note: '掲載にあたっては相談する場合がございます' }
+      { no: '01', text: '12月17日都内で開催する授賞式にて表彰' },
+      { no: '02', text: '授賞式にてプレゼンテーションの実施（任意）', common: true },
+      { no: '03', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true, note: '掲載にあたっては相談する場合がございます' },
+      { no: '04', text: '経済産業省の報告書とサイトへ掲載', common: true, note: '掲載にあたっては相談する場合がございます' }
     ].map(b => ({ ...b, noColor: b.common ? '#333333' : '#C9971F' }));
 
     const finalistBenefits = [
-      { no: '01', text: '表彰式への参加（任意）', common: true },
+      { no: '01', text: '授賞式への参加（任意）', common: true },
       { no: '02', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true, note: '掲載にあたっては相談する場合がございます' },
       { no: '03', text: '経済産業省の報告書とサイトへ掲載', common: true, note: '掲載にあたっては相談する場合がございます' }
     ];

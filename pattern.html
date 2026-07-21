@@ -261,7 +261,7 @@
           <p style="margin:8px 0 0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:170%; color:#333333;">本アワードの受賞企業として選ばれた企業様への特典です。<br>共通特典に加え、受賞企業様だけの特別な特典をご用意しています。</p>
         </div>
         <div style="display:flex; flex-direction:column; gap:16px;">
-          <sc-for list="{{ winnerBenefits }}" as="b" hint-placeholder-count="5">
+          <sc-for list="{{ winnerBenefits }}" as="b" hint-placeholder-count="4">
             <div style="position:relative; display:flex; align-items:flex-start; gap:16px; padding:20px clamp(20px, 3vw, 28px); border:1px solid #E8B79A; border-radius:4px; background:rgba(255,255,255,0.5); overflow:hidden;">
               <sc-if value="{{ b.accent }}" hint-placeholder-val="{{ true }}">
                 <div aria-hidden="true" style="position:absolute; top:0; left:0; width:0; height:0; border-style:solid; border-width:32px 32px 0 0; border-color:#E8702A transparent transparent transparent;"></div>
@@ -1064,15 +1064,14 @@ class Component extends DCLogic {
     });
 
     const winnerBenefits = [
-      { no: '01', text: '12月17日都内で開催する表彰式にて表彰' },
-      { no: '02', text: '目録授与にて贈呈' },
-      { no: '03', text: '表彰式にてプレゼンテーションの実施（任意）', common: true },
-      { no: '04', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true, note: '掲載にあたっては相談する場合がございます' },
-      { no: '05', text: '経済産業省の報告書とサイトへ掲載', common: true, note: '掲載にあたっては相談する場合がございます' }
-    ].map(b => ({ ...b, accent: b.no === '01' || b.no === '02' }));
+      { no: '01', text: '12月17日都内で開催する授賞式にて表彰' },
+      { no: '02', text: '授賞式にてプレゼンテーションの実施（任意）', common: true },
+      { no: '03', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true, note: '掲載にあたっては相談する場合がございます' },
+      { no: '04', text: '経済産業省の報告書とサイトへ掲載', common: true, note: '掲載にあたっては相談する場合がございます' }
+    ].map(b => ({ ...b, accent: b.no === '01' }));
 
     const finalistBenefits = [
-      { no: '01', text: '表彰式への参加（任意）', common: true },
+      { no: '01', text: '授賞式への参加（任意）', common: true },
       { no: '02', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true, note: '掲載にあたっては相談する場合がございます' },
       { no: '03', text: '経済産業省の報告書とサイトへ掲載', common: true, note: '掲載にあたっては相談する場合がございます' }
     ];
