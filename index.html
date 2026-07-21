@@ -543,6 +543,13 @@
 
   <!-- ARCHIVE -->
   <section data-screen-label="Archive" style="max-width:1440px; margin:0 auto; padding:clamp(48px, 9vw, 96px) clamp(24px, 6vw, 96px) 0;">
+    <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:48px;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">ARCHIVE</span>
+      </div>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">ART & BUSINESS AWARD 2025について</span>
+    </div>
     <div style="{{ archiveListStyle }}">
       <sc-for list="{{ archiveItems }}" as="item" hint-placeholder-count="2">
         <a href="{{ item.url }}" aria-label="{{ item.description }}" class="archive-card" style="{{ archiveBoxStyle }}">
@@ -844,7 +851,7 @@ class Component extends DCLogic {
     const heroEyebrowMarginTop = isMobile ? '36px' : '100px';
     const heroEyebrowMarginBottom = isMobile ? '12px' : '24px';
     const benefitFadeStyle = { position: 'absolute', left: 0, right: 0, top: 0, height: isMobile ? '0px' : '120px', background: 'linear-gradient(to bottom, #FDF9F2 0%, rgba(253,249,242,0) 100%)', pointerEvents: 'none', zIndex: 1 };
-    const archiveListStyle = { display: 'flex', flexDirection: 'column', gap: isMobile ? '16px' : '24px' };
+    const archiveListStyle = { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '16px' : '24px' };
     const archiveBoxStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: isMobile ? 'nowrap' : 'wrap', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)', transition: 'background 350ms cubic-bezier(0.65, 0, 0.35, 1)' };
     const archiveInnerStyle = { display: 'flex', alignItems: 'center', gap: '16px', flexWrap: isMobile ? 'nowrap' : 'wrap', minWidth: 0, overflow: isMobile ? 'hidden' : 'visible' };
     const archiveDividerStyle = { display: isMobile ? 'none' : 'block', width: '1px', height: '16px', background: '#D4D5E2', flex: '0 0 auto' };
@@ -1100,7 +1107,7 @@ class Component extends DCLogic {
     });
 
     const archiveItems = [
-      { label: 'ARCHIVE', description: '2025年（第1回）受賞企業・プロジェクト一覧を見る', url: '#' },
+      { label: '2025 Honorees', description: '2025年（第1回）受賞企業・プロジェクト一覧を見る', url: '#' },
       { label: 'PLAYERS FILE', description: '企業とアートのプレイヤーをつなぐデータベースはこちらから', url: '#' }
     ];
 
