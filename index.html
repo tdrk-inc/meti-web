@@ -238,6 +238,9 @@
                   </sc-if>
                 </div>
                 <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:160%; color:#1F1F21;">{{ b.text }}</span>
+                <sc-if value="{{ b.note }}" hint-placeholder-val="{{ '' }}">
+                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; line-height:160%; color:#999999;">※{{ b.note }}</span>
+                </sc-if>
               </div>
             </div>
           </sc-for>
@@ -260,6 +263,9 @@
                   </sc-if>
                 </div>
                 <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:160%; color:#1F1F21;">{{ b.text }}</span>
+                <sc-if value="{{ b.note }}" hint-placeholder-val="{{ '' }}">
+                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; line-height:160%; color:#999999;">※{{ b.note }}</span>
+                </sc-if>
               </div>
             </div>
           </sc-for>
@@ -1052,13 +1058,13 @@ class Component extends DCLogic {
       { no: '01', text: '12月17日都内で開催する表彰式にて表彰' },
       { no: '02', text: '目録授与にて贈呈' },
       { no: '03', text: '表彰式にてプレゼンテーションの実施（任意）', common: true },
-      { no: '04', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true },
+      { no: '04', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true, note: '掲載にあたっては相談する場合がございます' },
       { no: '05', text: '経済産業省の報告書とサイトへ掲載', common: true }
     ].map(b => ({ ...b, noColor: b.common ? '#333333' : '#C9971F' }));
 
     const finalistBenefits = [
       { no: '01', text: '表彰式への参加（任意）', common: true },
-      { no: '02', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true },
+      { no: '02', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true, note: '掲載にあたっては相談する場合がございます' },
       { no: '03', text: '経済産業省の報告書とサイトへ掲載', common: true }
     ];
 
