@@ -49,6 +49,8 @@
     .archive-arrow:hover { background: #B48CC8; color: #FFFFFF !important; }
     .archive-card:hover { background: rgba(180,140,200,0.16) !important; }
     .footer-card:hover { border-color: #E8702A !important; background: #FDF9F2 !important; }
+    .entry-card:hover { border-color: #E8702A !important; }
+    .entry-card:hover .cta-arrow { background: #E8702A !important; border-color: #E8702A !important; color: #FFFFFF !important; }
     @media (min-width: 1000px) { .hero-eco-line { white-space: nowrap; } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes floatOrange {
@@ -142,7 +144,7 @@
     <video ref="{{ videoRef }}" autoplay muted loop playsinline aria-hidden="true" style="display:none;">
       <source src="glow_blend_fv.mp4" type="video/mp4">
     </video>
-    <div aria-hidden="true" style="position:absolute; left:-8%; bottom:-55%; width:66vmax; height:66vmax; border-radius:50%; background:radial-gradient(circle, rgba(232,112,42,0.7) 0%, rgba(232,112,42,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatOrange 13s ease-in-out infinite; z-index:0; pointer-events:none;"></div>
+    <div aria-hidden="true" style="position:absolute; left:-8%; bottom:-5%; width:66vmax; height:66vmax; border-radius:50%; background:radial-gradient(circle, rgba(232,112,42,0.7) 0%, rgba(232,112,42,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatOrange 13s ease-in-out infinite; z-index:0; pointer-events:none;"></div>
     <div aria-hidden="true" style="position:absolute; right:-10%; top:-15%; width:54vmax; height:54vmax; border-radius:50%; background:radial-gradient(circle, rgba(180,140,200,0.7) 0%, rgba(180,140,200,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatPurple 15s ease-in-out infinite; z-index:0; pointer-events:none;"></div>
     <div aria-hidden="true" style="position:absolute; inset:0; opacity:0.05; mix-blend-mode:overlay; pointer-events:none; z-index:0; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' base-frequency='0.9' num-octaves='3' stitch-tiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
     <div style="position:relative; z-index:1; max-width:1440px; margin:0 auto; width:100%; padding:clamp(32px, 5vw, 56px) clamp(24px, 6vw, 96px) 0;">
@@ -330,7 +332,7 @@
     <div style="display:grid; grid-template-columns:{{ advisoryGridColumns }}; gap:32px 24px; position:relative;">
       <sc-for list="{{ advisoryBoard }}" as="person" hint-placeholder-count="7">
         <div style="display:flex; flex-direction:column; gap:12px;">
-          <div style="width:160px; height:160px; border-radius:8px; overflow:hidden; border:1px solid #D4D5E2;">
+          <div style="width:180px; height:180px; border-radius:8px; overflow:hidden; border:1px solid #D4D5E2;">
             <img src="{{ person.photo }}" alt="{{ person.name }}" style="width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.75) contrast(0.95) brightness(1.02);">
           </div>
           <div style="display:flex; flex-direction:column; gap:4px;">
@@ -500,12 +502,13 @@
 
   <!-- ARCHIVE -->
   <section data-screen-label="Archive" ref="{{ revealRefs.archive }}" style="{{ revealStyles.archive }}">
-    <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:48px;">
+    <div style="{{ archiveHeaderStyle }}">
+    <div style="{{ archiveTitleBlockStyle }}">
       <div style="display:flex; align-items:center; gap:8px;">
         <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
         <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">ARCHIVE</span>
       </div>
-      <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">ART & BUSINESS AWARD 2025について</span>
+      <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">ART & BUSINESS AWARD 2025</span>
     </div>
     <div style="{{ archiveListStyle }}">
       <sc-for list="{{ archiveItems }}" as="item" hint-placeholder-count="2">
@@ -530,6 +533,7 @@
           </sc-if>
         </a>
       </sc-for>
+    </div>
     </div>
   </section>
 
@@ -576,7 +580,10 @@
     </div>
     <div style="display:flex; flex-direction:column;">
       <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
-        <div style="border-top:1px solid #D4D5E2;">
+        <div style="border-top:1px solid #D4D5E2; position:relative;">
+          <div aria-hidden="true" style="position:absolute; top:-1px; left:0; right:0; height:1px; overflow:hidden; pointer-events:none;">
+            <div style="{{ f.topLineFillStyle }}"></div>
+          </div>
           <button onClick="{{ f.toggle }}" onMouseEnter="{{ f.onMouseEnter }}" onMouseLeave="{{ f.onMouseLeave }}" style="width:100%; text-align:left; background:transparent; border:none; cursor:pointer; padding:32px 0 40px; display:flex; align-items:baseline; gap:16px; position:relative;">
             <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; color:#E8702A; flex:0 0 auto; margin-right:8px;">Q</span>
             <span style="flex:1; font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21; padding-right:40px;">{{ f.question }}</span>
@@ -607,14 +614,33 @@
   <!-- CTA BAND -->
   <section data-screen-label="CTA Band" ref="{{ revealRefs.ctaband }}" style="{{ revealStyles.ctaband }}">
     <div style="border-radius:4px; padding:clamp(48px, 9vw, 96px) clamp(32px, 7vw, 96px); position:relative; overflow:hidden; background:rgba(255,255,255,0.35); backdrop-filter:blur(12px) saturate(140%); -webkit-backdrop-filter:blur(12px) saturate(140%); border:1px solid rgba(255,255,255,0.5);">
-      <div style="position:relative; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;">
-        <div style="display:flex; flex-direction:column; gap:12px; max-width:760px;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
-            <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:28px; letter-spacing:1px; color:#1F1F21;">ENTRY NOW</span>
+      <div style="position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:28px; letter-spacing:1px; color:#1F1F21;">ENTRY NOW</span>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#333333;">プレエントリー締切まで<sc-if value="{{ preEntryDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}"><span style="color:#E8702A; font-weight:700;">あと{{ preEntryDaysLeft }}日</span></sc-if>。気になる方はまずはお気軽にエントリーください。</p>
+      </div>
+      <div style="{{ entryCardsRowStyle }}">
+        <a href="#" class="entry-card" style="{{ entryCardStyle }}">
+          <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:block;">
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px;">
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:24px; color:#1F1F21;">Download</span>
+              <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21;">ダウンロード</span>
+              <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; line-height:150%; color:#333333;">ART &amp; BUSINESS AWARD 2026の概要資料はこちらから</span>
+            </div>
+            <span aria-hidden="true" class="cta-arrow" style="width:36px; height:36px; border-radius:50%; border:1px solid #1F1F21; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:16px; flex:0 0 auto;">↓</span>
           </div>
-          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#333333;">プレエントリー締切まで<sc-if value="{{ preEntryDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}"><span style="color:#E8702A; font-weight:700;">あと{{ preEntryDaysLeft }}日</span></sc-if>。気になる方はまずはお気軽にエントリーください。</p>
-        </div>
-        <a href="https://form.run/@aba2026-pre-entry" target="_blank" rel="noopener noreferrer" class="cta-orange" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#E8702A; padding:12px 28px 12px 28px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; gap:16px; flex:0 0 auto; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#E8702A; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+        </a>
+        <a href="https://form.run/@aba2026-pre-entry" target="_blank" rel="noopener noreferrer" class="entry-card" style="{{ entryCardStyle }}">
+          <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:block;">
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px;">
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:24px; color:#1F1F21;">ENTRY</span>
+              <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21;">エントリー</span>
+              <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; line-height:150%; color:#333333;">ART &amp; BUSINESS AWARD 2026 へのエントリーはこちらから</span>
+            </div>
+            <span aria-hidden="true" class="cta-arrow" style="width:36px; height:36px; border-radius:50%; border:1px solid #1F1F21; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:16px; flex:0 0 auto;">→</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -639,7 +665,7 @@
             </div>
             <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:150%; color:#333333;">企業とアートのプレイヤーをつなぐデータベース</span>
           </a>
-          <div class="footer-card" style="{{ footerCardStyle }}">
+          <div style="{{ footerCardStyle }}">
             <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#1F1F21;">CONTACT</span>
             <a href="mailto:info@art-business-award.jp" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; color:#E8702A;">info@art-business-award.jp</a>
           </div>
@@ -673,7 +699,7 @@
           </div>
           <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:150%; color:#333333;">企業とアートのプレイヤーをつなぐデータベース</span>
         </a>
-        <div class="footer-card" style="{{ footerCardStyle }}">
+        <div style="{{ footerCardStyle }}">
           <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#1F1F21;">CONTACT</span>
           <a href="mailto:info@art-business-award.jp" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; color:#E8702A;">info@art-business-award.jp</a>
         </div>
@@ -817,7 +843,15 @@ class Component extends DCLogic {
     const heroSectionPaddingTop = headerHeight ? `${headerHeight}px` : (isMobile ? '56px' : '72px');
     const heroTitleMarginTop = isMobile ? '36px' : '100px';
     const benefitFadeStyle = { position: 'absolute', left: 0, right: 0, top: 0, height: isMobile ? '0px' : '120px', background: 'linear-gradient(to bottom, #FDF9F2 0%, rgba(253,249,242,0) 100%)', pointerEvents: 'none', zIndex: -1 };
-    const archiveListStyle = { display: 'grid', gridTemplateColumns: '1fr', gap: isMobile ? '16px' : '24px' };
+    const archiveHeaderStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: '24px' }
+      : { display: 'flex', alignItems: 'flex-start', gap: '40px' };
+    const archiveTitleBlockStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: '12px', position: 'relative' }
+      : { display: 'flex', flexDirection: 'column', gap: '12px', position: 'relative', flex: '1 1 0%', minWidth: 0 };
+    const archiveListStyle = isMobile
+      ? { display: 'grid', gridTemplateColumns: '1fr', gap: '16px' }
+      : { display: 'grid', gridTemplateColumns: '1fr', gap: '24px', flex: '1 1 0%', minWidth: 0 };
     const archiveBoxStyle = { textDecoration: 'none', border: '1px solid rgba(180,140,200,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: isMobile ? 'nowrap' : 'wrap', background: 'rgba(180,140,200,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)', transition: 'background 350ms cubic-bezier(0.65, 0, 0.35, 1)' };
     const archiveInnerStyle = { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', flexWrap: isMobile ? 'nowrap' : 'wrap', minWidth: 0, overflow: isMobile ? 'hidden' : 'visible' };
     const archiveDescStyle = { fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 500, fontSize: '13px', color: '#1F1F21', whiteSpace: isMobile ? 'nowrap' : 'normal', overflow: isMobile ? 'hidden' : 'visible', textOverflow: isMobile ? 'ellipsis' : 'clip', minWidth: 0 };
@@ -826,14 +860,24 @@ class Component extends DCLogic {
     const benefitGridColumns = isMobile ? 'repeat(auto-fit, minmax(260px, 1fr))' : '1fr 1fr';
     const benefitLayoutStyle = isMobile
       ? { display: 'flex', flexDirection: 'column', gap: '32px' }
-      : { display: 'grid', gridTemplateColumns: 'minmax(260px, 360px) 1fr', gap: '64px', alignItems: 'start' };
-    const benefitStickyStyle = isMobile
-      ? { display: 'flex', flexDirection: 'column', gap: '12px' }
-      : { display: 'flex', flexDirection: 'column', gap: '12px', position: 'sticky', top: `${(headerHeight || 90) + 40}px` };
+      : { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'start' };
+    const benefitStickyStyle = { display: 'flex', flexDirection: 'column', gap: '12px' };
+    const entryCardsRowStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px', marginTop: '40px' }
+      : { display: 'flex', justifyContent: 'center', gap: '24px', marginTop: '48px' };
+    const entryCardStyle = {
+      width: isMobile ? '100%' : '360px',
+      maxWidth: '360px',
+      minHeight: '220px',
+      display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '32px',
+      padding: '32px', borderRadius: '8px', border: '1px solid #D4D5E2', textDecoration: 'none',
+      background: 'rgba(255,255,255,0.4)',
+      transition: 'border-color 350ms cubic-bezier(0.65, 0, 0.35, 1)'
+    };
     const footerCardStyle = {
       display: 'flex', flexDirection: 'column', gap: '8px', padding: '20px 24px',
       width: isMobile ? '100%' : 'auto', minWidth: isMobile ? '0' : '240px',
-      borderRadius: '8px', border: '1px solid #E4E1DB', background: '#FFFFFF', textDecoration: 'none',
+      borderRadius: '8px', border: '1px solid #E4E1DB', background: 'transparent', textDecoration: 'none',
       transition: 'border-color 350ms cubic-bezier(0.65, 0, 0.35, 1), background 350ms cubic-bezier(0.65, 0, 0.35, 1)'
     };
     const advisoryGridColumns = isMobile ? 'repeat(auto-fit, minmax(140px, 1fr))' : 'repeat(4, 1fr)';
@@ -859,7 +903,7 @@ class Component extends DCLogic {
         ...revealBase[key],
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(32px)',
-        transition: 'opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)'
+        transition: 'opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1), transform 1.6s cubic-bezier(0.16, 1, 0.3, 1)'
       };
     });
     const headerStyle = {
@@ -999,13 +1043,9 @@ class Component extends DCLogic {
           gap: isMobile ? '14px' : '24px',
           flexWrap: isMobile ? 'nowrap' : 'wrap'
         },
-        noBlockStyle: {
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '2px',
-          flex: isMobile ? '0 0 44px' : '0 1 160px',
-          minWidth: 0
-        },
+        noBlockStyle: isMobile
+          ? { display: 'flex', flexDirection: 'column', gap: '2px', flex: '0 0 44px', minWidth: 0 }
+          : { display: 'flex', flexDirection: 'column', gap: '2px', flex: '0 1 160px', minWidth: 0, alignSelf: 'flex-start', position: 'sticky', top: `${(headerHeight || 90) + 40}px` },
         noFontSize: isMobile ? '20px' : 'clamp(32px, 4vw, 48px)',
         contentBlockStyle: {
           flex: '1 1 220px',
@@ -1070,12 +1110,19 @@ class Component extends DCLogic {
           display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
           transform: `rotate(${isOpen ? '135deg' : '0deg'})`,
           transition: 'transform 0.3s ease, background 500ms cubic-bezier(0.65, 0, 0.35, 1), color 500ms cubic-bezier(0.65, 0, 0.35, 1)'
+        },
+        topLineFillStyle: {
+          position: 'absolute', top: 0, left: 0, bottom: 0, width: '100%',
+          background: '#E8702A',
+          transform: isHovered ? 'scaleX(1)' : 'scaleX(0)',
+          transformOrigin: 'left',
+          transition: 'transform 500ms cubic-bezier(0.65, 0, 0.35, 1)'
         }
       };
     });
 
     const archiveItems = [
-      { label: '2025 Honorees', description: '2025年（第1回）受賞企業・プロジェクト一覧を見る', url: '#' }
+      { label: '2025 Honorees', description: 'ART & BUSINESS AWARD 2025 受賞企業・プロジェクト一覧を見る', url: '#' }
     ];
 
     const rawInformationItems = [
@@ -1156,7 +1203,7 @@ class Component extends DCLogic {
       { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役', '公益財団法人福武財団理事長'], photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveInnerStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, benefitLayoutStyle, benefitStickyStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroOverflow, heroSectionPaddingTop, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveHeaderStyle, archiveTitleBlockStyle, archiveListStyle, archiveBoxStyle, archiveInnerStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, benefitLayoutStyle, benefitStickyStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
