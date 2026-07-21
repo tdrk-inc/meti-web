@@ -1098,15 +1098,15 @@ class Component extends DCLogic {
     });
 
     const winnerBenefits = [
-      { no: '01', text: '12月17日都内で開催するアワード授賞式にて表彰' },
+      { no: '01', text: '12月17日都内で開催する表彰式にて表彰' },
       { no: '02', text: '目録授与にて贈呈' },
-      { no: '03', text: 'アワード受賞イベントにてプレゼンテーションの実施（任意）', common: true },
+      { no: '03', text: '表彰式にてプレゼンテーションの実施（任意）', common: true },
       { no: '04', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true },
       { no: '05', text: '経済産業省の報告書とサイトへ掲載', common: true }
     ].map(b => ({ ...b, accent: b.no === '01' || b.no === '02' }));
 
     const finalistBenefits = [
-      { no: '01', text: 'アワード受賞イベントへの参加（任意）', common: true },
+      { no: '01', text: '表彰式への参加（任意）', common: true },
       { no: '02', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', common: true },
       { no: '03', text: '経済産業省の報告書とサイトへ掲載', common: true }
     ];
@@ -1192,7 +1192,7 @@ class Component extends DCLogic {
       { date: '2026年8月26日', label: 'プレエントリー締切', isKeyDate: true },
       { date: '2026年9月9日', label: 'エントリーシート提出締切', isKeyDate: true },
       { date: '2026年11月23日', label: '受賞企業発表', isKeyDate: false },
-      { date: '2026年12月17日', label: 'アワード授賞式（都内）', isKeyDate: true }
+      { date: '2026年12月17日', label: '表彰式（都内）', isKeyDate: true }
     ];
     const scheduleItems = scheduleItemsRaw.map(ev => {
       const m = ev.date.match(/^(\d+)年(\d+)月(\d+)日$/);
