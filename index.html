@@ -249,7 +249,6 @@
       <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
 <div style="{{ cat.rowStyle }}">
           <div style="{{ cat.dividerStyle }}"></div>
-          <div style="{{ cat.dividerRightStyle }}"></div>
           <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
           <div style="{{ cat.innerRowStyle }}">
             <div style="{{ cat.noBlockStyle }}">
@@ -264,11 +263,11 @@
                 <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:32px; line-height:140%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.title }}</h3>
               </div>
               <div style="display:flex; flex-direction:column; gap:4px;">
-                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:18px; color:{{ cat.mutedColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">審査基準</span>
-                <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:18px; line-height:180%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.criteria }}</p>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:{{ cat.mutedColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">審査基準</span>
+                <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:180%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ cat.criteria }}</p>
               </div>
               <div style="display:flex; flex-direction:column; gap:16px; padding-top:8px;">
-                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:18px; color:{{ cat.mutedColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">審査のポイント</span>
+                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:{{ cat.mutedColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">審査のポイント</span>
                   <div style="{{ cat.pointsCushionStyle }}">
                     <div style="{{ cat.pointsListStyle }}">
                       <div aria-hidden="true" style="{{ cat.crossLineVTopStyle }}"></div>
@@ -281,7 +280,7 @@
                             <span style="width:8px; height:8px; border-radius:50%; background:#E8702A; flex:0 0 auto;"></span>
                             <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:18px; letter-spacing:0.5px; color:#E8702A;">{{ pt.no }}</span>
                           </div>
-                          <p style="margin:0; text-align:center; font-family:'Noto Sans JP',sans-serif; font-size:18px; line-height:170%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ pt.text }}</p>
+                          <p style="margin:0; text-align:center; white-space:pre-line; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ pt.text }}</p>
                         </div>
                       </sc-for>
                     </div>
@@ -308,12 +307,12 @@
             </div>
             <div style="display:flex; flex-direction:column; gap:16px; margin-top:20px;">
               <div style="display:flex; flex-direction:column; gap:4px;">
-                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:18px; color:{{ cat.mutedColor }};">審査基準</span>
-                <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:18px; line-height:180%; color:{{ cat.textColor }};">{{ cat.criteria }}</p>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:{{ cat.mutedColor }};">審査基準</span>
+                <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:180%; color:{{ cat.textColor }};">{{ cat.criteria }}</p>
               </div>
 
               <div style="display:flex; flex-direction:column; gap:16px; padding-top:8px;">
-                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:18px; color:{{ cat.mutedColor }};">審査のポイント</span>
+                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:{{ cat.mutedColor }};">審査のポイント</span>
                   <div style="{{ cat.pointsCushionStyle }}">
                     <div style="{{ cat.pointsListStyle }}">
                       <sc-for list="{{ cat.points }}" as="pt" hint-placeholder-count="4">
@@ -322,7 +321,7 @@
                             <span style="width:8px; height:8px; border-radius:50%; background:#E8702A; flex:0 0 auto;"></span>
                             <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:18px; letter-spacing:0.5px; color:#E8702A;">{{ pt.no }}</span>
                           </div>
-                          <p style="margin:0; text-align:center; font-family:'Noto Sans JP',sans-serif; font-size:18px; line-height:170%; color:{{ cat.textColor }};">{{ pt.text }}</p>
+                          <p style="margin:0; text-align:center; white-space:pre-line; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }};">{{ pt.text }}</p>
                         </div>
                       </sc-for>
                     </div>
@@ -967,10 +966,10 @@ class Component extends DCLogic {
         isNew: false,
         criteria: 'アートの有する価値を活用して企業戦略・体制の構築、実行、発信など経営領域で新たな変化を起こした企業',
         points: [
-          'アートの有する価値を活かした類を見ないユニークな取組か',
-          '経営レベル・指標の設定を行い、企業内外に大きな変化をもたらしているか',
+          'アートの有する価値を活かした\n類を見ないユニークな取組か',
+          '経営レベル・指標の設定を行い、\n企業内外に大きな変化をもたらしているか',
           '単発ではなく魅力的な取組となっているか',
-          'ステークホルダーや社会に対して取組を発信できているか'
+          'ステークホルダーや社会に対して\n取組を発信できているか'
         ]
       },
       {
@@ -981,8 +980,8 @@ class Component extends DCLogic {
         criteria: 'アート・アーティストとの共創を通じて事業の高度化など新たな経済的価値を創出した企業・プロジェクト',
         points: [
           'アートの有する価値を活かした類を見ないユニークな事業内容か',
-          'アーティストや関連団体・機関等との間にWin-Winの共創ができているか',
-          'プロジェクトの経済的価値（既存事業の高度化、顧客との関係強化、新規顧客獲得等）',
+          'アーティストや関連団体・機関等との間に\nWin-Winの共創ができているか',
+          'プロジェクトの経済的価値（既存事業の高度化、\n顧客との関係強化、新規顧客獲得等）',
           '単発ではなく魅力的な事業となっているか'
         ]
       },
@@ -995,8 +994,8 @@ class Component extends DCLogic {
         points: [
           'アートの有する価値を活かした類を見ないユニークな事業内容か',
           '事業としての新規性があるか',
-          'プロジェクトの経済的価値（収益性、エンゲージメント（参加者数、SNS等）、再現性等）',
-          '単発ではなく魅力的な事業となるための計画や構想があるか'
+          'プロジェクトの経済的価値（収益性、\nエンゲージメント（参加者数、SNS等）、再現性等）',
+          '単発ではなく魅力的な事業と\nなるための計画や構想があるか'
         ]
       },
       {
@@ -1008,7 +1007,7 @@ class Component extends DCLogic {
         points: [
           'アートの有する価値を活かした類を見ないユニークな取り組みか',
           '地域資源を活かした事業内容であるか',
-          '地域経済活性化に寄与しているか（新事業・新産業創出、雇用創出、観光客はか関係人口の増加等）',
+          '地域経済活性化に寄与しているか（新事業・新産業創出、\n雇用創出、観光客はか関係人口の増加等）',
           '単発ではなく魅力的な事業となっているか'
         ]
       },
@@ -1021,7 +1020,7 @@ class Component extends DCLogic {
         points: [
           '所有する作品を有効に活用してか',
           '企業価値向上につながっているか',
-          '日本のアート市場活性化や国際発信など日本のアート界の発展に寄与しているか',
+          '日本のアート市場活性化や国際発信など\n日本のアート界の発展に寄与しているか',
           '事業・プロジェクトを対外的に発信しているか'
         ]
       }
@@ -1095,14 +1094,9 @@ class Component extends DCLogic {
           background: 'transparent'
         },
         dividerStyle: {
-          position: 'absolute', top: 0, left: 0,
-          width: isMobile ? '44px' : '160px',
-          height: '2px', background: '#E8702A'
-        },
-        dividerRightStyle: {
-          position: 'absolute', top: 0,
-          left: isMobile ? '44px' : '160px', right: 0,
-          height: '2px', background: '#D4D5E2'
+          position: 'absolute', top: 0, left: 0, right: 0,
+          height: '2px',
+          background: `linear-gradient(to right, #E8702A 0, #E8702A ${(isMobile ? 44 : 160) - 40}px, #D4D5E2 ${(isMobile ? 44 : 160) + 40}px, #D4D5E2 100%)`
         },
         innerRowStyle: {
           display: 'flex',
