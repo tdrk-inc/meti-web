@@ -29,7 +29,7 @@
   <style>
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; background: #F5F3F0; scroll-behavior: smooth; }
-    body { overflow-x: hidden; }
+    html, body { overflow-x: hidden; width: 100%; }
     a { color: #E06219; text-decoration: none; }
     a:hover { color: #1F1F21; }
     ::selection { background: #B48CC8; color: #FFFFFF; }
@@ -936,7 +936,7 @@ class Component extends DCLogic {
       requirements: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       apply: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       archive: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
-      information: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
+      information: { maxWidth: '1440px', margin: '0 auto', padding: `${isMobile ? '24px' : SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       faq: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       contact: { maxWidth: '1440px', margin: '0 auto', padding: `0 clamp(24px, 6vw, 96px) ${SECTION_GAP}` },
       ctaband: { padding: '0', marginTop: SECTION_GAP, position: 'relative', background: 'linear-gradient(100deg, rgba(224,98,25,0.7) 0%, rgba(224,98,25,0.7) 45%, rgba(217,113,74,0.7) 65%, rgba(169,111,160,0.7) 82%, rgba(123,98,176,0.7) 100%)' }
