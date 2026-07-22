@@ -236,6 +236,7 @@
 
   <!-- CATEGORY -->
   <section data-screen-label="Category" id="category" ref="{{ revealRefs.category }}" style="{{ revealStyles.category }}">
+    <div style="{{ categoryInnerStyle }}">
     <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:40px;">
       <div style="display:flex; align-items:center; gap:8px;">
         <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
@@ -246,10 +247,10 @@
     <div style="display:flex; flex-direction:column; gap:40px; position:relative;">
       <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
 <div style="{{ cat.rowStyle }}">
-          <span aria-hidden="true" style="position:absolute; top:24px; left:24px; width:12px; height:12px; border-radius:50%; background:#F5F3F0;"></span>
-          <span aria-hidden="true" style="position:absolute; top:24px; right:24px; width:12px; height:12px; border-radius:50%; background:#F5F3F0;"></span>
-          <span aria-hidden="true" style="position:absolute; bottom:24px; left:24px; width:12px; height:12px; border-radius:50%; background:#F5F3F0;"></span>
-          <span aria-hidden="true" style="position:absolute; bottom:24px; right:24px; width:12px; height:12px; border-radius:50%; background:#F5F3F0;"></span>
+          <span aria-hidden="true" style="position:absolute; top:24px; left:24px; width:4px; height:4px; border-radius:50%; background:#F8F1E6;"></span>
+          <span aria-hidden="true" style="position:absolute; top:24px; right:24px; width:4px; height:4px; border-radius:50%; background:#F8F1E6;"></span>
+          <span aria-hidden="true" style="position:absolute; bottom:24px; left:24px; width:4px; height:4px; border-radius:50%; background:#F8F1E6;"></span>
+          <span aria-hidden="true" style="position:absolute; bottom:24px; right:24px; width:4px; height:4px; border-radius:50%; background:#F8F1E6;"></span>
           <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
           <div style="{{ cat.innerRowStyle }}">
             <div style="{{ cat.noBlockStyle }}">
@@ -326,6 +327,7 @@
           </sc-if>
         </div>
       </sc-for>
+    </div>
     </div>
   </section>
 
@@ -904,9 +906,19 @@ class Component extends DCLogic {
     };
     const advisoryGridColumns = (isMobile || isTablet) ? 'repeat(auto-fit, minmax(140px, 1fr))' : 'repeat(4, 1fr)';
     const SECTION_GAP = '120px';
+    const CATEGORY_OVERLAP = 80;
+    const categoryInnerStyle = { maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(24px, 6vw, 96px)' };
     const revealBase = {
       benefit: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
-      category: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: (isMobile || isTablet) ? 'hidden' : 'visible' },
+      category: {
+        background: '#F8F1E6',
+        marginTop: `-${CATEGORY_OVERLAP}px`,
+        paddingTop: `calc(${SECTION_GAP} + ${CATEGORY_OVERLAP}px)`,
+        position: 'relative',
+        zIndex: 2,
+        boxShadow: '0 -32px 48px -32px rgba(31,31,33,0.1)',
+        overflow: (isMobile || isTablet) ? 'hidden' : 'visible'
+      },
       midcta: { background: '#FFFFFF', borderRadius: '8px', maxWidth: '1440px', margin: `${SECTION_GAP} auto 0`, padding: '48px clamp(24px, 6vw, 96px)' },
       advisory: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: (isMobile || isTablet) ? 'hidden' : 'visible' },
       schedule: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: (isMobile || isTablet) ? 'hidden' : 'visible' },
@@ -921,12 +933,20 @@ class Component extends DCLogic {
     const revealStyles = {};
     this.revealKeys.forEach(key => {
       const visible = !!this.state.revealed[key];
-      revealStyles[key] = {
-        ...revealBase[key],
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(32px)',
-        transition: 'opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1), transform 1.6s cubic-bezier(0.16, 1, 0.3, 1)'
-      };
+      if (key === 'category') {
+        revealStyles[key] = {
+          ...revealBase[key],
+          transform: visible ? 'translateY(0)' : `translateY(${CATEGORY_OVERLAP + 40}px)`,
+          transition: 'transform 1.1s cubic-bezier(0.16, 1, 0.3, 1)'
+        };
+      } else {
+        revealStyles[key] = {
+          ...revealBase[key],
+          opacity: visible ? 1 : 0,
+          transform: visible ? 'translateY(0)' : 'translateY(32px)',
+          transition: 'opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1), transform 1.6s cubic-bezier(0.16, 1, 0.3, 1)'
+        };
+      }
     });
     const headerStyle = {
       position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 100,
@@ -1072,7 +1092,7 @@ class Component extends DCLogic {
           position: 'relative',
           borderRadius: '24px',
           padding: isMobile ? '32px 24px' : '56px 64px',
-          background: '#E6DED2'
+          background: '#F5F3F0'
         },
         innerRowStyle: {
           display: 'flex',
