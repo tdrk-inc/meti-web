@@ -247,10 +247,10 @@
     <div style="display:flex; flex-direction:column; gap:40px; position:relative;">
       <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
 <div style="{{ cat.rowStyle }}">
-          <span aria-hidden="true" style="position:absolute; top:24px; left:24px; width:4px; height:4px; border-radius:50%; background:#F8F1E6;"></span>
-          <span aria-hidden="true" style="position:absolute; top:24px; right:24px; width:4px; height:4px; border-radius:50%; background:#F8F1E6;"></span>
-          <span aria-hidden="true" style="position:absolute; bottom:24px; left:24px; width:4px; height:4px; border-radius:50%; background:#F8F1E6;"></span>
-          <span aria-hidden="true" style="position:absolute; bottom:24px; right:24px; width:4px; height:4px; border-radius:50%; background:#F8F1E6;"></span>
+          <span aria-hidden="true" style="position:absolute; top:24px; left:24px; width:4px; height:4px; border-radius:50%; background:#EEE9E2;"></span>
+          <span aria-hidden="true" style="position:absolute; top:24px; right:24px; width:4px; height:4px; border-radius:50%; background:#EEE9E2;"></span>
+          <span aria-hidden="true" style="position:absolute; bottom:24px; left:24px; width:4px; height:4px; border-radius:50%; background:#EEE9E2;"></span>
+          <span aria-hidden="true" style="position:absolute; bottom:24px; right:24px; width:4px; height:4px; border-radius:50%; background:#EEE9E2;"></span>
           <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
           <div style="{{ cat.innerRowStyle }}">
             <div style="{{ cat.noBlockStyle }}">
@@ -909,9 +909,9 @@ class Component extends DCLogic {
     const CATEGORY_OVERLAP = 80;
     const categoryInnerStyle = { maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(24px, 6vw, 96px)' };
     const revealBase = {
-      benefit: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
+      benefit: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, marginBottom: '100px', position: 'relative', overflow: 'hidden' },
       category: {
-        background: '#F8F1E6',
+        background: '#EEE9E2',
         paddingTop: SECTION_GAP,
         position: 'relative',
         zIndex: 2,
