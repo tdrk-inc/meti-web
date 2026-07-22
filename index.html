@@ -122,15 +122,15 @@
         <button onClick="{{ toggleMobileNav }}" aria-label="閉じる" style="width:40px; height:40px; border:none; background:transparent; font-size:26px; cursor:pointer; color:#1F1F21;">×</button>
       </div>
       <nav style="display:flex; flex-direction:column; gap:28px; margin-top:24px;">
-        <a href="#benefit" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">アワード特典</a>
-        <a href="#category" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">応募カテゴリー</a>
-        <a href="#advisory" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">アドバイザリーボード</a>
-        <a href="#schedule" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">スケジュール</a>
-        <a href="#requirements" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">応募条件</a>
-        <a href="#apply" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">エントリー方法</a>
-        <a href="" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">過去のアワード</a>
-        <a href="#faq" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">FAQ</a>
-        <a href="#footer" onClick="{{ toggleMobileNav }}" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;">お問い合わせ</a>
+        <a href="#benefit" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>アワード特典</a>
+        <a href="#category" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>応募カテゴリー</a>
+        <a href="#advisory" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>アドバイザリーボード</a>
+        <a href="#schedule" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>スケジュール</a>
+        <a href="#requirements" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>応募条件</a>
+        <a href="#apply" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>エントリー方法</a>
+        <a href="" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>過去のアワード</a>
+        <a href="#faq" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>FAQ</a>
+        <a href="#footer" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>お問い合わせ</a>
       </nav>
     </div>
   </sc-if>
@@ -140,7 +140,7 @@
   </sc-if>
 
   <!-- HERO -->
-  <section data-screen-label="Hero" id="top" style="position:relative; z-index:2; overflow-x:hidden; overflow-y:visible; padding-top:{{ heroSectionPaddingTop }}; background:#F5F3F0; min-height:100vh; display:flex; flex-direction:column;">
+  <section data-screen-label="Hero" id="top" style="position:relative; z-index:2; padding-top:{{ heroSectionPaddingTop }}; background:#F5F3F0; min-height:100vh; display:flex; flex-direction:column;">
     <video ref="{{ videoRef }}" autoplay muted loop playsinline aria-hidden="true" style="display:none;">
       <source src="glow_blend_fv.mp4" type="video/mp4">
     </video>
@@ -248,7 +248,7 @@
       <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
 <div style="{{ cat.rowStyle }}">
           <span aria-hidden="true" style="position:absolute; top:24px; left:24px; width:12px; height:12px; border-radius:50%; background:#EEE9E2;"></span>
-          <span aria-hidden="true" style="position:absolute; top:24px; right:24px; width:12px; height:12px; border-radius:50%; background:#EEE9E2;"></span>
+          <span aria-hidden="true" style="{{ categoryTopRightDotStyle }}"></span>
           <span aria-hidden="true" style="position:absolute; bottom:24px; left:24px; width:12px; height:12px; border-radius:50%; background:#EEE9E2;"></span>
           <span aria-hidden="true" style="position:absolute; bottom:24px; right:24px; width:12px; height:12px; border-radius:50%; background:#EEE9E2;"></span>
           <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
@@ -410,10 +410,10 @@
           <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
             <span style="width:6px; height:6px; border-radius:50%; background:{{ ev.dotColor }}; flex:0 0 auto;"></span>
             <span style="font-family:'Noto Sans JP',sans-serif; font-size:16px; color:#1F1F21; flex:1 1 auto;">{{ ev.label }}<sc-if value="{{ ev.daysLeft !== null }}" hint-placeholder-val="{{ false }}"><span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF; background:#E06219; padding:5px 14px; border-radius:4px; margin-left:10px; display:inline-block;">あと{{ ev.daysLeft }}日</span></sc-if></span>
-            <sc-if value="{{ ev.isKeyDate }}">
-              <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#E06219; background:transparent; border:1px solid #E06219; padding:6px 14px; border-radius:4px;">KEY DATE</span>
-            </sc-if>
           </div>
+          <sc-if value="{{ ev.isKeyDate }}">
+            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#E06219; background:transparent; border:1px solid #E06219; padding:6px 14px; border-radius:4px; align-self:flex-start; margin-left:16px;">KEY DATE</span>
+          </sc-if>
         </div>
         </sc-if>
       </sc-for>
@@ -541,7 +541,7 @@
               <span style="{{ archiveDescStyle }}">{{ item.description }}</span>
             </div>
           </div>
-          <span aria-hidden="true" class="archive-arrow" style="width:36px; height:36px; border-radius:50%; background:transparent; color:#E06219; display:inline-flex; align-items:center; justify-content:center; font-size:16px; flex:0 0 auto; transition:background 500ms cubic-bezier(0.65, 0, 0.35, 1), color 500ms cubic-bezier(0.65, 0, 0.35, 1);">→</span>
+          <span aria-hidden="true" class="archive-arrow" style="{{ archiveArrowStyle }}">→</span>
         </a>
       </sc-for>
     </div>
@@ -860,7 +860,15 @@ class Component extends DCLogic {
     const heroContentWrapStyle = { position: 'relative', zIndex: 1, marginTop: 'auto', maxWidth: '1440px', marginLeft: 'auto', marginRight: 'auto', width: '100%', padding: '0 clamp(24px, 6vw, 96px) 80px' };
     const benefitFadeStyle = { position: 'absolute', left: 0, right: 0, top: 0, height: isMobile ? '0px' : '120px', background: 'linear-gradient(to bottom, #F5F3F0 0%, rgba(245,243,240,0) 100%)', pointerEvents: 'none', zIndex: -1 };
     const archiveListStyle = { display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gap: isMobile ? '16px' : '24px' };
-    const archiveBoxStyle = { textDecoration: 'none', border: '1px solid rgba(224,98,25,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: 'nowrap', background: 'rgba(224,98,25,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)', transition: 'background 350ms cubic-bezier(0.65, 0, 0.35, 1)' };
+    const archiveBoxStyle = isMobile
+      ? { textDecoration: 'none', border: '1px solid rgba(224,98,25,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '24px', background: 'rgba(224,98,25,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)', transition: 'background 350ms cubic-bezier(0.65, 0, 0.35, 1)' }
+      : { textDecoration: 'none', border: '1px solid rgba(224,98,25,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: 'nowrap', background: 'rgba(224,98,25,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)', transition: 'background 350ms cubic-bezier(0.65, 0, 0.35, 1)' };
+    const archiveArrowStyle = {
+      width: '36px', height: '36px', borderRadius: '50%', background: 'transparent', color: '#E06219',
+      display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px', flex: '0 0 auto',
+      alignSelf: isMobile ? 'flex-end' : 'auto',
+      transition: 'background 500ms cubic-bezier(0.65, 0, 0.35, 1), color 500ms cubic-bezier(0.65, 0, 0.35, 1)'
+    };
     const archiveInnerStyle = isMobile
       ? { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '12px', minWidth: 0 }
       : { display: 'flex', alignItems: 'flex-start', gap: '40px', flexWrap: 'nowrap', minWidth: 0, overflow: 'hidden' };
@@ -908,6 +916,7 @@ class Component extends DCLogic {
     const SECTION_GAP = '120px';
     const CATEGORY_OVERLAP = 80;
     const categoryInnerStyle = { maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(24px, 6vw, 96px)' };
+    const categoryTopRightDotStyle = { position: 'absolute', top: '24px', right: '24px', width: isMobile ? '6px' : '12px', height: isMobile ? '6px' : '12px', borderRadius: '50%', background: '#EEE9E2' };
     const revealBase = {
       benefit: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, marginBottom: '100px', position: 'relative', overflow: 'hidden' },
       category: {
@@ -1076,7 +1085,7 @@ class Component extends DCLogic {
           noFontSize: '16px',
           itemStyle: {
             position: 'relative',
-            display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '40px',
+            display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', gap: isMobile ? '12px' : '40px',
             padding: isMobile ? '16px' : '24px',
             borderRadius: '8px',
             background: '#FFFFFF'
@@ -1263,7 +1272,7 @@ class Component extends DCLogic {
       { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役', '公益財団法人福武財団理事長'], photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, benefitCardStyle, categoryInnerStyle, categoryTopRightDotStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
