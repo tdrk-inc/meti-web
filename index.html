@@ -140,7 +140,7 @@
   </sc-if>
 
   <!-- HERO -->
-  <section data-screen-label="Hero" id="top" style="position:relative; z-index:2; overflow:{{ heroOverflow }}; padding-top:{{ heroSectionPaddingTop }}; background:#FDF9F2; min-height:100vh; display:flex; flex-direction:column;">
+  <section data-screen-label="Hero" id="top" style="position:relative; z-index:2; overflow-x:hidden; overflow-y:visible; padding-top:{{ heroSectionPaddingTop }}; background:#FDF9F2; min-height:100vh; display:flex; flex-direction:column;">
     <video ref="{{ videoRef }}" autoplay muted loop playsinline aria-hidden="true" style="display:none;">
       <source src="glow_blend_fv.mp4" type="video/mp4">
     </video>
@@ -173,11 +173,10 @@
           <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(24px, 3vw, 32px); line-height:135%; color:#1F1F21;">アート<span style="font-size:clamp(20px, 2.6vw, 28px);">と</span>ビジネス<span style="font-size:clamp(20px, 2.6vw, 28px);">の</span>共創<span style="font-size:clamp(20px, 2.6vw, 28px);">が</span>、<br>未来<span style="font-size:clamp(20px, 2.6vw, 28px);">の</span>経済<span style="font-size:clamp(20px, 2.6vw, 28px);">を</span>つくる。</span>
           <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; letter-spacing:0.15px; color:#333333;">本アワードは2025年に第1回を開催し、2026年に第2回を迎えます。<br>共創の現場と経済的価値創出を巧みに結びつけたモデルとなる企業・プロジェクトを選出・表彰します。<br>企業がアート・アーティストとの共創を通じて新たな価値を創出し、経済社会とアート・アーティストそれぞれが持続的に発展するエコシステムの構築を目指しています。</p>
         </div>
-        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 16px; margin-top:20px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;">
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin-top:20px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;">
           <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:#1F1F21;">応募カテゴリー</span>
-          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#1F1F21;">|</span>
           <sc-for list="{{ categoryLabels }}" as="cl" hint-placeholder-count="5">
-            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#1F1F21;">#{{ cl }}</span>
+            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21; border:1px solid #1F1F21; border-radius:8px; padding:6px 14px;">{{ cl }}</span>
           </sc-for>
         </div>
         <div style="margin-top:20px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.3s both;">
@@ -214,7 +213,7 @@
           </div>
           <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">アワード特典</span>
         </div>
-        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; color:#333333; text-align:right;">受賞企業様とファイナリスト企業様（最終選考に残られた企業）への特典です。</p>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; color:#333333; text-align:{{ benefitDescAlign }};">受賞企業様とファイナリスト企業様（最終選考に残られた企業）への特典です。</p>
       </div>
       <div style="display:grid; grid-template-columns:{{ benefitGridColumns }}; gap:24px;">
         <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
@@ -287,8 +286,8 @@
             <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
               <div style="display:flex; flex-direction:column; gap:6px; min-width:0;">
                 <div style="display:flex; align-items:baseline; gap:10px; min-width:0;">
-                  <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; line-height:1; color:{{ cat.textColor }};">{{ cat.no }}</span>
-                  <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.3px; color:{{ cat.textColor }};">{{ cat.titleEn }}</span>
+                  <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:18px; line-height:1; color:{{ cat.textColor }};">{{ cat.no }}</span>
+                  <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.3px; color:{{ cat.textColor }};">{{ cat.titleEn }}</span>
                 </div>
               </div>
             </div>
@@ -296,7 +295,7 @@
               <sc-if value="{{ cat.isNew }}">
                 <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#FFFFFF; background:#B48CC8; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; height:24px;">NEW</span>
               </sc-if>
-              <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:32px; line-height:140%; color:{{ cat.textColor }};">{{ cat.title }}</h3>
+              <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:24px; line-height:140%; color:{{ cat.textColor }};">{{ cat.title }}</h3>
             </div>
             <div style="display:flex; flex-direction:column; gap:16px; margin-top:20px;">
               <div style="display:flex; flex-direction:column; gap:4px;">
@@ -621,7 +620,7 @@
     <div style="max-width:1440px; margin:0 auto; padding:clamp(48px, 9vw, 96px) clamp(32px, 7vw, 96px); position:relative; overflow:hidden;">
       <div style="position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px;">
         <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:36px; letter-spacing:1px; color:#FFFFFF;">ENTRY NOW</span>
-        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:18px; line-height:170%; color:#FFFFFF;">プレエントリー締切まで<sc-if value="{{ preEntryDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}"><span style="font-size:18px; color:#1F1F21; font-weight:700;">あと{{ preEntryDaysLeft }}日</span></sc-if>。気になる方はまずはお気軽にエントリーください。</p>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:18px; line-height:170%; color:#FFFFFF;">プレエントリー締切まで<sc-if value="{{ preEntryDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}"><span style="font-size:18px; color:#1F1F21; font-weight:700;">あと{{ preEntryDaysLeft }}日</span></sc-if>。<sc-if value="{{ isMobile }}"><br></sc-if>気になる方はまずはお気軽にエントリーください。</p>
       </div>
       <div style="{{ entryCardsRowStyle }}">
         <a href="#" class="entry-card" style="{{ entryCardStyle }}">
@@ -844,7 +843,6 @@ class Component extends DCLogic {
     const isMobile = this.state.isMobile;
     const isTablet = this.state.isTablet;
     const mobileNavOpen = this.state.mobileNavOpen;
-    const heroOverflow = isMobile ? 'hidden' : 'visible';
     const heroTitleFontSize = isMobile ? 'clamp(28px, 8vw, 48px)' : 'clamp(28px, 3.4vw, 56px)';
     const heroTitleWhiteSpace = isMobile ? 'normal' : 'nowrap';
     const heroTitleMarginBottom = isMobile ? '40px' : '0';
@@ -858,9 +856,13 @@ class Component extends DCLogic {
     const benefitFadeStyle = { position: 'absolute', left: 0, right: 0, top: 0, height: isMobile ? '0px' : '120px', background: 'linear-gradient(to bottom, #FDF9F2 0%, rgba(253,249,242,0) 100%)', pointerEvents: 'none', zIndex: -1 };
     const archiveListStyle = { display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gap: isMobile ? '16px' : '24px' };
     const archiveBoxStyle = { textDecoration: 'none', border: '1px solid rgba(232,112,42,0.16)', borderRadius: '8px', padding: 'clamp(32px, 5vw, 48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: 'nowrap', background: 'rgba(232,112,42,0.035)', backdropFilter: 'blur(12px) saturate(140%)', WebkitBackdropFilter: 'blur(12px) saturate(140%)', transition: 'background 350ms cubic-bezier(0.65, 0, 0.35, 1)' };
-    const archiveInnerStyle = { display: 'flex', alignItems: 'flex-start', gap: isMobile ? '12px' : '40px', flexWrap: 'nowrap', minWidth: 0, overflow: 'hidden' };
+    const archiveInnerStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '12px', minWidth: 0 }
+      : { display: 'flex', alignItems: 'flex-start', gap: '40px', flexWrap: 'nowrap', minWidth: 0, overflow: 'hidden' };
     const archiveTagStyle = { fontFamily: "'Oswald',sans-serif", fontWeight: 600, fontSize: '20px', letterSpacing: '1.5px', color: '#1F1F21', flex: '0 0 auto', paddingTop: '2px' };
-    const archiveDividerStyle = { display: 'block', width: '1px', alignSelf: 'stretch', background: '#D4D5E2', flex: '0 0 auto' };
+    const archiveDividerStyle = isMobile
+      ? { display: 'none' }
+      : { display: 'block', width: '1px', alignSelf: 'stretch', background: '#D4D5E2', flex: '0 0 auto' };
     const archiveLabelStyle = { fontFamily: "'Oswald',sans-serif", fontWeight: 600, fontSize: '14px', letterSpacing: '1.5px', color: '#1F1F21' };
     const archiveDescStyle = { fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 500, fontSize: '13px', color: '#1F1F21', minWidth: 0 };
     const advisoryNoteRowStyle = { display: 'flex', alignItems: isMobile ? 'flex-start' : 'baseline', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '4px' : '12px' };
@@ -870,6 +872,7 @@ class Component extends DCLogic {
       ? { display: 'flex', flexDirection: 'column', gap: '16px' }
       : { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'end' };
     const benefitStickyStyle = { display: 'flex', flexDirection: 'column', gap: '12px' };
+    const benefitDescAlign = isMobile ? 'left' : 'right';
     const benefitCardStyle = {
       display: 'flex', flexDirection: 'column', gap: '8px',
       border: '1px solid #F6C6AA', borderRadius: '8px', padding: '24px',
@@ -893,6 +896,7 @@ class Component extends DCLogic {
       display: 'flex', flexDirection: 'column', gap: '8px', padding: '20px 32px',
       width: 'auto', minWidth: isMobile ? '0' : '240px',
       borderRadius: '8px', border: '1px solid #E4E1DB', background: 'transparent', textDecoration: 'none',
+      textAlign: 'left',
       transition: 'border-color 350ms cubic-bezier(0.65, 0, 0.35, 1), background 350ms cubic-bezier(0.65, 0, 0.35, 1)'
     };
     const advisoryGridColumns = isMobile ? 'repeat(auto-fit, minmax(140px, 1fr))' : 'repeat(4, 1fr)';
@@ -1240,7 +1244,7 @@ class Component extends DCLogic {
       { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役', '公益財団法人福武財団理事長'], photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroOverflow, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitCardStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, benefitCardStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
