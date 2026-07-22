@@ -243,10 +243,13 @@
       </div>
       <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">応募カテゴリー</span>
     </div>
-    <div style="display:flex; flex-direction:column; position:relative;">
+    <div style="display:flex; flex-direction:column; gap:40px; position:relative;">
       <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
 <div style="{{ cat.rowStyle }}">
-          <div style="{{ cat.dividerStyle }}"></div>
+          <span aria-hidden="true" style="position:absolute; top:24px; left:24px; width:12px; height:12px; border-radius:50%; background:#F5F3F0;"></span>
+          <span aria-hidden="true" style="position:absolute; top:24px; right:24px; width:12px; height:12px; border-radius:50%; background:#F5F3F0;"></span>
+          <span aria-hidden="true" style="position:absolute; bottom:24px; left:24px; width:12px; height:12px; border-radius:50%; background:#F5F3F0;"></span>
+          <span aria-hidden="true" style="position:absolute; bottom:24px; right:24px; width:12px; height:12px; border-radius:50%; background:#F5F3F0;"></span>
           <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
           <div style="{{ cat.innerRowStyle }}">
             <div style="{{ cat.noBlockStyle }}">
@@ -269,9 +272,11 @@
                   <div style="{{ cat.pointsListStyle }}">
                     <sc-for list="{{ cat.points }}" as="pt" hint-placeholder-count="4">
                       <div style="{{ pt.itemStyle }}">
-                        <span style="flex:0 0 auto; width:8px; height:8px; border-radius:50%; background:#E06219;"></span>
-                        <span style="flex:0 0 auto; font-family:'Oswald',sans-serif; font-weight:700; font-size:{{ pt.noFontSize }}; line-height:1; letter-spacing:0.5px; color:#E06219;">{{ pt.no }}</span>
-                        <p style="margin:0; flex:1 1 auto; min-width:0; text-align:left; white-space:pre-line; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ pt.text }}</p>
+                        <div style="{{ pt.labelGroupStyle }}">
+                          <span style="flex:0 0 auto; width:8px; height:8px; border-radius:50%; background:#E06219;"></span>
+                          <span style="flex:0 0 auto; font-family:'Oswald',sans-serif; font-weight:700; font-size:{{ pt.noFontSize }}; line-height:1; letter-spacing:0.5px; color:#E06219;">{{ pt.no }}</span>
+                        </div>
+                        <p style="margin:0; flex:1 1 auto; min-width:0; text-align:left; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ pt.text }}</p>
                       </div>
                     </sc-for>
                   </div>
@@ -306,9 +311,11 @@
                   <div style="{{ cat.pointsListStyle }}">
                     <sc-for list="{{ cat.points }}" as="pt" hint-placeholder-count="4">
                       <div style="{{ pt.itemStyle }}">
-                        <span style="flex:0 0 auto; width:8px; height:8px; border-radius:50%; background:#E06219;"></span>
-                        <span style="flex:0 0 auto; font-family:'Oswald',sans-serif; font-weight:700; font-size:{{ pt.noFontSize }}; line-height:1; letter-spacing:0.5px; color:#E06219;">{{ pt.no }}</span>
-                        <p style="margin:0; flex:1 1 auto; min-width:0; text-align:left; white-space:pre-line; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }};">{{ pt.text }}</p>
+                        <div style="{{ pt.labelGroupStyle }}">
+                          <span style="flex:0 0 auto; width:8px; height:8px; border-radius:50%; background:#E06219;"></span>
+                          <span style="flex:0 0 auto; font-family:'Oswald',sans-serif; font-weight:700; font-size:{{ pt.noFontSize }}; line-height:1; letter-spacing:0.5px; color:#E06219;">{{ pt.no }}</span>
+                        </div>
+                        <p style="margin:0; flex:1 1 auto; min-width:0; text-align:left; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:{{ cat.textColor }};">{{ pt.text }}</p>
                       </div>
                     </sc-for>
                   </div>
@@ -957,10 +964,10 @@ class Component extends DCLogic {
         isNew: false,
         criteria: 'アートの有する価値を活用して企業戦略・体制の構築、実行、発信など経営領域で新たな変化を起こした企業',
         points: [
-          'アートの有する価値を活かした\n類を見ないユニークな取組か',
-          '経営レベル・指標の設定を行い、\n企業内外に大きな変化をもたらしているか',
+          'アートの有する価値を活かした類を見ないユニークな取組か',
+          '経営レベル・指標の設定を行い、企業内外に大きな変化をもたらしているか',
           '単発ではなく魅力的な取組となっているか',
-          'ステークホルダーや社会に対して\n取組を発信できているか'
+          'ステークホルダーや社会に対して取組を発信できているか'
         ]
       },
       {
@@ -970,9 +977,9 @@ class Component extends DCLogic {
         isNew: false,
         criteria: 'アート・アーティストとの共創を通じて事業の高度化など新たな経済的価値を創出した企業・プロジェクト',
         points: [
-          'アートの有する価値を活かした\n類を見ないユニークな事業内容か',
-          'アーティストや関連団体・機関等との間に\nWin-Winの共創ができているか',
-          'プロジェクトの経済的価値（既存事業の高度化、\n顧客との関係強化、新規顧客獲得等）',
+          'アートの有する価値を活かした類を見ないユニークな事業内容か',
+          'アーティストや関連団体・機関等との間にWin-Winの共創ができているか',
+          'プロジェクトの経済的価値（既存事業の高度化、顧客との関係強化、新規顧客獲得等）',
           '単発ではなく魅力的な事業となっているか'
         ]
       },
@@ -983,10 +990,10 @@ class Component extends DCLogic {
         isNew: false,
         criteria: 'アート起点とした事業創造などを通じて新たなビジネスモデルを創出した企業・プロジェクト',
         points: [
-          'アートの有する価値を活かした\n類を見ないユニークな事業内容か',
+          'アートの有する価値を活かした類を見ないユニークな事業内容か',
           '事業としての新規性があるか',
-          'プロジェクトの経済的価値（収益性、\nエンゲージメント（参加者数、SNS等）、再現性等）',
-          '単発ではなく魅力的な事業と\nなるための計画や構想があるか'
+          'プロジェクトの経済的価値（収益性、エンゲージメント（参加者数、SNS等）、再現性等）',
+          '単発ではなく魅力的な事業となるための計画や構想があるか'
         ]
       },
       {
@@ -996,9 +1003,9 @@ class Component extends DCLogic {
         isNew: false,
         criteria: '地域特性を活かしたアートに関わる取組を通じて地域における経済的価値を創出した企業・プロジェクト',
         points: [
-          'アートの有する価値を活かした\n類を見ないユニークな取り組みか',
+          'アートの有する価値を活かした類を見ないユニークな取り組みか',
           '地域資源を活かした事業内容であるか',
-          '地域経済活性化に寄与しているか（新事業・新産業創出、\n雇用創出、観光客はか関係人口の増加等）',
+          '地域経済活性化に寄与しているか（新事業・新産業創出、雇用創出、観光客はか関係人口の増加等）',
           '単発ではなく魅力的な事業となっているか'
         ]
       },
@@ -1011,7 +1018,7 @@ class Component extends DCLogic {
         points: [
           '所有する作品を有効に活用してか',
           '企業価値向上につながっているか',
-          '日本のアート市場活性化や国際発信など\n日本のアート界の発展に寄与しているか',
+          '日本のアート市場活性化や国際発信など日本のアート界の発展に寄与しているか',
           '事業・プロジェクトを対外的に発信しているか'
         ]
       }
@@ -1044,14 +1051,16 @@ class Component extends DCLogic {
         points: c.points.map((p, idx) => ({
           no: `POINT ${idx + 1}`,
           text: p,
-          noFontSize: isMobile ? '22px' : '40px',
+          noFontSize: '16px',
           itemStyle: {
             position: 'relative',
-            display: 'flex', flexDirection: 'row', alignItems: 'center', gap: isMobile ? '12px' : '16px',
+            display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '40px',
             padding: isMobile ? '16px' : '24px',
             borderRadius: '8px',
-            border: '1px solid rgba(224,98,25,0.35)',
             background: '#FFFFFF'
+          },
+          labelGroupStyle: {
+            display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '8px', flex: '0 0 auto'
           }
         })),
         isOpen,
@@ -1061,14 +1070,9 @@ class Component extends DCLogic {
         opacity: isOpen ? 1 : 0,
         rowStyle: {
           position: 'relative',
-          borderRadius: '4px',
-          padding: '64px 0',
-          background: 'transparent'
-        },
-        dividerStyle: {
-          position: 'absolute', top: 0, left: 0, right: 0,
-          height: '2px',
-          background: `linear-gradient(to right, #E06219 0, #E06219 ${(isMobile ? 44 : 160) - 40}px, #D4D5E2 ${(isMobile ? 44 : 160) + 40}px, #D4D5E2 100%)`
+          borderRadius: '24px',
+          padding: isMobile ? '32px 24px' : '56px 64px',
+          background: '#E6DED2'
         },
         innerRowStyle: {
           display: 'flex',
