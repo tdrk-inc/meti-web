@@ -144,9 +144,10 @@
     <video ref="{{ videoRef }}" autoplay muted loop playsinline aria-hidden="true" style="display:none;">
       <source src="glow_blend_fv.mp4" type="video/mp4">
     </video>
-    <div aria-hidden="true" style="position:absolute; left:-8%; bottom:-55%; width:85vmax; height:85vmax; border-radius:50%; background:radial-gradient(circle, rgba(232,112,42,0.7) 0%, rgba(232,112,42,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatOrange 13s ease-in-out infinite; z-index:0; pointer-events:none;"></div>
-    <div aria-hidden="true" style="position:absolute; right:-10%; top:-15%; width:70vmax; height:70vmax; border-radius:50%; background:radial-gradient(circle, rgba(180,140,200,0.7) 0%, rgba(180,140,200,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatPurple 15s ease-in-out infinite; z-index:0; pointer-events:none;"></div>
+    <div aria-hidden="true" style="position:absolute; left:-8%; bottom:-55%; width:72.25vmax; height:72.25vmax; border-radius:50%; background:radial-gradient(circle, rgba(232,112,42,0.7) 0%, rgba(232,112,42,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatOrange 13s ease-in-out infinite; z-index:-5; pointer-events:none;"></div>
+    <div aria-hidden="true" style="position:absolute; right:-10%; top:-15%; width:59.5vmax; height:59.5vmax; border-radius:50%; background:radial-gradient(circle, rgba(180,140,200,0.7) 0%, rgba(180,140,200,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatPurple 15s ease-in-out infinite; z-index:-5; pointer-events:none;"></div>
     <div aria-hidden="true" style="position:absolute; inset:0; opacity:0.05; mix-blend-mode:overlay; pointer-events:none; z-index:0; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' base-frequency='0.9' num-octaves='3' stitch-tiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
+    <div style="flex:1 1 auto; display:flex; align-items:center;">
     <div style="{{ heroTopRowStyle }}">
       <div style="position:relative; max-width:100%; overflow:visible; margin-top:{{ heroTitleMarginTop }}; flex:0 0 40%;">
         <span style="display:block; font-family:'Oswald',sans-serif; font-weight:700; font-size:{{ heroTitleFontSize }}; line-height:0.98; letter-spacing:-0.5px; white-space:{{ heroTitleWhiteSpace }}; margin-bottom:{{ heroTitleMarginBottom }}; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; color:#1F1F21;">ART &amp; BUSINESS<br>AWARD 2026</span>
@@ -157,7 +158,7 @@
             <div style="display:flex; flex-direction:column; gap:12px;">
               <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(24px, 3vw, 32px); line-height:135%; color:#1F1F21;">アート<span style="font-size:clamp(20px, 2.6vw, 28px);">と</span>ビジネス<span style="font-size:clamp(20px, 2.6vw, 28px);">の</span>共創<span style="font-size:clamp(20px, 2.6vw, 28px);">が</span>、<br>未来<span style="font-size:clamp(20px, 2.6vw, 28px);">の</span>経済<span style="font-size:clamp(20px, 2.6vw, 28px);">を</span>つくる。</span>
             </div>
-            <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; letter-spacing:0.15px; color:#333333;">企業がアート・アーティストとの共創を通じて新たな価値を創出し、経済社会とアート・アーティストそれぞれが持続的に発展するエコシステムの構築を目指しています。共創の現場と経済的価値創出を巧みに結びつけたモデルとなる企業・プロジェクトを選出・表彰いたします。本アワードは2025年に第1回を開催し、2026年で第2回を迎えます。</p>
+            <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; letter-spacing:0.15px; color:#333333;">本アワードは2025年に第1回を開催し、2026年に第2回を迎えます。<br>共創の現場と経済的価値創出を巧みに結びつけたモデルとなる企業・プロジェクトを選出・表彰します。<br>企業がアート・アーティストとの共創を通じて新たな価値を創出し、経済社会とアート・アーティストそれぞれが持続的に発展するエコシステムの構築を目指しています。</p>
           </div>
           <div style="animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;">
             <a href="https://form.run/@aba2026-pre-entry" target="_blank" rel="noopener noreferrer" class="cta-orange" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#E8702A; padding:16px 32px; border-radius:8px; display:inline-flex; align-items:center; gap:16px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#E8702A; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
@@ -165,11 +166,12 @@
         </div>
       </sc-if>
     </div>
+    </div>
     <sc-if value="{{ isMobile }}">
       <div style="{{ heroContentWrapStyle }}">
         <div style="display:flex; flex-direction:column; gap:16px; position:relative; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.1s both;">
           <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:clamp(24px, 3vw, 32px); line-height:135%; color:#1F1F21;">アート<span style="font-size:clamp(20px, 2.6vw, 28px);">と</span>ビジネス<span style="font-size:clamp(20px, 2.6vw, 28px);">の</span>共創<span style="font-size:clamp(20px, 2.6vw, 28px);">が</span>、<br>未来<span style="font-size:clamp(20px, 2.6vw, 28px);">の</span>経済<span style="font-size:clamp(20px, 2.6vw, 28px);">を</span>つくる。</span>
-          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; letter-spacing:0.15px; color:#333333;">企業がアート・アーティストとの共創を通じて新たな価値を創出し、経済社会とアート・アーティストそれぞれが持続的に発展するエコシステムの構築を目指しています。共創の現場と経済的価値創出を巧みに結びつけたモデルとなる企業・プロジェクトを選出・表彰いたします。本アワードは2025年に第1回を開催し、2026年で第2回を迎えます。</p>
+          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; letter-spacing:0.15px; color:#333333;">本アワードは2025年に第1回を開催し、2026年に第2回を迎えます。<br>共創の現場と経済的価値創出を巧みに結びつけたモデルとなる企業・プロジェクトを選出・表彰します。<br>企業がアート・アーティストとの共創を通じて新たな価値を創出し、経済社会とアート・アーティストそれぞれが持続的に発展するエコシステムの構築を目指しています。</p>
         </div>
         <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 16px; margin-top:20px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;">
           <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:#1F1F21;">応募カテゴリー</span>
