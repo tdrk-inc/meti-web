@@ -919,8 +919,8 @@ class Component extends DCLogic {
         overflow: (isMobile || isTablet) ? 'hidden' : 'visible'
       },
       midcta: { background: '#FFFFFF', borderRadius: '8px', maxWidth: '1440px', margin: `${SECTION_GAP} auto 0`, padding: '48px clamp(24px, 6vw, 96px)' },
-      advisory: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: (isMobile || isTablet) ? 'hidden' : 'visible' },
-      schedule: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: (isMobile || isTablet) ? 'hidden' : 'visible' },
+      advisory: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: isMobile ? 'hidden' : 'visible' },
+      schedule: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: isMobile ? 'hidden' : 'visible' },
       requirements: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       apply: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       archive: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
