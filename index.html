@@ -29,7 +29,7 @@
   <style>
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; background: #F5F3F0; scroll-behavior: smooth; }
-    html, body { overflow-x: hidden; width: 100%; }
+    html, body { overflow-x: clip; width: 100%; }
     a { color: #E06219; text-decoration: none; }
     a:hover { color: #1F1F21; }
     ::selection { background: #B48CC8; color: #FFFFFF; }
@@ -249,10 +249,6 @@
     <div style="display:flex; flex-direction:column; gap:40px; position:relative;">
       <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
 <div style="{{ cat.rowStyle }}">
-          <span aria-hidden="true" style="{{ categoryTopLeftDotStyle }}"></span>
-          <span aria-hidden="true" style="{{ categoryTopRightDotStyle }}"></span>
-          <span aria-hidden="true" style="{{ categoryBottomLeftDotStyle }}"></span>
-          <span aria-hidden="true" style="{{ categoryBottomRightDotStyle }}"></span>
           <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
           <div style="{{ cat.innerRowStyle }}">
             <div style="{{ cat.noBlockStyle }}">
@@ -918,11 +914,6 @@ class Component extends DCLogic {
     const SECTION_GAP = '120px';
     const CATEGORY_OVERLAP = 80;
     const categoryInnerStyle = { maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(24px, 6vw, 96px)' };
-    const categoryDotSize = isMobile ? '6px' : '12px';
-    const categoryTopLeftDotStyle = { position: 'absolute', top: '24px', left: '24px', width: categoryDotSize, height: categoryDotSize, borderRadius: '50%', background: '#EEE9E2' };
-    const categoryTopRightDotStyle = { position: 'absolute', top: '24px', right: '24px', width: categoryDotSize, height: categoryDotSize, borderRadius: '50%', background: '#EEE9E2' };
-    const categoryBottomLeftDotStyle = { position: 'absolute', bottom: '24px', left: '24px', width: categoryDotSize, height: categoryDotSize, borderRadius: '50%', background: '#EEE9E2' };
-    const categoryBottomRightDotStyle = { position: 'absolute', bottom: '24px', right: '24px', width: categoryDotSize, height: categoryDotSize, borderRadius: '50%', background: '#EEE9E2' };
     const revealBase = {
       benefit: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, marginBottom: '100px', position: 'relative', overflow: 'hidden' },
       category: {
@@ -1278,7 +1269,7 @@ class Component extends DCLogic {
       { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役', '公益財団法人福武財団理事長'], photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, benefitCardStyle, categoryInnerStyle, categoryTopLeftDotStyle, categoryTopRightDotStyle, categoryBottomLeftDotStyle, categoryBottomRightDotStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
