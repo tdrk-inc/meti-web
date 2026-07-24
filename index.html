@@ -1260,13 +1260,13 @@ class Component extends DCLogic {
     const entrySheetDaysLeft = (scheduleItems.find(s => s.label === 'エントリーシート提出締切') || {}).daysLeft;
 
     const advisoryBoard = [
-      { name: '大林 剛郎', titleLines: ['大林組取締役会長', '公益財団法人大林財団理事長'], photo: 'assets/advisory-01.png' },
+      { name: '大林 剛郎', titleLines: ['大林組 取締役会長 兼 取締役会議長', '公益財団法人大林財団 理事長'], photo: 'assets/advisory-01.png' },
       { name: '片岡 真実', titleLines: ['森美術館館長'], photo: 'assets/advisory-02.png' },
-      { name: '塩見 有子', titleLines: ['NPO法人アーツコミュニケーション代表'], photo: 'assets/advisory-03.png' },
+      { name: '塩見 有子', titleLines: ['NPO法人アーツイニシアティヴトウキョウ[AIT]ディレクター'], photo: 'assets/advisory-03.png' },
       { name: '寺瀬 由紀', titleLines: ['アート・インテリジェンス・グローバル Founding Partner'], photo: 'assets/advisory-04.png' },
-      { name: '永田 暁彦', titleLines: ['ユーグレナ代表取締役社長CEO'], photo: 'assets/advisory-05.png' },
+      { name: '永田 暁彦', titleLines: ['UntroD Capital Japan 代表取締役社長'], photo: 'assets/advisory-05.png' },
       { name: '日比野 克彦', titleLines: ['東京藝術大学長'], photo: 'assets/advisory-06.png' },
-      { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役', '公益財団法人福武財団理事長'], photo: 'assets/advisory-07.png' }
+      { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役会長', '公益財団法人福武財団 理事長'], photo: 'assets/advisory-07.png' }
     ];
 
     return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
