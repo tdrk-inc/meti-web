@@ -530,7 +530,7 @@
   <section data-screen-label="Archive" ref="{{ revealRefs.archive }}" style="{{ revealStyles.archive }}">
     <div style="{{ archiveListStyle }}">
       <sc-for list="{{ archiveItems }}" as="item" hint-placeholder-count="2">
-        <a href="{{ item.url }}" aria-label="{{ item.description }}" class="archive-card" style="{{ archiveBoxStyle }}">
+        <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.description }}" class="archive-card" style="{{ archiveBoxStyle }}">
           <div style="{{ archiveInnerStyle }}">
             <span style="{{ archiveTagStyle }}">ARCHIVE</span>
             <span style="{{ archiveDividerStyle }}"></span>
