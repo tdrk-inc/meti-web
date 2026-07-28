@@ -3,9 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TDH3VT6K');</script>
+<!-- End Google Tag Manager -->
 <script src="./support.js"></script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDH3VT6K"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <x-dc>
 <helmet>
   <title>ART &amp; BUSINESS AWARD 2026｜企業とアーティストの共創で新たな経済価値を創出する</title>
@@ -218,7 +229,7 @@
         <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; color:#333333; text-align:{{ benefitDescAlign }};">受賞企業様とファイナリスト企業様（最終選考に残られた企業）への特典です。</p>
       </div>
       <div style="display:grid; grid-template-columns:{{ benefitGridColumns }}; gap:24px;">
-        <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
+        <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="5">
           <div style="{{ benefitCardStyle }}">
             <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
               <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">{{ b.no }}</span>
@@ -275,7 +286,7 @@
                           <span style="flex:0 0 auto; width:8px; height:8px; border-radius:50%; background:#E06219;"></span>
                           <span style="flex:0 0 auto; font-family:'Oswald',sans-serif; font-weight:700; font-size:{{ pt.noFontSize }}; line-height:1; letter-spacing:0.5px; color:#E06219;">{{ pt.no }}</span>
                         </div>
-                        <p style="margin:0; flex:1 1 auto; min-width:0; text-align:left; font-family:'Noto Sans JP',sans-serif; font-weight:700;　font-size:16px; line-height:170%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ pt.text }}</p>
+                        <p style="margin:0; flex:1 1 auto; min-width:0; text-align:left; font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:170%; color:{{ cat.textColor }}; transition:color 500ms cubic-bezier(0.65, 0, 0.35, 1);">{{ pt.text }}</p>
                       </div>
                     </sc-for>
                   </div>
@@ -314,7 +325,7 @@
                           <span style="flex:0 0 auto; width:8px; height:8px; border-radius:50%; background:#E06219;"></span>
                           <span style="flex:0 0 auto; font-family:'Oswald',sans-serif; font-weight:700; font-size:{{ pt.noFontSize }}; line-height:1; letter-spacing:0.5px; color:#E06219;">{{ pt.no }}</span>
                         </div>
-                        <p style="margin:0; flex:1 1 auto; min-width:0; text-align:left; font-family:'Noto Sans JP',sans-serif; font-weight:700;　font-size:16px; line-height:170%; color:{{ cat.textColor }};">{{ pt.text }}</p>
+                        <p style="margin:0; flex:1 1 auto; min-width:0; text-align:left; font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:170%; color:{{ cat.textColor }};">{{ pt.text }}</p>
                       </div>
                     </sc-for>
                   </div>
@@ -626,7 +637,8 @@
         <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:18px; line-height:170%; color:#FFFFFF;">プレエントリー締切まで<sc-if value="{{ preEntryDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}"><span style="font-size:18px; color:#1F1F21; font-weight:700;">あと{{ preEntryDaysLeft }}日</span></sc-if>。<sc-if value="{{ isMobile }}"><br></sc-if>気になる方はまずはお気軽にエントリーください。</p>
       </div>
       <div style="{{ entryCardsRowStyle }}">
-        <a href="#" class="entry-card" style="{{ entryCardStyle }}">
+        <a href="assets/ART_BUSINESS_AWARD_2026_
+Overview.pdf" target="_blank" rel="noopener noreferrer" download class="entry-card" style="{{ entryCardStyle }}">
           <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:block;">
           <div style="display:flex; flex-direction:column; gap:24px;">
             <div style="display:flex; flex-direction:column; gap:16px;">
@@ -678,7 +690,7 @@
           </a>
           <div style="{{ footerCardStyle }}">
             <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#FFFFFF;">CONTACT</span>
-            <a href="mailto:info@art-business-award.jp" style="font-family:'Oswald',sans-serif; font-weight:400; font-size:16px; color:rgb(201, 201, 201);">info@art-business-meti.com</a>
+            <span style="font-family:'Oswald',sans-serif; font-weight:400; font-size:16px; color:rgb(201, 201, 201);">info@art-business-meti.com</span>
           </div>
         </div>
       </div>
@@ -712,7 +724,7 @@
         </a>
         <div style="{{ footerCardStyle }}">
           <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#FFFFFF;">CONTACT</span>
-          <a href="mailto:info@art-business-award.jp" style="font-family:'Oswald',sans-serif; font-weight:400; font-size:16px; color:rgb(201, 201, 201);">info@art-business-meti.com</a>
+          <span style="font-family:'Oswald',sans-serif; font-weight:400; font-size:16px; color:rgb(201, 201, 201);">info@art-business-meti.com</span>
         </div>
       </div>
       <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:24px; display:flex; flex-direction:column; align-items:center; gap:16px; width:100%;">
@@ -1005,7 +1017,7 @@ class Component extends DCLogic {
         isNew: false,
         criteria: 'アート・アーティストとの共創を通じて事業の高度化など新たな経済的価値を創出した企業・プロジェクト',
         points: [
-          'アートの有する価値を活かした類を見ないユニークな事業内容か',
+          'アートの有する価値を活かした類を見ないユニークな取組か',
           'アーティストや関連団体・機関等との間にWin-Winの共創ができているか',
           'プロジェクトの経済的価値（既存事業の高度化、顧客との関係強化、新規顧客獲得等）',
           '単発ではなく継続的な事業となっているか'
@@ -1016,7 +1028,7 @@ class Component extends DCLogic {
         title: 'ニューアートビジネス',
         titleEn: 'New Business with Art',
         isNew: false,
-        criteria: 'アート起点とした事業創造などを通じて新たなビジネスモデルを創出した企業・プロジェクト',
+        criteria: 'アートを起点とした事業創造などを通じて新たなビジネスモデルを創出した企業・プロジェクト',
         points: [
           'アートの有する価値を活かした類を見ないユニークな事業内容か',
           '事業としての新規性があるか',
@@ -1031,7 +1043,7 @@ class Component extends DCLogic {
         isNew: false,
         criteria: '地域特性を活かしたアートに関わる取組を通じて地域における経済的価値を創出した企業・プロジェクト',
         points: [
-          'アートの有する価値を活かした類を見ないユニークな取り組みか',
+          'アートの有する価値を活かした類を見ないユニークな取組か',
           '地域資源を活かした事業内容であるか',
           '地域経済活性化に寄与しているか（新事業・新産業創出、雇用創出、観光客ほか関係人口の増加等）',
           '単発ではなく継続的な事業となっているか'
@@ -1044,7 +1056,7 @@ class Component extends DCLogic {
         isNew: true,
         criteria: '所有しているアート作品を活用し企業価値向上とともに日本のアートの発展に寄与した企業・プロジェクト',
         points: [
-          '所有するアート作品を有効に活用してるか',
+          '所有するアート作品を有効に活用しているか',
           '企業価値向上につながっているか',
           '日本のアート市場活性化や魅力発信など日本のアート界の発展に寄与しているか',
           '事業・プロジェクトを対外的に発信しているか'
@@ -1055,8 +1067,8 @@ class Component extends DCLogic {
     const categoryLabels = rawCategories.map(c => `${c.no} ${c.title}`);
     const requirementItems = [
       { label: '対象', text: '日本国内に拠点を持つ企業・法人（外資系日本法人を含む）。個人事業主・任意団体は対象外です。' },
-      { label: 'プロジェクトの実施期間', text: '事業の期間は問いません。成果については、どの期間の数値か分かりやすく明記してください。' },
-      { label: '過去の応募・受賞歴', text: '2025年（第1回）にエントリーされた企業・プロジェクトもご応募可能です。エントリーシートに昨年度からの変更点（事業内容や成果）について明記してください。' }
+      { label: 'プロジェクトの実施期間', text: '事業の期間は問いません。' },
+      { label: '過去の応募・受賞歴', text: '2025年（第1回）にエントリーされた企業・プロジェクトもご応募可能です。' }
     ].map((r, i, arr) => {
       const borderBottom = i === arr.length - 1 ? 'none' : '1px solid #D4D5E2';
       return {
@@ -1130,10 +1142,11 @@ class Component extends DCLogic {
     };
 
     const benefits = [
-      { no: '01', text: '都内で開催する授賞式にて表彰', tagNames: ['受賞企業'] },
-      { no: '02', text: '授賞式にてプレゼンテーションの実施', tagNames: ['受賞企業'] },
-      { no: '03', text: 'Art&Businessデータベース（PLAYERS FILE）に掲載', tagNames: ['受賞企業', 'ファイナリスト企業'], note: '掲載は状況を勘案しご相談させていただく場合があります。' },
-      { no: '04', text: '経済産業省の報告書とサイトへ掲載', tagNames: ['受賞企業', 'ファイナリスト企業'], note: '掲載は状況を勘案しご相談させていただく場合があります。' }
+      { no: '01', text: '授賞式での表彰、プレゼンテーション実施', tagNames: ['受賞企業'] },
+      { no: '02', text: 'アワード特設サイトに社名・プロジェクト名を掲載', tagNames: ['受賞企業', 'ファイナリスト企業'] },
+      { no: '03', text: '企業とアートのプレイヤーをつなぐデータベース「PLAYERS FILE」への掲載', tagNames: ['受賞企業', 'ファイナリスト企業'], note: '掲載は状況を勘案しご相談させていただく場合があります。' },
+      { no: '04', text: '経済産業省 事業報告書・アート政策ページへの掲載', tagNames: ['受賞企業', 'ファイナリスト企業'] },
+      { no: '05', text: 'ART & BUSINESS CASEBOOK への掲載', tagNames: ['受賞企業', 'ファイナリスト企業'], note: '掲載は状況を勘案しご相談させていただく場合があります。' }
     ].map(b => ({ ...b, tags: b.tagNames.map(name => ({ label: name, style: benefitTagStyles[name] })) }));
 
     const midArticles = [
@@ -1144,11 +1157,11 @@ class Component extends DCLogic {
 
     const rawFaqs = [
       { q: 'どのような企業が応募できますか？', a: '日本に拠点を持つ企業・法人であればご応募いただけます（外資系日本法人を含む）。' },
-      { q: '複数のカテゴリーに応募することはできますか？', a: '複数カテゴリーへの応募が可能です。複数のカテゴリーを選択のうえご提出ください。※カテゴリーに平伏全てそろえてください。' },
+      { q: '複数のカテゴリーに応募することはできますか？', a: '複数カテゴリーへの応募が可能です。エントリーシート提出時、希望するカテゴリーを選んでご提出ください。' },
       { q: 'どのカテゴリーに応募すべきか分かりません。', a: '複数カテゴリーに関連する事業・プロジェクトについては複数選択のうえご提出ください。事務局にてカテゴリーを判断させていただきます。' },
       { q: '応募に費用はかかりますか？', a: '無料です。' },
       { q: '審査はどのように行われますか？', a: '各カテゴリーに設定された審査基準・審査のポイントに基づき、アドバイザリーボードによる審査を実施します。' },
-      { q: 'エントリー後に内容を変更できますか？', a: 'エントリーシート提出後は内容を修正することはできませんが、再提出いただければ後から提出されたもので審査を実施します。' },
+      { q: 'エントリー後に内容を変更できますか？', a: 'エントリーシート提出後は内容を修正することはできませんが、提出期限内に再提出いただければ後から提出されたもので審査を実施します。' },
       { q: '昨年度もエントリーしたのですが、今年もエントリーできますか？', a: 'エントリー可能です。昨年度からの変更点（事業内容や成果）について明記してください。' }
     ];
 
@@ -1192,7 +1205,7 @@ class Component extends DCLogic {
     const rawInformationItems = [
       { date: '2026年7月29日', tag: 'INFO', tagColor: '#E06219', text: 'Art & Business Award 2026 エントリー開始のお知らせ' },
       { date: '2026年6月11日', tag: 'NEWS', tagColor: '#B48CC8', text: 'ART & BUSINESS CASEBOOKを公表しました。', url: 'https://www.meti.go.jp/policy/mono_info_service/mono/creative/art/260601_casebook01.pdf' },
-      { date: '2025年12月18日', tag: 'INFO', tagColor: '#E06219', text: 'アーティスト、コラボレーター、企業プロジェクトを紹介する「PLAYERS FILE」を公開しました。' }
+      { date: '2025年12月8日', tag: 'INFO', tagColor: '#E06219', text: 'アーティスト、コラボレーター、企業プロジェクトを紹介する「PLAYERS FILE」を公開しました。' }
     ];
     const informationItems = rawInformationItems.map((item, i) => ({
       ...item,
