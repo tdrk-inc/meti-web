@@ -1143,10 +1143,10 @@ class Component extends DCLogic {
 
     const benefits = [
       { no: '01', text: '授賞式での表彰、プレゼンテーション実施', tagNames: ['受賞企業'] },
-      { no: '02', text: 'アワード特設サイトに社名・プロジェクト名を掲載', tagNames: ['受賞企業', 'ファイナリスト企業'] },
-      { no: '03', text: '企業とアートのプレイヤーをつなぐデータベース「PLAYERS FILE」への掲載', tagNames: ['受賞企業', 'ファイナリスト企業'], note: '掲載は状況を勘案しご相談させていただく場合があります。' },
       { no: '04', text: '経済産業省 事業報告書・アート政策ページへの掲載', tagNames: ['受賞企業', 'ファイナリスト企業'] },
-      { no: '05', text: 'ART & BUSINESS CASEBOOK への掲載', tagNames: ['受賞企業', 'ファイナリスト企業'], note: '掲載は状況を勘案しご相談させていただく場合があります。' }
+      { no: '02', text: 'アワード特設サイトに社名・プロジェクト名を掲載', tagNames: ['受賞企業', 'ファイナリスト企業'] },
+      { no: '05', text: 'ART & BUSINESS CASEBOOK への掲載', tagNames: ['受賞企業', 'ファイナリスト企業'], note: '掲載は状況を勘案しご相談させていただく場合があります。' },
+      { no: '03', text: '企業とアートのプレイヤーをつなぐデータベース「PLAYERS FILE」への掲載', tagNames: ['受賞企業', 'ファイナリスト企業'], note: '掲載は状況を勘案しご相談させていただく場合があります。' }
     ].map(b => ({ ...b, tags: b.tagNames.map(name => ({ label: name, style: benefitTagStyles[name] })) }));
 
     const midArticles = [
