@@ -231,7 +231,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; color:#333333; text-align:{{ benefitDescAlign }};">受賞企業様とファイナリスト企業様（最終選考に残られた企業）への特典です。</p>
       </div>
       <div style="display:grid; grid-template-columns:{{ benefitGridColumns }}; gap:24px;">
-        <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="5">
+        <sc-for list="{{ benefitsDisplay }}" as="b" hint-placeholder-count="5">
           <div style="{{ benefitCardStyle }}">
             <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
               <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">{{ b.no }}</span>
@@ -1151,6 +1151,8 @@ class Component extends DCLogic {
       { no: '03', text: '企業とアートのプレイヤーをつなぐデータベース「PLAYERS FILE」への掲載', tagNames: ['受賞企業', 'ファイナリスト企業'], note: '掲載は状況を勘案しご相談させていただく場合があります。' }
     ].map(b => ({ ...b, tags: b.tagNames.map(name => ({ label: name, style: benefitTagStyles[name] })) }));
 
+    const benefitsDisplay = isMobile ? [...benefits].sort((a, b) => a.no.localeCompare(b.no)) : benefits;
+
     const midArticles = [
       { url: 'https://forbesjapan.com/articles/detail/85055', tag: 'アートな数字', title: '「直島新美術館」と創造的カオス', date: '2025.11.23', image: 'https://images.forbesjapan.com/media/article/85055/images/main_image_2859a654bc375ae44b3adc8171340623ab3bd005.jpg?w=1200' },
       { url: 'https://forbesjapan.com/articles/detail/83719', tag: 'カルチャープレナー', title: '東洋から美のルネサンスを起こす「文化統合戦略」', date: '2025.10.23', image: 'https://images.forbesjapan.com/media/article/83719/images/main_image_3c7c6297206e20b185479754f4d7d14912fed795.jpg?w=1200' },
@@ -1282,7 +1284,7 @@ class Component extends DCLogic {
       { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役会長', '公益財団法人福武財団 理事長'], photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, benefitsDisplay, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, advisoryNoteRowStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
