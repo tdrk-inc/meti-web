@@ -359,7 +359,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section data-screen-label="Advisory Board" id="advisory" ref="{{ revealRefs.advisory }}" style="{{ revealStyles.advisory }}">
     <div aria-hidden="true" style="position:absolute; top:-80px; right:-160px; width:480px; height:480px; border-radius:50%; background:#E06219; opacity:0.25; filter:blur(80px); z-index:0; pointer-events:none;"></div>
     <div style="position:relative; margin-bottom:48px;">
-      <div style="{{ benefitHeaderStyle }}">
+      <div style="display:flex; flex-direction:column; gap:20px;">
         <div style="{{ benefitStickyStyle }}">
           <div style="display:flex; align-items:center; gap:8px;">
             <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
@@ -367,7 +367,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <h2 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">アドバイザリーボード</h2>
         </div>
-        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; color:#333333; text-align:{{ benefitDescAlign }};">アートとビジネスの共創において、アート側の視点・ビジネス側の視点、<br>その共創などについて知見をお持ちの有識者の方々が、多角的な助言や審査等に携わります。<br>（※五十音順）</p>
+        <p style="margin:0; width:{{ advisoryDescWidth }}; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; color:#333333; text-align:left;">アートとビジネスの共創において、アート側の視点・ビジネス側の視点、<br>その共創などについて知見をお持ちの有識者の方々が、多角的な助言や審査等に携わります。<br>（※五十音順）</p>
       </div>
     </div>
     <div style="display:grid; grid-template-columns:{{ advisoryGridColumns }}; gap:32px 24px; position:relative;">
@@ -900,6 +900,7 @@ class Component extends DCLogic {
       : { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'end' };
     const benefitStickyStyle = { display: 'flex', flexDirection: 'column', gap: '12px' };
     const benefitDescAlign = isMobile ? 'left' : 'right';
+    const advisoryDescWidth = isMobile ? '100%' : '75%';
     const benefitCardStyle = {
       display: 'flex', flexDirection: 'column', gap: '8px',
       border: '1px solid #F6C6AA', borderRadius: '8px', padding: '24px',
@@ -1286,7 +1287,7 @@ class Component extends DCLogic {
       { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役会長', '公益財団法人福武財団 理事長'], photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, benefitsDisplay, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, preEntryDaysLeft, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, benefitsDisplay, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, advisoryDescWidth, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
