@@ -358,13 +358,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- ADVISORY BOARD -->
   <section data-screen-label="Advisory Board" id="advisory" ref="{{ revealRefs.advisory }}" style="{{ revealStyles.advisory }}">
     <div aria-hidden="true" style="position:absolute; top:-80px; right:-160px; width:480px; height:480px; border-radius:50%; background:#E06219; opacity:0.25; filter:blur(80px); z-index:0; pointer-events:none;"></div>
-    <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:48px;">
-      <div style="display:flex; align-items:center; gap:8px;">
-        <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
-        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">ADVISORY BOARD</span>
+    <div style="position:relative; margin-bottom:48px;">
+      <div style="{{ benefitHeaderStyle }}">
+        <div style="{{ benefitStickyStyle }}">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
+            <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">ADVISORY BOARD</span>
+          </div>
+          <h2 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">アドバイザリーボード</h2>
+        </div>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; color:#333333; text-align:{{ benefitDescAlign }};">アートとビジネスの共創において、アート側の視点・ビジネス側の視点、<br>その共創などについて知見をお持ちの有識者の方々が、多角的な助言や審査等に携わります。<br>（※五十音順）</p>
       </div>
-      <h2 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">アドバイザリーボード</h2>
-      <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; color:#333333;">アートとビジネスの共創において、アート側の視点・ビジネス側の視点、<br>その共創などについて知見をお持ちの有識者の方々が、多角的な助言や審査等に携わります。<br>（※五十音順）</p>
     </div>
     <div style="display:grid; grid-template-columns:{{ advisoryGridColumns }}; gap:32px 24px; position:relative;">
       <sc-for list="{{ advisoryBoard }}" as="person" hint-placeholder-count="7">
@@ -883,12 +887,12 @@ class Component extends DCLogic {
     const archiveInnerStyle = isMobile
       ? { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '24px', minWidth: 0 }
       : { display: 'flex', alignItems: 'flex-start', gap: '40px', flexWrap: 'nowrap', minWidth: 0, overflow: 'hidden' };
-    const archiveTagStyle = { fontFamily: "'Oswald',sans-serif", fontWeight: 600, fontSize: '20px', letterSpacing: '1.5px', color: '#1F1F21', flex: '0 0 auto', paddingTop: '2px' };
+    const archiveTagStyle = { fontFamily: "'Oswald',sans-serif", fontWeight: 600, fontSize: '24px', letterSpacing: '1.5px', color: '#1F1F21', flex: '0 0 auto', paddingTop: '2px' };
     const archiveDividerStyle = isMobile
       ? { display: 'none' }
       : { display: 'block', width: '1px', alignSelf: 'stretch', background: '#D4D5E2', flex: '0 0 auto' };
-    const archiveLabelStyle = { fontFamily: "'Oswald',sans-serif", fontWeight: 600, fontSize: '14px', letterSpacing: '1.5px', color: '#1F1F21' };
-    const archiveDescStyle = { fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 500, fontSize: '13px', color: '#1F1F21', minWidth: 0 };
+    const archiveLabelStyle = { fontFamily: "'Oswald',sans-serif", fontWeight: 600, fontSize: '16px', letterSpacing: '1.5px', color: '#1F1F21' };
+    const archiveDescStyle = { fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 500, fontSize: '14px', color: '#1F1F21', minWidth: 0 };
     const sectionTitleFontSize = isMobile ? '28px' : '36px';
     const benefitGridColumns = isMobile ? '1fr' : '1fr 1fr';
     const benefitHeaderStyle = isMobile
