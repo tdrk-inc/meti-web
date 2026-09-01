@@ -81,6 +81,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     .footer-card:hover .footer-card-desc { color: #1F1F21 !important; }
     .entry-card:hover { background: rgba(255,255,255,0.7) !important; }
     .entry-card:hover .cta-arrow { background: #E06219 !important; border-color: #E06219 !important; color: #FFFFFF !important; }
+    .cta-disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
     @media (min-width: 1000px) { .hero-eco-line { white-space: nowrap; } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes floatOrange {
@@ -119,10 +120,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="#faq" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">FAQ</a>
           <a href="#footer" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">お問い合わせ</a>
         </nav>
-        <a href="https://form.run/@aba2026-entry" target="_blank" rel="noopener noreferrer" class="cta-dark" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; flex:0 0 auto; position:absolute; top:50%; right:clamp(24px, 4vw, 48px); transform:translateY(-50%); transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+        <span aria-disabled="true" class="cta-dark cta-disabled" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; flex:0 0 auto; position:absolute; top:50%; right:clamp(24px, 4vw, 48px); transform:translateY(-50%);">プレエントリーは締め切りました</span>
       </sc-if>
       <sc-if value="{{ isTablet }}" hint-placeholder-val="{{ false }}">
-        <a href="https://form.run/@aba2026-entry" target="_blank" rel="noopener noreferrer" class="cta-dark" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; flex:0 0 auto; position:absolute; top:50%; right:clamp(24px, 4vw, 48px); transform:translateY(-50%); transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+        <span aria-disabled="true" class="cta-dark cta-disabled" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; flex:0 0 auto; position:absolute; top:50%; right:clamp(24px, 4vw, 48px); transform:translateY(-50%);">プレエントリーは締め切りました</span>
         <nav style="display:flex; align-items:center; gap:12px; flex-basis:100%; justify-content:flex-start; overflow-x:auto; white-space:nowrap; scrollbar-width:thin; margin-top:0;">
           <a href="#category" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">応募カテゴリー</a>
           <a href="#advisory" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">アドバイザリーボード</a>
@@ -166,7 +167,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </sc-if>
 
   <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
-    <a href="https://form.run/@aba2026-entry" target="_blank" rel="noopener noreferrer" style="position:fixed; bottom:0; left:0; right:0; z-index:150; background:#1F1F21; color:#FFFFFF; text-align:center; padding:16px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; display:block;">エントリーする</a>
+    <span aria-disabled="true" style="position:fixed; bottom:0; left:0; right:0; z-index:150; background:#1F1F21; color:#FFFFFF; text-align:center; padding:16px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; display:block; opacity:0.5; cursor:not-allowed;">プレエントリーは締め切りました</span>
   </sc-if>
 
   <!-- HERO -->
@@ -191,7 +192,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; letter-spacing:0.15px; color:#333333;">経済産業省は企業がアート・アーティストとの共創を通じて新たな価値を創出し、経済社会とアート・アーティストそれぞれが持続的に発展するエコシステムの構築を目指しています。<br>その実現に向けて、共創の取組と経済的価値の創出をさらに加速させるため、共創の現場と経済的価値創出を巧みに結びつけたモデルとなる企業・プロジェクトを選出・表彰します。<br>今年度は第2回の開催となります。</p>
           </div>
           <div style="animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;">
-            <a href="https://form.run/@aba2026-entry" target="_blank" rel="noopener noreferrer" class="cta-orange" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#E06219; padding:16px 32px; border-radius:8px; display:inline-flex; align-items:center; gap:16px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#E06219; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+            <span aria-disabled="true" class="cta-dark cta-disabled" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#1F1F21; padding:16px 32px; border-radius:8px; display:inline-flex; align-items:center; gap:16px;">プレエントリーは締め切りました</span>
           </div>
         </div>
       </sc-if>
@@ -212,7 +213,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div style="margin-top:20px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.3s both;">
-          <a href="https://form.run/@aba2026-entry" target="_blank" rel="noopener noreferrer" class="cta-orange" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#E06219; padding:16px 32px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; gap:16px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#E06219; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+          <span aria-disabled="true" class="cta-dark cta-disabled" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#1F1F21; padding:16px 32px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; gap:16px;">プレエントリーは締め切りました</span>
         </div>
       </div>
     </sc-if>
@@ -327,7 +328,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- MID-PAGE CTA -->
+  <!-- MID-PAGE CTA (hidden: pre-entry closed)
   <section data-screen-label="Mid Page CTA" ref="{{ revealRefs.midcta }}" style="{{ revealStyles.midcta }}">
     <div>
       <div style="display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;">
@@ -339,6 +340,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </section>
+  -->
 
   <!-- ADVISORY BOARD -->
   <section data-screen-label="Advisory Board" id="advisory" ref="{{ revealRefs.advisory }}" style="{{ revealStyles.advisory }}">
@@ -449,7 +451,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">エントリー方法</h2>
       </div>
       <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
-      <a href="https://form.run/@aba2026-entry" target="_blank" rel="noopener noreferrer" class="cta-orange" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#E06219; padding:12px 28px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; gap:16px; transition:background 350ms cubic-bezier(0.65, 0, 0.35, 1), color 350ms cubic-bezier(0.65, 0, 0.35, 1);">エントリーする <span class="cta-arrow" style="width:28px; height:28px; border-radius:50%; background:#FFFFFF; color:#E06219; display:inline-flex; align-items:center; justify-content:center; font-size:14px;">→</span></a>
+      <span aria-disabled="true" class="cta-dark cta-disabled" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#1F1F21; padding:12px 28px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; gap:16px;">プレエントリーは締め切りました</span>
       </sc-if>
     </div>
     <sc-if value="{{ !isMobile }}" hint-placeholder-val="{{ true }}">
@@ -486,7 +488,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF; background:#B48CC8; padding:4px 12px; border-radius:4px;">あと{{ entrySheetDaysLeft }}日</span>
           </sc-if>
         </div>
-        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#1F1F21;">「エントリーする」ボタンを押すと表示されるフォームから、エントリーシートをダウンロードし、必要事項を記入の上、アップロードしてください。提出をもって、エントリー完了となります。</p>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#1F1F21;">必要事項を記入したエントリーシートを、プレエントリー後にご案内したフォームよりアップロードします。提出をもってエントリー完了となります。</p>
       </div>
     </div>
     </sc-if>
@@ -516,7 +518,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF; background:#B48CC8; padding:4px 12px; border-radius:4px;">あと{{ entrySheetDaysLeft }}日</span>
           </sc-if>
         </div>
-        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#1F1F21;">「エントリーする」ボタンを押すと表示されるフォームから、エントリーシートをダウンロードし、必要事項を記入の上、アップロードしてください。提出をもって、エントリー完了となります。</p>
+        <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#1F1F21;">必要事項を記入したエントリーシートを、プレエントリー後にご案内したフォームよりアップロードします。提出をもってエントリー完了となります。</p>
       </div>
     </div>
     </sc-if>
@@ -655,7 +657,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:18px; line-height:170%; color:#FFFFFF;">エントリー締切まで<sc-if value="{{ entrySheetDaysLeft !== undefined }}" hint-placeholder-val="{{ false }}"><span style="font-size:18px; color:#1F1F21; font-weight:700;">あと{{ entrySheetDaysLeft }}日</span></sc-if>。<sc-if value="{{ isMobile }}"><br></sc-if>気になる方はまずはお気軽にエントリーください。</p>
       </div>
       <div style="{{ entryCardsRowStyle }}">
-        <a href="https://drive.google.com/file/d/1qyNkSDq6gozVLNgIxtl-UIRrJnLNx2qq/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="entry-card" style="{{ entryCardStyle }}">
+        <a href="https://art-business-meti.com/award/2026/assets/ART_BUSINESS_AWARD_2026_Overview.pdf" target="_blank" rel="noopener noreferrer" class="entry-card" style="{{ entryCardStyle }}">
           <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:block;">
           <div style="display:flex; flex-direction:column; gap:24px;">
             <div style="display:flex; flex-direction:column; gap:16px;">
@@ -668,7 +670,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span aria-hidden="true" class="cta-arrow" style="width:36px; height:36px; border-radius:50%; border:1px solid #1F1F21; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto; align-self:flex-end;"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#1F1F21"><path d="M480-337q-8 0-15-2.5t-13-8.5L308-492q-12-12-11.5-28t11.5-28q12-12 28.5-12.5T365-549l75 75v-286q0-17 11.5-28.5T480-800q17 0 28.5 11.5T520-760v286l75-75q12-12 28.5-11.5T652-548q11 12 11.5 28T652-492L508-348q-6 6-13 8.5t-15 2.5ZM240-160q-33 0-56.5-23.5T160-240v-80q0-17 11.5-28.5T200-360q17 0 28.5 11.5T240-320v80h480v-80q0-17 11.5-28.5T760-360q17 0 28.5 11.5T800-320v80q0 33-23.5 56.5T720-160H240Z"/></svg></span>
           </div>
         </a>
-        <a href="https://form.run/@aba2026-entry" target="_blank" rel="noopener noreferrer" class="entry-card" style="{{ entryCardStyle }}">
+        <span aria-disabled="true" class="entry-card cta-disabled" style="{{ entryCardStyle }}">
           <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:block;">
           <div style="display:flex; flex-direction:column; gap:24px;">
             <div style="display:flex; flex-direction:column; gap:16px;">
@@ -676,11 +678,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:24px; color:#1F1F21;">ENTRY</span>
                 <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21;">エントリー</span>
               </div>
-              <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; line-height:150%; color:#333333;">ART &amp; BUSINESS AWARD 2026 へのエントリーはこちらから</span>
+              <span style="font-family:'Noto Sans JP',sans-serif; font-size:14px; line-height:150%; color:#333333;">プレエントリーは終了いたしました。プレエントリーされた企業は、必要事項を記入したエントリーシートを、ご案内したフォームよりアップロードしてください。提出をもってエントリー完了となります。</span>
             </div>
-            <span aria-hidden="true" class="cta-arrow" style="width:36px; height:36px; border-radius:50%; border:1px solid #1F1F21; color:#1F1F21; display:inline-flex; align-items:center; justify-content:center; font-size:16px; flex:0 0 auto; align-self:flex-end;">→</span>
           </div>
-        </a>
+        </span>
       </div>
     </div>
   </section>
