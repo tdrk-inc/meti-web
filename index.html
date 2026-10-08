@@ -111,6 +111,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <sc-if value="{{ showDesktopNav }}" hint-placeholder-val="{{ true }}">
         <nav style="display:flex; align-items:center; gap:32px; flex:1 1 auto; justify-content:flex-start; overflow-x:auto; white-space:nowrap; scrollbar-width:none; padding-right:220px;">
+          <a href="#honorees" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">2026受賞企業</a>
           <a href="#category" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">応募カテゴリー</a>
           <a href="#advisory" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">アドバイザリーボード</a>
           <a href="#schedule" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">スケジュール</a>
@@ -121,11 +122,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="#faq" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">FAQ</a>
           <a href="#footer" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">お問い合わせ</a>
         </nav>
-        <span aria-disabled="true" class="cta-dark cta-disabled" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; flex:0 0 auto; position:absolute; top:50%; right:clamp(24px, 4vw, 48px); transform:translateY(-50%);">エントリーは締め切りました</span>
       </sc-if>
       <sc-if value="{{ isTablet }}" hint-placeholder-val="{{ false }}">
-        <span aria-disabled="true" class="cta-dark cta-disabled" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.2px; color:#FFFFFF; background:#1F1F21; padding:8px 24px; border-radius:8px; white-space:nowrap; display:inline-flex; align-items:center; line-height:1; gap:12px; flex:0 0 auto; position:absolute; top:50%; right:clamp(24px, 4vw, 48px); transform:translateY(-50%);">エントリーは締め切りました</span>
         <nav style="display:flex; align-items:center; gap:12px; flex-basis:100%; justify-content:flex-start; overflow-x:auto; white-space:nowrap; scrollbar-width:thin; margin-top:0;">
+          <a href="#honorees" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">2026受賞企業</a>
           <a href="#category" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">応募カテゴリー</a>
           <a href="#advisory" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">アドバイザリーボード</a>
           <a href="#schedule" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">スケジュール</a>
@@ -154,6 +154,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button onClick="{{ toggleMobileNav }}" aria-label="閉じる" style="width:40px; height:40px; border:none; background:transparent; font-size:26px; cursor:pointer; color:#1F1F21;">×</button>
       </div>
       <nav style="display:flex; flex-direction:column; gap:28px; margin-top:24px;">
+        <a href="#honorees" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>2026受賞企業</a>
         <a href="#category" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>応募カテゴリー</a>
         <a href="#advisory" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>アドバイザリーボード</a>
         <a href="#schedule" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>スケジュール</a>
@@ -192,9 +193,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; letter-spacing:0.15px; color:#333333;">経済産業省は企業がアート・アーティストとの共創を通じて新たな価値を創出し、経済社会とアート・アーティストそれぞれが持続的に発展するエコシステムの構築を目指しています。<br>その実現に向けて、共創の取組と経済的価値の創出をさらに加速させるため、共創の現場と経済的価値創出を巧みに結びつけたモデルとなる企業・プロジェクトを選出・表彰します。<br>今年度は第2回の開催となります。</p>
           </div>
-          <div style="animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;">
-            <span aria-disabled="true" class="cta-dark cta-disabled" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#1F1F21; padding:16px 32px; border-radius:8px; display:inline-flex; align-items:center; gap:16px;">エントリーは締め切りました</span>
-          </div>
         </div>
       </sc-if>
     </div>
@@ -212,9 +210,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21; border:1px solid #1F1F21; border-radius:8px; padding:6px 14px;">{{ cl }}</span>
             </sc-for>
           </div>
-        </div>
-        <div style="margin-top:20px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.3s both;">
-          <span aria-disabled="true" class="cta-dark cta-disabled" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#FFFFFF; background:#1F1F21; padding:16px 32px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; gap:16px;">エントリーは締め切りました</span>
         </div>
       </div>
     </sc-if>
@@ -235,6 +230,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div style="position:relative; z-index:1; background:linear-gradient(135deg, #F2F0EC 0%, #F5F3F0 55%, #F7F5F2 100%);">
     <div aria-hidden="true" style="{{ benefitFadeStyle }}"></div>
     <div aria-hidden="true" style="position:absolute; inset:0; opacity:0.035; mix-blend-mode:multiply; pointer-events:none; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' base-frequency='0.9' num-octaves='3' stitch-tiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
+
+  <!-- HONOREES -->
+  <section data-screen-label="Honorees" id="honorees" ref="{{ revealRefs.honorees }}" style="{{ revealStyles.honorees }}">
+    <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:40px;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
+        <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">2026 HONOREES</span>
+      </div>
+      <h2 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">受賞企業・プロジェクト</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:{{ honoreeGridColumns }}; gap:24px;">
+      <sc-for list="{{ honorees }}" as="h" hint-placeholder-count="3">
+        <div style="display:flex; flex-direction:column; gap:12px; padding:24px; border:1px solid #F6C6AA; border-radius:8px;">
+          <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#E06219;">{{ h.category }}</span>
+          <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:20px; line-height:140%; color:#1F1F21;">{{ h.company }}</span>
+          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:14px; line-height:170%; color:#333333;">{{ h.project }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
 
   <!-- CATEGORY -->
   <section data-screen-label="Category" id="category" ref="{{ revealRefs.category }}" style="{{ revealStyles.category }}">
@@ -849,7 +864,7 @@ class Component extends DCLogic {
       }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' })
     : null;
 
-  revealKeys = ['benefit', 'category', 'midcta', 'advisory', 'schedule', 'requirements', 'apply', 'archive', 'information', 'faq', 'contact', 'ctaband'];
+  revealKeys = ['benefit', 'honorees', 'category', 'midcta', 'advisory', 'schedule', 'requirements', 'apply', 'archive', 'information', 'faq', 'contact', 'ctaband'];
 
   makeAttachReveal(key) {
     return (el) => {
@@ -940,11 +955,18 @@ class Component extends DCLogic {
       textAlign: 'left',
       transition: 'border-color 350ms cubic-bezier(0.65, 0, 0.35, 1), background 350ms cubic-bezier(0.65, 0, 0.35, 1)'
     };
+    const honoreeGridColumns = isMobile ? '1fr' : 'repeat(3, 1fr)';
+    const honorees = [
+      { category: 'CATEGORY 01', company: '受賞企業名（仮）', project: 'プロジェクト概要（仮）' },
+      { category: 'CATEGORY 02', company: '受賞企業名（仮）', project: 'プロジェクト概要（仮）' },
+      { category: 'CATEGORY 03', company: '受賞企業名（仮）', project: 'プロジェクト概要（仮）' }
+    ];
     const advisoryGridColumns = isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)';
     const SECTION_GAP = '120px';
     const categoryInnerStyle = { maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(24px, 6vw, 96px)' };
     const revealBase = {
       benefit: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
+      honorees: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) ${SECTION_GAP}`, position: 'relative', overflow: 'hidden' },
       category: {
         background: 'linear-gradient(180deg, rgb(245, 243, 240) 0%, rgb(238, 233, 226) 10%, rgb(238, 233, 226) 100%)',
         paddingTop: SECTION_GAP,
@@ -1297,7 +1319,7 @@ class Component extends DCLogic {
       { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役会長', '公益財団法人福武財団 理事長'], photo: 'assets/advisory-07.png' }
     ];
 
-    return { categories, categoryLabels, requirementItems, informationItems, scheduleItems, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, benefitsDisplay, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, advisoryDescWidth, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { honorees, honoreeGridColumns, categories, categoryLabels, requirementItems, informationItems, scheduleItems, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, benefitsDisplay, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, advisoryDescWidth, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
