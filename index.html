@@ -240,14 +240,85 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <h2 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ sectionTitleFontSize }}; line-height:140%; color:#1F1F21;">受賞企業・プロジェクト</h2>
     </div>
-    <div style="display:grid; grid-template-columns:{{ honoreeGridColumns }}; gap:24px;">
-      <sc-for list="{{ honorees }}" as="h" hint-placeholder-count="3">
-        <div style="display:flex; flex-direction:column; gap:12px; padding:24px; border:1px solid #F6C6AA; border-radius:8px;">
-          <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#E06219;">{{ h.category }}</span>
-          <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:20px; line-height:140%; color:#1F1F21;">{{ h.company }}</span>
-          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:14px; line-height:170%; color:#333333;">{{ h.project }}</p>
-        </div>
-      </sc-for>
+    <div style="display:flex; flex-direction:column; gap:40px;">
+      <div style="display:flex; flex-direction:column; gap:24px;">
+        <sc-for list="{{ honoreeIndex }}" as="hi" hint-placeholder-count="5">
+          <a href="#{{ hi.anchor }}" style="{{ honoreeIndexRowStyle }}">
+            <div style="display:flex; flex-direction:column; gap:{{ honoreeIndexRowGap }}; flex:1 1 auto; min-width:0;">
+              <div style="display:flex; align-items:center; gap:10px; color:#E06219;">
+                <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:24px; line-height:normal;">{{ hi.no }}</span>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:20px; line-height:normal;">{{ hi.label }}</span>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:5px;">
+                <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:20px; line-height:28px; color:#1F1F21;">{{ hi.company }}</span>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:23.8px; color:#333333;">{{ hi.project }}</span>
+              </div>
+            </div>
+            <img src="assets/arrow-down.svg" alt="" width="24" height="24" style="flex:0 0 auto; display:block; width:24px; height:24px;">
+          </a>
+        </sc-for>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:40px;">
+        <sc-for list="{{ honoreeCategories }}" as="hc" hint-placeholder-count="5">
+          <div id="{{ hc.anchor }}" style="{{ honoreeDetailStyle }}">
+            <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start;">
+              <div style="display:flex; flex-direction:column; gap:2px; min-width:160px; flex:0 0 auto; position:sticky; top:96px;">
+                <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:48px; line-height:48px; color:#1F1F21;">{{ hc.no }}</span>
+                <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.3px; color:#1F1F21; white-space:nowrap;">{{ hc.titleEn }}</span>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:32px; flex:1 1 0; min-width:0;">
+                <div style="display:flex; flex-direction:column; gap:4px;">
+                  <div style="display:flex; align-items:center; flex-wrap:wrap; gap:12px;">
+                    <sc-if value="{{ hc.isNew }}">
+                      <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#FFFFFF; background:#B48CC8; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; height:26px;">NEW</span>
+                    </sc-if>
+                    <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ honoreeDetailTitleSize }}; line-height:140%; color:#1F1F21;">{{ hc.title }}</h3>
+                  </div>
+                  <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:180%; color:#1F1F21;">{{ hc.description }}</p>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:16px; padding-top:8px;">
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="width:8px; height:8px; border-radius:4px; background:#E06219; flex:0 0 auto;"></span>
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#F56C2E;">受賞企業</span>
+                  </div>
+                  <div style="display:flex; flex-direction:column; gap:16px;">
+                    <sc-for list="{{ hc.winners }}" as="w" hint-placeholder-count="1">
+                      <div style="{{ honoreeWinnerStyle }}">
+                        <div style="{{ honoreeWinnerImageStyle }}"></div>
+                        <div style="display:flex; flex-direction:column; gap:20px; flex:1 1 0; min-width:0; color:#1F1F21;">
+                          <div style="display:flex; flex-direction:column;">
+                            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:27.2px;">{{ w.name }}</span>
+                            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:normal;">{{ w.sub }}</span>
+                          </div>
+                          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; line-height:normal;">{{ w.text }}</p>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="width:8px; height:8px; border-radius:4px; background:#65635F; flex:0 0 auto;"></span>
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#65635F;">ファイナリスト企業</span>
+                  </div>
+                  <div style="display:flex; flex-direction:column; gap:16px;">
+                    <sc-for list="{{ hc.finalists }}" as="f" hint-placeholder-count="4">
+                      <div style="display:flex; align-items:center; gap:40px; padding:24px; background:#FFFFFF; border-radius:8px; color:#1F1F21;">
+                        <div style="display:flex; flex-direction:column; flex:1 1 0; min-width:0;">
+                          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:27.2px;">{{ f.name }}</span>
+                          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:normal;">{{ f.sub }}</span>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:16px; padding-top:20px; border-top:1px solid #8C919A;">
+                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#65635F;">アドバイザリーボードからのコメント</span>
+                  <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:normal; color:#1F1F21;">{{ hc.comment }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
     </div>
   </section>
 
@@ -955,12 +1026,44 @@ class Component extends DCLogic {
       textAlign: 'left',
       transition: 'border-color 350ms cubic-bezier(0.65, 0, 0.35, 1), background 350ms cubic-bezier(0.65, 0, 0.35, 1)'
     };
-    const honoreeGridColumns = isMobile ? '1fr' : 'repeat(3, 1fr)';
-    const honorees = [
-      { category: 'CATEGORY 01', company: '受賞企業名（仮）', project: 'プロジェクト概要（仮）' },
-      { category: 'CATEGORY 02', company: '受賞企業名（仮）', project: 'プロジェクト概要（仮）' },
-      { category: 'CATEGORY 03', company: '受賞企業名（仮）', project: 'プロジェクト概要（仮）' }
+    const honoreeIndexRowStyle = {
+      display: 'flex', alignItems: 'flex-end', gap: '40px', padding: isMobile ? '20px' : '25px',
+      border: '1px solid #F6C6AA', borderRadius: '8px', textDecoration: 'none', color: 'inherit'
+    };
+    const honoreeIndexRowGap = '16px';
+    const honoreeDetailStyle = {
+      background: '#F5F3F0', borderRadius: '8px',
+      padding: isMobile ? '32px 24px' : '56px 64px', scrollMarginTop: '96px'
+    };
+    const honoreeDetailTitleSize = isMobile ? '24px' : '32px';
+    const honoreeWinnerStyle = {
+      display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'stretch' : 'center',
+      gap: isMobile ? '24px' : '40px', padding: '24px', background: '#FFFFFF', borderRadius: '8px'
+    };
+    const honoreeWinnerImageStyle = {
+      flex: '0 0 auto', background: '#D9D9D9', height: '174px', width: isMobile ? '100%' : '265px'
+    };
+    const honoreeCategoryData = [
+      { titleEn: 'Corporate Strategy', title: 'コーポレート・ストラテジー', description: 'アートの有する価値を活用して企業戦略・体制の構築、実行、発信など経営領域で新たな変化を起こした企業' },
+      { titleEn: 'Art Collaboration', title: 'アートコラボレーション', description: 'アート・アーティストとの共創を通じて事業の高度化など新たな経済的価値を創出した企業・プロジェクト' },
+      { titleEn: 'New Business with Art', title: 'ニューアートビジネス', description: 'アートを起点とした事業創造などを通じて新たなビジネスモデルを創出した企業・プロジェクト' },
+      { titleEn: 'Local Impact', title: 'ローカルインパクト', description: '地域特性を活かしたアートに関わる取組を通じて地域における経済的価値を創出した企業・プロジェクト' },
+      { titleEn: 'Art Engagement', title: 'アートエンゲージメント', description: '所有しているアート作品を活用し企業価値向上とともに日本のアートの発展に寄与した企業・プロジェクト', isNew: true }
     ];
+    const honoreeWinnerText = '人々の人生を豊かにし、社会をより良くすることを目指して「アートがある生活」を企業理念として掲げる。その実現に向け、店舗・ECを通じたアート販売・グッズ展開、アート体験の提供・メディア事業、他企業やアーティストとの協業など多角的にアートを核としたバリューチェーンを構築。これまでに多数のアート作品を販売するなど、ビジネスとしても成立させながら長期的な視座で新たな取り組みにも挑戦し続けている。';
+    const honoreeComment = '企業理念を実現するためにアートやアーティストと共創し、ビジネスとしても成立させていることを評価。短期的な収益だけに捕らわれず、企業価値向上や社会課題解決など中長期的な視座を有していた。';
+    const honoreeCategories = honoreeCategoryData.map((c, i) => ({
+      ...c,
+      no: String(i + 1).padStart(2, '0'),
+      anchor: 'honoree-' + (i + 1),
+      winners: [{ name: 'カルチュア・コンビニエンス・クラブ', sub: 'CCCアートラボ', text: honoreeWinnerText }],
+      finalists: [0, 1, 2, 3].map(() => ({ name: 'カルチュア・コンビニエンス・クラブ', sub: 'CCCアートラボ' })),
+      comment: honoreeComment
+    }));
+    const honoreeIndex = honoreeCategories.map((c) => ({
+      no: c.no, anchor: c.anchor, label: c.title,
+      company: 'エイベックス・クリエイター・エージェンシー', project: 'MEET YOUR ART'
+    }));
     const advisoryGridColumns = isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)';
     const SECTION_GAP = '120px';
     const categoryInnerStyle = { maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(24px, 6vw, 96px)' };
@@ -1319,7 +1422,7 @@ class Component extends DCLogic {
       { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役会長', '公益財団法人福武財団 理事長'], photo: 'assets/advisory-07.png' }
     ];
 
-    return { honorees, honoreeGridColumns, categories, categoryLabels, requirementItems, informationItems, scheduleItems, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, benefitsDisplay, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, advisoryDescWidth, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { honoreeIndex, honoreeIndexRowStyle, honoreeIndexRowGap, honoreeCategories, honoreeDetailStyle, honoreeDetailTitleSize, honoreeWinnerStyle, honoreeWinnerImageStyle, categories, categoryLabels, requirementItems, informationItems, scheduleItems, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, benefitsDisplay, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, advisoryDescWidth, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
