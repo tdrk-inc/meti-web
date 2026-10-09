@@ -295,6 +295,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       </div>
                     </sc-for>
                   </div>
+                  <sc-if value="{{ hc.hasFinalists }}">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <span style="width:8px; height:8px; border-radius:4px; background:#65635F; flex:0 0 auto;"></span>
                     <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#65635F;">ファイナリスト企業</span>
@@ -309,6 +310,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       </div>
                     </sc-for>
                   </div>
+                  </sc-if>
                 </div>
                 <div style="display:flex; flex-direction:column; gap:16px; padding-top:20px; border-top:1px solid #8C919A;">
                   <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#65635F;">アドバイザリーボードからのコメント</span>
@@ -1043,26 +1045,94 @@ class Component extends DCLogic {
     const honoreeWinnerImageStyle = {
       flex: '0 0 auto', background: '#D9D9D9', height: '174px', width: isMobile ? '100%' : '265px'
     };
-    const honoreeCategoryData = [
-      { titleEn: 'Corporate Strategy', title: 'コーポレート・ストラテジー', description: 'アートの有する価値を活用して企業戦略・体制の構築、実行、発信など経営領域で新たな変化を起こした企業' },
-      { titleEn: 'Art Collaboration', title: 'アートコラボレーション', description: 'アート・アーティストとの共創を通じて事業の高度化など新たな経済的価値を創出した企業・プロジェクト' },
-      { titleEn: 'New Business with Art', title: 'ニューアートビジネス', description: 'アートを起点とした事業創造などを通じて新たなビジネスモデルを創出した企業・プロジェクト' },
-      { titleEn: 'Local Impact', title: 'ローカルインパクト', description: '地域特性を活かしたアートに関わる取組を通じて地域における経済的価値を創出した企業・プロジェクト' },
-      { titleEn: 'Art Engagement', title: 'アートエンゲージメント', description: '所有しているアート作品を活用し企業価値向上とともに日本のアートの発展に寄与した企業・プロジェクト', isNew: true }
-    ];
-    const honoreeWinnerText = '人々の人生を豊かにし、社会をより良くすることを目指して「アートがある生活」を企業理念として掲げる。その実現に向け、店舗・ECを通じたアート販売・グッズ展開、アート体験の提供・メディア事業、他企業やアーティストとの協業など多角的にアートを核としたバリューチェーンを構築。これまでに多数のアート作品を販売するなど、ビジネスとしても成立させながら長期的な視座で新たな取り組みにも挑戦し続けている。';
-    const honoreeComment = '企業理念を実現するためにアートやアーティストと共創し、ビジネスとしても成立させていることを評価。短期的な収益だけに捕らわれず、企業価値向上や社会課題解決など中長期的な視座を有していた。';
-    const honoreeCategories = honoreeCategoryData.map((c, i) => ({
+    const honoreeCategories = [
+      {
+        titleEn: 'Corporate Strategy', title: 'コーポレート・ストラテジー',
+        description: 'アートの有する価値を活用して企業戦略・体制の構築、実行、発信など経営領域で新たな変化を起こした企業・プロジェクト',
+        winners: [{ name: 'カルチュア・コンビニエンス・クラブ', sub: 'CCCアートラボ', text: '人々の人生を豊かにし、社会をより良くすることを目指して「アートがある生活」を企業理念として掲げる。その実現に向け、店舗・ECを通じたアート販売・グッズ展開、アート体験の提供・メディア事業、他企業やアーティストとの協業など多角的にアートを核としたバリューチェーンを構築。これまでに多数のアート作品を販売するなど、ビジネスとしても成立させながら長期的な視座で新たな取り組みにも挑戦し続けている。' }],
+        finalists: [
+          { name: '山陰パナソニック', sub: 'バディアートプロジェクト' },
+          { name: '大丸有エリアマネジメント協会（リガーレ）、大手町・丸の内・有楽町地区まちづくり協議会、三菱地所', sub: '有楽町アートアーバニズムYAU' },
+          { name: '戸田建設', sub: 'TODA BUILDINGの芸術文化エリア' },
+          { name: '日本マクドナルド', sub: 'マクドナルドラジオ大学' },
+          { name: 'NOT A HOTEL', sub: 'NOT A HOTEL' },
+          { name: 'みずほフィナンシャルグループ', sub: '藝大連携プロジェクト' }
+        ],
+        comment: '企業理念を実現するためにアートやアーティストと共創し、ビジネスとしても成立させていることを評価。短期的な収益だけに捕らわれず、企業価値向上や社会課題解決など中長期的な視座を有していた。'
+      },
+      {
+        titleEn: 'Art Collaboration', title: 'アートコラボレーション',
+        description: 'アート・アーティストとの共創を通じて事業の高度化など新たな経済的価値を創出した企業・プロジェクト',
+        winners: [{ name: '太宰府天満宮', sub: '太宰府天満宮 仮殿', text: '1100年以上の歴史を有する太宰府天満宮が、御本殿改修中の3年間限定で神社の仮殿を現代建築で造る前代未聞の試み。これまで神社に訪れる機会がなかった新たな層が訪れ、参拝者数は毎年過去最高を更新。参拝者が増えた参道や周辺地域でも飲食店や宿泊施設が増加するなど、アートとのコラボレーションを通じて地域全体に広く経済効果をもたらしている。※参拝は2026年5月上旬まで' }],
+        finalists: [
+          { name: 'オイシックス・ラ・大地', sub: '大地の芸術祭プロジェクト' },
+          { name: 'KDDI', sub: 'au Design project［ARTS ＆ CULTURE PROGRAM］' },
+          { name: 'CON_', sub: '獸' },
+          { name: 'ジャクエツ', sub: 'PLAY & ART PROJECT' },
+          { name: 'SMBCグループ', sub: 'SMBCグループのアートへの取り組み' }
+        ],
+        comment: '新規顧客の獲得、既存商品・サービスの競合との差別化や高付加価値化の実現、重要顧客との関係強化などアートやアーティストとの共創が多様な経済的価値の創出することが明らかとなった。'
+      },
+      {
+        titleEn: 'New Business with Art', title: 'ニューアートビジネス',
+        description: 'アートを起点とした事業創造などを通じて新たなビジネスモデルを創出した企業・プロジェクト',
+        winners: [
+          { name: 'エイベックス・クリエイター・エージェンシー', sub: 'MEET YOUR ART', text: 'コンテンツ産業で培ったノウハウやファンダムをアート産業にも展開。アート専門YouTube番組やECサイトなど、アート業界に新たな市場を開拓。2025年には4度目の開催となる「MEET YOUR ART FESTIVAL2025」で4日間で5万人超の集客、8億円超のPR効果があった。また協賛パートナーも32社に拡大し、新たなアートマーケットのプラットフォーマーに成長している。' },
+          { name: 'ヘラルボニー', sub: 'HERALBONY', text: '2000点超の障害のあるアーティストの作品とライセンス契約を結び、BtoBによるコラボレーション、自社ブランドでのプロダクト販売を通じてマネタイズする新たなビジネスモデルを構築。世界5カ国・6施設との海外パートナー契約を締結するなど成長を続け、作家報酬総額は3年間で15.6倍に増加。2025年にはカンヌ広告祭で「Glass: The Lion for Change」ゴールドを受賞するなど、世界的にも高い評価を受けている。' }
+        ],
+        finalists: [
+          { name: 'IDEABLE WORKS', sub: 'HACKK TAG' },
+          { name: 'O', sub: 'MEs' },
+          { name: 'クスカ', sub: 'Fabric Art Evolution：伝統工芸アップデートモデル' },
+          { name: 'Casie', sub: 'Casie & KAG – アート作品の流通をデザインする新たな市場構想' },
+          { name: 'TODOROKI', sub: 'アートの価値を翻訳するビジネスモデルの構築' },
+          { name: '日揮', sub: 'ホスピタルアートプロジェクト' },
+          { name: 'ミトメ舎', sub: 'ノボリバタプロジェクト' }
+        ],
+        comment: '他産業からの参入によるアートビジネスの拡大、アウトサイダーアートを核とした新たなビジネスモデル創出の2社が受賞となったが、多様なエントリーがあったことから今後も新しいアートを核としたビジネスが生まれ成長する可能性を感じる結果となった。'
+      },
+      {
+        titleEn: 'Local Impact', title: 'ローカルインパクト',
+        description: '地域特性を活かしたアートに関わる取組を通じて地域における経済的価値を創出した企業・プロジェクト',
+        winners: [{ name: 'ジンズホールディングスおよび田中仁財団', sub: 'アートを活用した群馬県前橋市の地域創生', text: '地域にアートを取り込むことで、街の魅力を高める街づくりを推進。減少傾向にあった馬場川通の通行量を115％増と改善するなど、地域の人流を増加させた。また約30店舗のローカルビジネスの開業を誘発し、新たな雇用創出にも寄与するなど、アートの力で地域の価値を飛躍的に向上させた。2025年には、前橋市と包括協定を結ぶなど更なる地域課題の解決や地域の発展に向けて活動を続けている。' }],
+        finalists: [
+          { name: '小田急電鉄・スタートバーン', sub: 'ムーンアートナイト下北沢' },
+          { name: 'OVER ALLs', sub: 'FUTABA Art District' },
+          { name: 'Qe to Hare', sub: 'Micro Happening – Regenerative Place-Making in Fog' },
+          { name: 'concon', sub: 'TOKYO LOLLIPOP' },
+          { name: '山陰合同銀行', sub: 'ごうぎんチャレンジド' },
+          { name: '天王洲・キャナルサイド活性化協会', sub: '「水辺とアートの街づくり」で地域活性化' },
+          { name: '京都府・京都府立植物園アートナイトウォーク実行委員会・三井不動産', sub: 'LIGHT CYCLES KYOTO' }
+        ],
+        comment: 'それぞれの地域性を活かしながらアートやアーティストと共創することで、経済的価値の創出につながった。行政や地域住民を巻き込むことが継続・発展のポイントであった。'
+      },
+      {
+        titleEn: 'Art Market Contribution', title: 'アートマーケット',
+        description: '企業活動におけるアート作品の購入等を通じて日本のアート市場拡大に貢献した企業・プロジェクト',
+        winners: [{ name: '東京建物', sub: 'Brillia Tower 堂島', text: '新たな複合開発において、国内外のアーティストによる50点超の多彩なアート作品を購入。当該マンションの外観・建物空間は多くの顧客の感度を刺激し、一部住戸は抽選販売になるほど人気となった。マンション共用部のみならずパブリックスペースにも設置することで、居住者のみならず一般市民にもアートに触れる機会を提供し、同エリアの魅力とともに企業及びBrilliaブランドの価値向上にも寄与している。' }],
+        finalists: [
+          { name: 'アマナ', sub: 'amana photo collection' },
+          { name: '大丸松坂屋百貨店', sub: 'Ladder Project' }
+        ],
+        comment: 'アート購入を通じて日本のアート市場拡大に貢献するだけでなく、一般生活者にも購入したアート作品に触れる機会を提供するなどの活用方法も重要であった。'
+      },
+      {
+        titleEn: 'Special Recognition', title: '特別賞',
+        description: 'カテゴリーを横断して顕著な成果を上げた企業',
+        winners: [{ name: 'ベネッセホールディングス', sub: 'ベネッセアートサイト直島', text: '企業理念「Benesse（よく生きる）」を体現するため、瀬戸内の島々に着目。風景の中に現代アートを取り込み、国内外から年間約70万人超の来島者をもたらし、地域ブランド価値向上と地域活性化を両立。「直島新美術館」が開館した2025年は、6度目の瀬戸内国際芸術祭実施に関わるなど取り組みを進化させている。また経営者向けフォーラムや対話型鑑賞などの提供を通じ、アートを活用した企業価値向上の社会実装に貢献している。' }],
+        finalists: [],
+        comment: 'アートの力で新たな価値を創出し続ける、世界的にみてもユニークな取組でカテゴリーの枠を超え突出した事業であるとともに、国内のさまざまなアートプロジェクトに良い影響を与えていることから特別賞を設けて表彰することとなった。'
+      }
+    ].map((c, i) => ({
       ...c,
       no: String(i + 1).padStart(2, '0'),
       anchor: 'honoree-' + (i + 1),
-      winners: [{ name: 'カルチュア・コンビニエンス・クラブ', sub: 'CCCアートラボ', text: honoreeWinnerText }],
-      finalists: [0, 1, 2, 3].map(() => ({ name: 'カルチュア・コンビニエンス・クラブ', sub: 'CCCアートラボ' })),
-      comment: honoreeComment
+      hasFinalists: c.finalists.length > 0
     }));
     const honoreeIndex = honoreeCategories.map((c) => ({
       no: c.no, anchor: c.anchor, label: c.title,
-      company: 'エイベックス・クリエイター・エージェンシー', project: 'MEET YOUR ART'
+      company: c.winners.map((w) => w.name).join('／'),
+      project: c.winners.map((w) => w.sub).join('／')
     }));
     const advisoryGridColumns = isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)';
     const SECTION_GAP = '120px';
