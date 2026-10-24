@@ -272,6 +272,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="cat-title-en" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.3px; color:#1F1F21;">{{ hc.titleEn }}</span>
               </div>
               <div style="{{ honoreeContentStyle }}">
+                <div style="display:flex; flex-direction:column; gap:8px;">
                 <div style="display:flex; align-items:center; flex-wrap:wrap; gap:12px;">
                   <sc-if value="{{ hc.isNew }}">
                     <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#FFFFFF; background:#B48CC8; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; height:26px;">NEW</span>
@@ -279,6 +280,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <h3 class="cat-title-h" style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ honoreeDetailTitleSize }}; line-height:140%; color:#1F1F21;">{{ hc.title }}</h3>
                 </div>
                 <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:180%; color:#1F1F21;">{{ hc.description }}</p>
+                </div>
                 <div style="display:flex; flex-direction:column; gap:16px; padding-top:8px;">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <span style="width:8px; height:8px; border-radius:4px; background:#E06219; flex:0 0 auto;"></span>
@@ -1067,7 +1069,7 @@ class Component extends DCLogic {
       ? { display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '10px', minWidth: 0 }
       : { display: 'flex', flexDirection: 'column', gap: '2px', flex: '0 1 160px', minWidth: 0, alignSelf: 'flex-start', position: 'sticky', top: stickyTop };
     const honoreeContentStyle = {
-      flex: '1 1 220px', display: 'flex', flexDirection: 'column', gap: isMobile ? '16px' : '32px', minWidth: 0, width: isMobile ? '100%' : 'auto'
+      flex: '1 1 220px', display: 'flex', flexDirection: 'column', gap: isMobile ? '16px' : '24px', minWidth: 0, width: isMobile ? '100%' : 'auto'
     };
     const honoreeNoFontSize = isMobile ? '18px' : 'clamp(32px, 4vw, 48px)';
     const honoreeDetailTitleSize = isMobile ? '24px' : '32px';
