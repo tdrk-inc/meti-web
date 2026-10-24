@@ -304,8 +304,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <div style="display:flex; flex-direction:column; gap:16px;">
                     <sc-for list="{{ hc.finalists }}" as="f" hint-placeholder-count="4">
                       <div style="display:flex; align-items:center; gap:40px; padding:24px; background:#FFFFFF; border-radius:8px; color:#1F1F21;">
-                        <div style="display:flex; flex-direction:column; flex:1 1 0; min-width:0;">
-                          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:27.2px;">{{ f.name }}</span>
+                        <div style="{{ finalistColStyle }}">
+                          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; {{ finalistNameStyle }}">{{ f.name }}</span>
                           <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:normal;">{{ f.sub }}</span>
                         </div>
                       </div>
@@ -1055,10 +1055,12 @@ class Component extends DCLogic {
       border: '1px solid #F6C6AA', borderRadius: '8px', textDecoration: 'none', color: 'inherit',
       position: 'relative'
     };
-    const honoreeWinnerTextLineHeight = isMobile ? '150%' : 'normal';
+    const honoreeWinnerTextLineHeight = isMobile ? '175%' : 'normal';
+    const finalistNameStyle = isMobile ? 'line-height:160%;' : 'line-height:27.2px;';
+    const finalistColStyle = isMobile ? 'display:flex; flex-direction:column; gap:4px; flex:1 1 0; min-width:0;' : 'display:flex; flex-direction:column; flex:1 1 0; min-width:0;';
     const honoreeIndexNoSize = isMobile ? '20px' : '24px';
     const honoreeDescSize = isMobile ? '14px' : '16px';
-    const honoreeIndexLabelSize = isMobile ? '16px' : '20px';
+    const honoreeIndexLabelSize = isMobile ? '18px' : '20px';
     const honoreeIndexCompanySize = isMobile ? '16px' : '20px';
     const honoreeIndexProjectPad = '0';
     const honoreeIndexArrowStyle = isMobile
@@ -1069,7 +1071,7 @@ class Component extends DCLogic {
     const honoreeIndexColStyle = isMobile ? 'display:contents;' : 'display:flex; flex-direction:column; gap:16px; flex:1 1 auto; min-width:0;';
     const honoreeIndexHeadStyle = 'display:flex; align-items:center; gap:10px; color:#E06219;' + (isMobile ? ' grid-column:1 / -1;' : '');
     const honoreeIndexInnerStyle = isMobile ? 'display:contents;' : 'display:flex; flex-direction:column; gap:5px;';
-    const honoreeIndexCompanyStyle = isMobile ? 'grid-column:1 / -1; ' : '';
+    const honoreeIndexCompanyStyle = isMobile ? 'grid-column:1 / -1; margin-bottom:-12px; ' : '';
     const honoreeIndexProjectGrid = isMobile ? ' grid-column:1; grid-row:3;' : '';
     const honoreeDetailStyle = {
       background: '#F5F3F0', borderRadius: '8px',
@@ -1551,7 +1553,7 @@ class Component extends DCLogic {
       { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役会長', '公益財団法人福武財団 理事長'], photo: 'assets/advisory-07.png' }
     ];
 
-    return { honoreeIndex, honoreeIndexRowStyle, honoreeIndexRowGap, honoreeCommentBorder, honoreeIndexColStyle, honoreeIndexHeadStyle, honoreeIndexInnerStyle, honoreeIndexCompanyStyle, honoreeIndexProjectGrid, honoreeIndexNoSize, honoreeDescSize, honoreeIndexLabelSize, honoreeIndexCompanySize, honoreeIndexArrowStyle, honoreeIndexProjectPad, honoreeCategories, honoreeDetailStyle, honoreeHeadRowStyle, honoreeNoBlockStyle, honoreeContentStyle, honoreeNoFontSize, honoreeDetailTitleSize, honoreeWinnerStyle, honoreeWinnerImageStyle, categories, categoryLabels, requirementItems, informationItems, scheduleItems, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, benefitsDisplay, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, advisoryDescWidth, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { honoreeIndex, honoreeIndexRowStyle, honoreeIndexRowGap, honoreeCommentBorder, honoreeIndexColStyle, honoreeIndexHeadStyle, honoreeIndexInnerStyle, honoreeIndexCompanyStyle, honoreeIndexProjectGrid, honoreeIndexNoSize, honoreeDescSize, honoreeIndexLabelSize, honoreeIndexCompanySize, honoreeIndexArrowStyle, honoreeIndexProjectPad, honoreeCategories, honoreeDetailStyle, honoreeHeadRowStyle, honoreeNoBlockStyle, honoreeContentStyle, honoreeNoFontSize, honoreeDetailTitleSize, honoreeWinnerStyle, honoreeWinnerImageStyle, honoreeWinnerTextLineHeight, finalistNameStyle, finalistColStyle, categories, categoryLabels, requirementItems, informationItems, scheduleItems, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, benefitsDisplay, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, advisoryDescWidth, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
