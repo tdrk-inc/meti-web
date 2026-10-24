@@ -88,8 +88,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     .cat-title-en { animation-delay: 80ms; }
     .cat-title-h { animation-delay: 160ms; }
     .cat-block.is-in .cat-title-no, .cat-block.is-in .cat-title-en, .cat-block.is-in .cat-title-h { animation-play-state: running; }
-    .cat-accent { display:block; height:3px; width:0; border-radius:2px; transition: width 900ms cubic-bezier(0.16, 1, 0.3, 1) 300ms; }
-    .cat-block.is-in .cat-accent { width:48px; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes floatOrange {
       0%, 100% { transform: translate(0, -200px) scale(1); }
@@ -272,7 +270,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div style="{{ honoreeNoBlockStyle }}">
                 <span class="cat-title-no" style="font-family:'Oswald',sans-serif; font-weight:600; font-size:{{ honoreeNoFontSize }}; line-height:{{ honoreeNoLineHeight }}; color:#1F1F21;">{{ hc.no }}</span>
                 <span class="cat-title-en" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.3px; color:#1F1F21; white-space:nowrap;">{{ hc.titleEn }}</span>
-                <span class="cat-accent" style="background:{{ hc.accent }};"></span>
+                
               </div>
               <div style="display:flex; flex-direction:column; gap:32px; flex:1 1 0; min-width:0; width:100%;">
                 <div style="display:flex; flex-direction:column; gap:4px;">
@@ -351,7 +349,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div style="{{ cat.noBlockStyle }}">
               <span class="cat-title-no" style="font-family:'Oswald',sans-serif; font-weight:600; font-size:{{ cat.noFontSize }}; line-height:1; color:{{ cat.textColor }};">{{ cat.no }}</span>
               <span class="cat-title-en" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.3px; color:{{ cat.textColor }};">{{ cat.titleEn }}</span>
-              <span class="cat-accent" style="background:{{ cat.accent }};"></span>
+              
             </div>
             <div style="{{ cat.contentBlockStyle }}">
               <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
@@ -443,7 +441,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- ADVISORY BOARD -->
   <section data-screen-label="Advisory Board" id="advisory" ref="{{ revealRefs.advisory }}" style="{{ revealStyles.advisory }}">
-    <div aria-hidden="true" style="position:absolute; top:-200px; right:-240px; width:720px; height:720px; background:radial-gradient(circle closest-side, rgba(224,98,25,0.26) 0%, rgba(224,98,25,0.14) 40%, rgba(224,98,25,0) 100%); z-index:0; pointer-events:none;"></div>
+    <div aria-hidden="true" style="position:absolute; top:0; right:-240px; width:720px; height:720px; background:radial-gradient(circle closest-side, rgba(224,98,25,0.26) 0%, rgba(224,98,25,0.14) 40%, rgba(224,98,25,0) 100%); z-index:0; pointer-events:none;"></div>
     <div style="position:relative; margin-bottom:48px;">
       <div style="display:flex; flex-direction:column; gap:20px;">
         <div style="{{ benefitStickyStyle }}">
