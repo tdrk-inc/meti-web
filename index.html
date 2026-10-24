@@ -262,12 +262,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="display:flex; flex-direction:column; gap:40px;">
         <sc-for list="{{ honoreeCategories }}" as="hc" hint-placeholder-count="5">
           <div id="{{ hc.anchor }}" style="{{ honoreeDetailStyle }}">
-            <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start;">
-              <div style="display:flex; flex-direction:column; gap:2px; min-width:160px; flex:0 0 auto; position:sticky; top:96px;">
-                <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:48px; line-height:48px; color:#1F1F21;">{{ hc.no }}</span>
+            <div style="{{ honoreeHeadRowStyle }}">
+              <div style="{{ honoreeNoBlockStyle }}">
+                <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:{{ honoreeNoFontSize }}; line-height:{{ honoreeNoLineHeight }}; color:#1F1F21;">{{ hc.no }}</span>
                 <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.3px; color:#1F1F21; white-space:nowrap;">{{ hc.titleEn }}</span>
               </div>
-              <div style="display:flex; flex-direction:column; gap:32px; flex:1 1 0; min-width:0;">
+              <div style="display:flex; flex-direction:column; gap:32px; flex:1 1 0; min-width:0; width:100%;">
                 <div style="display:flex; flex-direction:column; gap:4px;">
                   <div style="display:flex; align-items:center; flex-wrap:wrap; gap:12px;">
                     <sc-if value="{{ hc.isNew }}">
@@ -328,7 +328,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- CATEGORY -->
   <section data-screen-label="Category" id="category" ref="{{ revealRefs.category }}" style="{{ revealStyles.category }}">
-    <div>
+    <div style="{{ categoryInnerStyle }}">
     <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:40px;">
       <div style="display:flex; align-items:center; gap:8px;">
         <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
@@ -1039,6 +1039,15 @@ class Component extends DCLogic {
       background: '#F5F3F0', borderRadius: '8px',
       padding: isMobile ? '32px 24px' : '56px 64px', scrollMarginTop: '96px'
     };
+    const stickyTop = `${(headerHeight || 90) + 56}px`;
+    const honoreeHeadRowStyle = isMobile
+      ? { display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'stretch' }
+      : { display: 'flex', flexWrap: 'wrap', gap: '24px', alignItems: 'flex-start' };
+    const honoreeNoBlockStyle = isMobile
+      ? { display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '10px', minWidth: 0 }
+      : { display: 'flex', flexDirection: 'column', gap: '2px', flex: '0 1 160px', minWidth: 0, alignSelf: 'flex-start', position: 'sticky', top: stickyTop };
+    const honoreeNoFontSize = isMobile ? '18px' : 'clamp(32px, 4vw, 48px)';
+    const honoreeNoLineHeight = '1';
     const honoreeDetailTitleSize = isMobile ? '24px' : '32px';
     const honoreeWinnerStyle = {
       display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'stretch' : 'center',
@@ -1142,18 +1151,22 @@ class Component extends DCLogic {
     const revealBase = {
       benefit: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       honorees: {
-        background: 'linear-gradient(180deg, rgb(245, 243, 240) 0%, rgb(238, 233, 226) 10%, rgb(238, 233, 226) 100%)',
+        background: `linear-gradient(180deg, rgb(245, 243, 240) 0px, rgb(238, 233, 226) ${SECTION_GAP})`,
+        backgroundColor: 'rgb(238, 233, 226)',
         paddingTop: SECTION_GAP,
         paddingBottom: '100px',
-        marginBottom: '100px',
         position: 'relative',
         zIndex: 2,
         boxShadow: '0 -32px 48px -32px rgba(31,31,33,0.1)',
         overflowX: (isMobile || isTablet) ? 'clip' : 'visible',
         overflowY: 'visible'
       },
-      category: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: isMobile ? 'hidden' : 'visible' },
-      midcta: { background: '#FFFFFF', borderRadius: '8px', maxWidth: '1440px', margin: `${SECTION_GAP} auto 0`, padding: '48px clamp(24px, 6vw, 96px)' },
+      category: {
+        background: `linear-gradient(180deg, rgb(238, 233, 226) calc(100% - ${SECTION_GAP}), rgb(245, 243, 240) 100%)`,
+        paddingTop: '0', paddingBottom: SECTION_GAP, position: 'relative',
+        overflowX: (isMobile || isTablet) ? 'clip' : 'visible', overflowY: 'visible'
+      },
+      midcta: { background: '#FFFFFF', borderRadius: '8px', maxWidth: '1440px', margin: '0 auto', padding: '48px clamp(24px, 6vw, 96px)' },
       advisory: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: isMobile ? 'hidden' : 'visible' },
       schedule: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: isMobile ? 'hidden' : 'visible' },
       requirements: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
@@ -1167,7 +1180,7 @@ class Component extends DCLogic {
     const revealStyles = {};
     this.revealKeys.forEach(key => {
       const visible = !!this.state.revealed[key];
-      if (key === 'honorees') {
+      if (key === 'honorees' || key === 'category') {
         revealStyles[key] = {
           ...revealBase[key]
         };
@@ -1332,7 +1345,7 @@ class Component extends DCLogic {
         },
         noBlockStyle: isMobile
           ? { display: 'flex', flexDirection: 'column', gap: '2px', flex: '0 0 44px', minWidth: 0 }
-          : { display: 'flex', flexDirection: 'column', gap: '2px', flex: '0 1 160px', minWidth: 0, alignSelf: 'flex-start', position: 'sticky', top: `${(headerHeight || 90) + 56}px` },
+          : { display: 'flex', flexDirection: 'column', gap: '2px', flex: '0 1 160px', minWidth: 0, alignSelf: 'flex-start', position: 'sticky', top: stickyTop },
         noFontSize: isMobile ? '20px' : 'clamp(32px, 4vw, 48px)',
         contentBlockStyle: {
           flex: '1 1 220px',
