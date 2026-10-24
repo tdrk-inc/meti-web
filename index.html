@@ -1067,9 +1067,9 @@ class Component extends DCLogic {
       ? { display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '10px', minWidth: 0 }
       : { display: 'flex', flexDirection: 'column', gap: '2px', flex: '0 1 160px', minWidth: 0, alignSelf: 'flex-start', position: 'sticky', top: stickyTop };
     const honoreeContentStyle = {
-      flex: '1 1 220px', display: 'flex', flexDirection: 'column', gap: '32px', minWidth: 0, width: isMobile ? '100%' : 'auto'
+      flex: '1 1 220px', display: 'flex', flexDirection: 'column', gap: isMobile ? '16px' : '32px', minWidth: 0, width: isMobile ? '100%' : 'auto'
     };
-    const honoreeNoFontSize = isMobile ? '20px' : 'clamp(32px, 4vw, 48px)';
+    const honoreeNoFontSize = isMobile ? '18px' : 'clamp(32px, 4vw, 48px)';
     const honoreeDetailTitleSize = isMobile ? '24px' : '32px';
     const honoreeWinnerStyle = {
       display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'stretch' : 'center',
