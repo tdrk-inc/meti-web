@@ -233,6 +233,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- HONOREES -->
   <section data-screen-label="Honorees" id="honorees" ref="{{ revealRefs.honorees }}" style="{{ revealStyles.honorees }}">
+    <div style="{{ categoryInnerStyle }}">
     <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:40px;">
       <div style="display:flex; align-items:center; gap:8px;">
         <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
@@ -313,7 +314,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   </sc-if>
                 </div>
                 <div style="display:flex; flex-direction:column; gap:16px; padding-top:20px; border-top:1px solid #8C919A;">
-                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#65635F;">アドバイザリーボードからのコメント</span>
+                  <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#65635F;">審査時のコメント</span>
                   <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:normal; color:#1F1F21;">{{ hc.comment }}</p>
                 </div>
               </div>
@@ -322,11 +323,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </sc-for>
       </div>
     </div>
+    </div>
   </section>
 
   <!-- CATEGORY -->
   <section data-screen-label="Category" id="category" ref="{{ revealRefs.category }}" style="{{ revealStyles.category }}">
-    <div style="{{ categoryInnerStyle }}">
+    <div>
     <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:40px;">
       <div style="display:flex; align-items:center; gap:8px;">
         <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
@@ -1139,8 +1141,7 @@ class Component extends DCLogic {
     const categoryInnerStyle = { maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(24px, 6vw, 96px)' };
     const revealBase = {
       benefit: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
-      honorees: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) ${SECTION_GAP}`, position: 'relative', overflow: 'hidden' },
-      category: {
+      honorees: {
         background: 'linear-gradient(180deg, rgb(245, 243, 240) 0%, rgb(238, 233, 226) 10%, rgb(238, 233, 226) 100%)',
         paddingTop: SECTION_GAP,
         paddingBottom: '100px',
@@ -1151,6 +1152,7 @@ class Component extends DCLogic {
         overflowX: (isMobile || isTablet) ? 'clip' : 'visible',
         overflowY: 'visible'
       },
+      category: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: isMobile ? 'hidden' : 'visible' },
       midcta: { background: '#FFFFFF', borderRadius: '8px', maxWidth: '1440px', margin: `${SECTION_GAP} auto 0`, padding: '48px clamp(24px, 6vw, 96px)' },
       advisory: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: isMobile ? 'hidden' : 'visible' },
       schedule: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: isMobile ? 'hidden' : 'visible' },
@@ -1165,7 +1167,7 @@ class Component extends DCLogic {
     const revealStyles = {};
     this.revealKeys.forEach(key => {
       const visible = !!this.state.revealed[key];
-      if (key === 'category') {
+      if (key === 'honorees') {
         revealStyles[key] = {
           ...revealBase[key]
         };
