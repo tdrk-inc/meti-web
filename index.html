@@ -269,19 +269,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div style="{{ honoreeHeadRowStyle }}">
               <div style="{{ honoreeNoBlockStyle }}">
                 <span class="cat-title-no" style="font-family:'Oswald',sans-serif; font-weight:600; font-size:{{ honoreeNoFontSize }}; line-height:{{ honoreeNoLineHeight }}; color:#1F1F21;">{{ hc.no }}</span>
-                <span class="cat-title-en" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.3px; color:#1F1F21; white-space:nowrap;">{{ hc.titleEn }}</span>
-                
               </div>
-              <div style="display:flex; flex-direction:column; gap:32px; flex:1 1 0; min-width:0; width:100%;">
-                <div style="display:flex; flex-direction:column; gap:4px;">
-                  <div style="display:flex; align-items:center; flex-wrap:wrap; gap:12px;">
-                    <sc-if value="{{ hc.isNew }}">
-                      <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#FFFFFF; background:#B48CC8; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; height:26px;">NEW</span>
-                    </sc-if>
-                    <h3 class="cat-title-h" style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ honoreeDetailTitleSize }}; line-height:140%; color:#1F1F21;">{{ hc.title }}</h3>
-                  </div>
-                  <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:180%; color:#1F1F21;">{{ hc.description }}</p>
+              <div style="{{ honoreeTitleBlockStyle }}">
+                <span class="cat-title-en" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:{{ honoreeEnFontSize }}; line-height:1.4; letter-spacing:0.3px; color:#1F1F21; white-space:nowrap;">{{ hc.titleEn }}</span>
+                <div style="display:flex; align-items:center; flex-wrap:wrap; gap:12px;">
+                  <sc-if value="{{ hc.isNew }}">
+                    <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#FFFFFF; background:#B48CC8; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; height:26px;">NEW</span>
+                  </sc-if>
+                  <h3 class="cat-title-h" style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ honoreeDetailTitleSize }}; line-height:140%; color:#1F1F21;">{{ hc.title }}</h3>
                 </div>
+              </div>
+              <div style="{{ honoreeBodyStyle }}">
+                <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:180%; color:#1F1F21;">{{ hc.description }}</p>
                 <div style="display:flex; flex-direction:column; gap:16px; padding-top:8px;">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <span style="width:8px; height:8px; border-radius:4px; background:#E06219; flex:0 0 auto;"></span>
@@ -441,7 +440,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- ADVISORY BOARD -->
   <section data-screen-label="Advisory Board" id="advisory" ref="{{ revealRefs.advisory }}" style="{{ revealStyles.advisory }}">
-    <div aria-hidden="true" style="position:absolute; top:0; right:-240px; width:720px; height:720px; background:radial-gradient(circle closest-side, rgba(224,98,25,0.26) 0%, rgba(224,98,25,0.14) 40%, rgba(224,98,25,0) 100%); z-index:0; pointer-events:none;"></div>
+    <div aria-hidden="true" style="position:absolute; top:-200px; right:-240px; width:720px; height:720px; background:radial-gradient(circle closest-side, rgba(224,98,25,0.26) 0%, rgba(224,98,25,0.14) 40%, rgba(224,98,25,0) 100%); z-index:0; pointer-events:none;"></div>
     <div style="position:relative; margin-bottom:48px;">
       <div style="display:flex; flex-direction:column; gap:20px;">
         <div style="{{ benefitStickyStyle }}">
@@ -1063,12 +1062,17 @@ class Component extends DCLogic {
     };
     const stickyTop = `${(headerHeight || 90) + 56}px`;
     const honoreeHeadRowStyle = isMobile
-      ? { display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'stretch' }
-      : { display: 'flex', flexWrap: 'wrap', gap: '24px', alignItems: 'flex-start' };
+      ? { display: 'grid', gridTemplateColumns: 'auto 1fr', columnGap: '16px', rowGap: '16px', alignItems: 'center' }
+      : { display: 'grid', gridTemplateColumns: '160px minmax(0, 1fr)', columnGap: '24px', rowGap: '4px', alignItems: 'start' };
     const honoreeNoBlockStyle = isMobile
-      ? { display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '10px', minWidth: 0 }
-      : { display: 'flex', flexDirection: 'column', gap: '2px', flex: '0 1 160px', minWidth: 0, alignSelf: 'flex-start', position: 'sticky', top: stickyTop };
-    const honoreeNoFontSize = isMobile ? '18px' : 'clamp(32px, 4vw, 48px)';
+      ? { gridColumn: '1', gridRow: '1', minWidth: 0 }
+      : { gridColumn: '1', gridRow: '1 / span 2', minWidth: 0, alignSelf: 'start', position: 'sticky', top: stickyTop };
+    const honoreeTitleBlockStyle = { gridColumn: isMobile ? '2' : '2', gridRow: '1', display: 'flex', flexDirection: 'column', gap: '0', minWidth: 0 };
+    const honoreeBodyStyle = isMobile
+      ? { gridColumn: '1 / -1', gridRow: '2', display: 'flex', flexDirection: 'column', gap: '32px', minWidth: 0 }
+      : { gridColumn: '2', gridRow: '2', display: 'flex', flexDirection: 'column', gap: '32px', minWidth: 0 };
+    const honoreeEnFontSize = isMobile ? '14px' : '16px';
+    const honoreeNoFontSize = isMobile ? '64px' : 'clamp(56px, 7vw, 80px)';
     const honoreeNoLineHeight = '1';
     const honoreeDetailTitleSize = isMobile ? '24px' : '32px';
     const honoreeWinnerStyle = {
@@ -1190,7 +1194,7 @@ class Component extends DCLogic {
         overflowX: (isMobile || isTablet) ? 'clip' : 'visible', overflowY: 'visible'
       },
       midcta: { background: '#FFFFFF', borderRadius: '8px', maxWidth: '1440px', margin: '0 auto', padding: '48px clamp(24px, 6vw, 96px)' },
-      advisory: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflowX: 'visible', overflowY: 'visible' },
+      advisory: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', zIndex: 1, overflowX: 'visible', overflowY: 'visible' },
       schedule: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: isMobile ? 'hidden' : 'visible' },
       requirements: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
       apply: { maxWidth: '1440px', margin: '0 auto', padding: `${SECTION_GAP} clamp(24px, 6vw, 96px) 0`, position: 'relative', overflow: 'hidden' },
