@@ -172,10 +172,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </sc-if>
 
-  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
-    <span aria-disabled="true" style="position:fixed; bottom:0; left:0; right:0; z-index:150; background:#1F1F21; color:#FFFFFF; text-align:center; padding:16px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; display:block; opacity:0.5; cursor:not-allowed;">エントリーは締め切りました</span>
-  </sc-if>
-
   <!-- HERO -->
   <section data-screen-label="Hero" id="top" style="position:relative; z-index:2; padding-top:{{ heroSectionPaddingTop }}; background:#F5F3F0; min-height:100vh; display:flex; flex-direction:column;">
     <video ref="{{ videoRef }}" autoplay muted loop playsinline aria-hidden="true" style="display:none;">
@@ -252,14 +248,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div style="display:flex; flex-direction:column; gap:{{ honoreeIndexRowGap }}; flex:1 1 auto; min-width:0;">
               <div style="display:flex; align-items:center; gap:10px; color:#E06219;">
                 <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:24px; line-height:normal;">{{ hi.no }}</span>
-                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:20px; line-height:normal;">{{ hi.label }}</span>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:{{ honoreeIndexLabelSize }}; line-height:normal;">{{ hi.label }}</span>
               </div>
               <div style="display:flex; flex-direction:column; gap:5px;">
-                <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:20px; line-height:28px; color:#1F1F21;">{{ hi.company }}</span>
-                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:23.8px; color:#333333;">{{ hi.project }}</span>
+                <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ honoreeIndexCompanySize }}; line-height:28px; color:#1F1F21;">{{ hi.company }}</span>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:23.8px; color:#333333; padding-right:{{ honoreeIndexProjectPad }};">{{ hi.project }}</span>
               </div>
             </div>
-            <img src="assets/arrow-down.svg" alt="" width="24" height="24" style="flex:0 0 auto; display:block; width:24px; height:24px;">
+            <img src="assets/arrow-down.svg" alt="" width="24" height="24" style="{{ honoreeIndexArrowStyle }}">
           </a>
         </sc-for>
       </div>
@@ -272,6 +268,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="cat-title-en" style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; letter-spacing:0.3px; color:#1F1F21;">{{ hc.titleEn }}</span>
               </div>
               <div style="{{ honoreeContentStyle }}">
+                <div style="display:flex; flex-direction:column; gap:8px;">
                 <div style="display:flex; align-items:center; flex-wrap:wrap; gap:12px;">
                   <sc-if value="{{ hc.isNew }}">
                     <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.5px; color:#FFFFFF; background:#B48CC8; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; height:26px;">NEW</span>
@@ -279,6 +276,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <h3 class="cat-title-h" style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ honoreeDetailTitleSize }}; line-height:140%; color:#1F1F21;">{{ hc.title }}</h3>
                 </div>
                 <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:180%; color:#1F1F21;">{{ hc.description }}</p>
+                </div>
                 <div style="display:flex; flex-direction:column; gap:16px; padding-top:8px;">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <span style="width:8px; height:8px; border-radius:4px; background:#E06219; flex:0 0 auto;"></span>
@@ -293,7 +291,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:27.2px;">{{ w.name }}</span>
                             <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:normal;">{{ w.sub }}</span>
                           </div>
-                          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; line-height:normal;">{{ w.text }}</p>
+                          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; line-height:{{ honoreeWinnerTextLineHeight }};">{{ w.text }}</p>
                         </div>
                       </div>
                     </sc-for>
@@ -1051,8 +1049,16 @@ class Component extends DCLogic {
     };
     const honoreeIndexRowStyle = {
       display: 'flex', alignItems: 'flex-end', gap: '40px', padding: isMobile ? '20px' : '25px',
-      border: '1px solid #F6C6AA', borderRadius: '8px', textDecoration: 'none', color: 'inherit'
+      border: '1px solid #F6C6AA', borderRadius: '8px', textDecoration: 'none', color: 'inherit',
+      position: 'relative'
     };
+    const honoreeWinnerTextLineHeight = isMobile ? '120%' : 'normal';
+    const honoreeIndexLabelSize = isMobile ? '16px' : '20px';
+    const honoreeIndexCompanySize = isMobile ? '16px' : '20px';
+    const honoreeIndexProjectPad = isMobile ? '32px' : '0';
+    const honoreeIndexArrowStyle = isMobile
+      ? { position: 'absolute', right: '20px', bottom: '20px', display: 'block', width: '24px', height: '24px' }
+      : { flex: '0 0 auto', display: 'block', width: '24px', height: '24px' };
     const honoreeIndexRowGap = '16px';
     const honoreeDetailStyle = {
       background: '#F5F3F0', borderRadius: '8px',
@@ -1067,7 +1073,7 @@ class Component extends DCLogic {
       ? { display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '10px', minWidth: 0 }
       : { display: 'flex', flexDirection: 'column', gap: '2px', flex: '0 1 160px', minWidth: 0, alignSelf: 'flex-start', position: 'sticky', top: stickyTop };
     const honoreeContentStyle = {
-      flex: '1 1 220px', display: 'flex', flexDirection: 'column', gap: isMobile ? '16px' : '32px', minWidth: 0, width: isMobile ? '100%' : 'auto'
+      flex: '1 1 220px', display: 'flex', flexDirection: 'column', gap: isMobile ? '16px' : '24px', minWidth: 0, width: isMobile ? '100%' : 'auto'
     };
     const honoreeNoFontSize = isMobile ? '18px' : 'clamp(32px, 4vw, 48px)';
     const honoreeDetailTitleSize = isMobile ? '24px' : '32px';
