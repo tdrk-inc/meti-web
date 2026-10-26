@@ -1,0 +1,203 @@
+.anm {
+  opacity: 0;
+}
+
+.trigger {
+  opacity: 0;
+}
+
+.trigger.blur {
+  animation: blur 1.5s ease 1 normal forwards;
+}
+
+.trigger.first {
+  animation: first 0.8s ease 0.3s 1 normal forwards;
+}
+
+.trigger.up {
+  animation: up 0.8s ease 0.3s 1 normal forwards;
+}
+
+.trigger.down {
+  animation: down 0.8s ease 0.3s 1 normal forwards;
+}
+
+.trigger.left {
+  animation: left 0.8s ease 0.3s 1 normal forwards;
+}
+
+.trigger.right {
+  animation: right 0.8s ease 0.3s 1 normal forwards;
+}
+
+.trigger.delay0 {
+  animation-delay: 0ms;
+}
+
+.trigger.delay1 {
+  animation-delay: 100ms;
+}
+
+.trigger.delay2 {
+  animation-delay: 200ms;
+}
+
+.trigger.delay3 {
+  animation-delay: 300ms;
+}
+
+.trigger.delay4 {
+  animation-delay: 400ms;
+}
+
+.trigger.delay5 {
+  animation-delay: 500ms;
+}
+
+.trigger.delay6 {
+  animation-delay: 600ms;
+}
+
+.trigger.delay7 {
+  animation-delay: 700ms;
+}
+
+.trigger.delay8 {
+  animation-delay: 800ms;
+}
+
+.trigger.delay9 {
+  animation-delay: 900ms;
+}
+
+.trigger.delay10 {
+  animation-delay: 1000ms;
+}
+
+.trigger.delay11 {
+  animation-delay: 1100ms;
+}
+
+.trigger.delay12 {
+  animation-delay: 1200ms;
+}
+
+.trigger.delay15 {
+  animation-delay: 1500ms;
+}
+
+.trigger.delay20 {
+  animation-delay: 2000ms;
+}
+
+.trigger.delay25 {
+  animation-delay: 2500ms;
+}
+
+.trigger.delay30 {
+  animation-delay: 3000ms;
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes first {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes up {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes down {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes right {
+  0% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes left {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  1% {
+    display: block;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+@keyframes parallax {
+  from {
+    background-position: center 0;
+  }
+  to {
+    background-position: center -150px;
+  }
+}
+/*# sourceMappingURL=animation.css.map */
