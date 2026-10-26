@@ -174,9 +174,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- HERO -->
   <section data-screen-label="Hero" id="top" style="position:relative; z-index:2; padding-top:{{ heroSectionPaddingTop }}; background:#F5F3F0; min-height:100vh; display:flex; flex-direction:column;">
-    <video ref="{{ videoRef }}" autoplay muted loop playsinline aria-hidden="true" style="display:none;">
-      <source src="glow_blend_fv.mp4" type="video/mp4">
-    </video>
     <div aria-hidden="true" style="position:absolute; left:-8%; bottom:calc(-55% + 160px); width:57.8vmax; height:57.8vmax; border-radius:50%; background:radial-gradient(circle, rgba(224,98,25,0.7) 0%, rgba(224,98,25,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatOrange 13s ease-in-out infinite; z-index:-5; pointer-events:none;"></div>
     <div aria-hidden="true" style="position:absolute; right:-10%; top:calc(-15% + 80px); width:59.5vmax; height:59.5vmax; border-radius:50%; background:radial-gradient(circle, rgba(180,140,200,0.7) 0%, rgba(180,140,200,0.6) 25%, transparent 70%); filter:blur(60px); mix-blend-mode:multiply; animation:floatPurple 15s ease-in-out infinite; z-index:-5; pointer-events:none;"></div>
     <div aria-hidden="true" style="position:absolute; inset:0; opacity:0.05; mix-blend-mode:overlay; pointer-events:none; z-index:0; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' base-frequency='0.9' num-octaves='3' stitch-tiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
@@ -457,7 +454,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <sc-for list="{{ advisoryBoard }}" as="person" hint-placeholder-count="7">
         <div style="display:flex; flex-direction:column; gap:12px;">
           <div style="width:100%; max-width:180px; aspect-ratio:1/1; border-radius:8px; overflow:hidden; border:1px solid #D4D5E2;">
-            <img src="{{ person.photo }}" alt="{{ person.name }}" style="width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.75) contrast(0.95) brightness(1.02);">
+            <img src="{{ person.photo }}" alt="{{ person.name }}" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.75) contrast(0.95) brightness(1.02);">
           </div>
           <div style="display:flex; flex-direction:column; gap:4px;">
             <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#1F1F21;">{{ person.name }}</span>
@@ -894,10 +891,6 @@ class Component extends DCLogic {
     return str.split('').map((ch, i) => ({ ch: ch === ' ' ? '\u00A0' : ch, delay: (startDelay + i * 0.045).toFixed(3) }));
   };
 
-  videoRef = React.createRef();
-
-  titleVideoRef = React.createRef();
-
   headerRef = React.createRef();
 
   componentDidMount() {
@@ -916,24 +909,6 @@ class Component extends DCLogic {
       } else {
         this.setState({ headerHeight: Math.round(this.headerRef.current.getBoundingClientRect().height) });
       }
-    }
-    const v = this.videoRef.current;
-    if (v) {
-      v.muted = true;
-      v.loop = true;
-      v.playsInline = true;
-      const tryPlay = () => v.play().catch(() => {});
-      tryPlay();
-      v.addEventListener('loadedmetadata', tryPlay);
-    }
-    const tv = this.titleVideoRef.current;
-    if (tv) {
-      tv.muted = true;
-      tv.loop = true;
-      tv.playsInline = true;
-      const tryPlayTitle = () => tv.play().catch(() => {});
-      tryPlayTitle();
-      tv.addEventListener('loadedmetadata', tryPlayTitle);
     }
   }
 
@@ -1530,13 +1505,13 @@ class Component extends DCLogic {
     const entrySheetDaysLeft = (scheduleItems.find(s => s.label === 'エントリーシート提出締切') || {}).daysLeft;
 
     const advisoryBoard = [
-      { name: '大林 剛郎', titleLines: ['大林組 取締役会長 兼 取締役会議長', '公益財団法人大林財団 理事長'], photo: 'assets/advisory-01.png' },
-      { name: '片岡 真実', titleLines: ['森美術館館長', '国立アートリサーチセンター エグゼクティブ・アドバイザー'], photo: 'assets/advisory-02.png' },
-      { name: '塩見 有子', titleLines: ['NPO法人アーツイニシアティヴトウキョウ[AIT]ディレクター'], photo: 'assets/advisory-03.png' },
-      { name: '寺瀬 由紀', titleLines: ['Art Intelligence Global Founder'], photo: 'assets/advisory-04.png' },
-      { name: '永田 暁彦', titleLines: ['UntroD Capital Japan 代表取締役社長'], photo: 'assets/advisory-05.png' },
-      { name: '日比野 克彦', titleLines: ['東京藝術大学長'], photo: 'assets/advisory-06.png' },
-      { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役会長', '公益財団法人福武財団 理事長'], photo: 'assets/advisory-07.png' }
+      { name: '大林 剛郎', titleLines: ['大林組 取締役会長 兼 取締役会議長', '公益財団法人大林財団 理事長'], photo: 'assets/advisory-01.webp' },
+      { name: '片岡 真実', titleLines: ['森美術館館長', '国立アートリサーチセンター エグゼクティブ・アドバイザー'], photo: 'assets/advisory-02.webp' },
+      { name: '塩見 有子', titleLines: ['NPO法人アーツイニシアティヴトウキョウ[AIT]ディレクター'], photo: 'assets/advisory-03.webp' },
+      { name: '寺瀬 由紀', titleLines: ['Art Intelligence Global Founder'], photo: 'assets/advisory-04.webp' },
+      { name: '永田 暁彦', titleLines: ['UntroD Capital Japan 代表取締役社長'], photo: 'assets/advisory-05.webp' },
+      { name: '日比野 克彦', titleLines: ['東京藝術大学長'], photo: 'assets/advisory-06.webp' },
+      { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役会長', '公益財団法人福武財団 理事長'], photo: 'assets/advisory-07.webp' }
     ];
 
     return { honoreeIndex, honoreeIndexRowStyle, honoreeIndexRowGap, honoreeCommentBorder, honoreeIndexColStyle, honoreeIndexHeadStyle, honoreeIndexInnerStyle, honoreeIndexCompanyStyle, honoreeIndexProjectGrid, honoreeIndexNoSize, honoreeDescSize, honoreeIndexLabelSize, honoreeIndexCompanySize, honoreeIndexArrowStyle, honoreeIndexProjectPad, honoreeCategories, honoreeDetailStyle, honoreeHeadRowStyle, honoreeNoBlockStyle, honoreeContentStyle, honoreeNoFontSize, honoreeDetailTitleSize, honoreeWinnerStyle, honoreeWinnerImageStyle, honoreeWinnerTextLineHeight, finalistNameStyle, finalistColStyle, categories, categoryLabels, requirementItems, informationItems, scheduleItems, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, benefitsDisplay, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, advisoryDescWidth, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
