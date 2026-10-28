@@ -285,11 +285,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div style="{{ honoreeWinnerImageStyle }}"></div>
                         <div style="display:flex; flex-direction:column; gap:20px; flex:1 1 0; min-width:0; color:#1F1F21;">
                           <div style="display:flex; flex-direction:column;">
-                            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:27.2px;">{{ w.name }}</span>
-                            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:normal;">{{ w.sub }}</span>
+                            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:18px; line-height:160%;">{{ w.name }}</span>
+                            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; line-height:150%;">{{ w.sub }}</span>
                           </div>
                           <sc-if value="{{ w.hasText }}">
-                          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:12px; line-height:{{ honoreeWinnerTextLineHeight }};">{{ w.text }}</p>
+                          <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:{{ honoreeWinnerTextLineHeight }};">{{ w.text }}</p>
                           </sc-if>
                         </div>
                       </div>
@@ -300,12 +300,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <span style="width:8px; height:8px; border-radius:4px; background:#65635F; flex:0 0 auto;"></span>
                     <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#65635F;">ファイナリスト企業</span>
                   </div>
-                  <div style="display:flex; flex-direction:column; gap:16px;">
+                  <div style="{{ finalistGridStyle }}">
                     <sc-for list="{{ hc.finalists }}" as="f" hint-placeholder-count="4">
-                      <div style="display:flex; align-items:center; gap:40px; padding:24px; background:#FFFFFF; border-radius:8px; color:#1F1F21;">
+                      <div style="display:flex; align-items:flex-start; padding:16px 24px; background:#FFFFFF; border-radius:8px; color:#1F1F21;">
                         <div style="{{ finalistColStyle }}">
-                          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; {{ finalistNameStyle }}">{{ f.name }}</span>
-                          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:normal;">{{ f.sub }}</span>
+                          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; {{ finalistNameStyle }}">{{ f.name }}</span>
+                          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:13px; line-height:150%; color:#65635F;">{{ f.sub }}</span>
                         </div>
                       </div>
                     </sc-for>
@@ -1039,8 +1039,9 @@ class Component extends DCLogic {
       position: 'relative'
     };
     const honoreeWinnerTextLineHeight = isMobile ? '175%' : 'normal';
-    const finalistNameStyle = isMobile ? 'line-height:160%;' : 'line-height:27.2px;';
-    const finalistColStyle = isMobile ? 'display:flex; flex-direction:column; gap:4px; flex:1 1 0; min-width:0;' : 'display:flex; flex-direction:column; flex:1 1 0; min-width:0;';
+    const finalistNameStyle = 'line-height:160%;';
+    const finalistGridStyle = 'display:grid; grid-template-columns:' + (isMobile ? '1fr' : 'repeat(2, minmax(0, 1fr))') + '; gap:12px;';
+    const finalistColStyle = isMobile ? 'display:flex; flex-direction:column; gap:4px; flex:1 1 0; min-width:0;' : 'display:flex; flex-direction:column; gap:4px; flex:1 1 0; min-width:0;';
     const honoreeIndexNoSize = isMobile ? '20px' : '24px';
     const honoreeDescSize = isMobile ? '14px' : '16px';
     const honoreeIndexLabelSize = isMobile ? '18px' : '20px';
