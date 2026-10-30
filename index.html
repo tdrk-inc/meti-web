@@ -201,6 +201,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; letter-spacing:0.15px; color:#333333;">経済産業省は企業がアート・アーティストとの共創を通じて新たな価値を創出し、経済社会とアート・アーティストそれぞれが持続的に発展するエコシステムの構築を目指しています。<br>その実現に向けて、共創の取組と経済的価値の創出をさらに加速させるため、共創の現場と経済的価値創出を巧みに結びつけたモデルとなる企業・プロジェクトを選出・表彰します。<br>今年度は第2回の開催となります。</p>
         </div>
         <div style="display:flex; flex-direction:column; align-items:flex-start; gap:12px; margin-top:20px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;">
+          <a href="#honorees" style="display:flex; flex-wrap:wrap; align-items:center; gap:4px 10px; font-family:'Noto Sans JP',sans-serif; font-size:13px; line-height:150%; color:#1F1F21; text-decoration:none; border-bottom:1px solid #E06219; padding-bottom:4px;"><span style="font-weight:700; color:#E06219;">お知らせ</span><span aria-hidden="true" style="width:1px; height:12px; background:#D4D5E2;"></span><span style="font-weight:500;">ART &amp; BUSINESS AWARD 2026の受賞企業を発表いたしました</span></a>
           <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:#1F1F21;">応募カテゴリー</span>
           <div style="display:flex; flex-direction:column; align-items:flex-start; gap:8px;">
             <sc-for list="{{ categoryLabels }}" as="cl" hint-placeholder-count="5">
@@ -213,6 +214,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <sc-if value="{{ !isMobile }}">
       <div style="max-width:1440px; margin:0 auto; width:100%; padding:0 clamp(24px, 6vw, 96px) 64px; position:relative; z-index:1;">
         <div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.3s both;">
+          <a href="#honorees" style="display:flex; align-items:center; gap:12px; width:100%; margin-bottom:8px; font-family:'Noto Sans JP',sans-serif; font-size:16px; color:#1F1F21; text-decoration:none;"><span style="font-weight:700; color:#E06219;">お知らせ</span><span aria-hidden="true" style="width:1px; height:16px; background:#D4D5E2;"></span><span style="font-weight:500; border-bottom:1px solid #E06219; padding-bottom:2px;">ART &amp; BUSINESS AWARD 2026の受賞企業を発表いたしました</span></a>
           <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:#1F1F21;">応募カテゴリー</span>
           <span style="display:block; width:1px; align-self:stretch; background:#D4D5E2;"></span>
           <sc-for list="{{ categoryLabels }}" as="cl" hint-placeholder-count="5">
@@ -248,8 +250,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:{{ honoreeIndexLabelSize }}; line-height:normal;">{{ hi.label }}</span>
               </div>
               <div style="{{ honoreeIndexInnerStyle }}">
-                <span style="{{ honoreeIndexCompanyStyle }}font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ honoreeIndexCompanySize }}; line-height:28px; color:#1F1F21;">{{ hi.company }}</span>
-                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:14px; line-height:23.8px; color:#333333; padding-right:{{ honoreeIndexProjectPad }};{{ honoreeIndexProjectGrid }}">{{ hi.project }}</span>
+                <span style="{{ honoreeIndexCompanyStyle }}font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ honoreeIndexCompanySize }}; line-height:30px; color:#1F1F21;">{{ hi.company }}</span>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:15px; line-height:25px; color:#1F1F21; padding-right:{{ honoreeIndexProjectPad }};{{ honoreeIndexProjectGrid }}">{{ hi.project }}</span>
               </div>
             </div>
             <img src="assets/arrow-down.svg" alt="" width="24" height="24" style="{{ honoreeIndexArrowStyle }}">
@@ -272,7 +274,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   </sc-if>
                   <h3 class="cat-title-h" style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ honoreeDetailTitleSize }}; line-height:140%; color:#1F1F21;">{{ hc.title }}</h3>
                 </div>
+                <sc-if value="{{ hc.hasDescription }}">
                 <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:{{ honoreeDescSize }}; line-height:180%; color:#1F1F21;">{{ hc.description }}</p>
+                </sc-if>
                 </div>
                 <div style="display:flex; flex-direction:column; gap:16px; padding-top:8px;">
                   <div style="display:flex; align-items:center; gap:8px;">
@@ -285,8 +289,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div style="{{ honoreeWinnerImageStyle }}"></div>
                         <div style="display:flex; flex-direction:column; gap:20px; flex:1 1 0; min-width:0; color:#1F1F21;">
                           <div style="display:flex; flex-direction:column;">
-                            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:18px; line-height:160%;">{{ w.name }}</span>
-                            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:150%;">{{ w.sub }}</span>
+                            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:20px; line-height:160%;">{{ w.name }}</span>
+                            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:15px; line-height:150%;">{{ w.sub }}</span>
                           </div>
                           <sc-if value="{{ w.hasText }}">
                           <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:13px; line-height:{{ honoreeWinnerTextLineHeight }};">{{ w.text }}</p>
@@ -304,8 +308,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <sc-for list="{{ hc.finalists }}" as="f" hint-placeholder-count="4">
                       <div style="display:flex; align-items:flex-start; padding:16px; background:rgba(255,255,255,0.7); border-radius:8px; color:#1F1F21;">
                         <div style="{{ finalistColStyle }}">
-                          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; {{ finalistNameStyle }}">{{ f.name }}</span>
-                          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:13px; line-height:150%; color:#65635F;">{{ f.sub }}</span>
+                          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:15px; {{ finalistNameStyle }}">{{ f.name }}</span>
+                          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:150%; color:#1F1F21;">{{ f.sub }}</span>
                         </div>
                       </div>
                     </sc-for>
@@ -1047,7 +1051,7 @@ class Component extends DCLogic {
     const honoreeIndexNoSize = isStacked ? '20px' : '24px';
     const honoreeDescSize = isStacked ? '14px' : '16px';
     const honoreeIndexLabelSize = isStacked ? '18px' : '20px';
-    const honoreeIndexCompanySize = isStacked ? '16px' : '20px';
+    const honoreeIndexCompanySize = isStacked ? '18px' : '22px';
     const honoreeIndexProjectPad = '0';
     const honoreeIndexArrowStyle = isStacked
       ? { gridColumn: '2', gridRow: '3', display: 'block', width: '24px', height: '24px' }
@@ -1138,7 +1142,6 @@ class Component extends DCLogic {
       },
       {
         titleEn: 'Special Recognition', title: '特別賞',
-        description: 'カテゴリーを横断して顕著な成果を上げた企業',
         comment: '初回の会期中のため、継続性・経済的価値は明らかになっていないが、地域の産業・住民等に強いインパクトをもたらす取組であると評価し特別賞とした。今後の継続的な発展を期待したい。',
         winners: [{ name: '一般財団法人 日本産業芸術財団', sub: '瀬戸内産業芸術祭 2026（Setouchi Art and Industry 2026）', text: '地域産業７社（製塩、学生服、舶用エンジン部品、蓄電池、資源循環、デニム等）が、稼働中の工場やプラントを会期中だけ「美術館」として開放する分散型の芸術祭。既存の作品を購入して置くのではなく、各社の産業の特徴をコンセプトに企業と芸術家が作品を共創し、来場者の案内は社員が務める。モニターツアー183名の満足度は8.26/10、バスツアーは全日程が完売。アートが産業の現場を観光資源へと転換し、働く人の誇りも引き出している。' }],
         finalists: []
@@ -1149,6 +1152,7 @@ class Component extends DCLogic {
       no: String(i + 1).padStart(2, '0'),
       anchor: 'honoree-' + (i + 1),
       hasFinalists: c.finalists.length > 0,
+      hasDescription: !!c.description,
       hasComment: !!c.comment,
       accent: ['#E06219', '#B48CC8', '#E06219', '#B48CC8', '#E06219', '#C9971F'][i]
     }));
