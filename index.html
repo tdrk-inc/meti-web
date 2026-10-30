@@ -70,6 +70,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       transition: background-size 350ms cubic-bezier(0.65, 0, 0.35, 1);
     }
     .header-anchor-link:hover { background-size: 100% 2px; }
+    .hero-notice-text { text-decoration: none; }
+    .hero-notice:hover .hero-notice-text { text-decoration: underline; text-underline-offset: 4px; }
     .cta-dark:hover { background: #E06219 !important; color: #FFFFFF !important; }
     .cta-orange:hover { background: #1F1F21 !important; color: #FFFFFF !important; }
     .cta-arrow { transition: transform 350ms cubic-bezier(0.65, 0, 0.35, 1); }
@@ -201,8 +203,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; letter-spacing:0.15px; color:#333333;">経済産業省は企業がアート・アーティストとの共創を通じて新たな価値を創出し、経済社会とアート・アーティストそれぞれが持続的に発展するエコシステムの構築を目指しています。<br>その実現に向けて、共創の取組と経済的価値の創出をさらに加速させるため、共創の現場と経済的価値創出を巧みに結びつけたモデルとなる企業・プロジェクトを選出・表彰します。<br>今年度は第2回の開催となります。</p>
         </div>
         <div style="display:flex; flex-direction:column; align-items:flex-start; gap:12px; margin-top:20px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;">
-          <a href="#honorees" style="display:flex; flex-wrap:wrap; align-items:center; gap:4px 10px; font-family:'Noto Sans JP',sans-serif; font-size:13px; line-height:150%; color:#1F1F21; text-decoration:none; border-bottom:1px solid #E06219; padding-bottom:4px;"><span style="font-weight:700; color:#E06219;">お知らせ</span><span aria-hidden="true" style="width:1px; height:12px; background:#D4D5E2;"></span><span style="font-weight:500;">ART &amp; BUSINESS AWARD 2026の受賞企業を発表いたしました</span></a>
-          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:#1F1F21;">応募カテゴリー</span>
+          <a href="#honorees" class="hero-notice" style="display:flex; flex-wrap:wrap; align-items:center; gap:4px 10px; font-family:'Noto Sans JP',sans-serif; font-size:14px; line-height:150%; color:#1F1F21; text-decoration:none;"><span style="font-weight:700; color:#1F1F21;">お知らせ</span><span aria-hidden="true" style="width:1px; height:12px; background:#D4D5E2;"></span><span class="hero-notice-text" style="font-weight:500;">ART &amp; BUSINESS AWARD 2026の受賞企業を発表いたしました</span></a>
           <div style="display:flex; flex-direction:column; align-items:flex-start; gap:8px;">
             <sc-for list="{{ categoryLabels }}" as="cl" hint-placeholder-count="5">
               <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21; border:1px solid #1F1F21; border-radius:8px; padding:6px 14px;">{{ cl }}</span>
@@ -214,9 +215,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <sc-if value="{{ !isMobile }}">
       <div style="max-width:1440px; margin:0 auto; width:100%; padding:0 clamp(24px, 6vw, 96px) 64px; position:relative; z-index:1;">
         <div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.3s both;">
-          <a href="#honorees" style="display:flex; align-items:center; gap:12px; width:100%; margin-bottom:8px; font-family:'Noto Sans JP',sans-serif; font-size:16px; color:#1F1F21; text-decoration:none;"><span style="font-weight:700; color:#E06219;">お知らせ</span><span aria-hidden="true" style="width:1px; height:16px; background:#D4D5E2;"></span><span style="font-weight:500; border-bottom:1px solid #E06219; padding-bottom:2px;">ART &amp; BUSINESS AWARD 2026の受賞企業を発表いたしました</span></a>
-          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:14px; color:#1F1F21;">応募カテゴリー</span>
-          <span style="display:block; width:1px; align-self:stretch; background:#D4D5E2;"></span>
+          <a href="#honorees" class="hero-notice" style="display:flex; align-items:center; gap:12px; width:100%; margin-bottom:8px; font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#1F1F21; text-decoration:none;"><span style="font-weight:700; color:#1F1F21;">お知らせ</span><span aria-hidden="true" style="width:1px; height:16px; background:#D4D5E2;"></span><span class="hero-notice-text" style="font-weight:500;">ART &amp; BUSINESS AWARD 2026の受賞企業を発表いたしました</span></a>
           <sc-for list="{{ categoryLabels }}" as="cl" hint-placeholder-count="5">
             <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#1F1F21; border:1px solid #1F1F21; border-radius:8px; padding:8px 18px;">{{ cl }}</span>
           </sc-for>
