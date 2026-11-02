@@ -269,6 +269,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:{{ honoreeDescSize }}; line-height:180%; color:#1F1F21;">{{ hc.description }}</p>
                 </sc-if>
                 </div>
+              </div>
+            </div>
+            <div style="{{ honoreeFullStyle }}">
                 <div style="display:flex; flex-direction:column; gap:16px; padding-top:8px;">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <span style="width:8px; height:8px; border-radius:4px; background:#E06219; flex:0 0 auto;"></span>
@@ -291,7 +294,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </sc-for>
                   </div>
                   <sc-if value="{{ hc.hasFinalists }}">
-                  <div style="display:flex; align-items:center; gap:8px;">
+                  <div style="display:flex; align-items:center; gap:8px; margin-top:16px;">
                     <span style="width:8px; height:8px; border-radius:4px; background:#65635F; flex:0 0 auto;"></span>
                     <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:16px; color:#65635F;">ファイナリスト企業</span>
                   </div>
@@ -313,7 +316,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; line-height:normal; color:#1F1F21;">{{ hc.comment }}</p>
                 </div>
                 </sc-if>
-              </div>
             </div>
           </div>
         </sc-for>
@@ -1069,6 +1071,7 @@ class Component extends DCLogic {
     const honoreeContentStyle = {
       flex: '1 1 220px', display: 'flex', flexDirection: 'column', gap: isStacked ? '16px' : '24px', minWidth: 0, width: isStacked ? '100%' : 'auto'
     };
+    const honoreeFullStyle = { display: 'flex', flexDirection: 'column', gap: isStacked ? '16px' : '24px', width: '100%', marginTop: isStacked ? '16px' : '24px' };
     const honoreeNoFontSize = isStacked ? '18px' : 'clamp(32px, 4vw, 48px)';
     const honoreeDetailTitleSize = isStacked ? '24px' : '32px';
     const honoreeWinnerStyle = {
@@ -1125,7 +1128,7 @@ class Component extends DCLogic {
         titleEn: 'Art Engagement', title: 'アートエンゲージメント',
         description: '所有しているアート作品を活用し企業価値向上とともに日本のアートの発展に寄与した企業・プロジェクト', isNew: true,
         comment: '新たなカテゴリーとして加えたが自社所有のアート作品を活用した取組の応募は少なかった。他者のアート作品の活用による価値創出事業という観点で新たな需要開拓・高い収益性を獲得した取組を評価した。',
-        winners: [{ name: '株式会社リビタ', sub: 'KAIKA 東京 by THE SHARE HOTELS／KAIKA TOKYO AWARD', text: '全国の遊休不動産を再生させるリノベーションホテルブランド。「KAIKA東京」では1966年築の倉庫ビルを、アートの公開収蔵庫とホテルを融合させた施設として展開。客室にできない無窓の地下をアートギャラリーやコレクター向けのストレージとして貸し出している。ストレージは宿泊客にも公開し、アートと宿泊が一体となった体験が好評を博しており、最寄駅から徒歩13分という不利な立地にも関わらず駅近の競合に劣らない客室平均単価と稼働率を実現している。' }],
+        winners: [{ name: '株式会社リビタ', sub: 'KAIKA 東京 by THE SHARE HOTELS／KAIKA TOKYO AWARD', text: '「KAIKA 東京」は、1966年築の倉庫ビルをリノベーションし、現代アートの公開収蔵庫とホテルを融合させた施設。客室にできない余剰スペースを、アートギャラリーやコレクター向けのストレージ、アワードで募った多様な作品の収蔵・展示空間として活用している。これらを宿泊客にも公開し、アートと宿泊が一体となった体験が好評を博しており、最寄駅から徒歩13分という不利な立地にも関わらず駅近の競合に劣らない客室平均単価と稼働率を実現している。' }],
         finalists: [
           { name: '株式会社The Chain Museum', sub: 'The Chain Museum（オフィス空間へのアート導入）' },
           { name: 'パークホテル東京', sub: 'Art Hotel Rebranding Project ‒ 日本の美意識戦略' }
@@ -1519,7 +1522,7 @@ class Component extends DCLogic {
       { name: '福武 英明', titleLines: ['ベネッセホールディングス取締役会長', '公益財団法人福武財団 理事長'], photo: 'assets/advisory-07.webp' }
     ];
 
-    return { honoreeIndex, honoreeIndexRowStyle, honoreeIndexRowGap, honoreeCommentBorder, honoreeIndexColStyle, honoreeIndexHeadStyle, honoreeIndexInnerStyle, honoreeIndexCompanyStyle, honoreeIndexProjectGrid, honoreeIndexNoSize, honoreeDescSize, honoreeIndexLabelSize, honoreeIndexCompanySize, honoreeIndexArrowStyle, honoreeIndexProjectPad, honoreeCategories, honoreeDetailStyle, honoreeHeadRowStyle, honoreeNoBlockStyle, honoreeContentStyle, honoreeNoFontSize, honoreeDetailTitleSize, honoreeWinnerStyle, honoreeWinnerImageStyle, honoreeWinnerTextLineHeight, finalistNameStyle, finalistGridStyle, finalistColStyle, categories, categoryLabels, requirementItems, informationItems, scheduleItems, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, mobileNavPadding, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, benefitsDisplay, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, advisoryDescWidth, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
+    return { honoreeIndex, honoreeIndexRowStyle, honoreeIndexRowGap, honoreeCommentBorder, honoreeIndexColStyle, honoreeIndexHeadStyle, honoreeIndexInnerStyle, honoreeIndexCompanyStyle, honoreeIndexProjectGrid, honoreeIndexNoSize, honoreeDescSize, honoreeIndexLabelSize, honoreeIndexCompanySize, honoreeIndexArrowStyle, honoreeIndexProjectPad, honoreeCategories, honoreeDetailStyle, honoreeHeadRowStyle, honoreeNoBlockStyle, honoreeContentStyle, honoreeFullStyle, honoreeNoFontSize, honoreeDetailTitleSize, honoreeWinnerStyle, honoreeWinnerImageStyle, honoreeWinnerTextLineHeight, finalistNameStyle, finalistGridStyle, finalistColStyle, categories, categoryLabels, requirementItems, informationItems, scheduleItems, entrySheetDaysLeft, advisoryBoard, headerStyle, headerInnerStyle, mobileNavPadding, logoTitleStyle, logoBlockStyle, logoSubtitleStyle, scrolled, videoRef: this.videoRef, titleVideoRef: this.titleVideoRef, titleLine1Chars: this.makeTitleChars('ART & BUSINESS', 0), titleLine2Chars: this.makeTitleChars('AWARD 2026', 14 * 0.045 + 0.08), revealRefs: this.revealRefs, revealStyles, benefits, benefitsDisplay, midArticles, faqs, stepDots, mobileStepDots, isMobile, mobileNavOpen, toggleMobileNav: this.toggleMobileNav, heroTitleFontSize, heroTitleWhiteSpace, heroTitleMarginBottom, heroTitleMarginTop, heroSectionPaddingTop, heroTopRowStyle, heroContentWrapStyle, headerRef: this.headerRef, benefitFadeStyle, archiveItems, archiveListStyle, archiveBoxStyle, archiveArrowStyle, archiveInnerStyle, archiveTagStyle, archiveDividerStyle, archiveLabelStyle, archiveDescStyle, sectionTitleFontSize, benefitGridColumns, benefitHeaderStyle, benefitStickyStyle, benefitDescAlign, advisoryDescWidth, benefitCardStyle, categoryInnerStyle, entryCardsRowStyle, entryCardStyle, footerCardStyle, advisoryGridColumns, isTablet, showDesktopNav: !isMobile && !isTablet };
     // showDesktopNav now true only at 1600px+ (PC Large); 769-1599px uses tablet-style stacked layout.
   }
 }
