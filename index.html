@@ -203,14 +203,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:16px; line-height:170%; letter-spacing:0.15px; color:#333333;">経済産業省は企業がアート・アーティストとの共創を通じて新たな価値を創出し、経済社会とアート・アーティストそれぞれが持続的に発展するエコシステムの構築を目指しています。<br>その実現に向けて、共創の取組と経済的価値の創出をさらに加速させるため、共創の現場と経済的価値創出を巧みに結びつけたモデルとなる企業・プロジェクトを選出・表彰します。<br>今年度は第2回の開催となります。</p>
         </div>
         <div style="display:flex; flex-direction:column; align-items:flex-start; gap:12px; margin-top:36px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;">
-          <a href="#honorees" class="hero-notice" style="display:flex; flex-wrap:wrap; align-items:center; gap:4px 10px; font-family:'Noto Sans JP',sans-serif; font-size:14px; line-height:150%; color:#1F1F21; text-decoration:none;"><span style="font-weight:700; color:#1F1F21;">お知らせ</span><span aria-hidden="true" style="width:1px; height:12px; background:#D4D5E2;"></span><span class="hero-notice-text" style="font-weight:500;">ART &amp; BUSINESS AWARD 2026の受賞企業を発表いたしました</span></a>
+          <div style="display:flex; flex-direction:column; gap:12px; width:100%; font-family:'Noto Sans JP',sans-serif;"><div style="display:flex; align-items:baseline; gap:8px; padding-left:8px; color:#E06219;"><span style="font-weight:700; font-size:14px;">新着情報</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:14px; letter-spacing:1px;">/ NEWS</span></div><div style="display:flex; flex-direction:column; padding:0 14px; box-sizing:border-box; background:rgba(255,255,255,0.3); border:1px solid rgba(255,255,255,0.6); border-radius:16px; box-shadow:0 4px 16px rgba(31,31,33,0.06);"><a href="#honorees" class="hero-notice" style="display:flex; align-items:baseline; gap:16px; padding:14px 0; color:#1F1F21; text-decoration:none;"><span style="flex:0 0 auto; font-weight:700; font-size:13px; letter-spacing:0.5px; color:#E06219;">2026.11.05</span><span class="hero-notice-text" style="font-weight:500; font-size:14px; line-height:160%;">ART &amp; BUSINESS AWARD 2026の受賞企業を発表いたしました。</span></a></div></div>
         </div>
       </div>
     </sc-if>
     <sc-if value="{{ !isMobile }}">
       <div style="max-width:1440px; margin:0 auto; width:100%; padding:0 clamp(24px, 6vw, 96px) 64px; position:relative; z-index:1;">
         <div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px; animation:fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.3s both;">
-          <a href="#honorees" class="hero-notice" style="display:flex; align-items:center; gap:12px; width:100%; font-family:'Noto Sans JP',sans-serif; font-size:16px; color:#1F1F21; text-decoration:none;"><span style="font-weight:400; color:#1F1F21;">お知らせ</span><span aria-hidden="true" style="width:1px; height:16px; background:#D4D5E2;"></span><span class="hero-notice-text" style="font-weight:400;">ART &amp; BUSINESS AWARD 2026の受賞企業を発表いたしました</span></a>
+          <div style="display:flex; flex-direction:row; align-items:center; gap:24px; width:min(820px, 100%); font-family:'Noto Sans JP',sans-serif;"><div style="display:flex; align-items:baseline; gap:8px; flex:0 0 auto; white-space:nowrap; color:#E06219;"><span style="font-weight:700; font-size:16px;">新着情報</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; letter-spacing:1px;">/ NEWS</span></div><div style="display:flex; flex-direction:column; flex:1 1 0; min-width:0; padding:4px 20px; box-sizing:border-box; background:rgba(255,255,255,0.3); border:1px solid rgba(255,255,255,0.6); border-radius:16px; box-shadow:0 4px 16px rgba(31,31,33,0.06);"><a href="#honorees" class="hero-notice" style="display:flex; align-items:baseline; gap:32px; padding:16px 0; color:#1F1F21; text-decoration:none;"><span style="flex:0 0 auto; font-weight:700; font-size:15px; letter-spacing:0.5px; color:#E06219;">2026.11.05</span><span class="hero-notice-text" style="font-weight:500; font-size:15px; line-height:160%;">ART &amp; BUSINESS AWARD 2026の受賞企業を発表いたしました。</span></a></div></div>
         </div>
       </div>
     </sc-if>
@@ -241,8 +241,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:{{ honoreeIndexLabelSize }}; line-height:normal;">{{ hi.label }}</span>
               </div>
               <div style="{{ honoreeIndexInnerStyle }}">
-                <span style="{{ honoreeIndexCompanyStyle }}font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ honoreeIndexCompanySize }}; line-height:30px; color:#1F1F21;">{{ hi.company }}</span>
-                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:15px; line-height:25px; color:#1F1F21; padding-right:{{ honoreeIndexProjectPad }};{{ honoreeIndexProjectGrid }}">{{ hi.project }}</span>
+                <span style="{{ honoreeIndexCompanyStyle }}font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ honoreeIndexCompanySize }}; line-height:150%; color:#1F1F21;">{{ hi.company }}</span>
+                <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:17px; line-height:150%; color:#1F1F21; padding-right:{{ honoreeIndexProjectPad }};{{ honoreeIndexProjectGrid }}">{{ hi.project }}</span>
               </div>
             </div>
             <img src="assets/arrow-down.svg" alt="" width="24" height="24" style="{{ honoreeIndexArrowStyle }}">
@@ -278,10 +278,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <sc-for list="{{ hc.winners }}" as="w" hint-placeholder-count="1">
                       <div style="{{ honoreeWinnerStyle }}">
                         <div style="{{ honoreeWinnerImageStyle }}"></div>
-                        <div style="display:flex; flex-direction:column; gap:20px; flex:1 1 0; min-width:0; color:#1F1F21;">
-                          <div style="display:flex; flex-direction:column;">
-                            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:20px; line-height:160%;">{{ w.name }}</span>
-                            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:15px; line-height:150%;">{{ w.sub }}</span>
+                        <div style="display:flex; flex-direction:column; gap:24px; flex:1 1 0; min-width:0; color:#1F1F21;">
+                          <div style="display:flex; flex-direction:column; gap:8px;">
+                            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:700; font-size:clamp(20px, 2.4vw, 24px); line-height:150%;">{{ w.name }}</span>
+                            <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:17px; line-height:150%;">{{ w.sub }}</span>
                           </div>
                           <sc-if value="{{ w.hasText }}">
                           <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:13px; line-height:{{ honoreeWinnerTextLineHeight }};">{{ w.text }}</p>
@@ -1028,21 +1028,21 @@ class Component extends DCLogic {
     };
     const isStacked = isMobile || this.state.isCompact;
     const honoreeIndexRowStyle = isStacked ? {
-      display: 'grid', gridTemplateColumns: '1fr auto', columnGap: '36px', rowGap: '16px', alignItems: 'end', padding: '20px',
+      display: 'grid', gridTemplateColumns: '1fr auto', columnGap: '36px', rowGap: '20px', alignItems: 'end', padding: '24px',
       border: '1px solid #F6C6AA', borderRadius: '8px', textDecoration: 'none', color: 'inherit'
     } : {
-      display: 'flex', alignItems: 'flex-end', gap: '40px', padding: '25px',
+      display: 'flex', alignItems: 'flex-end', gap: '40px', padding: '32px',
       border: '1px solid #F6C6AA', borderRadius: '8px', textDecoration: 'none', color: 'inherit',
       position: 'relative'
     };
-    const honoreeWinnerTextLineHeight = isStacked ? '175%' : 'normal';
+    const honoreeWinnerTextLineHeight = isStacked ? '175%' : '180%';
     const finalistNameStyle = 'line-height:160%;';
     const finalistGridStyle = 'display:grid; grid-template-columns:1fr; gap:12px;';
     const finalistColStyle = 'display:flex; flex-direction:row; flex-wrap:wrap; align-items:baseline; column-gap:16px; row-gap:4px; flex:1 1 0; min-width:0;';
     const honoreeIndexNoSize = isStacked ? '20px' : '24px';
     const honoreeDescSize = isStacked ? '14px' : '16px';
     const honoreeIndexLabelSize = isStacked ? '18px' : '20px';
-    const honoreeIndexCompanySize = isStacked ? '18px' : '22px';
+    const honoreeIndexCompanySize = isStacked ? '20px' : '26px';
     const honoreeIndexProjectPad = '0';
     const honoreeIndexArrowStyle = isStacked
       ? { gridColumn: '2', gridRow: '3', display: 'block', width: '24px', height: '24px' }
@@ -1051,8 +1051,8 @@ class Component extends DCLogic {
     const honoreeCommentBorder = isStacked ? 'none' : '1px solid #8C919A';
     const honoreeIndexColStyle = isStacked ? 'display:contents;' : 'display:flex; flex-direction:column; gap:16px; flex:1 1 auto; min-width:0;';
     const honoreeIndexHeadStyle = 'display:flex; align-items:center; gap:10px; color:#E06219;' + (isStacked ? ' grid-column:1 / -1;' : '');
-    const honoreeIndexInnerStyle = isStacked ? 'display:contents;' : 'display:flex; flex-direction:column; gap:5px;';
-    const honoreeIndexCompanyStyle = isStacked ? 'grid-column:1 / -1; margin-bottom:-12px; ' : '';
+    const honoreeIndexInnerStyle = isStacked ? 'display:contents;' : 'display:flex; flex-direction:column; gap:8px;';
+    const honoreeIndexCompanyStyle = isStacked ? 'grid-column:1 / -1; margin-bottom:-8px; ' : '';
     const honoreeIndexProjectGrid = isStacked ? ' grid-column:1; grid-row:3;' : '';
     const honoreeDetailStyle = {
       background: '#F5F3F0', borderRadius: '8px',
@@ -1073,7 +1073,7 @@ class Component extends DCLogic {
     const honoreeDetailTitleSize = isStacked ? '24px' : '32px';
     const honoreeWinnerStyle = {
       display: 'flex', flexDirection: isStacked ? 'column' : 'row', alignItems: isStacked ? 'stretch' : 'center',
-      gap: isStacked ? '24px' : '40px', padding: '24px', background: '#FFFFFF', borderRadius: '8px'
+      gap: isStacked ? '24px' : '40px', padding: isStacked ? '24px' : '32px', background: '#FFFFFF', borderRadius: '8px'
     };
     const honoreeWinnerImageStyle = {
       flex: '0 0 auto', background: '#D9D9D9', aspectRatio: '16 / 9', width: isStacked ? '100%' : '265px'
@@ -1083,7 +1083,7 @@ class Component extends DCLogic {
         titleEn: 'Corporate Strategy', title: 'コーポレート・ストラテジー',
         description: 'アートの有する価値を活用して企業戦略・体制の構築、実行、発信など経営領域で新たな変化を起こした企業・プロジェクト',
         comment: 'アートやアーティストとの共創を通じて、企業と顧客や社会との繋がりが強化されることが明らかになった。なかでも社内外を広く積極的に巻き込んだ取組や継続性に対して評価が集まった。',
-        winners: [{ name: '株式会社三井住友銀行', sub: '美術品を「のこす」事業／「みせる」事業', text: 'プライベートバンキング領域において戦略的に継続展開。「のこす」では信託を活用した美術品の次世代承継スキームと、金融機関で唯一の寄贈窓口を整備。「みせる」では大手町本店東館を展示空間として開放するとともにアートフェアへの協賛も重ねる。アートフェアには毎回約1,000人の企業オーナーを招待し、協賛金をはるかに上回る新たな金融収入を創出。差別化の難しい金融業において、アートとの共創が顧客から選ばれる理由を創出している。' }],
+        winners: [{ name: '株式会社三井住友フィナンシャルグループ／株式会社三井住友銀行', sub: '美術品を「のこす」事業／「みせる」事業', text: 'プライベートバンキング領域において戦略的に継続展開。「のこす」では信託を活用した美術品の次世代承継スキームと、金融機関で唯一の寄贈窓口を整備。「みせる」では大手町本店東館を展示空間として開放するとともにアートフェアへの協賛も重ねる。アートフェアには毎回約1,000人の企業オーナーを招待し、協賛金をはるかに上回る新たな金融収入を創出。差別化の難しい金融業において、アートとの共創が顧客から選ばれる理由を創出している。' }],
         finalists: [
           { name: 'マツダ株式会社', sub: 'CAR as ART（クルマはアート）' },
           { name: '株式会社日立製作所', sub: '量子芸術祭 4年間のアウトリーチ活動' }
@@ -1093,11 +1093,11 @@ class Component extends DCLogic {
         titleEn: 'Art Collaboration', title: 'アートコラボレーション',
         description: 'アート・アーティストとの共創を通じて事業の高度化など新たな経済的価値を創出した企業・プロジェクト',
         comment: 'アーティストの思想や作品性を取り込むことで自社の商品・サービスブランドが成長し、新規顧客の獲得や売上増に繋がる。アーティストへの利益還元や国際評価向上にも寄与する取組が高く評価された。',
-        winners: [{ name: '株式会社アンテプリマジャパン', sub: 'ANTEPRIMA ART PROJECT — ミラノから世界へ、日本の現代アートを日常にひらく —', text: '1998年からミラノコレクションに立つ創業者・荻野いづみが、加藤泉、岩崎貴宏、宮永愛子ら日本人アーティストとの対話を起点に、コレクション、バッグ、店舗空間へと転換。アート作品の図像を使用するのではなく、制作の過程ごとにアーティストの思想やブランドの創造性に取り込んだ。ミラノのランウェイと国内のポップアップを連動させることで、新規顧客の獲得し新たなコミュニティを形成。対象カテゴリーの売上は成長を続けている。' }],
+        winners: [{ name: '株式会社アンテプリマジャパン', sub: 'ANTEPRIMA ART PROJECT — ミラノから世界へ、日本の現代アートを日常にひらく —', text: '1998年からミラノコレクションに立つ創業者・荻野いづみが、加藤泉、岩崎貴宏、宮永愛子ら日本人アーティストとの対話を起点に、コレクション、バッグ、店舗空間へと転換。アート作品の図像を使用するのではなく、制作の過程ごとにアーティストの思想やブランドの創造性に取り込んだ。ミラノのランウェイと国内のポップアップを連動させることで、新規顧客を獲得し新たなコミュニティを形成。対象カテゴリーの売上は成長を続けている。' }],
         finalists: [
           { name: '株式会社thePIXEL', sub: 'HAMANASHI HOUSEBOAT' },
           { name: '西武鉄道株式会社', sub: 'SEIBU BLUE ART STATION' },
-          { name: '株式会社マツモトキヨシ・株式会社プラスアート', sub: 'マツモトキヨシ渋谷 アートコラボレーションプロジェクト' }
+          { name: '株式会社マツキヨココカラ&カンパニー（株式会社プラスアート）', sub: 'マツモトキヨシ渋谷フラッグシップストア アート導入プロジェクト' }
         ]
       },
       {
