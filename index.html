@@ -1070,9 +1070,9 @@ class Component extends DCLogic {
       ? { display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '10px', minWidth: 0 }
       : { display: 'flex', flexDirection: 'column', gap: '2px', flex: '0 1 160px', minWidth: 0, alignSelf: 'flex-start', position: 'sticky', top: stickyTop };
     const honoreeContentStyle = {
-      flex: '1 1 220px', display: 'flex', flexDirection: 'column', gap: isStacked ? '16px' : '24px', minWidth: 0, width: isStacked ? '100%' : 'auto'
+      flex: isStacked ? '0 0 auto' : '1 1 220px', display: 'flex', flexDirection: 'column', gap: isStacked ? '16px' : '24px', minWidth: 0, width: isStacked ? '100%' : 'auto'
     };
-    const honoreeFullStyle = { display: 'flex', flexDirection: 'column', gap: isStacked ? '16px' : '24px', width: '100%', marginTop: isStacked ? '16px' : '24px' };
+    const honoreeFullStyle = { display: 'flex', flexDirection: 'column', gap: isStacked ? '16px' : '24px', width: '100%', marginTop: isStacked ? '24px' : '24px' };
     const honoreeNoFontSize = isStacked ? '18px' : 'clamp(32px, 4vw, 48px)';
     const honoreeDetailTitleSize = isStacked ? '24px' : '32px';
     const honoreeWinnerStyle = {
