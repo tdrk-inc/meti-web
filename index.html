@@ -282,7 +282,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <div style="{{ honoreeWinnerStyle }}">
                         <div style="{{ w.imageBoxStyle }}">
                           <sc-if value="{{ w.hasImage }}">
-                          <img src="{{ w.image }}" alt="{{ w.name }}　{{ w.sub }}" loading="lazy" style="display:block; width:100%; height:100%; object-fit:{{ w.imageFit }}; background:#FFFFFF;">
+                          <img src="{{ w.image }}" alt="{{ w.name }}　{{ w.sub }}" loading="lazy" style="{{ w.imageStyle }}">
                           </sc-if>
                         </div>
                         <div style="display:flex; flex-direction:column; gap:24px; flex:1 1 0; min-width:0; color:#1F1F21;">
@@ -804,7 +804,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
           <div style="{{ footerCardStyle }}">
             <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#FFFFFF;">CONTACT</span>
-            <span style="font-family:'Oswald',sans-serif; font-weight:400; font-size:16px; color:rgb(201, 201, 201);">info@art-business-meti.com</span>
+            <span style="font-family:'Oswald',sans-serif; font-weight:400; font-size:16px; color:rgb(201, 201, 201);">info@art-business-meti.go.jp</span>
           </div>
         </div>
       </div>
@@ -839,7 +839,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
         <div style="{{ footerCardStyle }}">
           <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1.5px; color:#FFFFFF;">CONTACT</span>
-          <span style="font-family:'Oswald',sans-serif; font-weight:400; font-size:16px; color:rgb(201, 201, 201);">info@art-business-meti.com</span>
+          <span style="font-family:'Oswald',sans-serif; font-weight:400; font-size:16px; color:rgb(201, 201, 201);">info@art-business-meti.go.jp</span>
         </div>
       </div>
       <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:24px; display:flex; flex-direction:column; align-items:center; gap:16px; width:100%;">
@@ -1123,7 +1123,7 @@ class Component extends DCLogic {
         titleEn: 'Local Impact', title: 'ローカルインパクト',
         description: '地域特性を活かしたアートに関わる取組を通じて地域における経済的価値を創出した企業・プロジェクト',
         comment: '地域資源を活用したアート取組によって地域に様々な価値が生まれることが明らかになった。なかでもアートをきっかけとして地域で新たな挑戦する「場」を創ることに対して評価が集まった。',
-        winners: [{ name: '一般社団法人0と編集社', image: 'assets/honorees/local-impact.jpg', sub: 'トビチアート&カルチャーツーリズム', text: '長野県辰野町の商店街そのものを美術館に見立て、空き家や空き店舗を展示会場とする「トビチ美術展」を2021年から毎年開催。空き家から出る不用品を素材にアーティストが滞在制作した作品を展示。美術展の来場者に対して展示会場となっている空き家を紹介することで、６か所で新たな店舗の出店に繋がった。アートによって地域に新たな事業が生まれるとともに関係人口が増加し、地域経済の活性化を実現している。' }],
+        winners: [{ name: '一般社団法人0と編集社', image: 'assets/honorees/local-impact.jpg', imageAuto: true, sub: 'トビチアート&カルチャーツーリズム', text: '長野県辰野町の商店街そのものを美術館に見立て、空き家や空き店舗を展示会場とする「トビチ美術展」を2021年から毎年開催。空き家から出る不用品を素材にアーティストが滞在制作した作品を展示。美術展の来場者に対して展示会場となっている空き家を紹介することで、６か所で新たな店舗の出店に繋がった。アートによって地域に新たな事業が生まれるとともに関係人口が増加し、地域経済の活性化を実現している。' }],
         finalists: [
           { name: 'AGC株式会社', sub: '素材のテロワール' },
           { name: '株式会社ＡＯＩＬＯ', sub: 'スノーアート・プロジェクト ～Our Life Is Our Art～（足跡で描く10,000㎡のキセキ。十勝の雪原から世界へ。）' }
@@ -1142,12 +1142,12 @@ class Component extends DCLogic {
       {
         titleEn: 'Special Recognition', title: '特別賞',
         comment: '初回の会期中のため、継続性・経済的価値は明らかになっていないが、地域の産業・住民等に強いインパクトをもたらす取組であると評価し特別賞とした。今後の継続的な発展を期待したい。',
-        winners: [{ name: '一般財団法人 日本産業芸術財団', image: 'assets/honorees/special-recognition.jpg', sub: '瀬戸内産業芸術祭 2026（Setouchi Art and Industry 2026）', text: '地域の7つの企業・団体（製塩、学生服、舶用エンジン部品、蓄電池、資源循環、デニム等）が、稼働中の工場やプラントを会期中だけ「美術館」に変える分散型の芸術祭。既存作品ではなく各社の産業をコンセプトに芸術家と作品を共創し、案内は社員が務める。今秋の初開催では鑑賞券約3,000枚が売れ、バスツアーも完売が相次いだ。満足度は93.1%にのぼる。アートが産業の現場を観光資源へと転換し、働く人の誇りも引き出している。' }],
+        winners: [{ name: '一般財団法人 日本産業芸術財団', image: 'assets/honorees/special-recognition.jpg', imageAuto: true, sub: '瀬戸内産業芸術祭 2026（Setouchi Art and Industry 2026）', text: '地域の7つの企業・団体（製塩、学生服、舶用エンジン部品、蓄電池、資源循環、デニム等）が、稼働中の工場やプラントを会期中だけ「美術館」に変える分散型の芸術祭。既存作品ではなく各社の産業をコンセプトに芸術家と作品を共創し、案内は社員が務める。今秋の初開催では鑑賞券約3,000枚が売れ、バスツアーも完売が相次いだ。満足度は93.1%にのぼる。アートが産業の現場を観光資源へと転換し、働く人の誇りも引き出している。' }],
         finalists: []
       }
     ].map((c, i) => ({
       ...c,
-      winners: c.winners.map((w) => ({ ...w, hasText: !!w.text, hasImage: !!w.image, imageFit: w.imageFit || 'cover', imageBoxStyle: { ...honoreeWinnerImageStyle, width: isStacked ? '100%' : (i === 0 ? '300px' : '350px') } })),
+      winners: c.winners.map((w) => ({ ...w, hasText: !!w.text, hasImage: !!w.image, imageFit: w.imageFit || 'cover', imageStyle: w.imageAuto ? { display: 'block', width: '100%', height: 'auto', background: '#FFFFFF' } : { display: 'block', width: '100%', height: '100%', objectFit: (w.imageFit || 'cover'), background: '#FFFFFF' }, imageBoxStyle: { ...honoreeWinnerImageStyle, ...(w.imageAuto ? { aspectRatio: 'auto', background: 'transparent', alignSelf: 'flex-start' } : {}), width: isStacked ? '100%' : (i === 0 ? '300px' : '350px') } })),
       no: String(i + 1).padStart(2, '0'),
       anchor: 'honoree-' + (i + 1),
       hasFinalists: c.finalists.length > 0,
