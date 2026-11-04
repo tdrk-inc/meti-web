@@ -282,7 +282,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <div style="{{ honoreeWinnerStyle }}">
                         <div style="{{ w.imageBoxStyle }}">
                           <sc-if value="{{ w.hasImage }}">
-                          <img src="{{ w.image }}" alt="{{ w.name }}　{{ w.sub }}" loading="lazy" style="display:block; width:100%; height:100%; object-fit:{{ w.imageFit }}; background:#FFFFFF;">
+                          <img src="{{ w.image }}" alt="{{ w.name }}　{{ w.sub }}" loading="lazy" style="{{ w.imageStyle }}">
                           </sc-if>
                         </div>
                         <div style="display:flex; flex-direction:column; gap:24px; flex:1 1 0; min-width:0; color:#1F1F21;">
@@ -1142,12 +1142,12 @@ class Component extends DCLogic {
       {
         titleEn: 'Special Recognition', title: '特別賞',
         comment: '初回の会期中のため、継続性・経済的価値は明らかになっていないが、地域の産業・住民等に強いインパクトをもたらす取組であると評価し特別賞とした。今後の継続的な発展を期待したい。',
-        winners: [{ name: '一般財団法人 日本産業芸術財団', image: 'assets/honorees/special-recognition.jpg', sub: '瀬戸内産業芸術祭 2026（Setouchi Art and Industry 2026）', text: '地域の7つの企業・団体（製塩、学生服、舶用エンジン部品、蓄電池、資源循環、デニム等）が、稼働中の工場やプラントを会期中だけ「美術館」に変える分散型の芸術祭。既存作品ではなく各社の産業をコンセプトに芸術家と作品を共創し、案内は社員が務める。今秋の初開催では鑑賞券約3,000枚が売れ、バスツアーも完売が相次いだ。満足度は93.1%にのぼる。アートが産業の現場を観光資源へと転換し、働く人の誇りも引き出している。' }],
+        winners: [{ name: '一般財団法人 日本産業芸術財団', image: 'assets/honorees/special-recognition.jpg', imageAuto: true, sub: '瀬戸内産業芸術祭 2026（Setouchi Art and Industry 2026）', text: '地域の7つの企業・団体（製塩、学生服、舶用エンジン部品、蓄電池、資源循環、デニム等）が、稼働中の工場やプラントを会期中だけ「美術館」に変える分散型の芸術祭。既存作品ではなく各社の産業をコンセプトに芸術家と作品を共創し、案内は社員が務める。今秋の初開催では鑑賞券約3,000枚が売れ、バスツアーも完売が相次いだ。満足度は93.1%にのぼる。アートが産業の現場を観光資源へと転換し、働く人の誇りも引き出している。' }],
         finalists: []
       }
     ].map((c, i) => ({
       ...c,
-      winners: c.winners.map((w) => ({ ...w, hasText: !!w.text, hasImage: !!w.image, imageFit: w.imageFit || 'cover', imageBoxStyle: { ...honoreeWinnerImageStyle, width: isStacked ? '100%' : (i === 0 ? '300px' : '350px') } })),
+      winners: c.winners.map((w) => ({ ...w, hasText: !!w.text, hasImage: !!w.image, imageFit: w.imageFit || 'cover', imageStyle: w.imageAuto ? { display: 'block', width: '100%', height: 'auto', background: '#FFFFFF' } : { display: 'block', width: '100%', height: '100%', objectFit: (w.imageFit || 'cover'), background: '#FFFFFF' }, imageBoxStyle: { ...honoreeWinnerImageStyle, ...(w.imageAuto ? { aspectRatio: 'auto', background: 'transparent', alignSelf: 'flex-start' } : {}), width: isStacked ? '100%' : (i === 0 ? '300px' : '350px') } })),
       no: String(i + 1).padStart(2, '0'),
       anchor: 'honoree-' + (i + 1),
       hasFinalists: c.finalists.length > 0,
