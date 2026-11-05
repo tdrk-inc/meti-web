@@ -280,9 +280,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <div style="display:flex; flex-direction:column; gap:16px;">
                     <sc-for list="{{ hc.winners }}" as="w" hint-placeholder-count="1">
                       <div style="{{ honoreeWinnerStyle }}">
-                        <div style="{{ w.imageBoxStyle }}">
-                          <sc-if value="{{ w.hasImage }}">
-                          <img src="{{ w.image }}" alt="{{ w.name }}　{{ w.sub }}" loading="lazy" style="{{ w.imageStyle }}">
+                        <div style="{{ w.imageWrapStyle }}">
+                          <div style="{{ w.imageBoxStyle }}">
+                            <sc-if value="{{ w.hasImage }}">
+                            <img src="{{ w.image }}" alt="{{ w.name }}　{{ w.sub }}" loading="lazy" style="{{ w.imageStyle }}">
+                            </sc-if>
+                          </div>
+                          <sc-if value="{{ w.hasCredit }}">
+                          <span style="font-family:'Noto Sans JP',sans-serif; font-weight:400; font-size:10px; line-height:150%; color:#8C919A;">{{ w.credit }}</span>
                           </sc-if>
                         </div>
                         <div style="display:flex; flex-direction:column; gap:24px; flex:1 1 0; min-width:0; color:#1F1F21;">
@@ -1123,7 +1128,7 @@ class Component extends DCLogic {
         titleEn: 'Local Impact', title: 'ローカルインパクト',
         description: '地域特性を活かしたアートに関わる取組を通じて地域における経済的価値を創出した企業・プロジェクト',
         comment: '地域資源を活用したアート取組によって地域に様々な価値が生まれることが明らかになった。なかでもアートをきっかけとして地域で新たな挑戦する「場」を創ることに対して評価が集まった。',
-        winners: [{ name: '一般社団法人0と編集社', image: 'assets/honorees/local-impact.jpg', imageAuto: true, sub: 'トビチアート&カルチャーツーリズム', text: '長野県辰野町の商店街そのものを美術館に見立て、空き家や空き店舗を展示会場とする「トビチ美術展」を2021年から毎年開催。空き家から出る不用品を素材にアーティストが滞在制作した作品を展示。美術展の来場者に対して展示会場となっている空き家を紹介することで、６か所で新たな店舗の出店に繋がった。アートによって地域に新たな事業が生まれるとともに関係人口が増加し、地域経済の活性化を実現している。' }],
+        winners: [{ name: '一般社団法人0と編集社', image: 'assets/honorees/local-impact.jpg', imageAuto: true, credit: 'Photo: Yo Oki Design', sub: 'トビチアート&カルチャーツーリズム', text: '長野県辰野町の商店街そのものを美術館に見立て、空き家や空き店舗を展示会場とする「トビチ美術展」を2021年から毎年開催。空き家から出る不用品を素材にアーティストが滞在制作した作品を展示。美術展の来場者に対して展示会場となっている空き家を紹介することで、６か所で新たな店舗の出店に繋がった。アートによって地域に新たな事業が生まれるとともに関係人口が増加し、地域経済の活性化を実現している。' }],
         finalists: [
           { name: 'AGC株式会社', sub: '素材のテロワール' },
           { name: '株式会社ＡＯＩＬＯ', sub: 'スノーアート・プロジェクト ～Our Life Is Our Art～（足跡で描く10,000㎡のキセキ。十勝の雪原から世界へ。）' }
@@ -1133,7 +1138,7 @@ class Component extends DCLogic {
         titleEn: 'Art Engagement', title: 'アートエンゲージメント',
         description: '所有しているアート作品を活用し企業価値向上とともに日本のアートの発展に寄与した企業・プロジェクト', isNew: true,
         comment: '新たなカテゴリーとして加えたが自社所有のアート作品を活用した取組の応募は少なかった。他者のアート作品の活用による価値創出事業という観点で新たな需要開拓・高い収益性を獲得した取組を評価した。',
-        winners: [{ name: '株式会社リビタ', image: 'assets/honorees/art-engagement.jpg', sub: 'KAIKA 東京 by THE SHARE HOTELS／KAIKA TOKYO AWARD', text: '「KAIKA 東京」は、1966年築の倉庫ビルをリノベーションし、現代アートの公開収蔵庫とホテルを融合させた施設。客室にできない余剰スペースを、アートギャラリーやコレクター向けのストレージ、アワードで募った多様な作品の収蔵・展示空間として活用している。これらを宿泊客にも公開し、アートと宿泊が一体となった体験が好評を博しており、最寄駅から徒歩13分という不利な立地にも関わらず駅近の競合に劣らない客室平均単価と稼働率を実現している。' }],
+        winners: [{ name: '株式会社リビタ', image: 'assets/honorees/art-engagement.jpg', credit: 'Photo: Takumi Ota', sub: 'KAIKA 東京 by THE SHARE HOTELS／KAIKA TOKYO AWARD', text: '「KAIKA 東京」は、1966年築の倉庫ビルをリノベーションし、現代アートの公開収蔵庫とホテルを融合させた施設。客室にできない余剰スペースを、アートギャラリーやコレクター向けのストレージ、アワードで募った多様な作品の収蔵・展示空間として活用している。これらを宿泊客にも公開し、アートと宿泊が一体となった体験が好評を博しており、最寄駅から徒歩13分という不利な立地にも関わらず駅近の競合に劣らない客室平均単価と稼働率を実現している。' }],
         finalists: [
           { name: '株式会社The Chain Museum', sub: 'The Chain Museum（オフィス空間へのアート導入）' },
           { name: 'パークホテル東京', sub: 'Art Hotel Rebranding Project ‒ 日本の美意識戦略' }
@@ -1147,7 +1152,7 @@ class Component extends DCLogic {
       }
     ].map((c, i) => ({
       ...c,
-      winners: c.winners.map((w) => ({ ...w, hasText: !!w.text, hasImage: !!w.image, imageFit: w.imageFit || 'cover', imageStyle: w.imageAuto ? { display: 'block', width: '100%', height: 'auto', background: '#FFFFFF' } : { display: 'block', width: '100%', height: '100%', objectFit: (w.imageFit || 'cover'), background: '#FFFFFF' }, imageBoxStyle: { ...honoreeWinnerImageStyle, ...(w.imageAuto ? { aspectRatio: 'auto', background: 'transparent', alignSelf: 'flex-start' } : {}), width: isStacked ? '100%' : (i === 0 ? '300px' : '350px') } })),
+      winners: c.winners.map((w) => ({ ...w, hasText: !!w.text, hasImage: !!w.image, imageFit: w.imageFit || 'cover', imageStyle: w.imageAuto ? { display: 'block', width: '100%', height: 'auto', background: '#FFFFFF' } : { display: 'block', width: '100%', height: '100%', objectFit: (w.imageFit || 'cover'), background: '#FFFFFF' }, hasCredit: !!w.credit, imageWrapStyle: { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', flex: '0 0 auto', width: isStacked ? '100%' : (i === 0 ? '300px' : '350px'), ...(w.imageAuto ? { alignSelf: 'flex-start' } : {}) }, imageBoxStyle: { ...honoreeWinnerImageStyle, ...(w.imageAuto ? { aspectRatio: 'auto', background: 'transparent' } : {}), width: '100%' } })),
       no: String(i + 1).padStart(2, '0'),
       anchor: 'honoree-' + (i + 1),
       hasFinalists: c.finalists.length > 0,
