@@ -116,24 +116,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span style="{{ logoSubtitleStyle }}">主催：経済産業省</span>
       </div>
       <sc-if value="{{ showDesktopNav }}" hint-placeholder-val="{{ true }}">
-        <nav style="display:flex; align-items:center; gap:32px; flex:1 1 auto; justify-content:flex-start; overflow-x:auto; white-space:nowrap; scrollbar-width:none; padding-right:220px;">
+        <nav style="display:flex; align-items:center; gap:32px; flex:1 1 100%; order:3; justify-content:flex-start; overflow-x:auto; white-space:nowrap; scrollbar-width:none; padding-right:220px;">
           <a href="#honorees" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">2026受賞企業</a>
+          <a href="#category" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">応募カテゴリー</a>
           <a href="#advisory" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">アドバイザリーボード</a>
           <a href="#schedule" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">スケジュール</a>
-          <a href="#ceremony" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">授賞式概要</a>
+          <a href="#requirements" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">応募条件</a>
+          <a href="#apply" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">エントリー方法</a>
           <a href="#benefit" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">アワード特典</a>
+          <a href="#information" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">お知らせ</a>
           <a href="https://art-business-meti.com/award/2025" target="_blank" rel="noopener noreferrer" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">過去のアワード</a>
+          <a href="#faq" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">FAQ</a>
           <a href="#footer" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:16px; color:#1F1F21;">お問い合わせ</a>
         </nav>
       </sc-if>
       <sc-if value="{{ isTablet }}" hint-placeholder-val="{{ false }}">
         <nav style="display:flex; align-items:center; gap:12px; flex-basis:100%; justify-content:flex-start; overflow-x:auto; white-space:nowrap; scrollbar-width:thin; margin-top:0;">
           <a href="#honorees" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">2026受賞企業</a>
+          <a href="#category" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">応募カテゴリー</a>
           <a href="#advisory" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">アドバイザリーボード</a>
           <a href="#schedule" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">スケジュール</a>
-          <a href="#ceremony" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">授賞式概要</a>
+          <a href="#requirements" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">応募条件</a>
+          <a href="#apply" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">エントリー方法</a>
           <a href="#benefit" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">アワード特典</a>
+          <a href="#information" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">お知らせ</a>
           <a href="https://art-business-meti.com/award/2025" target="_blank" rel="noopener noreferrer" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">過去のアワード</a>
+          <a href="#faq" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">FAQ</a>
           <a href="#footer" class="header-anchor-link" style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:13px; color:#1F1F21;">お問い合わせ</a>
         </nav>
       </sc-if>
@@ -155,11 +163,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <nav style="display:flex; flex-direction:column; gap:28px; margin-top:24px;">
         <a href="#honorees" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>2026受賞企業</a>
+        <a href="#category" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>応募カテゴリー</a>
         <a href="#advisory" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>アドバイザリーボード</a>
         <a href="#schedule" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>スケジュール</a>
-        <a href="#ceremony" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>授賞式概要</a>
+        <a href="#requirements" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>応募条件</a>
+        <a href="#apply" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>エントリー方法</a>
         <a href="#benefit" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>アワード特典</a>
+        <a href="#information" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>お知らせ</a>
         <a href="https://art-business-meti.com/award/2025" target="_blank" rel="noopener noreferrer" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>過去のアワード</a>
+        <a href="#faq" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>FAQ</a>
         <a href="#footer" onClick="{{ toggleMobileNav }}" style="display:flex; align-items:center; gap:12px; font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:18px; color:#1F1F21;"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#E06219; flex:0 0 auto;"></span>お問い合わせ</a>
       </nav>
     </div>
@@ -1232,7 +1244,7 @@ class Component extends DCLogic {
     const headerInnerStyle = {
       maxWidth: '1600px', margin: '0 auto', position: 'relative',
       padding: scrolled ? '8px clamp(24px, 4vw, 48px)' : '14px clamp(24px, 4vw, 48px)',
-      display: 'flex', alignItems: isMobile ? 'flex-start' : 'center', justifyContent: 'space-between', gap: isTablet ? '16px 32px' : '32px',
+      display: 'flex', alignItems: isMobile ? 'flex-start' : 'center', justifyContent: 'space-between', gap: isMobile ? '32px' : '8px 32px',
       flexWrap: isMobile ? 'nowrap' : 'wrap',
       transition: 'padding 0.35s ease'
     };
