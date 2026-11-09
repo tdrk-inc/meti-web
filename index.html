@@ -522,23 +522,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <!-- AWARD CEREMONY -->
     <div id="ceremony" style="{{ ceremonyWrapStyle }}">
-      <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="display:flex; flex-direction:column; gap:12px; position:relative; margin-bottom:32px;">
         <div style="display:flex; align-items:center; gap:8px;">
-          <span aria-hidden="true" style="width:10px; height:10px; background:#E06219; flex:0 0 auto;"></span>
-          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:{{ ceremonyTitleSize }}; line-height:120%; letter-spacing:1px; color:#1F1F21;">AWARD CEREMONY</span>
+          <img src="assets/motif.png" alt="" style="width:16px; height:auto; display:inline-block;">
+          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:16px; letter-spacing:1px; color:#1F1F21;">AWARD CEREMONY</span>
         </div>
-        <span style="font-family:'Noto Sans JP',sans-serif; font-weight:500; font-size:14px; color:#E06219;">授賞式概要</span>
+        <h3 style="margin:0; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:{{ ceremonyTitleSize }}; line-height:140%; color:#1F1F21;">授賞式概要</h3>
       </div>
-      <div style="display:flex; flex-direction:column; flex:1 1 auto; min-width:0;">
-        <sc-for list="{{ ceremonyItems }}" as="c" hint-placeholder-count="4">
+      <div style="display:flex; flex-direction:column; border-top:1px solid #D4D5E2;">
+        <sc-for list="{{ ceremonyItems }}" as="c" hint-placeholder-count="3">
           <div style="{{ c.rowStyle }}">
             <span style="{{ c.labelStyle }}">{{ c.label }}</span>
-            <span aria-hidden="true" style="{{ c.barStyle }}"></span>
-            <div style="display:flex; flex-direction:column; gap:4px; flex:1 1 auto; min-width:0;">
-              <sc-for list="{{ c.lines }}" as="line" hint-placeholder-count="2">
-                <span style="font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:170%; color:#1F1F21;">{{ line }}</span>
-              </sc-for>
-            </div>
+            <p style="margin:0; font-family:'Noto Sans JP',sans-serif; font-size:16px; line-height:180%; color:#1F1F21; flex:1 1 auto;">{{ c.text }}</p>
           </div>
         </sc-for>
       </div>
@@ -1544,26 +1539,25 @@ class Component extends DCLogic {
       }
       return { ...ev, dotColor: ev.isKeyDate ? '#E06219' : '#333333', dateParts, daysLeft };
     });
-    const ceremonyWrapStyle = {
-      display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center',
-      gap: isMobile ? '24px' : '80px', marginTop: isMobile ? '48px' : '72px', position: 'relative'
-    };
-    const ceremonyTitleSize = isMobile ? '32px' : '40px';
+    const ceremonyWrapStyle = { marginTop: isMobile ? '64px' : '96px', position: 'relative' };
+    const ceremonyTitleSize = isMobile ? '24px' : '28px';
     const ceremonyItems = [
-      { label: '開催日', lines: ['2026年12月1日（火）17:00–20:00'] },
-      { label: '会場', lines: ['TOKYO NODE HALL（虎ノ門ヒルズ ステーションタワー46F）', '東京都港区虎ノ門2-6-2'] },
-      { label: '内容', lines: ['表彰式 / トークセッション / 交流会'] }
-    ].map(c => ({
-      ...c,
-      rowStyle: isMobile
-        ? { display: 'flex', flexDirection: 'column', gap: '8px', padding: '16px 0' }
-        : { display: 'flex', alignItems: 'flex-start', gap: '24px', padding: '20px 0' },
-      labelStyle: {
-        fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 500, fontSize: '16px', color: '#1F1F21',
-        flex: isMobile ? '0 0 auto' : '0 0 80px'
-      },
-      barStyle: isMobile ? { display: 'none' } : { width: '3px', alignSelf: 'stretch', background: '#E06219', flex: '0 0 3px' }
-    }));
+      { label: '開催日', text: '2026年12月1日（火）17:00–20:00' },
+      { label: '会場', text: 'TOKYO NODE HALL（虎ノ門ヒルズ ステーションタワー46F）東京都港区虎ノ門2-6-2' },
+      { label: '内容', text: '表彰式 / トークセッション / 交流会' }
+    ].map((r, i, arr) => {
+      const borderBottom = i === arr.length - 1 ? 'none' : '1px solid #D4D5E2';
+      return {
+        ...r,
+        rowStyle: isMobile
+          ? { display: 'flex', flexDirection: 'column', gap: '12px', padding: '24px 0', borderBottom }
+          : { display: 'flex', alignItems: 'flex-start', gap: '32px', padding: '32px 0', borderBottom },
+        labelStyle: {
+          fontFamily: "'Noto Sans JP',sans-serif", fontWeight: 700, fontSize: '16px', color: '#1F1F21',
+          flex: isMobile ? '0 0 auto' : '0 0 200px'
+        }
+      };
+    });
     const entrySheetDaysLeft = (scheduleItems.find(s => s.label === 'エントリーシート提出締切') || {}).daysLeft;
 
     const advisoryBoard = [
